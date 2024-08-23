@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import Singup from './components/Signup';

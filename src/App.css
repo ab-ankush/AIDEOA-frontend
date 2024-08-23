@@ -1,0 +1,11 @@
+body{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../public/Rectangle128.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  .glass-effect {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.227)
+  }
+}
+

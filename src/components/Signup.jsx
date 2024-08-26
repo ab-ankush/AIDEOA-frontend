@@ -15,7 +15,7 @@ const Singup = () => {
 
   return (
     <>
-      <div className="min-h-screen  flex justify-center items-center">
+      <div className="min-h-dvh  flex justify-center items-center">
         <div className=" p-8 w-[50%] max-w-[353px] min-w-[300px]">
           <div className="flex justify-center  ">
             <img
@@ -62,7 +62,7 @@ const Singup = () => {
               />
               <FaRegEyeSlash
                 onClick={() => setPass(!pass)}
-                className="absolute top-3 text-gray-300 right-3"
+                className="absolute top-3 text-gray-300 right-3 cursor-pointer"
                 size={15}
               />
             </div>
@@ -75,7 +75,7 @@ const Singup = () => {
               />
               <FaRegEyeSlash
                 onClick={() => setConPass(!ConPass)}
-                className="absolute top-3 text-gray-300 right-3"
+                className="absolute top-3 text-gray-300 right-3 cursor-pointer"
                 size={15}
               />
             </div>

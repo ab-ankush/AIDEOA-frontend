@@ -1,4 +1,8 @@
 
+
+
+/* 
+
 body {
   .glass-effect {
     -webkit-backdrop-filter: blur(15px);
@@ -22,4 +26,4 @@ body {
 .bottomshadowgradient {
   background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
 }
-}
+} */

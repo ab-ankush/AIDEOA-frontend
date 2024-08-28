@@ -1,6 +1,6 @@
 import React from "react";
 import { CiUser } from "react-icons/ci";
-import { FaRegEyeSlash ,FaUser} from "react-icons/fa";
+import { FaDribbble, FaInstagram, FaRegEyeSlash ,FaTwitter,FaUser, FaYoutube} from "react-icons/fa";
 const Login = () => {
   return (
     <div className="min-h-screen mainBackgroundImg flex justify-center items-center">
@@ -16,7 +16,7 @@ const Login = () => {
           {" "}
           All India Diploma Engineers And Officials Association
         </h2>
-        <p className="text-center mb-3 text-white font-semibold ">SignIn</p>
+        <p className="text-center mb-3 text-white font-semibold ">Sign In</p>
         <form>
           <div className="relative">
             <input
@@ -62,12 +62,12 @@ const Login = () => {
             </span>
           </div>
         </form>
-        <div className="flex gap-4 absolute  bottom-3 left-[50%]  -translate-x-[50%] -translate-y-[50%] cursor-pointer">
-            <img src='/path.png' className="w-4"/>
-            <img src='/webl.png' className="w-4"/>
-            <img src='/tweet.png' className="w-4 rotate-[60deg] "/>
-            <img src='/you.png' className="w-4 rotate-[90deg]"/>
-        </div>
+        <div className="flex gap-4 absolute text-white bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] ">
+           <FaInstagram  className="cursor-pointer"/>
+           <  FaDribbble  className="cursor-pointer"/>
+          <  FaTwitter  className="cursor-pointer"/>
+           <  FaYoutube className="cursor-pointer"/>
+          </div>
       </div>
     </div>
   );

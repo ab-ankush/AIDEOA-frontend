@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FaRegEyeSlash, FaUser } from "react-icons/fa";
+import {
+  FaRegEyeSlash,
+  FaUser,
+  FaInstagram,
+  FaDribbble,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 
 const Signup = () => {
@@ -47,7 +54,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="min-h-dvh flex justify-center items-center">
+      <div className="min-h-dvh mainBackgroundImg flex justify-center items-center">
         <div className="p-8 w-[50%] max-w-[353px] min-w-[300px]">
           <div className="flex justify-center">
             <img
@@ -55,11 +62,12 @@ const Signup = () => {
               className="mix-blend-color-burn"
               alt="logo"
             />
-            <MdAlternateEmail
-              className="absolute top-3 text-gray-300 right-3"
-              size={14}
-            />
+      
           </div>
+          <h2 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
+            All India Diploma Engineers And Officials Association
+          </h2>
+          <p className="text-center mb-3 text-white font-semibold">Sign Up</p>
           <form onSubmit={handleSubmit}>
             <div className="relative">
               <input
@@ -135,17 +143,23 @@ const Signup = () => {
               >
                 Sign Up
               </button>
+           
+            </div>
+            <div className="mt-4 text-center text-white">
+              <span>
+                Not have account yet?{" "}
+                <a href="" className="text-purple-400 hover:text-purple-600 ">
+                  sign up
+                </a>
+              </span>
             </div>
           </form>
-          <h2 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
-            All India Diploma Engineers And Officials Association
-          </h2>
-          <p className="text-center mb-3 text-white font-semibold">Sign Up</p>
-          <div className="flex gap-4 absolute bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] cursor-pointer">
-            <img src="/path.png" className="w-4" />
-            <img src="/webl.png" className="w-4" />
-            <img src="/tweet.png" className="w-4 rotate-[60deg]" />
-            <img src="/you.png" className="w-4 rotate-[90deg]" />
+         
+          <div className="flex gap-4 absolute text-white bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] ">
+           <FaInstagram  className="cursor-pointer"/>
+           <  FaDribbble  className="cursor-pointer"/>
+          <  FaTwitter  className="cursor-pointer"/>
+           <  FaYoutube className="cursor-pointer"/>
           </div>
         </div>
       </div>

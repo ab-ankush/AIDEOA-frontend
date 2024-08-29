@@ -6,12 +6,18 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 // import Homepage from "./components/Homepage/Homepage.jsx";
 import Singup from "./components/Signup";
+import JoinMembership from "./components/JoinMembershipHomepage/JoinMembership";
+import DonationComponent from "./components/Donation/DonationComponent";
 
 function App() {
   return (
     <div className="App">
       {/* <EventPage /> */}
-      <Homepage />
+     {/* <ContactUs /> */}
+     {/* <Homepage /> */}
+     {/* <JoinMembership /> */}
+     <DonationComponent />
+     {/* <Signup /> */}
     </div>
   );
 }

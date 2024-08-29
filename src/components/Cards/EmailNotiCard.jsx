@@ -11,10 +11,10 @@ const EmailNotiCard = () => {
         Join us for our latest upcoming events by subscribing us & get notified..
         </p>
         <div className='relative text-center'>
-            <input className='w-80 h-14 rounded-full focus:outline-none px-4 max-sm:w-60' 
+            <input className='w-96 h-14 rounded-full focus:outline-none px-4 max-sm:w-64' 
             placeholder='Enter email address'
             />  
-            <button className='bg-purple-600 absolute right-0 top-0  text-white h-full w-28 rounded-full text-sm font-normal max-sm:w-20 max-sm:text-xs'>continue</button>
+            <button className='bg-purple-600 absolute right-0 top-0  text-white h-full w-24 rounded-full  font-semibold max-sm:w-20 max-sm:text-xs max-sm:text-sm'>continue</button>
         </div>
     </div>
     </div>

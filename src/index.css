@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  .glass-effect {
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
+    background: rgba(79, 77, 77, 0.3);
+  }
+  .membershipBtn {
+    background: linear-gradient(
+      270deg,
+      rgba(87, 0, 199, 0.4) 6.44%,
+      rgba(86, 0, 196, 0.5) 46.74%,
+      #410094 100%
+    );
+  }
+  .mainBackgroundImg {
+    background-image: url(/Rectangle128.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: brightness(10%) contrast(200%) saturate(150%);
+  }
+
+  .imagefilter {
+    backdrop-filter: brightness(30%) contrast(200%) saturate(150%);
+  }
+
+  .bottomshadowgradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+  }
+}

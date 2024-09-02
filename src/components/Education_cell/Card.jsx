@@ -9,7 +9,7 @@ const Card = (props) => {
           className="flex rounded-full  border  border-black flex-row justify-center items-center  mx-auto sm:w-[200px] sm:h-[200px] sm:my-[10px]"
         >
           <img
-            src="/icon.png"
+            src="/images/2.jpg"
             className="rounded-full sm:w-[200px] sm:h-[200px]"
             alt=""
           />

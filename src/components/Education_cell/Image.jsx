@@ -1,11 +1,14 @@
 import React from "react";
-import "./.css";
 const Image = () => {
   return (
     <div
       id="image"
       style={{
         width: "100vw",
+        backgroundImage: "url(../../../public/images/2.jpg)",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
       className="h-[400px]  flex justify-center items-center text-white text-[50px]"
     >

@@ -7,10 +7,9 @@ const Seclast = () => {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
     gsap.from("#lll", {
-      opacity: 0,
-      scale: 0,
-      duration: 2,
-      delay: 1,
+      y: -600,
+      duration: 0.5,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#lll",

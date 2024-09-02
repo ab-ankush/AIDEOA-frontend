@@ -7,8 +7,8 @@ const Mission = () => {
     gsap.from("#line1", {
       x: -500,
       rotateY: 360,
-      duration: 2,
-      delay: 1,
+      duration: 1,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#line1",
@@ -20,8 +20,8 @@ const Mission = () => {
     gsap.from("#line3", {
       x: 500,
       rotateY: 360,
-      duration: 2,
-      delay: 1,
+      duration: 1,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#line3",
@@ -33,8 +33,8 @@ const Mission = () => {
     gsap.from("#line2", {
       opacity: 0,
       scale: 0,
-      duration: 2,
-      delay: 1,
+      duration: 1,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#line2",
@@ -56,8 +56,10 @@ const Mission = () => {
             <img src="./images/send/setting.png" className=" " alt="" />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
-            <h1 className="p-4 text-justify">Empower and Advocate </h1>
-            <p className="p-4 text-justify">
+            <h1 className="p-4 font-bold text-justify">
+              Empower and Advocate{" "}
+            </h1>
+            <p className="p-4 text-[#00000099] text-justify">
               We tackle the unique challenges faced by mining students, from
               examination hurdles and promotion pathways to certificate issuance
               by D.G.M.S and job vacancies. We stand with you every step of the
@@ -77,8 +79,10 @@ const Mission = () => {
             />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
-            <h1 className="p-4 text-justify">Community Leadership </h1>
-            <p className="p-4 text-justify">
+            <h1 className="p-4 font-bold text-justify">
+              Community Leadership{" "}
+            </h1>
+            <p className="p-4 text-[#00000099] text-justify">
               Our involvement in key events related to promotions, examinations,
               and grievance resolutions, ensures that voices from every corner
               of the mining sector are heard and respected.
@@ -97,8 +101,10 @@ const Mission = () => {
             />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
-            <h1 className="p-4 text-justify">Educational Excellence </h1>
-            <p className="p-4 text-justify">
+            <h1 className="p-4 font-bold text-justify">
+              Educational Excellence{" "}
+            </h1>
+            <p className="p-4 text-[#00000099] text-justify">
               We offer a wealth of study materials, including free books, MCQ
               questions, and detailed notes for a variety of mining exams like
               Mining Sirdar, Overman, Gas Testing, Surveyor, 2nd Class Manager,

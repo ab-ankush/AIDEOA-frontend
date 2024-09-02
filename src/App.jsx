@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import JoinMembership from "./components/JoinMembershipHomepage/JoinMembership";
 import DonationComponent from "./components/Donation/DonationComponent";
+import MutualTransferPage from "./components/MutualTransferPage/MutualTransferPage"
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/membership" element={<JoinMembership />} />
       <Route path="/donation" element={<DonationComponent />} />
+      <Route path="/mutualtransfer" element={<MutualTransferPage/>}/>
     </Routes>
   );
 }

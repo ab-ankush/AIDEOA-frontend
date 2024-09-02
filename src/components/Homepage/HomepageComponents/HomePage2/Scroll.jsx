@@ -29,7 +29,6 @@ const Scroll = () => {
     gsap.to(line1.current, {
       x: 1000,
       duration: 5,
-      delay: 1,
       repeat: -1,
       yoyo: true,
       // scrollTrigger: {
@@ -44,7 +43,6 @@ const Scroll = () => {
     gsap.to(line2.current, {
       x: -1000,
       duration: 5,
-      delay: 1,
       repeat: -1,
       yoyo: true,
     });
@@ -52,7 +50,6 @@ const Scroll = () => {
       x: 1000,
       repeat: -1,
       duration: 5,
-      delay: 1,
       yoyo: true,
     });
     gsap.to(".teamupdata", {

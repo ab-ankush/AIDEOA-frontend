@@ -41,7 +41,7 @@ const EducationCell = () => {
     <>
       <Navbar />
       <Image />
-      <div className=" eduheading font-bold text-[35px] text-purple-500 text-center my-[20px]">
+      <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
         Education Cell Members
       </div>
       <div className=" cards grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
@@ -54,7 +54,7 @@ const EducationCell = () => {
         )}
       </div>
       <div className="border border-gray-100"></div>
-      <div className=" secheading font-bold text-purple-500 text-[35px] text-center my-[20px]">
+      <div className=" secheading font-bold text-purple-500 text-[25px] text-center my-[20px]">
         IT Cell Members
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">

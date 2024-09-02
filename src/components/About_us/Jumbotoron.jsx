@@ -8,8 +8,8 @@ const Jumbotoron = () => {
     gsap.from("#sq", {
       opacity: 0,
       scale: 0,
-      duration: 2,
-      delay: 1,
+      duration: 1,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#sq",
@@ -21,12 +21,12 @@ const Jumbotoron = () => {
   });
   return (
     <>
-      <div className="container my-4 rounded-lg text-[35px] sm:mx-auto justify-start items-center   text-purple-600  flex flex-row sm:w-[500px] md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]">
+      <div className="container  rounded-lg text-[35px] sm:mx-auto justify-start items-center   text-purple-600  flex flex-row sm:w-[500px] md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[100px] 2xl:w-[1300px]">
         Who are we
       </div>
       <div
         id="sq"
-        className="container my-4 rounded-lg bg-[#0000000D] sm:mx-auto justify-between items-center border  flex sm:flex-col-reverse sm:w-[500px] md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]"
+        className="container my-3 rounded-lg bg-[#0000000D] sm:mx-auto justify-between items-center border  flex sm:flex-col-reverse sm:w-[500px] md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]"
       >
         <div className="flex flex-col sm:p-[10px] lg:w-[50%] xl:mx-[10px] 2xl:w-[50%] 2xl:mx-[20px]  ">
           <h1 className="p-4 text-justify font-bold lg:py-2 lg:text-[30px] xl:text-[35px] 2xl:text-[50px]">

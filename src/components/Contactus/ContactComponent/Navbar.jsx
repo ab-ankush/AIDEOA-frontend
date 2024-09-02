@@ -16,15 +16,15 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.from(".wo", {
       y: -200,
-      duration: 2,
-      delay: 1,
-      stagger: 0.5,
+      duration: 1,
+      delay: 0.3,
+      stagger: 0.2,
     });
     gsap.from(".do ", {
       x: -200,
-      duration: 2,
-      delay: 1,
-      stagger: 0.5,
+      duration: 0.5,
+      delay: 0.3,
+      stagger: 0.2,
     });
   });
   return (
@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className=" adeiou flex flex-row justify-between items-center">
           <Link
             className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
-            to="/home"
+            to="/"
           >
             Home
           </Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
           </Link>
           <Link
             className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
-            to="/transfer"
+            to="#"
           >
             Mutual Transfer
           </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
             <div className="flex flex-col">
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
-                to="/home"
+                to="/"
               >
                 Home
               </Link>

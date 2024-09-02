@@ -16,15 +16,15 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.from(".wo", {
       y: -200,
-      duration: 2,
-      delay: 1,
-      stagger: 0.5,
+      duration: 0.5,
+      delay: 0.2,
+      stagger: 0.2,
     });
     gsap.from(".do ", {
       x: -200,
-      duration: 2,
-      delay: 1,
-      stagger: 0.5,
+      duration: 0.5,
+      delay: 0.3,
+      stagger: 0.2,
     });
   });
   return (

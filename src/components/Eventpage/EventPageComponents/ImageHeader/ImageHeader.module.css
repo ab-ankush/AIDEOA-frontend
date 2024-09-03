@@ -1,7 +1,7 @@
 .header_image {
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
-    url(/Rectangle128.png);
+    url(../../../../../public/Rectangle128.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 308px;
@@ -10,7 +10,8 @@
 
 .cover_image {
   position: absolute;
-  background-image: url(/Rectangle\ 145.png);
+  background-image:
+    url(../../../../../public/Rectangle\ 145.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;

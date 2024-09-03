@@ -17,14 +17,13 @@ const Navbar = () => {
     gsap.from(".wo", {
       y: -200,
       duration: 0.5,
-      delay: 0.2,
-      stagger: 0.2,
+      stagger: 0.1,
     });
     gsap.from(".do ", {
       x: -200,
       duration: 0.5,
-      delay: 0.3,
-      stagger: 0.2,
+      delay: 0.1,
+      stagger: 0.1,
     });
   });
   return (
@@ -36,7 +35,7 @@ const Navbar = () => {
         <img src="./images/logo.png" className=" wo pl-2" alt="" />
         <h2 className=" wo pr-2 font-extrabold">AIDEOA</h2>
       </div>
-      <div className="  sm:hidden lg:flex  lg:flex-row  gap-2 ">
+      <div className="  max-lg:hidden lg:flex  lg:flex-row  gap-2 ">
         <div className=" adeiou flex flex-row justify-between items-center">
           <Link
             className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
@@ -52,7 +51,7 @@ const Navbar = () => {
           </Link>
           <Link
             className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
-            to="#"
+            to="/mutualtransfer"
           >
             Mutual Transfer
           </Link>
@@ -78,7 +77,7 @@ const Navbar = () => {
         <div className=" wo py-3 px-4">
           <button
             onClick={signupfunc}
-            className="btn   p-3 rounded-[25px] px-6 text-left text-purple-600 border border-purple-600"
+            className="btn   p-3 rounded-[25px] px-6 text-left bg-purple-600 border border-white text-white"
           >
             Sign up
           </button>
@@ -94,8 +93,8 @@ const Navbar = () => {
       >
         <div className="flex flex-row border-b border-gray-300 justify-between items-center ">
           <div className="flex flex-row justify-center items-center" id="brand">
-            <img src="./logo.png" className="p-2" alt="" />
-            <h2 className="px-2 font-extrabold">AIDEOA</h2>
+            <img src="./images/logo.png" className="py-2" alt="" />
+            <h2 className="px-0 font-extrabold">AIDEOA</h2>
           </div>
           <div onClick={sethamfunc} id="hamicon lg:block ">
             {ham ? (
@@ -106,7 +105,7 @@ const Navbar = () => {
           </div>
         </div>
         {!ham ? (
-          <div className="flex sm:flex-col-reverse  gap-2 ">
+          <div className="flex max-lg:flex-col-reverse  gap-2 ">
             <div className="flex flex-col">
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
@@ -122,7 +121,7 @@ const Navbar = () => {
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
-                to="#"
+                to="/mutualtransfer"
               >
                 Mutual Transfer
               </Link>
@@ -148,7 +147,7 @@ const Navbar = () => {
             <div className=" do py-3 px-6">
               <button
                 onClick={signupfunc}
-                className="btn block  px-3 w-full text-left text-purple-600 border border-purple-600"
+                className="btn block  px-3 w-full text-left bg-purple-600 border border-white text-white"
               >
                 Sign up
               </button>

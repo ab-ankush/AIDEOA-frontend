@@ -1,27 +1,28 @@
-
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import { PiCreditCardLight } from "react-icons/pi";
 
 const LinkButtonv2 = () => {
   return (
     <div>
-        <div className="flex bg-white rounded-full w-80 pl-4 pr-4  p-4 items-center justify-between">
-        <div className=" flex gap-3 items-center">
-        <div>
-        <PiCreditCardLight  className="text-blacl" size={25}/>
-        </div>
-        <div className="flex flex-col gap-y-1">
-            <div className="text-black font-normal text-xl">
-                <p>Apply ID Card</p>
+      <div className="flex cursor-pointer bg-white rounded-full w-80 pl-4 pr-4  p-4 items-center justify-between">
+        <div className=" flex gap-3 items-center ">
+          <div>
+            <PiCreditCardLight className="mt-1" size={25} />
+          </div>
+          <div className="flex flex-col  ">
+            <div className="text-black font-normal text-lg">
+              <p>Apply ID Card</p>
             </div>
-            
+          </div>
         </div>
+        <div className="bg-black rounded-full p-1">
+          <FaArrowUp
+            size={20}
+            className="rotate-45 rounded-full text-white  border-none"
+          />
         </div>
-        <div>
-        <FaArrowCircleUp size={25} className="rotate-45 rounded-full    p-0"/>
-        </div>
+      </div>
     </div>
-    </div>
-  )
-}
-export default LinkButtonv2
+  );
+};
+export default LinkButtonv2;

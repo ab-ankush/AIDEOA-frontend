@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 const Login = () => {
   return (
-    <div className="min-h-screen mainBackgroundImg flex justify-center items-center">
+    <div className="min-h-screen mainBackgroundImg pt-14 flex justify-center items-center">
       <div className=" p-8 w-[50%] max-w-[353px] min-w-[300px]">
         <div className="flex justify-center  ">
         <img
@@ -61,7 +61,7 @@ const Login = () => {
           </div>
           <div className="mt-4">
             <button
-              className="bg-[#6E00FA] hover:bg-purple-700 text-white  py-2 px-4 rounded-full w-full "
+              className="bg-purplebtn hover:bg-purple-700 text-white  py-2 px-4 rounded-full w-full "
               type="button"
             >
               Sign in

@@ -1,7 +1,7 @@
 
 const ApplyNow = () => {
   return (
-    <div className='my-20 mx-20'>
+    <div className='my-20 mx-20 max-sm:mx-3 max-md:mx-6 max-lg:mx-12'>
       <div className=''>
         <h3 className='text-AIDEOTYPO text-xl mb-8 font-semibold'>Why you should join membership?</h3>
         <div className='flex flex-col gap-8'>

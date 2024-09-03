@@ -7,12 +7,12 @@ const DonationForm = () => {
     <div className='flex items-center justify-center   my-24'>
         <div className='w-96 flex flex-col gap-6'>
           <p className='text-center font-normal'><span className='text-AIDEOTYPO font-medium'>Aideoa </span>platform is free to use, but if you want to support us, you can donate us.</p>
-            <div className='flex flex-col gap-5  justify-between  '>
+            <div className='flex flex-col gap-5  justify-between  px-3'>
                    <p className='text-AIDEOTYPO  text-lg'>Choose a donation amount</p>
                 <div className='flex justify-between'>
                     {
-                        donationAmount.map((item)=>{
-                            return <div className='border-2 flex px-3 items-center gap-2 border-AIDEOTYPO w-24 h-14 rounded-2xl items-center'>
+                        donationAmount.map((item,idx)=>{
+                            return <div key={idx} className='border-2 flex px-3 items-center gap-2 border-AIDEOTYPO w-24 h-14 rounded-2xl items-center'>
                                      <FaCircleCheck size={20} className=' text-AIDEOTYPO' />
                                      <h3 className='font-semibold text-xl'>{item}</h3>
                             </div>  

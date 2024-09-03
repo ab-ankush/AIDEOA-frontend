@@ -55,7 +55,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="min-h-dvh mainBackgroundImg flex justify-center items-center">
+      <div className="min-h-dvh mainBackgroundImg pt-14 flex justify-center items-center">
         <div className="p-8 w-[50%] max-w-[353px] min-w-[300px]">
           <div className="flex justify-center">
             <img
@@ -138,7 +138,7 @@ const Signup = () => {
             </div>
             <div className="mt-4">
               <button
-                className="bg-[#6E00FA] hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
+                className="bg-purplebtn hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
                 type="submit"
               >
                 Sign Up

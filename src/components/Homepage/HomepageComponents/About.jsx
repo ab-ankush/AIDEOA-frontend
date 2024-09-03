@@ -33,9 +33,9 @@ const About = () => {
 
         </div>
         <div className="mt-28  flex flex-col gap-10 text-center">
-          <h1 className=" font-semibold text-2xl ">
+          <h1 className=" font-black text-3xl ">
             About{" "}
-            <span className=" text-3xl font-bold text-AIDEOTYPO">
+            <span className=" text-4xl font-black text-AIDEOTYPO">
               AIDEOA
             </span>
           </h1>

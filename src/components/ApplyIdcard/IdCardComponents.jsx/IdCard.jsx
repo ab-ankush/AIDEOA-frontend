@@ -1,13 +1,18 @@
+import { useState } from "react";
+
 const IdCard = () => {
+  const [show,setShow]=useState(true)
   return (
-    <div className="flex flex-col  justify-around">
-      <div className="flex flex-col justify-center items-center">
-        <div
+    <div className="flex flex-col  justify-around ">
+      <div className="flex flex-col justify-center items-center ">
+      {show ?  <div
           id="frontcover"
-          className=" absolute z-[5] hover:z-[-1] top-[200px] left-[680px]  h-[547px] w-[391px] rounded-lg bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
+          onMouseEnter={()=>{setShow(false)}}
+          className=" 
+           z-[5] hover:z-[-1]   rounded-lg bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
         >
           <div className="relative">
-            <img src="/card/lower.svg" className="w-[391px] h-[190px]" alt="" />
+            <img src="/card/lower.svg" className="" alt="" />
             <div className="absolute flex top-[10px] ">
               <img
                 src="/images/logo.png"
@@ -54,12 +59,12 @@ const IdCard = () => {
             <div className="absolute text-white top-[515px] left-[40px]">
               <p>Your address goes here 125 Street, USA</p>
             </div>
-            <img src="/card/upper.svg" className="w-[391px] h-[91px]" alt="" />
+            <img src="/card/upper.svg" className="" alt="" />
           </div>
-        </div>
-        <div
+        </div>:  <div
           id="backcover"
-          className=" absolute z-[4] top-[200px] left-[680px]  h-[547px] w-[391px] rounded-lg bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
+          onMouseLeave={()=>{setShow(true)}}
+          className=" z-[4] top-[200px] right-0  rounded-lg bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
         >
           <div className="relative">
             <img src="/card/lower.svg" className="w-[391px] h-[190px]" alt="" />
@@ -108,7 +113,8 @@ const IdCard = () => {
             </div>
             <img src="/card/upper.svg" className="w-[391px] h-[91px]" alt="" />
           </div>
-        </div>
+        </div>}
+      
       </div>
     </div>
   );

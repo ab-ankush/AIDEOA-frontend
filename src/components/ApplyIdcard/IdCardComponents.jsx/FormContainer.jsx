@@ -1,11 +1,12 @@
 import { useState } from "react";
 import IDform from "./IDform";
 import IdCard from "./IdCard";
+import EmployeeForm from "./EmployeeForm";
 
 const FormContainer = () => {
   const [formType, SetFormType] = useState(true);
   return (
-    <div className="my-20 relative mx-32 flex flex-col gap-6 max-lg:mx-16 max-md:mx-8 max-sm:mx-4 ">
+    <div className="my-20 relative mx-32 flex flex-col gap-6 max-xl:mx-8 max-lg:mx-8 max-md:mx-4 max-sm:mx-2 ">
       <p className="text-xl font-medium">ID Card form</p>
       <div className="flex justify-center w-full  ">
         <div className="p-1 border-2 flex border-gray-200 max-w-full  rounded-full">
@@ -27,9 +28,13 @@ const FormContainer = () => {
           </button>
         </div>
       </div>
-      <div className="flex  justify-between gap-16 max-md:flex-col max-md:flex-col-reverse">
-        <IDform />
+      <div className="flex  w-full justify-between gap-16 max-md:flex-col max-md:flex-col-reverse max-lg:gap-10 max-lg:">
+       {
+        formType?  <IDform /> : <EmployeeForm />
+       }
+       
         <IdCard />
+        
       </div>
       <div className=" flex justify-end  -mt-4">
         <button className="w-52 h-12 membershipBtn rounded-2xl text-white font-medium text-lg">

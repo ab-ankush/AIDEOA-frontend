@@ -1,7 +1,7 @@
-import  { useState } from "react";
+import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Outlet } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const Navbar = () => {
@@ -27,9 +27,8 @@ const Navbar = () => {
       stagger: 0.2,
     });
   });
-  return (
+  return (<>
     <nav className="fixed z-10 w-full bg-white opacity-100 flex  flex-row justify-between items-center">
-   
       <div
         className=" adeiou flex  flex-row justify-center items-center"
         id="brand"
@@ -159,7 +158,10 @@ const Navbar = () => {
           ""
         )}
       </div>
+    
     </nav>
+      <Outlet />
+      </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { FaCircleCheck } from "react-icons/fa6";
 const JoinNow = () => {
   return (
-    <div className='flex items-center justify-center h-full  mt-24'>
+    <div className='flex items-center justify-center h-full mt-24 max-sm:p-2'>
         <div className='w-96 flex flex-col gap-6'>
           <p className='text-center font-normal'><span className='text-AIDEOTYPO font-medium'>Aideoa</span> platform is free to use, but if you need to apply for <span className='text-AIDEOTYPO font-medium' >ID card</span>, join our membership..</p>
             <div className='flex px-5 items-center justify-between w-full h-20 rounded-2xl border-2 border-AIDEOTYPO'>

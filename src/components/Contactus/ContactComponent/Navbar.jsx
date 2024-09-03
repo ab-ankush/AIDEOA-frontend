@@ -16,15 +16,13 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.from(".wo", {
       y: -200,
-      duration: 1,
-      delay: 0.3,
+      duration: 0.3,
       stagger: 0.2,
     });
     gsap.from(".do ", {
       x: -200,
       duration: 0.5,
-      delay: 0.3,
-      stagger: 0.2,
+      stagger: 0.1,
     });
   });
   return (
@@ -52,7 +50,7 @@ const Navbar = () => {
           </Link>
           <Link
             className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
-            to="#"
+            to="/mutualtransfer"
           >
             Mutual Transfer
           </Link>
@@ -122,7 +120,7 @@ const Navbar = () => {
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
-                to="/transfer"
+                to="/mutualtransfer"
               >
                 Mutual Transfer
               </Link>

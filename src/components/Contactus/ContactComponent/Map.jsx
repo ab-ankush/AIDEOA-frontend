@@ -2,7 +2,10 @@ import React from 'react'
 
 const Map = () => {
   return (
-    <img src="/Rectangle 165.png" className='w-full h-full  ' alt=""/>
+    <div className='h-96 w-full '>
+<img src="/Rectangle 165.png" className=' w-full ' alt=""/>
+    </div>
+    
   )
 }
 

@@ -8,16 +8,17 @@ import {
   FaUser,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="min-h-screen mainBackgroundImg flex justify-center items-center">
       <div className=" p-8 w-[50%] max-w-[353px] min-w-[300px]">
         <div className="flex justify-center  ">
-          <img
-            src={"/AIDEOA LOGO 1.jpg"}
-            className="mix-blend-color-burn"
-            alt="logo"
-          />
+        <img
+              src={"/logoback.png"}
+              className=" w-24 "
+              alt="logo"
+            />
         </div>
         <h2 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
           {" "}
@@ -69,9 +70,9 @@ const Login = () => {
           <div className="mt-4 text-center text-white">
             <span>
               Not have account yet?{" "}
-              <a href="" className="text-[#6E00FA] hover:text-purple-600 ">
+              <Link to={"/signup"} className="text-[#6E00FA] hover:text-purple-600 ">
                 sign up
-              </a>
+              </Link>
             </span>
           </div>
         </form>

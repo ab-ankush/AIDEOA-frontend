@@ -8,6 +8,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -58,8 +59,8 @@ const Signup = () => {
         <div className="p-8 w-[50%] max-w-[353px] min-w-[300px]">
           <div className="flex justify-center">
             <img
-              src={"/AIDEOA LOGO 1.jpg"}
-              className="mix-blend-color-burn"
+              src={"/logoback.png"}
+              className=" w-24 "
               alt="logo"
             />
           </div>
@@ -145,10 +146,10 @@ const Signup = () => {
             </div>
             <div className="mt-4 text-center text-white">
               <span>
-                Not have account yet?{" "}
-                <a href="" className="text-purple-400 hover:text-purple-600 ">
-                  sign up
-                </a>
+                Already have account {" "}
+              <Link to="/login" className="text-purple-400 hover:text-purple-600 ">
+                  sign in
+               </Link>
               </span>
             </div>
           </form>

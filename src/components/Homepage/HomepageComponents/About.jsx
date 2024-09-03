@@ -23,8 +23,8 @@ const About = () => {
         <div className="flex gap-24  justify-center max-2xl:gap-16 max-xl:gap-8 max-lg:flex-wrap" >
        
         {
-            flow.map((item)=>{
-                return  <div className="w-48 h-20 rounded-xl flex flex-col items-center justify-center gap-2 shadow-lg">
+            flow.map((item,idx)=>{
+                return  <div key={idx} className="w-48 h-20 rounded-xl flex flex-col items-center justify-center gap-2 dropshadowbox">
                 <h3 className="font-medium text-sm text-center">{item.head}</h3>
                 <p className="text-[#828282] bg-[#F2F2F2] rounded-lg font-normal text-xs px-2 py-2 self-end mr-3">{item.p}</p>
               </div>

@@ -18,9 +18,9 @@ const IDform = () => {
     setFile(e.target.files[0]);
   };
   return (
-    <form className='flex gap-8 flex-col w-1/2  max-md:w-full'>
+    <form className='flex gap-4 flex-col w-1/2  max-md:w-full'>
 
-    <div className='flex flex-col gap-4' >
+    <div className='flex flex-col gap-2 ' >
       <label className=" text-gray-700 text-base font-bold ">
         Your Name
       </label>
@@ -32,7 +32,7 @@ const IDform = () => {
     </div>
 
 
-    <div className='flex flex-col gap-4' >
+    <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
         College Name
       </label>
@@ -44,7 +44,7 @@ const IDform = () => {
     </div>
 
 
-    <div className='flex flex-col gap-4' >
+    <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
         Contact No
       </label>
@@ -56,7 +56,7 @@ const IDform = () => {
     </div>
 
 
-    <div className='flex flex-col gap-4' >
+    <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
         Address
       </label>
@@ -68,7 +68,7 @@ const IDform = () => {
     </div>
 
 
-    <div className='flex flex-col gap-4' >
+    <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
         Aideoa ID
       </label>
@@ -80,7 +80,7 @@ const IDform = () => {
     </div>
 
 
-    <div className='flex flex-col gap-4' >
+    <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
        { "Student's Photo"}
       </label>
@@ -88,9 +88,9 @@ const IDform = () => {
       onDragOver={handleDragOver} className="flex justify-center items-center w-full h-32 bg-gray-100 rounded-2xl cursor-pointer hover:border-blue-300">
        <label htmlFor='file' className='flex flex-col justify-center items-center cursor-pointer'>
        <span className="text-gray-400 text-sm">Drag & Drop or</span>
-       <span className="text-AIDEOTYPO text-sm font-semibold ">Upload</span>
+       <span className="text-AIDEOTYPO text-sm font-semibold text-purple-700">Upload</span>
+       {file && <p className="text-gray-400"> {file.name}</p>}
        </label>
-       {file && <p>file: {file.name}</p>}
         <input onChange={handleFileChange} type='file' id="file"  className='hidden'/>
       </div>
     </div>

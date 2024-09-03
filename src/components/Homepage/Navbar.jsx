@@ -17,14 +17,12 @@ const Navbar = () => {
     gsap.from(".wo", {
       y: -200,
       duration: 0.5,
-      delay: 0.2,
-      stagger: 0.2,
+      stagger: 0.1,
     });
     gsap.from(".do ", {
       x: -200,
       duration: 0.5,
-      delay: 0.2,
-      stagger: 0.2,
+      stagger: 0.1,
     });
   });
   return (

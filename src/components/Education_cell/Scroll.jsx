@@ -29,9 +29,9 @@ const Scroll = () => {
     gsap.to(line1.current, {
       x: 1000,
       duration: 5,
-      delay: 1,
       repeat: -1,
       yoyo: true,
+      ease: "cubic-bazier(0.65,0.05,0.36,1)",
       // scrollTrigger: {
       //   trigger: line1.current,
       //   scroller: "body",
@@ -44,16 +44,16 @@ const Scroll = () => {
     gsap.to(line2.current, {
       x: -1000,
       duration: 5,
-      delay: 1,
       repeat: -1,
       yoyo: true,
+      ease: "cubic-bazier(0.65,0.05,0.36,1)",
     });
     gsap.to(line3.current, {
       x: 1000,
       repeat: -1,
       duration: 5,
-      delay: 1,
       yoyo: true,
+      ease: "cubic-bazier(0.65,0.05,0.36,1)",
     });
     gsap.to(".teamupdata", {
       opacity: 0,

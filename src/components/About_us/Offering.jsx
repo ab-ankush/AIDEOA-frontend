@@ -7,8 +7,8 @@ const Offering = () => {
     gsap.from("#dib1", {
       y: -600,
       rotateY: 360,
-      duration: 2,
-      delay: 1,
+      duration: 1,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#dib1",
@@ -18,10 +18,10 @@ const Offering = () => {
       },
     });
     gsap.from("#dib2", {
-      y: 430,
+      y: -500,
       rotateY: 360,
-      duration: 2,
-      delay: 1,
+      duration: 1,
+      delay: 0.2,
       yoyo: true,
       scrollTrigger: {
         trigger: "#dib2",
@@ -44,8 +44,10 @@ const Offering = () => {
               <img src="./images/send/setting.png" className=" " alt="" />
             </div>
             <div className="flex flex-col lg:w-[250px]  ">
-              <h1 className="p-4 text-justify">Empower and Advocate </h1>
-              <p className="p-4 text-justify">
+              <h1 className="p-4 font-bold text-justify">
+                Empower and Advocate{" "}
+              </h1>
+              <p className="p-4 text-[#00000099] text-justify">
                 We tackle the unique challenges faced by mining students, from
                 examination hurdles and promotion pathways to certificate
                 issuance by D.G.M.S and job vacancies. We stand with you every
@@ -65,8 +67,10 @@ const Offering = () => {
               />
             </div>
             <div className="flex flex-col lg:w-[250px]  ">
-              <h1 className="p-4 text-justify">Educational Excellence </h1>
-              <p className="p-4 text-justify">
+              <h1 className="p-4 font-bold text-justify">
+                Educational Excellence{" "}
+              </h1>
+              <p className="p-4 text-[#00000099] text-justify">
                 We offer a wealth of study materials, including free books, MCQ
                 questions, and detailed notes for a variety of mining exams like
                 Mining Sirdar, Overman, Gas Testing, Surveyor, 2nd Class

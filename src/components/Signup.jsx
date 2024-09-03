@@ -130,7 +130,7 @@ const Signup = () => {
             <span className="text-center text-sm text-red-500">{error}</span>
             <div className="text-center">
               <a
-                className="text-[#6E00FA] hover:text-purple-600 text-sm font-semibold"
+                className="text-white hover:text-purple-600 text-sm font-semibold"
                 href=""
               >
                 Forgot password?
@@ -147,7 +147,7 @@ const Signup = () => {
             <div className="mt-4 text-center text-white">
               <span>
                 Already have account {" "}
-              <Link to="/login" className="text-purple-400 hover:text-purple-600 ">
+              <Link to="/login" className="underline hover:text-purple-600 ">
                   sign in
                </Link>
               </span>

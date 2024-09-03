@@ -7,7 +7,7 @@ const notificationsArr = [
 ];
 const LatestUpdates = () => {
   return (
-    <div className="bg-[#070D18] text-white p-14 pt-24 min-h-screen ">
+    <div className="bg-[#070D18] text-white p-14 pt-24 min-h-screen max-sm:px-6 ">
 
         <div className="flex   justify-around items-center gap-5  max-md:flex-col max-md:items-start">
           <div className=" ">

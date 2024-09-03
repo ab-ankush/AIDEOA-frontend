@@ -9,7 +9,7 @@ import Footer from "./Footer.jsx";
 const Contactus = () => {
   return (
     <div className="overflow-x-hidden relative">
-      <Navbar />
+    
       <Image />
       <Jumbotoron />
       <Mission />

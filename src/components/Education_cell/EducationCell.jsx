@@ -39,7 +39,6 @@ const EducationCell = () => {
   });
   return (
     <>
-      <Navbar />
       <Image />
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
         Education Cell Members

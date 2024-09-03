@@ -8,7 +8,7 @@ import Navbar from './Navbar.jsx'
 const Homepage = () => {
   return (
     <>
-    <Navbar/>
+  
       <MembershipComponent />
       <About />
       <Featured />

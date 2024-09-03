@@ -53,7 +53,7 @@ const Login = () => {
 
           <div className="text-center">
             <a
-              className="text-[#6E00FA] hover:text-purple-600 text-sm font-semibold"
+              className="text-white hover:text-purple-600 text-sm font-semibold"
               href=""
             >
               Forgot password?
@@ -70,7 +70,7 @@ const Login = () => {
           <div className="mt-4 text-center text-white">
             <span>
               Not have account yet?{" "}
-              <Link to={"/signup"} className="text-[#6E00FA] hover:text-purple-600 ">
+              <Link to={"/signup"} className="text-white underline hover:text-purple-600 ">
                 sign up
               </Link>
             </span>

@@ -8,10 +8,14 @@ import Signup from "./components/Signup";
 import JoinMembership from "./components/JoinMembershipHomepage/JoinMembership";
 import DonationComponent from "./components/Donation/DonationComponent";
 import About from "./components/About_us/Contactus.jsx";
+import Navbar from './components/Cards/Navbar.jsx'
 import Education from "./components/Education_cell/EducationCell.jsx";
 import ApplyIdCard from "./components/ApplyIdcard/ApplyIdCard.jsx";
 export default function App() {
+  
   return (
+    <>
+    <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/event" element={<Event />} />
@@ -24,5 +28,6 @@ export default function App() {
       <Route path="/education" element={<Education />} />
       <Route path="/idcard" element={<ApplyIdCard />} />
     </Routes>
+    </>
   );
 }

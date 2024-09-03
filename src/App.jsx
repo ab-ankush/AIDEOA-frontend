@@ -12,6 +12,7 @@ import MutualTransferPage from "./components/MutualTransferPage/MutualTransferPa
 import About from "./components/About_us/Contactus.jsx";
 import Education from "./components/Education_cell/EducationCell.jsx";
 import ApplyIdCard from "./components/ApplyIdcard/ApplyIdCard.jsx";
+import Landingpage from "./components/Landingpage/Landingpage.jsx";
 export default function App() {
   return (
     <Routes>
@@ -26,6 +27,7 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/education" element={<Education />} />
       <Route path="/idcard" element={<ApplyIdCard />} />
+      <Route path="/home" element={<Landingpage/>}/>
     </Routes>
   );
 }

@@ -18,7 +18,7 @@ const CompanyCardCrousel = () => {
         <CompanyCard />
       </div>
 
-      <div className="animate-customscrollreverse  items-center  flex gap-8 pb-10 ">
+      <div className="animate-customscrollreverse flex items-center   gap-8 pb-10 ">
         <CompanyCard />
         <CompanyCard />
         <CompanyCard />

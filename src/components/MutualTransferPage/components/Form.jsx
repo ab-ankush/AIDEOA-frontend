@@ -1,6 +1,6 @@
 const Form = () => {
   return (
-    <div className="text-center m-auto w-[1500px]">
+    <div className="text-center mb-60 m-auto w-[1216px]">
       <form>
         <div className="flex flex-col text-left mb-5 gap-y-5">
           <label
@@ -17,7 +17,7 @@ const Form = () => {
             className="rounded-full bg-gray-100 border border-gray-300 p-4 "
           />
         </div>
-        <div className="flex justify-between  w-[1500px] gap-x-20 m-auto ">
+        <div className="flex justify-between  w-[1216px] gap-x-20 m-auto ">
           <div className="w-1/2 ">
             <div className="flex flex-col mb-5 gap-y-5 text-left  ">
               <label

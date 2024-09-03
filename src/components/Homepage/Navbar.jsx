@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
           <Link
             className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
-            to="#"
+            to="/mutualtransfer"
           >
             Mutual Transfer
           </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
-                to="#"
+                to="/mutualtransfer"
               >
                 Mutual Transfer
               </Link>

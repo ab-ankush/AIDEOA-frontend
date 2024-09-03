@@ -9,7 +9,7 @@ import JoinMembership from "./components/JoinMembershipHomepage/JoinMembership";
 import DonationComponent from "./components/Donation/DonationComponent";
 import About from "./components/About_us/Contactus.jsx";
 import Education from "./components/Education_cell/EducationCell.jsx";
-import Dibba from "./practice/Dibba.jsx";
+import ApplyIdCard from "./components/ApplyIdcard/ApplyIdCard.jsx";
 export default function App() {
   return (
     <Routes>
@@ -22,7 +22,7 @@ export default function App() {
       <Route path="/donation" element={<DonationComponent />} />
       <Route path="/about" element={<About />} />
       <Route path="/education" element={<Education />} />
-      <Route path="/practice" element={<Dibba />} />
+      <Route path="/idcard" element={<ApplyIdCard />} />
     </Routes>
   );
 }

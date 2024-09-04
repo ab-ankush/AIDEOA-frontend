@@ -3,12 +3,13 @@ const Jumbotoron = () => {
   
   return (
     <>
-      <div className="container mx-auto rounded-lg text-[35px]  justify-start items-center text-purple-600  flex flex-row max-sm:my-2 max-sm:mx-auto max-sm:w-full   md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[100px] 2xl:w-[1300px]">
+      <div className=" mx-auto rounded-lg text-[35px]  justify-start items-center text-purple-600  flex flex-row max-sm:m-2 max-sm:mx-auto max-sm:w-[80%] max-sm:text-center sm:w-[450px]
+      sm:mx-auto  md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[100px] 2xl:w-[1300px]">
         Who are we
       </div>
       <div
         id="sq"
-        className="container my-3 rounded-lg bg-[#0000000D]  justify-between items-center border max-sm:w-full  flex max-md:flex-col-reverse sm:mx-auto sm:w-[450px]  md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]"
+        className="container my-3 rounded-lg bg-[#0000000D]  justify-between items-center border max-sm:mx-auto max-sm:w-[80%]  flex max-md:flex-col-reverse sm:mx-auto sm:w-[450px]  md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]"
       >
         <div className="flex flex-col sm:p-[10px] md:w-[40%] lg:w-[50%] xl:mx-[10px] 2xl:w-[50%] 2xl:mx-[20px]  ">
           <h1 className="p-4 text-justify font-bold lg:py-2 lg:text-[30px] xl:text-[35px] 2xl:text-[50px]">

@@ -71,7 +71,7 @@ const Offering = () => {
               />
             </div>
             <div className="flex flex-col lg:w-[250px]  ">
-              <h1 className="p-4 font-bold text-justify">
+              <h1 className="p-4 font-bold ">
                 Educational Excellence{" "}
               </h1>
               <p className="p-4 text-[#00000099] ">

@@ -11,6 +11,7 @@ import TopImageCard from "../Cards/TopImageCard";
 import EmailNotiCard from "../Cards/EmailNotiCard";
 import BottomFooter from "../Cards/BottomFooter";
 
+
 const EducationCell = () => {
   const data1 = [
     ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
@@ -67,8 +68,8 @@ const EducationCell = () => {
       </div>
       <Scroll />
      <EmailNotiCard />
-      <Footer />
-
+     <Footer />
+     <BottomFooter />
     </div>
   );
 };

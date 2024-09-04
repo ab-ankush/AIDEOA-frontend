@@ -10,6 +10,17 @@ import EmailNotiCard from "../Cards/EmailNotiCard";
 import BottomFooter from "../Cards/BottomFooter";
 
 const EducationCell = () => {
+  const data3=[
+    ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
+    ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
+    ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
+    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+    ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
+    ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
+    ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
+    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+  ]
   const data1 = [
     ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
     ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
@@ -25,10 +36,24 @@ const EducationCell = () => {
   return (
     <div className="pt-14">
      <TopImageCard title={"Education Cell"}/>
+     <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
+        Executive Members
+      </div>
+      
+      <div className=" mx-auto w-[90%] flex flex-row flex-wrap justify-evenly items-center ">
+        {data3.map((data, index) =>
+          index >= 4 ? (
+            <Card name={data} className={`  xl:col-start-2 xl:col-end-3`} />
+          ) : (
+            <Card name={data} />
+          )
+        )}
+      </div>
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
         Education Cell Members
       </div>
-      <div className=" mx-auto w-[80%] flex flex-row justify-evenly items-center ">
+      
+      <div className=" mx-auto w-[90%] flex flex-row justify-evenly items-center ">
         {data1.map((data, index) =>
           index >= 4 ? (
             <Card name={data} className={`  xl:col-start-2 xl:col-end-3`} />

@@ -7,6 +7,9 @@ import Seclast from "../About_us/Seclast";
 import Footer from "../About_us/Footer";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import TopImageCard from "../Cards/TopImageCard";
+import EmailNotiCard from "../Cards/EmailNotiCard";
+import BottomFooter from "../Cards/BottomFooter";
 
 const EducationCell = () => {
   const data1 = [
@@ -35,8 +38,8 @@ const EducationCell = () => {
     });
   });
   return (
-    <>
-      <Image />
+    <div className="pt-14">
+     <TopImageCard title={"Education Cell"}/>
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
         Education Cell Members
       </div>
@@ -63,9 +66,10 @@ const EducationCell = () => {
         )}
       </div>
       <Scroll />
-      <Seclast />
+     <EmailNotiCard />
       <Footer />
-    </>
+
+    </div>
   );
 };
 

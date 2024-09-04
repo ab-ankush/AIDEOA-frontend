@@ -16,7 +16,7 @@ const Homepage = () => {
 
       <LatestUpdates />
       <Homepage2 />
-      <BottomFooter />
+   
     </div>
   );
 };

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
-import { useNavigate, Link, Outlet } from "react-router-dom";
+import { useNavigate, Link, Outlet, useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const Navbar = () => {
   const [ham, setham] = useState(true);
+  const {pathname} = useLocation()
+
   const navigate = useNavigate();
   const sethamfunc = () => {
     setham(!ham);
@@ -36,40 +38,40 @@ const Navbar = () => {
         <img src="./images/logo.png" className=" wo pl-2" alt="" />
         <h2 className=" wo pr-2 font-extrabold">AIDEOA</h2>
       </div>
-      <div className="  sm:hidden lg:flex  lg:flex-row  gap-2 ">
+      <div className="  max-lg:hidden lg:flex  lg:flex-row  gap-2 ">
         <div className=" adeiou flex flex-row justify-between items-center">
           <Link
-            className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
+            className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname==='/'&& 'text-purple-600 border-purple-600 border-b'} `}
             to="/"
           >
             Home
           </Link>
           <Link
-            className="wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
+             className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname==='/event'&& 'text-purple-600 border-purple-600 border-b'} `}
             to="/event"
           >
             Aideoa Events
           </Link>
           <Link
-            className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
-            to="#"
+  className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname==='/mutualtransfer'&& 'text-purple-600 border-purple-600 border-b'} `}
+            to="/mutualtransfer"
           >
             Mutual Transfer
           </Link>
           <Link
-            className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
+  className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname==='/education'&& 'text-purple-600 border-purple-600 border-b'} `}
             to="/education"
           >
             Education cell
           </Link>
           <Link
-            className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
+  className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname==='/about'&& 'text-purple-600 border-purple-600 border-b'} `}
             to="/about"
           >
             About us
           </Link>
           <Link
-            className=" wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600"
+  className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname==='/contact'&& 'text-purple-600 border-purple-600 border-b'} `}
             to="/contact"
           >
             Contact us

@@ -1,8 +1,9 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaDribbble, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import BottomFooter from "../../../Cards/BottomFooter";
 const Footer = () => {
-  return (
+  return ( <div>
     <div className="bg-black h-full grid grid-cols-4 px-28 py-10 max-xl:px-15 max-lg:px-10 max-md:px-5 max-sm:grid-cols-2 max-sm:gap-5">
       <div className="pr-3 border-r-2 ">
         <h1 className="text-white font-medium text-xl mb-2">Key words</h1>
@@ -68,6 +69,8 @@ const Footer = () => {
           <FaYoutube className="cursor-pointer" />
         </div>
       </div>
+    </div>
+    <BottomFooter />
     </div>
   );
 };

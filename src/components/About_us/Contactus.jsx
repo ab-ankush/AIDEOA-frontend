@@ -1,21 +1,23 @@
-import React from "react";
+
 import Jumbotoron from "./Jumbotoron";
 import Mission from "./Mission";
 import Offering from "./Offering";
-import Seclast from "./Seclast";
-import Image from "./Image";
-import Navbar from "./Navbar";
+
 import Footer from "./Footer.jsx";
+import TopImageCard from "../Cards/TopImageCard.jsx";
+import EmailNotiCard from "../Cards/EmailNotiCard.jsx";
+
 const Contactus = () => {
   return (
-    <div className="overflow-x-hidden relative">
+    <div className="overflow-x-hidden relative pt-14">
     
-      <Image />
+      <TopImageCard title={"About us"}/>
       <Jumbotoron />
       <Mission />
       <Offering />
-      <Seclast />
+     <EmailNotiCard />
       <Footer />
+ 
     </div>
   );
 };

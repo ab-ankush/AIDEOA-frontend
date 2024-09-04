@@ -43,10 +43,10 @@ const EmployeeForm = () => {
 
     <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
-       Signature
+    
       </label>
       <input
-        type="text"
+        type="file"
         placeholder="Write here..."
         className="w-full px-3 py-2 border-2 border-gray-300 bg-gray-100 rounded-full shadow-sm focus:outline-none  focus:border-blue-300"
       />

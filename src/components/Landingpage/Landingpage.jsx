@@ -8,7 +8,7 @@ import LinkButtonv2 from "./components/LinkButtonv2"
 
 const Landingpage = () => {
   return (
-    <div className=" flex items-center justify-center flex-col gap-y-10 bg-landingpageBackgroundImage bg-cover min-h-screen p-10" >
+    <div className=" pt-14 flex items-center justify-center flex-col gap-y-10 bg-landingpageBackgroundImage bg-cover min-h-screen p-10" >
         <div className="m-auto">
         <div>
             <Header/>

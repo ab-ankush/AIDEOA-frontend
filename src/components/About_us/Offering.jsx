@@ -51,7 +51,7 @@ const Offering = () => {
               <h1 className="p-4 font-bold text-justify">
                 Empower and Advocate{" "}
               </h1>
-              <p className="p-4 text-[#00000099] text-justify">
+              <p className="p-4 text-[#00000099] ">
                 We tackle the unique challenges faced by mining students, from
                 examination hurdles and promotion pathways to certificate
                 issuance by D.G.M.S and job vacancies. We stand with you every
@@ -74,7 +74,7 @@ const Offering = () => {
               <h1 className="p-4 font-bold text-justify">
                 Educational Excellence{" "}
               </h1>
-              <p className="p-4 text-[#00000099] text-justify">
+              <p className="p-4 text-[#00000099] ">
                 We offer a wealth of study materials, including free books, MCQ
                 questions, and detailed notes for a variety of mining exams like
                 Mining Sirdar, Overman, Gas Testing, Surveyor, 2nd Class

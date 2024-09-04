@@ -24,7 +24,7 @@ const Scroll = () => {
   gsap.registerPlugin(ScrollTrigger);
   const line1 = useRef(null);
   const line2 = useRef(null);
-  const line3 = useRef(null);
+  // const line3 = useRef(null);
   useGSAP(() => {
     gsap.to(line1.current, {
       x: 1000,
@@ -46,12 +46,12 @@ const Scroll = () => {
       repeat: -1,
       yoyo: true,
     });
-    gsap.to(line3.current, {
-      x: 1000,
-      repeat: -1,
-      duration: 5,
-      yoyo: true,
-    });
+    // gsap.to(line3.current, {
+    //   x: 1000,
+    //   repeat: -1,
+    //   duration: 5,
+    //   yoyo: true,
+    // });
     gsap.to(".teamupdata", {
       opacity: 0,
       duration: 2,
@@ -104,17 +104,17 @@ const Scroll = () => {
 
           {/* line1 ends here */}
         </div>
-        <div
+        {/* <div
           ref={line3}
           class="medium my-5 -translate-x-[115px] flex gap-5 justify-center items-center"
         >
           {/* line1 start here */}
-          {data.map((d) => (
+        {/* {data.map((d) => (
             <Slide data={d} />
-          ))}
+          ))} */}
 
-          {/* line1 ends here */}
-        </div>
+        {/* line1 ends here */}
+        {/* </div> */}
       </div>
     </div>
   );

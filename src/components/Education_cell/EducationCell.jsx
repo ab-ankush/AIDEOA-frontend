@@ -14,14 +14,11 @@ const EducationCell = () => {
     ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
     ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
     ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
-    ["Shri Manish Kumar", "Aideoa Ed. Cell"],
-    ["Shri abc ", "Aideoa Ed. Cell"],
   ];
   const data2 = [
     ["Shri Manish Kumar", "Aideoa Ed. Cell"],
     ["Vinay Nath Tiwary", "Aideoa IT Cell "],
     ["Adrash Kulshrestha", "Aideoa IT Cell "],
-    ["ABC", "Aideoa IT Cell "],
   ];
   useGSAP(() => {
     gsap.from(".eduheading", {
@@ -56,7 +53,7 @@ const EducationCell = () => {
       <div className=" secheading font-bold text-purple-500 text-[25px] text-center my-[20px]">
         IT Cell Members
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+      <div className="flex justify-evenly items-center max-md:flex-col">
         {data2.map((data, index) =>
           index >= 4 ? (
             <Card name={data} className="xl:col-start-2 xl:col-end-3" />

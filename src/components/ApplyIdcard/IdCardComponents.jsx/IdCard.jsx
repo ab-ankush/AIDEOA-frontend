@@ -9,7 +9,7 @@ const IdCard = () => {
           id="frontcover"
           onMouseEnter={()=>{setShow(false)}}
           className=" 
-           z-[5] hover:z-[-1]   rounded-lg bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
+           z-[5] hover:z-[-1]  bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
         >
           <div className="relative">
             <img src="/card/lower.svg" className="" alt="" />
@@ -32,10 +32,8 @@ const IdCard = () => {
               <h1 className="my-10px relative text-[20px] top-[-100px] text-center">
                 VICTOR ANIH
               </h1>
-              <p className="relative my-10px top-[-80px] text-center text-[18px]">
-                Cambridge University
-              </p>
-              <div className="my-[10px] w-[292px] h-[91px] mx-auto bg-white rounded-lg relative top-[-50px] flex justify-center items-center">
+             
+              <div className="my-[10px] w-[292px] h-[91px] mx-auto bg-white rounded-lg relative top-[-80px] flex justify-center items-center">
                 <div className="flex flex-col text-[11px] justify-start items-start">
                   <div className=" flex justify-start items-start">
                     <h4 className="font-bold mx-1">AIDEOA ID : </h4>
@@ -55,9 +53,13 @@ const IdCard = () => {
                   </div>
                 </div>
               </div>
+              <div className="relative flex flex-col justify-start items-start top-[-80px] left-[50px]">
+                <img src="/images/send/sign.png" className=" bg-white w-[80px] h-[50px]" alt="" />
+                <p>Signature</p>
+              </div>
             </div>
             <div className="absolute text-white top-[515px] left-[40px]">
-              <p>Your address goes here 125 Street, USA</p>
+              <p className="text-[11px] ">Your address goes here (Sijua more, katrasgarh, Dhanbad, jharkhand, 828113)</p>
             </div>
             <img src="/card/upper.svg" className="" alt="" />
           </div>
@@ -78,33 +80,28 @@ const IdCard = () => {
                 All india diploma engineers & Officials Association (AIDEOA)
               </p>
             </div>
-            <div className=" h-[266px] w-[391px]">
+            <div className=" relative top-[-40px] px-4 h-[266px] w-[391px]">
               <h1 className="text-purple-800 mx-4">Terms and Conditions</h1>
-              <p className="mx-5 text-[13px]">
+              <p className="mx-5 my-2 text-justify text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <p className="mx-5 text-[13px]">
+              <p className="mx-5 my-2 text-justify text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <p className="mx-5 text-[13px]">
+              <p className="mx-5 my-2 text-justify text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <div className="mx-5 flex items-center">
-                <h1>join date :</h1>
-                <p className=" bg-white rouded-lg px-2 my-1 inline-flex">
-                  12 July,2024
-                </p>
-              </div>
+              
               <div className="mx-5 flex items-center">
                 <h1>Valid Upto :</h1>
-                <p className=" bg-white rouded-lg px-2 inline-flex">
-                  12 August,2024
+                <p className=" bg-white rouded-full px-2 inline-flex">
+                  31 March,2025
                 </p>
               </div>
             </div>

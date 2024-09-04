@@ -1,27 +1,9 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import React from "react";
-import { ScrollTrigger } from "gsap/all";
 const Jumbotoron = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
-    gsap.from("#sq", {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#sq",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-  });
+  
   return (
     <>
-      <div className="container mx-4 rounded-lg text-[35px]  justify-start items-center text-purple-600  flex flex-row max-sm:my-2 max-sm:mx-auto max-sm:w-full   md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[100px] 2xl:w-[1300px]">
+      <div className="container mx-auto rounded-lg text-[35px]  justify-start items-center text-purple-600  flex flex-row max-sm:my-2 max-sm:mx-auto max-sm:w-full   md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[100px] 2xl:w-[1300px]">
         Who are we
       </div>
       <div

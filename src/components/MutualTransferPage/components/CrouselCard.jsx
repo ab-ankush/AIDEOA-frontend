@@ -1,6 +1,6 @@
 const CrouselCard = () => {
     return (
-        <div className="bg-white items-center shadow-2xl shadow-gray-400 p-3 h-30 min-w-56 rounded-full flex justify-evenly ">
+        <div className="bg-white items-center shadow-xl shadow-gray-400 p-3 h-30 min-w-56 rounded-full flex justify-evenly ">
             <div>
               <img className="w-16" src="base.png" alt="company_logo" />
             </div>

@@ -1,12 +1,12 @@
-import styles from "./NewsCard.module.css"
+
 
 const NewsCard = () => {
   return (
-    <div className="flex max-w-screen-xl bg-gray-200 rounded-xl w-11/12 m-auto p-10 justify-between">
-        <div className="rounded-xl overflow-hidden">
+    <div className=" flex-col lg:flex-row w-[70%] gap-x-5 flex max-w-screen-xl bg-gray-200 rounded-xl lg:w-11/12 m-auto p-10 justify-between">
+        <div className="rounded-xl mb-6 m-auto overflow-hidden">
             <img src="Rectangle 5.png" alt="slider-image" />
         </div>
-        <div className="flex flex-col justify-evenly w-2/4 ">
+        <div className="flex flex-col gap-y-6   justify-evenly lg:w-2/4 ">
             <div className="font-medium">
                 <h3>18 जुलाई 2023 को CIL HQ में CIL निदेशक (चेयरमैन ) आदरणीय श्री पीएम प्रसाद सर से AIDEOA के राष्ट्रीय महासचिव श्री आर के तिवारी एवं कार्यकारिणी अध्यक्ष श्री प्रदीप सिंह के साथ मीटिंग हुआ। </h3>
             </div>

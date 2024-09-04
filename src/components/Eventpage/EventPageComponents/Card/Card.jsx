@@ -1,11 +1,10 @@
-import styles from "./Card.module.css";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdCalendarMonth  } from "react-icons/md";
 
 
 const Card = () => {
   return (
-    <div className="w-96 m-auto mb-24 shadow-lg shadow-gray-600 rounded-2xl">
+    <div className="w-[70%] m-auto mb-24 shadow-lg  shadow-gray-600 rounded-2xl">
       <div className="flex justify-around pt-5 pb-5 bg-customgradient-background rounded-t-2xl">
         <div className=" " >
           <p className="font-semibold  text-white w-14 text-xl" >DAY 2</p>

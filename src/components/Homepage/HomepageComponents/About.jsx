@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const flow =[{head:"Aideoa Events",p:"1200+  events"},
+const flow =[{head:"Aideoa Events",p:"1200+  events",link:"/event"},
     {head:"Online Test",p:"1200+  events"},
     {head:"Student Corner",p:"1200+  materials"},
     {head:"Employee Corner ",p:"1200+  materials"},
@@ -10,7 +11,7 @@ const flow =[{head:"Aideoa Events",p:"1200+  events"},
 
 const aboutArray=[
   {head:"Our Mission",tag:"At AIDEOA, we strive to address and resolve issues faced by mining students and professionals.",icon:"/flag.png"},
-  {head:"Our Support and Resources",tag:"We offer a wide range of study materials to aid mining students and professionals in their preparation for various examinations",icon:"/laptop.png"},
+  {head:"Our Support and Resources",tag:"We offer a wide range of study materials to aid mining students and professionals in their preparation for various examinations",icon:"/laptop.png",link:"/contact"},
   {head:"Online Classes",tag:"JWe conduct online classes where students can engage in discussions about different mining topics and field-related issues.",icon:"/headset.png"},
 ]
 
@@ -24,10 +25,12 @@ const About = () => {
        
         {
             flow.map((item,idx)=>{
-                return  <div key={idx} className="w-48 h-20 rounded-xl flex flex-col items-center justify-center gap-2 dropshadowbox">
+                return  <Link key={idx} to={item?.link}>
+                <div  className="w-48 h-20 rounded-xl flex flex-col items-center justify-center gap-2 dropshadowbox">
                 <h3 className="font-medium text-sm text-center">{item.head}</h3>
                 <p className="text-[#828282] bg-[#F2F2F2] rounded-lg font-normal text-xs px-2 py-2 self-end mr-3">{item.p}</p>
               </div>
+                </Link>
             })
         }
 

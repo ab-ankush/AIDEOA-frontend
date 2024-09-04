@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .myimg{
   background-image: url(../public/images/2.jpg);
   background-repeat: no-repeat;

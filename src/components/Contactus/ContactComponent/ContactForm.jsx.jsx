@@ -2,6 +2,7 @@ import React from "react";
 import { BsChatSquareText } from "react-icons/bs";
 import Map from "./Map";
 import Form from "./Form";
+import { MdOutlineLocationOn } from "react-icons/md";
 const ContactForm = () => {
   return (
     <div className="px-20 max-md:px-10 max-sm:px-5">
@@ -20,8 +21,9 @@ const ContactForm = () => {
             </div>
             <Form />
           </div>
-          <div className=" w-1/2 lg:rounded-r-2xl max-h-full max-lg:h-64 max-lg:rounded-b-2xl overflow-hidden max-lg:w-full">
-            <Map />
+          <div className=" w-1/2 relative bg-blue-200 lg:rounded-r-2xl max-h-full max-lg:h-64 max-lg:rounded-b-2xl overflow-hidden max-lg:w-full">
+        <Map />
+            <MdOutlineLocationOn className='absolute top-1/2 left-1/2  text-red-700 transform  -translate-x-1/2 -translate-y-1/2 hover:scale-125 duration-500 cursor-pointer' size={70} />
           </div>
         </div>
       </div>

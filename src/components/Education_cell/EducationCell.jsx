@@ -28,7 +28,7 @@ const EducationCell = () => {
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
         Education Cell Members
       </div>
-      <div className=" cards grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+      <div className=" mx-auto w-[80%] flex flex-row justify-evenly items-center ">
         {data1.map((data, index) =>
           index >= 4 ? (
             <Card name={data} className={`  xl:col-start-2 xl:col-end-3`} />

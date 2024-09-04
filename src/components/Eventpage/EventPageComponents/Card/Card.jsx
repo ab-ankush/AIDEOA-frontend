@@ -1,14 +1,14 @@
-import styles from "./Card.module.css";
+
 import { IoLocationOutline } from "react-icons/io5";
 import { MdCalendarMonth  } from "react-icons/md";
 
 
 const Card = () => {
   return (
-    <div className="w-96 m-auto mb-24 shadow-lg shadow-gray-600 rounded-2xl">
-      <div className="flex justify-around pt-5 pb-5 bg-customgradient-background rounded-t-2xl">
+    <div className="w-3/4  m-auto mb-24 shadow-lg shadow-gray-600 rounded-2xl">
+      <div className="flex justify-around pt-5 pb-5 membershipBtn rounded-t-2xl">
         <div className=" " >
-          <p className="font-semibold  text-white w-14 text-xl" >DAY 2</p>
+          <p className="font-semibold w-full text-white w-14 text-3xl " >DAY 2</p>
         </div>
         <div className="size-3 w-36">
           <p className="text-xs text-white">
@@ -31,7 +31,7 @@ const Card = () => {
             <p className="ml-1 font-light">2:00 PM - 1:00 PM</p>
           </div>
         </div>
-        <div className="text-sm font-normal pb-5">
+        <div className="text-sm font-light pb-5">
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text

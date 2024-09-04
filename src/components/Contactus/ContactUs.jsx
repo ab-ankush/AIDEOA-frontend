@@ -1,14 +1,13 @@
-import React from "react";
-import ContactComponents from "./ContactComponent/ContactForm.jsx";
+
 import ContactForm from "./ContactComponent/ContactForm.jsx";
 import TopImageCard from "../Cards/TopImageCard.jsx";
 import EmailNotiCard from "../Cards/EmailNotiCard.jsx";
-import Navbar from "./ContactComponent/Navbar.jsx";
-import Footer from "./ContactComponent/Footer.jsx";
+import Footer from '../Cards/Footer.jsx'
+
 const ContactUs = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="pt-14">
+    
       <TopImageCard />
       <ContactForm />
       <EmailNotiCard />

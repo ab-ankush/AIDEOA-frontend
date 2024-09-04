@@ -1,36 +1,7 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import React from "react";
 
 const Offering = () => {
-  useGSAP(() => {
-    gsap.from("#dib1", {
-      y: -600,
-      rotateY: 360,
-      duration: 0.5,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#dib1",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-    gsap.from("#dib2", {
-      y: -500,
-      rotateY: 360,
-      duration: 0.5,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#dib2",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-  });
+ 
   return (
     <>
       <div className="text-center text-[35px]  my-10 ">Our Offerings</div>

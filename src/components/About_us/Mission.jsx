@@ -1,49 +1,7 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import React from "react";
 
 const Mission = () => {
-  useGSAP(() => {
-    gsap.from("#line1", {
-      x: -500,
-      rotateY: 360,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#line1",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-    gsap.from("#line3", {
-      x: 500,
-      rotateY: 360,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#line3",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-    gsap.from("#line2", {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#line2",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-  });
+  
   return (
     <>
       <div className="text-center text-[35px]  my-10 ">Our Mission</div>

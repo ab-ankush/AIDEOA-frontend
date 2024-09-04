@@ -1,24 +1,7 @@
-import { useGSAP } from "@gsap/react";
 import React, { useCallback, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 const Seclast = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
-    gsap.from("#lll", {
-      y: -600,
-      duration: 0.5,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#lll",
-        scroller: "body",
-        markers: false,
-        start: "top 700px",
-      },
-    });
-  });
+  
   return (
     <div
       id="lll"

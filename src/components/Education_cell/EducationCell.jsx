@@ -5,8 +5,6 @@ import Image from "./Image";
 import Scroll from "./Scroll";
 import Seclast from "../About_us/Seclast";
 import Footer from "../About_us/Footer";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import TopImageCard from "../Cards/TopImageCard";
 import EmailNotiCard from "../Cards/EmailNotiCard";
 import BottomFooter from "../Cards/BottomFooter";
@@ -23,20 +21,7 @@ const EducationCell = () => {
     ["Vinay Nath Tiwary", "Aideoa IT Cell "],
     ["Adrash Kulshrestha", "Aideoa IT Cell "],
   ];
-  useGSAP(() => {
-    gsap.from(".eduheading", {
-      x: -500,
-      opacity: 0,
-      duration: 2,
-      delay: 1,
-    });
-    gsap.from(".secheading", {
-      x: -500,
-      opacity: 0,
-      duration: 2,
-      delay: 1,
-    });
-  });
+  
   return (
     <div className="pt-14">
      <TopImageCard title={"Education Cell"}/>
@@ -59,7 +44,7 @@ const EducationCell = () => {
       <div className="flex justify-evenly items-center max-md:flex-col">
         {data2.map((data, index) =>
           index >= 4 ? (
-            <Card name={data} className="xl:col-start-2 xl:col-end-3" />
+            <Card name={data} className="" />
           ) : (
             <Card name={data} />
           )

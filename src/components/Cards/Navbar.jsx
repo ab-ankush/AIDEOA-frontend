@@ -15,20 +15,7 @@ const Navbar = () => {
   const signupfunc = () => {
     navigate("/signup");
   };
-  useGSAP(() => {
-    gsap.from(".wo", {
-      y: -200,
-      duration: 0.5,
-      delay: 0.2,
-      stagger: 0.2,
-    });
-    gsap.from(".do ", {
-      x: -200,
-      duration: 0.5,
-      delay: 0.3,
-      stagger: 0.2,
-    });
-  });
+  
   return (<>
     <nav className="fixed z-10 w-full bg-white opacity-100 flex  flex-row justify-between items-center">
       <div

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.myimg {
+.myimg{
   background-image: url(../public/images/2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,35 +15,24 @@ body {
     background: rgba(79, 77, 77, 0.3);
   }
   .membershipBtn {
-    background: linear-gradient(
-      270deg,
-      rgba(87, 0, 199, 0.32) 6.44%,
-      rgba(86, 0, 196, 0.4) 24.14%,
-      rgba(65, 0, 148, 0.8) 100%
-    );
+    background: linear-gradient(270deg, rgba(87, 0, 199, 0.32) 6.44%, rgba(86, 0, 196, 0.4) 24.14%, rgba(65, 0, 148, 0.8) 100%);
+
   }
   .mainBackgroundImg {
     background-image: url(/Rectangle128.png);
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-backdrop-filter: brightness(10%) contrast(200%) saturate(150%);
     backdrop-filter: brightness(10%) contrast(200%) saturate(150%);
   }
 
   .imagefilter {
-    -webkit-backdrop-filter: brightness(30%) contrast(200%) saturate(150%);
     backdrop-filter: brightness(30%) contrast(200%) saturate(150%);
   }
 
   .bottomshadowgradient {
     background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
   }
-  .dropshadowbox {
+  .dropshadowbox{
     box-shadow: 0px 0px 15px 0px #00000040;
-  }
-}
-@layer base {
-  :root {
-    --radius: 0.5rem;
   }
 }

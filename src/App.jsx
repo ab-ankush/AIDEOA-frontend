@@ -19,7 +19,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Navbar />}>
-          <Route index element={<Home />}></Route>
+        <Route index element={<Home />}></Route>
           <Route path="/event" element={<Event />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />

@@ -113,36 +113,42 @@ const Navbar = () => {
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
                 to="/"
+                onClick={sethamfunc}
               >
                 Home
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
                 to="/event"
+                onClick={sethamfunc}
               >
                 Aideoa Events
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
-                to="#"
+                to="/mutualtransfer"
+                onClick={sethamfunc}
               >
                 Mutual Transfer
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
                 to="/education"
+                onClick={sethamfunc}
               >
                 Education cell
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
                 to="/about"
+                onClick={sethamfunc}
               >
                 About us
               </Link>
               <Link
                 className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
                 to="/contact"
+                onClick={sethamfunc}
               >
                 Contact us
               </Link>

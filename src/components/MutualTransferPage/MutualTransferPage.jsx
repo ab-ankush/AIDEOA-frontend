@@ -5,7 +5,8 @@ import SelectSwitch from "./components/SelectSwitch";
 import Form from "./components/Form";
 import CrouselHeader from "./components/CrouselHeader";
 import CrouselCardList from "./components/CrouselCardList";
-import GetUpdata from "./components/GetUpdata";
+
+import EmailNotiCard from "../Cards/EmailNotiCard";
 
 const MutualTransferPage = () => {
   return (
@@ -17,7 +18,7 @@ const MutualTransferPage = () => {
       <Form />
       <CrouselHeader />
       <CrouselCardList />
-      <GetUpdata />
+      <EmailNotiCard />
     </div>
   );
 };

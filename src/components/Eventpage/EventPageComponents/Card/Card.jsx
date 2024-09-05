@@ -17,7 +17,7 @@ const Card = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col m-auto justify-between gap-6 p-4 lg:p-8" >
+      <div className="flex flex-col m-auto justify-between gap-6 p-4 lg:p-8">
         <div className="text-xl font-semibold">
           <p>AIDEOA Hosts Successful Annual Conference</p>
         </div>

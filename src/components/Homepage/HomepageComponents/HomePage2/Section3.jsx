@@ -13,9 +13,9 @@ const Section3 = () => {
           labore!
         </p>
       </div>
-      <div class="  mx-auto">
+      <div class="mx-auto">
         <div
-          class="images-container sm:flex gap-y-2 w-full h-full flex-col justify-center items-center flex-wrap lg:w-[900px] lg:h-[400px] gap-[10px] lg:grid grid-cols-6  "
+          class="images-container flex gap-5 w-full h-full flex-col justify-center items-center flex-wrap lg:w-[900px] lg:h-[400px] lg:grid lg:grid-cols-6 mb-5"
           style={{ gridAutoColumns: "13%" }}
         >
           <div class=" h-full  sm:my-2 lg:my-0 flex justify-center items-center image lg:col-start-1 lg:col-end-2 lg:h-[200px] ">

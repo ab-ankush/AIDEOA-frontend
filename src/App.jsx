@@ -14,6 +14,7 @@ import Navbar from "./components/Cards/Navbar.jsx";
 import Education from "./components/Education_cell/EducationCell.jsx";
 import ApplyIdCard from "./components/ApplyIdcard/ApplyIdCard.jsx";
 import Landingpage from "./components/Landingpage/Landingpage.jsx";
+import Transactions from "./adminpanel/Transactions";
 import Dashboard from "./components/Admin_panel/Dashboard.jsx";
 import MainLayout from "./layout/MainLayout.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";

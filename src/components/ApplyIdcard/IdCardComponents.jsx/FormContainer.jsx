@@ -36,7 +36,7 @@ const FormContainer = () => {
         <IdCard />
         
       </div>
-      <div className=" flex justify-end  -mt-4">
+      <div className=" flex ">
         <button className="w-52 h-12 membershipBtn rounded-2xl text-white font-medium text-lg">
           Submit
         </button>

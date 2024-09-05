@@ -1,7 +1,7 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { FaDribbble, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import BottomFooter from "../../../Cards/BottomFooter";
+
 const Footer = () => {
   return ( <div>
     <div className="bg-black h-full grid grid-cols-4 px-28 py-10 max-xl:px-15 max-lg:px-10 max-md:px-5 max-sm:grid-cols-2 max-sm:gap-5">
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    <BottomFooter />
+
     </div>
   );
 };

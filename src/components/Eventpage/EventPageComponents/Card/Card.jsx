@@ -4,7 +4,7 @@ import { MdCalendarMonth  } from "react-icons/md";
 
 const Card = () => {
   return (
-    <div className="w-[70%] m-auto mb-24 shadow-lg  shadow-gray-600 rounded-2xl">
+    <div className=" w-[95%]  lg:w-[80%] m-auto mb-24 shadow-lg  shadow-gray-600 rounded-2xl">
       <div className="flex justify-around pt-5 pb-5 bg-customgradient-background rounded-t-2xl">
         <div className=" " >
           <p className="font-semibold  text-white w-14 text-xl" >DAY 2</p>
@@ -16,7 +16,7 @@ const Card = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col m-auto justify-between gap-6 p-8" >
+      <div className="flex flex-col m-auto justify-between gap-6 p-4 lg:p-8" >
         <div className="text-xl font-semibold">
           <p>AIDEOA Hosts Successful Annual Conference</p>
         </div>

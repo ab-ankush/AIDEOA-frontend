@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const IdCard = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   return (
     <div className="flex flex-col  w-full justify-around ">
       <div className="flex flex-col  justify-center items-center">
@@ -14,13 +14,13 @@ const IdCard = () => {
           <div className="relative">
             <img src="/card/lower.svg" className="" alt="" />
             <div className="absolute flex top-[10px] ">
-              <img
+            <img
                 src="/images/logo.png"
-                className="h-[32px] w-[32px] mx-[6px]"
+                className="h-[50px] w-[50px] "
                 alt=""
               />
                </div>
-              <p className=" absolute top-4 left-6 mx-2 px-3 text-xs text-white text-center font-semibold">
+              <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
                 All india diploma engineers & Officials Association (AIDEOA)
               </p>
            
@@ -54,7 +54,7 @@ const IdCard = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute flex flex-col justify-start items-start left-[115px] top-[420px] absolute transform -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute flex flex-col justify-start items-start left-[130px] top-[420px] absolute transform -translate-x-1/2 -translate-y-1/2">
                 <img src="/images/send/sign.png" className=" bg-white w-[70px] h-[45px]" alt="" />
                 <p className="text-[10px] text-purple-700 font-medium">National General Secretary AIDEOA</p>
               </div>
@@ -67,47 +67,51 @@ const IdCard = () => {
         </div> : <div
           id="backcover"
           onMouseLeave={() => { setShow(true) }}
-          className=" z-[4] top-[200px] right-0 bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
+          className="  bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden "
         >
           <div className="relative">
             <img src="/card/lower.svg" className="w-[391px] h-[190px]" alt="" />
             <div className="absolute flex top-[10px] ">
               <img
                 src="/images/logo.png"
-                className="h-[50px] w-[50px] mx-[5px]"
+                className="h-[50px] w-[50px] "
                 alt=""
               />
-              <p className=" text-white">
+            
+            </div>
+            <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
                 All india diploma engineers & Officials Association (AIDEOA)
               </p>
-            </div>
-            <div className=" relative top-[-40px] px-4 h-[266px] w-[391px]">
-              <h1 className="text-purple-800 mx-4">Terms and Conditions</h1>
-              <p className="mx-5 my-2 text-justify text-[12px]">
+           
+            <div className=" relative top-[-40px]  px-6 py-4 h-[266px] w-[391px]">
+              <h1 className="text-purple-800 font-bold mx-4">Terms and Conditions</h1>
+              <p className="mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <p className="mx-5 my-2 text-justify text-[12px]">
+              <p className="mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <p className="mx-5 my-2 text-justify text-[12px]">
+              <p className="mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
 
-              <div className="mx-5 flex items-center">
-                <h1>Valid Upto :</h1>
-                <p className=" bg-white rouded-full px-2 inline-flex">
-                  31 March,2025
+              <div className="mx-5 flex  items-center gap-2">
+                <h1 className="text-purple-800 font-bold">Valid Upto 
+
+                </h1>
+                <p className=" bg-white  text-centerrouded-full px-2 py-1 rounded-full text-xs">
+                  31 March 2025
                 </p>
               </div>
             </div>
-            <div className="absolute text-white top-[515px] left-[40px]">
-              <p>Your address goes here 125 Street, USA</p>
+            <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
+              <p className="text-[11px] ">Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
             </div>
             <img src="/card/upper.svg" className="w-[391px] h-[91px]" alt="" />
           </div>

@@ -17,13 +17,16 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed z-10 w-full bg-white opacity-100 flex  flex-row justify-between items-center">
-        <div
+       <Link to="/">
+       <div
           className=" adeiou flex  flex-row justify-center items-center"
           id="brand"
         >
           <img src="./images/logo.png" className=" wo pl-2" alt="" />
           <h2 className=" wo pr-2 font-extrabold">AIDEOA</h2>
         </div>
+       </Link>
+       
         <div className="  max-lg:hidden lg:flex  lg:flex-row  gap-2 ">
           <div className=" adeiou flex flex-row justify-between items-center">
             <Link
@@ -77,14 +80,14 @@ const Navbar = () => {
           <div className=" wo py-3 px-4">
             <button
               onClick={signupfunc}
-              className="btn hover:text-white hover:bg-purple-600   p-3 rounded-[25px] px-6 text-left text-purple-600 border border-purple-600"
+              className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
             >
               Sign up
             </button>
           </div>
         </div>
         <div id="hamicon  " onClick={sethamfunc} className="sm:block lg:hidden">
-          <RxHamburgerMenu className="w-[44px] mx-3 h-[44px]" />
+          <RxHamburgerMenu className="w-[44px] cursor-pointer mx-3 h-[44px]" />
         </div>
         <div
           className={`fixed bg-white flex flex-col lg:hidden  inset-0 ${ham ? "hidden" : "block"
@@ -102,12 +105,12 @@ const Navbar = () => {
               {ham ? (
                 <RxHamburgerMenu className="w-[44px] mx-3 h-[44px]" />
               ) : (
-                <IoMdClose className="w-[44px] mx-3 h-[44px]" />
+                <IoMdClose className="w-[44px] cursor-pointer mx-3 h-[44px]" />
               )}
             </div>
           </div>
           {!ham ? (
-            <div className="flex flex-col-reverse max-sm:flex-col gap-2 ">
+            <div className="flex flex-col-reverse max-lg:flex-col gap-2 ">
               <div className="flex flex-col">
                 <Link
                   className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
@@ -152,13 +155,13 @@ const Navbar = () => {
                   Contact us
                 </Link>
               </div>
-              <div className=" do py-3 px-6">
+              <div className=" px-5">
                 <button
                   onClick={() => {
                     signupfunc();
                     sethamfunc();
                   }}
-                  className="btn hover:text-white hover:bg-purple-600 block max-sm:w-fit px-3 w-full text-left text-purple-600 border border-purple-600"
+                  className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
                 >
                   Sign up
                 </button>

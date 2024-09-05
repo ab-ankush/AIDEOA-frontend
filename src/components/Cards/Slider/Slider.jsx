@@ -5,7 +5,7 @@ import Logo from './Logo'
 
 const Slider = ({textColor,shadowColor}) => {
   return (
-    <div className='py-5'>
+    <div className='my-20'>
       <Logo />
         <CrouselHeader textColor={textColor} />
         <CrouselCardList shadowColor={shadowColor}/>

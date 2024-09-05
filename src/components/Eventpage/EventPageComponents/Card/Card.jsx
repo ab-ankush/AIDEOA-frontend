@@ -3,7 +3,7 @@ import { MdCalendarMonth } from "react-icons/md";
 
 const Card = () => {
   return (
-    <div className=" w-[95%]  lg:w-[60%] m-auto mb-24 shadow-lg  shadow-gray-600 rounded-2xl">
+    <div className="  m-auto max-w-lg mb-24 shadow-md  shadow-gray-600 rounded-2xl">
       <div className="flex justify-around pt-5 pb-5 bg-customgradient-background rounded-t-2xl">
         <div className=" ">
           <p className="font-semibold w-full text-white w-14 text-3xl ">

@@ -72,7 +72,7 @@ const Scroll = () => {
       <img src="./images/logo.png" className="w-[100px] h-[100px]" alt="" />
       <div class="dibba my-3">
         {" "}
-        <h1 class=" teamupdata flex justify-center items-center font-bold text-[30px]">
+        <h1 class=" teamupdata text-center flex justify-center items-center font-bold text-[30px]">
           Already team up and moving forward!
         </h1>
       </div>

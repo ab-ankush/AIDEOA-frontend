@@ -6,10 +6,10 @@ const Offering = () => {
     <>
       <div className="text-center text-[35px]  my-10 ">Our Offerings</div>
       <div>
-        <div className="flex overflow-y-hidden  max-md:flex-col  max-lg:flex-col lg:flex-row xl:mx-[100px] xl:flex-row 2xl:mx-[150px]">
+        <div className="flex overflow-y-hidden justify-evenly items-center max-md:flex-col  max-lg:flex-col lg:flex-row xl:mx-[100px] xl:flex-row 2xl:mx-[150px]">
           <div
             id="dib1"
-            className="container my-4 rounded-lg flex flex-col bg-[#0000000D] justify-center items-center border   max-sm:w-full sm:w-[350px] sm:mx-auto sm:flex-col md:w-[400px] lg:w-[400px] lg:flex-row lg:justify-evenly xl:flex-col xl:px-[100px] xl:w-[500px] xl:h-[400px] 2xl:w-[400px]"
+            className="container my-4  rounded-lg flex flex-col bg-[#0000000D] justify-center items-center border max-sm:w-[300px] sm:w-[350px] max-md:mx-auto sm:flex-col md:w-[400px] lg:w-[400px] lg:flex-row lg:justify-evenly xl:flex-col xl:px-[100px] xl:w-[400px] xl:h-[400px] 2xl:w-[400px]"
           >
             <div className="flex max-sm:my-2 sm:mb-3  sm:mt-4 lg:mx-3  ">
               <img
@@ -32,7 +32,7 @@ const Offering = () => {
           </div>
           <div
             id="dib2"
-            className="container my-4 rounded-lg bg-[#0000000D] flex flex-col justify-center items-center border max-sm:w-full sm:mx-auto sm:w-[350px] sm:flex-col md:w-[400px] lg:w-[400px] lg:flex-row lg:justify-evenly xl:flex-col xl:px-[100px] xl:w-[500px] xl:h-[400px] 2xl:w-[400px]"
+            className="container my-4 rounded-lg bg-[#0000000D] flex flex-col justify-center items-center border max-md:mx-auto max-sm:w-[300px] sm:w-[350px] sm:flex-col md:w-[400px] lg:w-[400px] lg:flex-row lg:justify-evenly xl:flex-col xl:px-[100px] xl:w-[400px] xl:h-[400px] 2xl:w-[400px]"
           >
             <div className="flex max-sm:my-2 sm:mb-3 sm:mt-4 lg:mx-3 ">
               <img

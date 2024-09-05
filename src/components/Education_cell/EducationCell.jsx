@@ -54,7 +54,7 @@ const EducationCell = () => {
         Education Cell Members
       </div>
       
-      <div className=" mx-auto w-[90%] flex flex-row justify-evenly items-center ">
+      <div className=" mx-auto w-[90%]  flex flex-row flex-wrap justify-evenly items-center ">
         {data1.map((data, index) =>
           index >= 4 ? (
             <Card name={data} className={`  xl:col-start-2 xl:col-end-3`} />

@@ -1,6 +1,18 @@
+import { useState } from "react";
+
 const Form = () => {
+  const [form,setForm]=useState(false);
   return (
-    <div className="text-center mb-60 m-auto w-2/3">
+    <div className="text-center mb-60 m-auto w-[95%] lg:w-2/3">
+      <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
+        <div className=" w-full ">
+          <button className={`lg:text-xl w-full  p-2 lg:p-4  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white" }`} onClick={()=>setForm(!form)}>Non-Executive</button>
+        </div>
+        <div className="w-full  ">
+          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-4 ${form?" bg-purple-600 rounded-full text-white":""} `} onClick={()=>setForm(!form)}>Executive</button>
+        </div>
+      </div>
+
       <form>
         <div className="flex flex-col text-left mb-5 gap-y-5">
           <label
@@ -156,7 +168,12 @@ const Form = () => {
           />
         </div>
         <div>
-          <button className="bg-gradient-to-r text-xl font-normal from-purple-800 via-purple-500 to-purple-400 p-2 rounded-full w-60 text-white" type="submit">Submit</button>
+          <button
+            className="bg-gradient-to-r text-xl font-normal from-purple-800 via-purple-500 to-purple-400 p-2 rounded-full w-60 text-white"
+            type="submit"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>

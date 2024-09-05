@@ -3,11 +3,11 @@ import Card from "./Card";
 import Navbar from "../About_us/Navbar";
 import Image from "./Image";
 import Scroll from "./Scroll";
-import Seclast from "../About_us/Seclast";
-import Footer from "../About_us/Footer";
+
 import TopImageCard from "../Cards/TopImageCard";
 import EmailNotiCard from "../Cards/EmailNotiCard";
-import BottomFooter from "../Cards/BottomFooter";
+import Footer from "../Cards/Footer";
+import Slider from "../Cards/Slider/Slider";
 
 
 const EducationCell = () => {
@@ -76,10 +76,10 @@ const EducationCell = () => {
           )
         )}
       </div>
-      <Scroll />
+     <Slider />
      <EmailNotiCard />
      <Footer />
-     <BottomFooter />
+    
     </div>
   );
 };

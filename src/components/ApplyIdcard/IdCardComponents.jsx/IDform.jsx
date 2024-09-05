@@ -18,7 +18,7 @@ const IDform = () => {
     setFile(e.target.files[0]);
   };
   return (
-    <form className='flex gap-4 flex-col w-1/2  max-md:w-full'>
+    <form className='flex gap-4 flex-col w-1/2 w-full '>
 
     <div className='flex flex-col gap-2 ' >
       <label className=" text-gray-700 text-base font-bold ">

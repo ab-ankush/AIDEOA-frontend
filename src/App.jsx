@@ -14,11 +14,12 @@ import Navbar from "./components/Cards/Navbar.jsx";
 import Education from "./components/Education_cell/EducationCell.jsx";
 import ApplyIdCard from "./components/ApplyIdcard/ApplyIdCard.jsx";
 import Landingpage from "./components/Landingpage/Landingpage.jsx";
+import Transactions from "./adminpanel/Transactions";
 export default function App() {
   return (
     <>
+    <Navbar />
       <Routes>
-        <Route path="/" element={<Navbar />}>
         <Route index element={<Home />}></Route>
           <Route path="/event" element={<Event />} />
           <Route path="/contact" element={<ContactUs />} />
@@ -31,7 +32,8 @@ export default function App() {
           <Route path="education" element={<Education />} />
           <Route path="/idcard" element={<ApplyIdCard />} />
           <Route path="/home" element={<Landingpage />} />
-        </Route>
+          <Route path="/tt" element={<Transactions  />} />
+      
       </Routes>
     </>
   );

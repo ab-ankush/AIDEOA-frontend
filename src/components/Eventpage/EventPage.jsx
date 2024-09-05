@@ -6,13 +6,15 @@ import CompanyCardCrousel from "./EventPageComponents/CompanyCardCrousel/Company
 import Logo from "./EventPageComponents/Logo/Logo"
 import CompanyHeader from "./EventPageComponents/CompanyCardCrousel/CompanyHeader/CompanyHeader"
 import EmailNotiCard from "../Cards/EmailNotiCard"
-import Footer from "../About_us/Footer";
+import Footer from "../Cards/Footer"
+import TopImageCard from "../Cards/TopImageCard"
+import Slider from "../Cards/Slider/Slider"
 
 const EventPage = () => {
   const getData="Already team up and moving forward!"
   return (
-    <div>
-        <ImageHeader />
+    <div className="pt-14">
+      <TopImageCard title={"Aideoa Events"}/>
         <div className=" flex flex-col   lg:grid lg:grid-cols-2 content-center max-w-7xl  m-auto">
         <Card/>
         <Card/>
@@ -20,9 +22,8 @@ const EventPage = () => {
         <Card/>
         </div>
         <div className=" bg-blue-950 pt-10 pb-10 mb-40">
-        <Logo/>
-        <CompanyHeader />
-        <CompanyCardCrousel className="p-10 m-10"/>
+  
+       <Slider textColor={"white"} shadowColor={"blue-900"}/>
         </div>
         <InfoHeader/>
         <div className="flex gap-10 flex-col">

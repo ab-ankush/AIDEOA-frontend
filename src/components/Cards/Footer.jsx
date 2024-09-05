@@ -19,8 +19,8 @@ const membership=[
 ]
 const Footer = () => {
   return (<>
-    <div className='bg-black h-full grid grid-cols-4 max-xl:grid-cols-2 py-14 px-20 max-lg:px-10'>
-        <div className='pr-3 flex border-r-2  gap-3 '>
+    <div className='bg-black h-full grid grid-cols-4 max-xl:grid-cols-2 py-14 px-20 max-lg:px-10 max-sm:grid-cols-1'>
+        <div className='pr-3 flex border-r-2  gap-3 max-sm:border-none'>
            
             <div className='flex flex-col gap-1 '>
             <h1 className='text-white font-semibold text-xl mb-2'>Organization</h1>
@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
           
         </div>
-        <div className='flex px-3 border-r-2 max-xl:border-none'>
+        <div className='flex px-3 border-r-2 max-xl:border-none max-sm:px-0 max-sm:py-3'>
             <div className='flex flex-col gap-3 justify-between'>
                 <div className='flex flex-col gap-3'>
                 <h1 className='font-medium text-xl rounded text-white'>Subscribe now</h1>
@@ -49,14 +49,14 @@ const Footer = () => {
                     <button className='bg-purple-700 absolute border-none rounded right-0 w-11 h-full top-0 flex items-center justify-center' ><CiSearch size={22} className='text-white '/></button>
                 </div>
                 </div>
-                <div className='flex flex-col gap-3 mb-8'>
+                <div className='flex flex-col gap-2 mb-3'>
                 <h1 className='font-mdeium text-xl text-white'>Lorem Ipsum is simple</h1>
                 <p className='text-base text-gray-400'>Go to our official Announcements</p>
            
                 </div>
                </div>
         </div>
-        <div className='flex px-3 border-r-2 max-lg:p-0'>
+        <div className='flex px-3 border-r-2 pt-3 max-xl:px-0 max-sm:border-none'>
             <div className='flex flex-col gap-3 justify-between'>
             <div className='flex flex-col gap-1'>
                 <h1 className='font-mdeium text-xl text-white'>Lorem Ipsum is simple</h1>

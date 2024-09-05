@@ -3,13 +3,14 @@ import Section1 from "./Section1";
 import Scroll from "./Scroll";
 import Section3 from "./Section3";
 
-import Carousel from '../../../Cards/carousel/Carousel'
 import Footer from "../../../Cards/Footer";
+import Slider from "../../../Cards/Slider/Slider";
+
 const HomePage2 = () => {
   return (
     <>
       <Section1 />
-     <Carousel />
+   <Slider />
       <Section3 />
       <Footer />
     </>

@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const IdCard = () => {
-  const [show,setShow]=useState(true)
+  const [show, setShow] = useState(true)
   return (
     <div className="flex flex-col  justify-around ">
       <div className="flex flex-col justify-center items-center ">
-      {show ?  <div
+        {show ? <div
           id="frontcover"
-          onMouseEnter={()=>{setShow(false)}}
+          onMouseEnter={() => { setShow(false) }}
           className=" 
            z-[5] hover:z-[-1]  bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
         >
@@ -32,7 +32,7 @@ const IdCard = () => {
               <h1 className="my-10px relative text-[20px] top-[-100px] text-center">
                 VICTOR ANIH
               </h1>
-             
+
               <div className="my-[10px] w-[292px] h-[91px] mx-auto bg-white rounded-lg relative top-[-80px] flex justify-center items-center">
                 <div className="flex flex-col text-[11px] justify-start items-start">
                   <div className=" flex justify-start items-start">
@@ -63,10 +63,10 @@ const IdCard = () => {
             </div>
             <img src="/card/upper.svg" className="" alt="" />
           </div>
-        </div>:  <div
+        </div> : <div
           id="backcover"
-          onMouseLeave={()=>{setShow(true)}}
-          className=" z-[4] top-[200px] right-0  rounded-lg bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
+          onMouseLeave={() => { setShow(true) }}
+          className=" z-[4] top-[200px] right-0 bg-purple-200 border  border-gray-500 rounded-[30px] overflow-hidden"
         >
           <div className="relative">
             <img src="/card/lower.svg" className="w-[391px] h-[190px]" alt="" />
@@ -97,7 +97,7 @@ const IdCard = () => {
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              
+
               <div className="mx-5 flex items-center">
                 <h1>Valid Upto :</h1>
                 <p className=" bg-white rouded-full px-2 inline-flex">
@@ -111,7 +111,7 @@ const IdCard = () => {
             <img src="/card/upper.svg" className="w-[391px] h-[91px]" alt="" />
           </div>
         </div>}
-      
+
       </div>
     </div>
   );

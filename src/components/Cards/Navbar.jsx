@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className=" wo py-3 px-4">
           <button
             onClick={signupfunc}
-            className="btn   p-3 rounded-[25px] px-6 text-left text-purple-600 border border-purple-600"
+            className="btn   p-3 rounded-[25px] px-6 text-left text-purple-600 border border-purple-600 hover:bg-purple-600 hover:text-white"
           >
             Sign up
           </button>
@@ -142,7 +142,7 @@ const Navbar = () => {
             <div className=" do py-3 px-6">
               <button
                 onClick={() => { signupfunc(); sethamfunc() }}
-                className="btn block max-sm:w-fit px-3 w-full text-left text-purple-600 border border-purple-600"
+                className="btn max-sm:w-fit px-6 py-4 rounded-full text-left text-purple-600 border border-purple-600 hover:bg-purple-600 hover:text-white "
               >
                 Sign up
               </button>

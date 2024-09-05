@@ -19,21 +19,21 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navbar />}>
-          <Route index element={<Home />}></Route>
-          <Route path="/event" element={<Event />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/membership" element={<JoinMembership />} />
-          <Route path="/donation" element={<DonationComponent />} />
-          <Route path="/mutualtransfer" element={<MutualTransferPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="education" element={<Education />} />
-          <Route path="/idcard" element={<ApplyIdCard />} />
-          <Route path="/home" element={<Landingpage />} />
-          <Route path="/admin" element={<Dashboard />} />
-        </Route>
+        {/* <Route path="/" element={<Navbar />}> */}
+        <Route index element={<Home />}></Route>
+        <Route path="/event" element={<Event />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/membership" element={<JoinMembership />} />
+        <Route path="/donation" element={<DonationComponent />} />
+        <Route path="/mutualtransfer" element={<MutualTransferPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="education" element={<Education />} />
+        <Route path="/idcard" element={<ApplyIdCard />} />
+        <Route path="/home" element={<Landingpage />} />
+        <Route path="/admin" element={<Dashboard />} />
+        {/* </Route> */}
       </Routes >
     </>
   );

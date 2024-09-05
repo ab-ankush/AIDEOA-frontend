@@ -15,7 +15,7 @@ const MutualTransferPage = () => {
     <TopImageCard title="AIDEOA Mutual Transfer Portal" description="Welcome to the Aidoea Mutual Transfer Portal"/>
       <Info />
       <FormDescription />
-      <SelectSwitch />
+      {/* <SelectSwitch /> */}
       <Form />
      <Slider />
       <EmailNotiCard />

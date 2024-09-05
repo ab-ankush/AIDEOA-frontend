@@ -2,8 +2,8 @@ import { GoQuestion } from "react-icons/go";
 
 const FormDescription = () => {
   return (
-    <div className="flex flex-col m-auto gap-16 mb-10 p-20">
-    <div className="flex flex-col gap-y-20 w-11/12 m-auto bg-gray-200 p-6 rounded-lg ">
+    <div className="flex flex-col m-auto gap-y-7 lg:gap-16 mb-10  lg:p-20">
+    <div className="flex flex-col gap-y-20 w-11/12 m-auto bg-gray-200 p-3 lg:p-6 rounded-lg ">
         <div className="flex gap-x-4 items-center">
             <div>
             <GoQuestion className="text-gray-500 " size={18}/>
@@ -14,7 +14,7 @@ const FormDescription = () => {
         </div>
 
     </div>
-    <div className="flex flex-col gap-y-20 w-11/12 m-auto bg-gray-200 p-6 rounded-lg">
+    <div className="flex flex-col gap-y-20 w-11/12 m-auto bg-gray-200 p-3 lg:p-6 rounded-lg">
         <div className="flex gap-x-4 items-center">
             <div>
             <GoQuestion className="text-gray-500 " size={18}/>
@@ -25,7 +25,7 @@ const FormDescription = () => {
         </div>
 
     </div>
-    <div className="flex flex-col gap-y-20 w-11/12 m-auto bg-gray-200 p-6 rounded-lg">
+    <div className="flex flex-col gap-y-20 w-11/12 m-auto bg-gray-200 p-3 lg:p-6 rounded-lg">
         <div className="flex gap-x-4 items-center">
             <div>
             <GoQuestion className="text-gray-500 " size={18}/>

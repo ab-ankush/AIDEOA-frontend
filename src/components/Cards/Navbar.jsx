@@ -27,54 +27,48 @@ const Navbar = () => {
         <div className="  max-lg:hidden lg:flex  lg:flex-row  gap-2 ">
           <div className=" adeiou flex flex-row justify-between items-center">
             <Link
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/" && "text-purple-600 border-purple-600 border-b"
-              } `}
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/" && "text-purple-600 border-purple-600 border-b"
+                } `}
               to="/"
             >
               Home
             </Link>
             <Link
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/event" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/event" &&
                 "text-purple-600 border-purple-600 border-b"
-              } `}
+                } `}
               to="/event"
             >
               Aideoa Events
             </Link>
             <Link
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/mutualtransfer" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/mutualtransfer" &&
                 "text-purple-600 border-purple-600 border-b"
-              } `}
+                } `}
               to="/mutualtransfer"
             >
               Mutual Transfer
             </Link>
             <Link
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/education" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/education" &&
                 "text-purple-600 border-purple-600 border-b"
-              } `}
+                } `}
               to="/education"
             >
               Education cell
             </Link>
             <Link
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/about" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/about" &&
                 "text-purple-600 border-purple-600 border-b"
-              } `}
+                } `}
               to="/about"
             >
               About us
             </Link>
             <Link
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/contact" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/contact" &&
                 "text-purple-600 border-purple-600 border-b"
-              } `}
+                } `}
               to="/contact"
             >
               Contact us
@@ -83,7 +77,7 @@ const Navbar = () => {
           <div className=" wo py-3 px-4">
             <button
               onClick={signupfunc}
-              className="btn   p-3 rounded-[25px] px-6 text-left text-purple-600 border border-purple-600"
+              className="btn hover:text-white hover:bg-purple-600   p-3 rounded-[25px] px-6 text-left text-purple-600 border border-purple-600"
             >
               Sign up
             </button>
@@ -93,9 +87,8 @@ const Navbar = () => {
           <RxHamburgerMenu className="w-[44px] mx-3 h-[44px]" />
         </div>
         <div
-          className={`fixed bg-white flex flex-col lg:hidden  inset-0 ${
-            ham ? "hidden" : "block"
-          } `}
+          className={`fixed bg-white flex flex-col lg:hidden  inset-0 ${ham ? "hidden" : "block"
+            } `}
         >
           <div className="flex flex-row border-b border-gray-300 justify-between items-center ">
             <div
@@ -165,7 +158,7 @@ const Navbar = () => {
                     signupfunc();
                     sethamfunc();
                   }}
-                  className="btn block max-sm:w-fit px-3 w-full text-left text-purple-600 border border-purple-600"
+                  className="btn hover:text-white hover:bg-purple-600 block max-sm:w-fit px-3 w-full text-left text-purple-600 border border-purple-600"
                 >
                   Sign up
                 </button>

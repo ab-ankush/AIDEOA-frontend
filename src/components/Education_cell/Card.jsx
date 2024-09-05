@@ -10,7 +10,7 @@ const Card = (props) => {
         >
           <img
             src="/images/2.jpg"
-            className="rounded-full sm:w-[200px] sm:h-[200px]"
+            className="rounded-full w-[200px] h-[200px]"
             alt=""
           />
         </div>

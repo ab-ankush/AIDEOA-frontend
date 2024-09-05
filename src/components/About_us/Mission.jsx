@@ -1,58 +1,17 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import React from "react";
 
 const Mission = () => {
-  useGSAP(() => {
-    gsap.from("#line1", {
-      x: -500,
-      rotateY: 360,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#line1",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-    gsap.from("#line3", {
-      x: 500,
-      rotateY: 360,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#line3",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-    gsap.from("#line2", {
-      opacity: 0,
-      scale: 0,
-      duration: 1,
-      delay: 0.2,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: "#line2",
-        scroller: "body",
-        markers: false,
-        start: "top 500px",
-      },
-    });
-  });
+  
   return (
     <>
       <div className="text-center text-[35px]  my-10 ">Our Mission</div>
-      <div className="flex xl:flex-row sm:flex-col overflow-x-hidden  lg:flex-row xl:mx-[120px] 2xl:mx-[200px]">
+      <div className="flex overflow-x-hidden  max-md:flex-col md:grid md:grid-cols-2 lg:flex   lg:flex-row xl:mx-[120px] xl:flex-row 2xl:mx-[200px]">
         <div
           id="line1"
-          className="container my-4 rounded-lg bg-[#0000000D] sm:w-[350px] sm:h-[400px] sm:mx-auto justify-around items-center border  flex sm:flex-col md:w-[400px] md:h-[500px] lg:w-[300px] lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
+          className="container my-4 rounded-lg bg-[#0000000D] 
+          max-sm:w-[300px] max-sm:mx-auto max-sm:flex-wrap max-md:w-full max-md:h-[400px]  justify-around items-center border  flex sm:w-[300px] sm:mx-auto max-md:flex-col md:w-[300px] md:h-[400px] max-lg:flex-col lg:w-[300px] lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
         >
-          <div className="flex sm:mb-3  sm:mt-4 lg:mx-3  ">
+          <div className="flex max-md:flex-col sm:mb-3  sm:mt-4 lg:mx-3  ">
             <img src="./images/send/setting.png" className=" " alt="" />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
@@ -69,12 +28,14 @@ const Mission = () => {
         </div>
         <div
           id="line2"
-          className="container my-4 rounded-lg bg-[#0000000D] sm:w-[350px] sm:h-[400px] sm:mx-auto justify-around items-center border  flex sm:flex-col md:w-[400px] md:h-[500px] lg:w-[300px] lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
+          className="container my-4 rounded-lg justify-around items-center border  flex bg-[#0000000D] 
+          max-sm:w-[300px] max-sm:mx-auto max-sm:flex-wrap
+          sm:w-[300px]  max-md:h-[400px] max-md:mx-auto  max-md:flex-col md:w-[300px] md:h-[400px] md:mx-auto max-lg:flex-col lg:w-[300px] lg:mx-auto lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
         >
           <div className="flex sm:mb-3 sm:mt-4 lg:mx-3 ">
             <img
               src="./images/send/profile-2user.png"
-              className=" sm:w-[88px]"
+              className="w-[88px]"
               alt=""
             />
           </div>
@@ -91,12 +52,14 @@ const Mission = () => {
         </div>
         <div
           id="line3"
-          className="container my-4 justify-around rounded-lg bg-[#0000000D] sm:w-[350px] sm:h-[400px] sm:mx-auto  items-center border  flex sm:flex-col md:w-[400px] md:h-[500px] lg:w-[300px] lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
+          className="container my-4   items-center border  flex 
+          max-sm:w-[300px] max-sm:mx-auto max-sm:flex-wrap justify-around rounded-lg bg-[#0000000D] sm:w-[300px] max-md:flex-col  max-md:h-[400px] max-md:mx-auto md:w-[300px] md:h-[400px] max-lg:flex-col 
+          max-lg:mx-auto lg:w-[300px] lg:mx-auto lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
         >
           <div className="flex sm:mb-3 sm:mt-4 lg:mx-3 ">
             <img
-              src="./images/send/Icon.png"
-              className="bg-[#0000000D] sm:w-[88px] "
+              src="./images/send/Icon.svg"
+              className="bg-[#0000000D] w-[88px] "
               alt=""
             />
           </div>

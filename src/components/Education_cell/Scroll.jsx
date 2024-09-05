@@ -24,11 +24,11 @@ const Scroll = () => {
   gsap.registerPlugin(ScrollTrigger);
   const line1 = useRef(null);
   const line2 = useRef(null);
-  const line3 = useRef(null);
+  // const line3 = useRef(null);
   useGSAP(() => {
     gsap.to(line1.current, {
       x: 1000,
-      duration: 5,
+      duration: 12,
       repeat: -1,
       yoyo: true,
       ease: "cubic-bazier(0.65,0.05,0.36,1)",
@@ -43,18 +43,18 @@ const Scroll = () => {
     });
     gsap.to(line2.current, {
       x: -1000,
-      duration: 5,
+      duration: 12,
       repeat: -1,
       yoyo: true,
       ease: "cubic-bazier(0.65,0.05,0.36,1)",
     });
-    gsap.to(line3.current, {
-      x: 1000,
-      repeat: -1,
-      duration: 5,
-      yoyo: true,
-      ease: "cubic-bazier(0.65,0.05,0.36,1)",
-    });
+    // gsap.to(line3.current, {
+    //   x: 1000,
+    //   repeat: -1,
+    //   duration: 5,
+    //   yoyo: true,
+    //   ease: "cubic-bazier(0.65,0.05,0.36,1)",
+    // });
     gsap.to(".teamupdata", {
       opacity: 0,
       duration: 2,
@@ -72,7 +72,7 @@ const Scroll = () => {
       <img src="./images/logo.png" className="w-[100px] h-[100px]" alt="" />
       <div class="dibba my-3">
         {" "}
-        <h1 class=" teamupdata flex justify-center items-center font-bold text-[30px]">
+        <h1 class=" teamupdata text-center flex justify-center items-center font-bold text-[30px]">
           Already team up and moving forward!
         </h1>
       </div>
@@ -107,17 +107,17 @@ const Scroll = () => {
 
           {/* line1 ends here */}
         </div>
-        <div
+        {/* <div
           ref={line3}
           class="medium my-5 -translate-x-[115px] flex gap-5 justify-center items-center"
         >
           {/* line1 start here */}
-          {data.map((d) => (
-            <Slide data={d} />
-          ))}
+        {/* {data.map((d) => (
+          <Slide data={d} />
+        ))} */}
 
-          {/* line1 ends here */}
-        </div>
+        {/* line1 ends here */}
+        {/* </div> */}
       </div>
     </div>
   );

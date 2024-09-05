@@ -8,6 +8,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -54,12 +55,12 @@ const Signup = () => {
 
   return (
     <>
-      <div className="min-h-dvh mainBackgroundImg flex justify-center items-center">
+      <div className="min-h-dvh mainBackgroundImg pt-14 flex justify-center items-center">
         <div className="p-8 w-[50%] max-w-[353px] min-w-[300px]">
           <div className="flex justify-center">
             <img
-              src={"/AIDEOA LOGO 1.jpg"}
-              className="mix-blend-color-burn"
+              src={"/logoback.png"}
+              className=" w-24 "
               alt="logo"
             />
           </div>
@@ -129,7 +130,7 @@ const Signup = () => {
             <span className="text-center text-sm text-red-500">{error}</span>
             <div className="text-center">
               <a
-                className="text-[#6E00FA] hover:text-purple-600 text-sm font-semibold"
+                className="text-white hover:text-purple-600 text-sm font-semibold"
                 href=""
               >
                 Forgot password?
@@ -137,7 +138,7 @@ const Signup = () => {
             </div>
             <div className="mt-4">
               <button
-                className="bg-[#6E00FA] hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
+                className="bg-purplebtn hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
                 type="submit"
               >
                 Sign Up
@@ -145,10 +146,10 @@ const Signup = () => {
             </div>
             <div className="mt-4 text-center text-white">
               <span>
-                Not have account yet?{" "}
-                <a href="" className="text-purple-400 hover:text-purple-600 ">
-                  sign up
-                </a>
+                Already have account {" "}
+              <Link to="/login" className="underline hover:text-purple-600 ">
+                  sign in
+               </Link>
               </span>
             </div>
           </form>

@@ -19,6 +19,7 @@ export default {
         darkpurple: "#5700C7",
         midpurple: "#5600C4",
         lightpurple: "#410094",
+        purplebtn:"#6E00FA"
       },
       height: {
         "custom-height": "508px",

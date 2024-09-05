@@ -11,7 +11,7 @@ const Section1 = () => {
         </p>
       </div>
       <div class="uldiv p-2">
-        <ul class=" list-disc px-2 flex flex-col justify-evenly items-start text-xl flex-wrap text-justify px-1 gap-y-[10px] ">
+        <ul class="w-[90%] mx-auto list-disc px-2 flex flex-col justify-evenly items-start text-xl flex-wrap text-justify gap-y-[10px] ">
           <li className=" px-2">
             सभी सीआईएल खदानों में माइनिंग सरदार और ओवरमैन की कमी का मूल्यांकन
             द्वारा रिक्तियों का निर्माण ।

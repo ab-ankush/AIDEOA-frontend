@@ -1,7 +1,7 @@
 import { FaChevronDown } from "react-icons/fa6";
 const Info = () => {
   return (
-    <div className="w-11/12 m-auto">
+    <div className="w-11/12 mb-10 m-auto">
       <div className="flex text-center xl:text-left flex-col xl:flex-row justify-between gap-20">
         <div>
           <div className="font-medium text-xl text-gray-800">

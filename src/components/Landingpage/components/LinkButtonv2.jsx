@@ -11,7 +11,7 @@ const LinkButtonv2 = () => {
           </div>
           <div className="flex flex-col  ">
             <div className="text-black font-normal text-lg">
-              <p>Apply ID Card</p>
+              <p>ID Card</p>
             </div>
           </div>
         </div>

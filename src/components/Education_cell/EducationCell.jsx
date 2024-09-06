@@ -21,6 +21,8 @@ const EducationCell = () => {
     ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
     ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
     ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+
   ];
   const data1 = [
     ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
@@ -72,10 +74,10 @@ const EducationCell = () => {
           index >= 4 ? <Card name={data} className="" /> : <Card name={data} />
         )}
       </div>
-     <Slider />
-     <EmailNotiCard />
-     <Footer />
-    
+      <Slider />
+      <EmailNotiCard />
+      <Footer />
+
     </div>
   );
 };

@@ -11,8 +11,8 @@ const Dashboard = () => {
             <div>
                 <Header />
                 <div className=' w-[90%] border border-gray-400 h-[600px] ml-7 m-5 p-4' style={{ boxShadow: '10px 10px 10px 0px gray' }}>
-                    <Chart />
-                    {/* <Table /> */}
+                    {/* <Chart /> */}
+                    <Table />
                 </div>
             </div>
         </div>

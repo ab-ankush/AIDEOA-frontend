@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header.jsx'
-import Chart from './Chart.jsx'
+import Chart from './Membership/Chart.jsx'
 import Table from './Table.jsx'
 const Dashboard = () => {
 

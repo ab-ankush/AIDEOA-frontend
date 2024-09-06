@@ -14,7 +14,7 @@ const Dashboard = () => {
         <div className="grid grid-cols-[1fr_19fr] w-screen h-screen bg-gray-100 ">
             <Sidebar setit={setit} />
             <div>
-                <Header />
+                <Header data={data} />
                 <div className="bg-white w-[90%]  h-[600px] ml-7 m-5 p-4 shadow-lg rounded-lg">
                     {
                         data.m ? <Chart /> : ''

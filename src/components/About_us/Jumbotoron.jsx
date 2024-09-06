@@ -3,20 +3,20 @@ const Jumbotoron = () => {
   
   return (
     <>
-      <div className=" mx-auto rounded-lg text-[35px]  justify-start items-center text-purple-600  flex flex-row max-sm:m-2 max-sm:mx-auto max-sm:w-[80%] max-sm:text-center sm:w-[450px]
+      <div className=" mx-auto rounded-lg  text-3xl justify-start items-center text-AIDEOTYPO  flex flex-row max-sm:m-2 max-sm:mx-auto max-sm:w-[80%] max-sm:text-center sm:w-[450px]
       sm:mx-auto  md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[100px] 2xl:w-[1300px]">
-        Who are we
+        -Who are we
       </div>
       <div
         id="sq"
-        className="container my-3 rounded-lg bg-[#0000000D]  justify-between items-center border max-sm:mx-auto max-sm:w-[80%]  flex max-md:flex-col-reverse sm:mx-auto sm:w-[450px]  md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]"
+        className="container my-3 dropshadowbox  rounded-2xl bg-[#0000000D] max-2xl:pr-0 justify-between items-center border max-sm:mx-auto max-sm:w-[80%]  flex max-md:flex-col-reverse sm:mx-auto sm:w-[450px]  md:w-[600px] lg:w-[800px] lg:flex-row xl:w-[1050px] xl:h-[350px] 2xl:w-[1300px]"
       >
-        <div className="flex flex-col sm:p-[10px] md:w-[40%] lg:w-[50%] xl:mx-[10px] 2xl:w-[50%] 2xl:mx-[20px]  ">
-          <h1 className="p-4 text-justify font-bold lg:py-2 lg:text-[30px] xl:text-[35px] 2xl:text-[50px]">
+        <div className="flex flex-col h-full gap-10 pt-10 md:w-[40%] lg:w-[50%] xl:mx-[10px] 2xl:w-[50%] 2xl:mx-[20px]  ">
+          <h1 className="py-4 pl-4 items-start text-start w-full font-semibold text-3xl max-lg:text-2xl">
             Aideoa is dedicated!{" "}
           </h1>
           <p
-            className="p-4 text-justify text-[#00000099] lg:py-2  lg:text-[15px] xl:text-[18px] 2xl:text-[20px]
+            className="px-4 pb-2 text-[#00000099]   lg:text-[15px] xl:text-[18px] 2xl:text-[20px]
 "
           >
             Welcome to our dynamic platform, a dedicated hub for Mining Diploma
@@ -26,10 +26,10 @@ const Jumbotoron = () => {
             industry excellence.
           </p>
         </div>
-        <div className="flex sm:mb-3 md:w-[60%] sm:mt-4 lg:mx-3  2xl:mx-[30px]">
+        <div className="w-[408px] rounded-2xl p-5">
           <img
             src="./images/home.jpeg"
-            className=" rounded-lg sm:w-[400px] sm:h-[200px] md:px-4 md:w-[350px] md:h-[300px] lg:w-[400px] lg:h-[170px] xl:h-[300px] xl:mx-auto xl:w-[450px] 2xl:w-[550px] 2xl:h-[300px]"
+            className="rounded-2xl"
             alt=""
           />
         </div>

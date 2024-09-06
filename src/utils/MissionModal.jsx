@@ -1,8 +1,9 @@
-import React from "react";
-
-const Section1 = () => {
+import { AiOutlineCloseCircle } from "react-icons/ai";
+const MissionModal = ({setOpen}) => {
   return (
-    <div className="centerdiv mx-4 overflow-x-hidden flex flex-col justify-center items-center">
+    <div className=" bg-white border  border-1 dropshadowbox rounded-2xl w-full my-20 customScrollbar  overflow-y-scroll  scroll-smooth  h-[80vh] ">
+         <div className=" overflow-x-hidden  flex flex-col justify-center items-center">
+         <AiOutlineCloseCircle onClick={()=>setOpen(false)} size={35} className="absolute cursor-pointer top-[40px]"/>
       <h1 className="text-[35px] my-3 font-bold">Our Mission</h1>
       <div className="pdiv flex justify-center items-center my-5">
         <p className="text-sm text-center ">
@@ -73,7 +74,8 @@ const Section1 = () => {
         </ul>
       </div>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Section1;
+export default MissionModal

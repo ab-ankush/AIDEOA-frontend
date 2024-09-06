@@ -1,4 +1,5 @@
-import React from "react";
+import MissionModal from "../../../utils/MissionModal"
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const flow =[{head:"Aideoa Events",p:"1200+  events",link:"/event"},
@@ -17,6 +18,11 @@ const aboutArray=[
 
 const About = () => {
 
+const [open,setOpen]=useState(false)
+
+const handleOpenModal=(idx)=>{
+  idx===0 && setOpen(true)
+}
   return (
     <div className="bg-white min-h-screen flex items-center justify-center">
       <div className=" container py-20">
@@ -45,11 +51,14 @@ const About = () => {
           <p className="font-normal text-base text-[#505050]">
             Know about our organization, mission, and objectives.
           </p>
-          <div className="flex justify-center gap-12 flex-wrap">
+          <div className="flex justify-center gap-12 relative flex-wrap ">
             
+{       open &&     <div className="fixed container px-48 max-lg:px-14 max-lg:px-6 top-[57%] left-1/2  transform -translate-x-1/2 -translate-y-1/2 transition ease-in duration-500 ">
+              <MissionModal  setOpen={setOpen}/>
+            </div>}
            
             {aboutArray.map((content,idx)=>{
-              return <div key={idx} className="w-96 bg-[#00000008] h-80 rounded-3xl shadow-xl flex justify-center items-center flex-col gap-12 max-sm:w-80">
+              return <div key={idx} onClick={()=>{handleOpenModal(idx)}}  className="w-96 cursor-pointer bg-[#00000008] h-80 rounded-3xl shadow-xl flex justify-center items-center flex-col gap-12 max-sm:w-80 ">
               <img
                 src={content.icon}
                 alt=""

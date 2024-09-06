@@ -2,6 +2,7 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import { FaDribbble, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import BottomFooter from './BottomFooter';
+import { Link } from 'react-router-dom';
 const orgainization=[
     {name:"About Us",link:"/about"},
     {name:"Events",link:"/events"},
@@ -26,7 +27,7 @@ const Footer = () => {
             <h1 className='text-white font-semibold text-xl mb-2'>Organization</h1>
             {
                 orgainization.map((item,idx)=>{
-                    return <span key={idx} className='text-gray-400  text-lg hover:text-purple-700'>{item.name}</span>
+                    return <Link to={item.link} key={idx} ><span className='text-gray-400  text-lg hover:text-purple-700'>{item.name}</span></Link>
                 })
             }
             </div>
@@ -34,7 +35,7 @@ const Footer = () => {
             <h1 className='text-white font-semibold text-xl mb-2'>Memberhsip</h1>
             {
                 membership.map((item,idx)=>{
-                    return <span key={idx} className='text-gray-400  text-lg hover:text-purple-700'>{item.name}</span>
+                    return <Link to={item.link} key={idx} ><span className='text-gray-400  text-lg hover:text-purple-700'>{item.name}</span></Link>
                 })
             }
             </div>

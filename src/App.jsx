@@ -18,6 +18,7 @@ import Transactions from "./adminpanel/Transactions";
 import Dashboard from "./components/Admin_panel/Dashboard.jsx";
 import MainLayout from "./layout/MainLayout.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
+import MissionModal from "./utils/MissionModal";
 export default function App() {
   return (
     <ScrollToTop>
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="home" element={<Landingpage />} />
         </Route>
         <Route path="/admin" element={<Dashboard />} />
+   
       </Routes>
     </ScrollToTop>
   );

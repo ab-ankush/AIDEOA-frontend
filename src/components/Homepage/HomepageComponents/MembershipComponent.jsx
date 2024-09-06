@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MembershipComponent = () => {
   return (
     <div className="min-h-screen mainBackgroundImg  flex justify-center flex-col items-center">
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-3">
         <img src={"logoback.png"} className="w-24 " alt="logo" />
       </div>
       <div className=" p-8  flex flex-col gap-12 max-w-[831px]  items-center text-center">

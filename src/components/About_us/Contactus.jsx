@@ -3,9 +3,9 @@ import Jumbotoron from "./Jumbotoron";
 import Mission from "./Mission";
 import Offering from "./Offering";
 
-import Footer from "./Footer.jsx";
 import TopImageCard from "../Cards/TopImageCard.jsx";
 import EmailNotiCard from "../Cards/EmailNotiCard.jsx";
+import Footer from "../Cards/Footer";
 
 const Contactus = () => {
   return (

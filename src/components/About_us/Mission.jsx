@@ -28,7 +28,7 @@ const Mission = () => {
         return (
           <div
           id="line1"
-          className="  my-4 dropshadowbox rounded-2xl bg-[#0000000D] flex flex-col px-7  items-center w-80 h-[470px] justify-center gap-10"
+          className="  my-4 lightdropshadowbox rounded-2xl bg-[#0000000D] flex flex-col px-7  items-center w-80 h-[470px] justify-center gap-10"
          key={idx}
         >
           <div className="flex max-md:flex-col  lg:mx-3  ">

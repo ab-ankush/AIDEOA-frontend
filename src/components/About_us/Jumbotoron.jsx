@@ -26,10 +26,10 @@ const Jumbotoron = () => {
             industry excellence.
           </p>
         </div>
-        <div className="w-[408px] rounded-2xl p-5">
+        <div className="max-w-[408px] rounded-2xl p-5">
           <img
             src="./images/home.jpeg"
-            className="rounded-2xl"
+            className="rounded-2xl w-full h-full"
             alt=""
           />
         </div>

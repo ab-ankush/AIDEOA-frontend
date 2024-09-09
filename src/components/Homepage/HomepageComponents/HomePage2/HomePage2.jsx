@@ -5,6 +5,7 @@ import Section3 from "./Section3";
 
 import Footer from "../../../Cards/Footer";
 import Slider from "../../../Cards/Slider/Slider";
+import Carousel from "../../..//carousel/Carousel";
 
 const HomePage2 = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage2 = () => {
       <Section1 />
    <Slider />
       <Section3 />
+      <Carousel />
       <Footer />
     </>
   );

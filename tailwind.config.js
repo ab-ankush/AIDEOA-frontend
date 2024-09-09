@@ -12,7 +12,7 @@ export default {
           " linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),url(/public/Rectangle128.png)",
         "header-background-bluetheme": "url(/public/Rectangle 145.png)",
         landingpageBackgroundImage:
-          "linear-gradient(rgba(31, 31, 31, 0.85), rgba(31, 31, 31, 0.65)),url('/public/landingpage.jpg')",
+          "linear-gradient(rgba(31, 31, 31, 0.85), rgba(31, 31, 31, 0.65)),url('/public/122.jpg')",
       },
       colors: {
         AIDEOTYPO: "rgba(110, 0, 250, 1)",

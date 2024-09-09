@@ -3,7 +3,7 @@ import React from "react";
 const Section1 = () => {
   return (
     <div className="centerdiv mx-4 overflow-x-hidden flex flex-col justify-center items-center">
-      <h1 className="text-[35px] my-3 font-bold">Our Mission</h1>
+      <h1 className="font-semibold text-[35px] leading-15">Our Mission</h1>
       <div className="pdiv flex justify-center items-center my-5">
         <p className="text-sm text-center ">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, ad?

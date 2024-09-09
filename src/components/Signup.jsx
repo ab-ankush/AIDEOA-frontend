@@ -74,7 +74,7 @@ const Signup = () => {
                 className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
                 name="username"
                 type="text"
-                placeholder="Username"
+                placeholder="Name"
                 value={formData.username}
                 onChange={handleChange}
               />
@@ -128,14 +128,7 @@ const Signup = () => {
               />
             </div>
             <span className="text-center text-sm text-red-500">{error}</span>
-            <div className="text-center">
-              <a
-                className="text-white hover:text-purple-600 text-sm font-semibold"
-                href=""
-              >
-                Forgot password?
-              </a>
-            </div>
+
             <div className="mt-4">
               <button
                 className="bg-purplebtn hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
@@ -147,9 +140,9 @@ const Signup = () => {
             <div className="mt-4 text-center text-white">
               <span>
                 Already have account {" "}
-              <Link to="/login" className="underline hover:text-purple-600 ">
+                <Link to="/login" className="underline hover:text-purple-600 ">
                   sign in
-               </Link>
+                </Link>
               </span>
             </div>
           </form>

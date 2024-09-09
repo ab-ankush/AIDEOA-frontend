@@ -4,7 +4,6 @@ import About from "./HomepageComponents/About";
 import Featured from "./HomepageComponents/Featured";
 import LatestUpdates from "./HomepageComponents/LatestUpdates";
 import Homepage2 from "./HomepageComponents/HomePage2/HomePage2.jsx";
-import BottomFooter from "../Cards/BottomFooter.jsx";
 
 const Homepage = () => {
   return (
@@ -13,7 +12,6 @@ const Homepage = () => {
       <MembershipComponent />
       <About />
       <Featured />
-
       <LatestUpdates />
       <Homepage2 />
    

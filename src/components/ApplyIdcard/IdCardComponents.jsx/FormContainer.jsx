@@ -6,6 +6,7 @@ import EmployeeForm from "./EmployeeForm";
 // import { Link } from 'react-router-dom'
 const FormContainer = () => {
   const [formType, SetFormType] = useState(true);
+  const [submit, setsubmit] = useState(false)
   return (
     <div className="my-20 relative mx-32 flex flex-col gap-6 max-xl:mx-8 max-lg:mx-8 max-md:mx-4 max-sm:mx-2 ">
       <p className="text-xl font-medium">ID Card form</p>
@@ -40,11 +41,13 @@ const FormContainer = () => {
           Submit
         </button>
       </div>
-      <div className=" flex ">
-        <button className="w-52 max-sm:w-full h-12 membershipBtn rounded-2xl text-white font-medium text-lg">
-          Download Id Card
-        </button>
-      </div>
+      {
+        submit ? <div className=" flex ">
+          <button className="w-52 max-sm:w-full h-12 membershipBtn rounded-2xl text-white font-medium text-lg">
+            Download Id Card
+          </button>
+        </div> : ""
+      }
     </div>
   );
 };

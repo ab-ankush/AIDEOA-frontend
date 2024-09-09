@@ -3,6 +3,28 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        xsm: "450px",
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
+      },
+      aspectRatio: {
+        "4/3": "4 / 3",
+        "3/2": "3 / 2",
+        "16/9": "16 / 9",
+      },
       backgroundImage: {
         "custom-gradient":
           "linear-gradient(270deg, rgba(87, 0, 199, 0.4) 6.44%, rgba(86, 0, 196, 0.5) 46.74%, #410094 100%)",
@@ -19,7 +41,7 @@ export default {
         darkpurple: "#5700C7",
         midpurple: "#5600C4",
         lightpurple: "#410094",
-        purplebtn:"#6E00FA"
+        purplebtn: "#6E00FA",
       },
       height: {
         "custom-height": "508px",

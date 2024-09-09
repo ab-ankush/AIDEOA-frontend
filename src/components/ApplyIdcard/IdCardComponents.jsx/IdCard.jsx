@@ -1,29 +1,29 @@
 import { useState } from "react";
 
 const IdCard = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   return (
     <div className="flex flex-col  w-full justify-around ">
       <div className="flex flex-col  justify-center items-center">
-      {show ?  <div
+        {show ? <div
           id="frontcover"
           onMouseEnter={() => { setShow(false) }}
           className=" 
-            bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden "
+            bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] "
         >
           <div className="relative">
-            <img src="/card/lower.svg" className="" alt="" />
+            <img src="/card/lower.svg" className="max-xsm:w-full" alt="" />
             <div className="absolute flex top-[10px] ">
-            <img
+              <img
                 src="/images/logo.png"
                 className="h-[50px] w-[50px] "
                 alt=""
               />
-               </div>
-              <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
-                All india diploma engineers & Officials Association (AIDEOA)
-              </p>
-           
+            </div>
+            <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
+              All india diploma engineers & Officials Association (AIDEOA)
+            </p>
+
             <div className="h-[266px] w-[391px] ">
               <img
                 src=""
@@ -33,7 +33,7 @@ const IdCard = () => {
               <h1 className="my-10px absolute  text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold">
                 VICTOR ANIH
               </h1>
-             
+
               <div className="my-[10px] w-[292px] h-[91px] mx-auto bg-white rounded-lg left-1/2 top-[300px] absolute transform -translate-x-1/2 -translate-y-1/2 text-center flex justify-center items-center">
                 <div className="flex flex-col text-[11px] justify-start items-start">
                   <div className=" flex justify-start items-start">
@@ -54,55 +54,55 @@ const IdCard = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute flex flex-col justify-start items-start left-[130px] top-[420px] absolute transform -translate-x-1/2 -translate-y-1/2">
-                <img src="/images/send/sign.png" className=" bg-white w-[70px] h-[45px]" alt="" />
+              <div className="absolute flex flex-col justify-start items-start left-[130px] top-[420px] absolute transform -translate-x-1/2 -translate-y-1/2 max-xsm:left-[105px] max-xsm:top-[390px]">
+                <img src="/images/send/sign.png" className=" bg-white w-[70px] h-[45px] mx-auto" alt="" />
                 <p className="text-[10px] text-purple-700 font-medium">National General Secretary AIDEOA</p>
               </div>
             </div>
             <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
               <p className="text-[11px] ">Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
             </div>
-            <img src="/card/upper.svg" className="" alt="" />
+            <img src="/card/upper.svg" className="max-xsm:w-full" alt="" />
           </div>
         </div> : <div
           id="backcover"
           onMouseLeave={() => { setShow(true) }}
-          className="  bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden "
+          className="  bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit "
         >
           <div className="relative">
-            <img src="/card/lower.svg" className="w-[391px] h-[190px]" alt="" />
-            <div className="absolute flex top-[10px] ">
+            <img src="/card/lower.svg" className=" max-xsm:w-full w-[391px] h-[190px] max-sm:h-fit" alt="" />
+            <div className="absolute flex top-[10px] max-sm:w-full ">
               <img
                 src="/images/logo.png"
                 className="h-[50px] w-[50px] "
                 alt=""
               />
-            
+
             </div>
             <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
-                All india diploma engineers & Officials Association (AIDEOA)
-              </p>
-           
-            <div className=" relative top-[-40px]  px-6 py-4 h-[266px] w-[391px]">
-              <h1 className="text-purple-800 font-bold mx-4">Terms and Conditions</h1>
-              <p className="mx-5 my-2  text-[12px]">
+              All india diploma engineers & Officials Association (AIDEOA)
+            </p>
+
+            <div className="max-xsm:w-full max-xsm:p-[10px] relative top-[-40px]  px-6 py-4 h-[266px] w-[391px]">
+              <h1 className="text-purple-800 max-xsm:text-center font-bold mx-4">Terms and Conditions</h1>
+              <p className="max-xsm:m-[5px] mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <p className="mx-5 my-2  text-[12px]">
+              <p className="max-xsm:m-[5px] mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
-              <p className="mx-5 my-2  text-[12px]">
+              <p className="max-xsm:m-[5px] mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
                 adipicing elit, sad diam nonummy nibh eulsmod.
               </p>
 
-              <div className="mx-5 flex  items-center gap-2">
-                <h1 className="text-purple-800 font-bold">Valid Upto 
+              <div className="max-xsm:m-[5px] mx-5 flex  items-center gap-2">
+                <h1 className="text-purple-800 font-bold">Valid Upto
 
                 </h1>
                 <p className=" bg-white  text-centerrouded-full px-2 py-1 rounded-full text-xs">
@@ -113,7 +113,7 @@ const IdCard = () => {
             <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
               <p className="text-[11px] ">Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
             </div>
-            <img src="/card/upper.svg" className="w-[391px] h-[91px]" alt="" />
+            <img src="/card/upper.svg" className=" max-xsm:w-full w-[391px] h-[91px] max-xsm:h-fit" alt="" />
           </div>
         </div>}
 

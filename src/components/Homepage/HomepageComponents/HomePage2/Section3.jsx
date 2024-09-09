@@ -1,6 +1,10 @@
 import React from "react";
 
 const Section3 = () => {
+  const slidefunc = () => {
+
+  }
+
   return (
     <div
       id="sec3"
@@ -13,9 +17,27 @@ const Section3 = () => {
           labore!
         </p>
       </div>
-      <div class="mx-auto">
-        <div
-          class="images-container flex gap-5 w-full h-full flex-col justify-center items-center flex-wrap lg:w-[900px] lg:h-[400px] lg:grid lg:grid-cols-6 mb-5"
+      {/* apply carousel below  */}
+
+
+      {/* apply carousel above */}
+    </div>
+  );
+};
+
+export default Section3;
+
+// <div class="image xl:col-start-2 col-end-4 ">
+{
+  /* <img
+class="w-full rounded-[10px] h-full object-fill"
+src="/images/2.jpg"
+alt=""
+/>
+</div> */
+}
+{/* <div
+          class="images-container flex gap-5 w-full h-full flex-row justify-center items-center flex-wrap lg:w-[900px] lg:h-[400px] lg:flex lg:flex-cols mb-5"
           style={{ gridAutoColumns: "13%" }}
         >
           <div class=" h-full  sm:my-2 lg:my-0 flex justify-center items-center image lg:col-start-1 lg:col-end-2 lg:h-[200px] ">
@@ -88,21 +110,5 @@ const Section3 = () => {
               src="/images/home.jpeg"
               alt=""
             />
-          </div> */}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Section3;
-
-// <div class="image xl:col-start-2 col-end-4 ">
-{
-  /* <img
-class="w-full rounded-[10px] h-full object-fill"
-src="/images/2.jpg"
-alt=""
-/>
-</div> */
-}
+          // </div> */}
+// </div> */}

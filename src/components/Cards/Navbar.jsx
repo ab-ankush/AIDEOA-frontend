@@ -17,16 +17,15 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed z-10 w-full bg-white opacity-100 flex  flex-row justify-between items-center">
-       <Link to="/">
-       <div
-          className=" adeiou flex  flex-row justify-center items-center"
-          id="brand"
-        >
-          <img src="./images/logo.png" className=" wo pl-2" alt="" />
-          <h2 className=" wo pr-2 font-extrabold">AIDEOA</h2>
-        </div>
-       </Link>
-       
+        <Link to="/">
+          <div
+            className=" adeiou flex  flex-row justify-center items-center"
+            id="brand"
+          >
+            <img src="./images/logo.png" className="max-sm:h-[50px]   pl-2" alt="" />
+          </div>
+        </Link>
+
         <div className="  max-lg:hidden lg:flex  lg:flex-row  gap-2 ">
           <div className=" adeiou flex flex-row justify-between items-center">
             <Link
@@ -98,8 +97,7 @@ const Navbar = () => {
               className="flex flex-row justify-center items-center"
               id="brand"
             >
-              <img src="./images/logo.png" className="pl-2" alt="" />
-              <h2 className="pr-2 font-extrabold">AIDEOA</h2>
+              <img src="./images/logo.png" className="pl-2 h-[50px] " alt="" />
             </div>
             <div onClick={sethamfunc} id="hamicon lg:block ">
               {ham ? (

@@ -19,9 +19,9 @@ const Offering = () => {
               />
             </div>
             <div className="flex flex-col lg:w-[250px]  ">
-              <h1 className="p-4 font-bold text-justify">
+              <p className="p-4 font-bold text-justify">
                 Empower and Advocate{" "}
-              </h1>
+              </p>
               <p className="p-4 text-[#00000099] ">
                 We tackle the unique challenges faced by mining students, from
                 examination hurdles and promotion pathways to certificate
@@ -42,9 +42,9 @@ const Offering = () => {
               />
             </div>
             <div className="flex flex-col lg:w-[250px]  ">
-              <h1 className="p-4 font-bold ">
+              <p className="p-4 font-bold ">
                 Educational Excellence{" "}
-              </h1>
+              </p>
               <p className="p-4 text-[#00000099] ">
                 We offer a wealth of study materials, including free books, MCQ
                 questions, and detailed notes for a variety of mining exams like

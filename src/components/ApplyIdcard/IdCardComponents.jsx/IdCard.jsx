@@ -30,9 +30,9 @@ const IdCard = () => {
                 className=" absolute  border-[2px] border-purple-400 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
                 alt=""
               />
-              <h1 className="my-10px absolute  text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold">
+              <p className="my-10px absolute  text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold">
                 VICTOR ANIH
-              </h1>
+              </p>
 
               <div className="my-[10px] w-[292px] h-[91px] mx-auto bg-white rounded-lg left-1/2 top-[300px] absolute transform -translate-x-1/2 -translate-y-1/2 text-center flex justify-center items-center">
                 <div className="flex flex-col text-[11px] justify-start items-start">
@@ -84,7 +84,7 @@ const IdCard = () => {
             </p>
 
             <div className="max-xsm:w-full max-xsm:p-[10px] relative top-[-40px]  px-6 py-4 h-[266px] w-[391px]">
-              <h1 className="text-purple-800 max-xsm:text-center font-bold mx-4">Terms and Conditions</h1>
+              <p className="text-purple-800 max-xsm:text-center font-bold mx-4">Terms and Conditions</p>
               <p className="max-xsm:m-[5px] mx-5 my-2  text-[12px]">
                 Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam
                 nonummy nibh eulsmod. Lorem ipsum dolor sit amet, consectetul
@@ -102,9 +102,9 @@ const IdCard = () => {
               </p>
 
               <div className="max-xsm:m-[5px] mx-5 flex  items-center gap-2">
-                <h1 className="text-purple-800 font-bold">Valid Upto
+                <p className="text-purple-800 font-bold">Valid Upto
 
-                </h1>
+                </p>
                 <p className=" bg-white  text-centerrouded-full px-2 py-1 rounded-full text-xs">
                   31 March 2025
                 </p>

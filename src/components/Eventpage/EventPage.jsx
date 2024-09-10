@@ -28,9 +28,11 @@ const EventPage = () => {
        <Slider textColor={"white"} shadowColor={"blue-900"}/>
         </div>
         <InfoHeader/>
+
         <div className="flex gap-10 flex-col">
         <NewsCard />
         <NewsCard/>
+        <a className="text-center text-xl  text-black" href="#">Read More...</a>
         <EmailNotiCard/>
         <Footer/>
         </div>

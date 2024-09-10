@@ -15,9 +15,9 @@ const Mission = () => {
             <img src="./images/send/setting.png" className=" " alt="" />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
-            <h1 className="p-4 font-bold text-justify">
+            <p className="p-4 font-bold text-justify">
               Empower and Advocate{" "}
-            </h1>
+            </p>
             <p className="p-4 text-[#00000099] text-justify">
               We tackle the unique challenges faced by mining students, from
               examination hurdles and promotion pathways to certificate issuance
@@ -40,9 +40,9 @@ const Mission = () => {
             />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
-            <h1 className="p-4 font-bold text-justify">
+            <p className="p-4 font-bold text-justify">
               Community Leadership{" "}
-            </h1>
+            </p>
             <p className="p-4 text-[#00000099] text-justify">
               Our involvement in key events related to promotions, examinations,
               and grievance resolutions, ensures that voices from every corner
@@ -64,9 +64,9 @@ const Mission = () => {
             />
           </div>
           <div className="flex flex-col lg:w-[250px]  ">
-            <h1 className="p-4 font-bold text-justify">
+            <p className="p-4 font-bold text-justify">
               Educational Excellence{" "}
-            </h1>
+            </p>
             <p className="p-4 text-[#00000099] text-justify">
               We offer a wealth of study materials, including free books, MCQ
               questions, and detailed notes for a variety of mining exams like

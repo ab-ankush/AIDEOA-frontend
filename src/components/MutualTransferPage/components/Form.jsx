@@ -3,13 +3,13 @@ import { useState } from "react";
 const Form = () => {
   const [form,setForm]=useState(false);
   return (
-    <div className="text-center m-auto w-[95%] lg:w-2/3">
+    <div id="form-section" className=" text-center m-auto w-[95%] lg:w-2/3">
       <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
         <div className=" w-full ">
           <button className={`lg:text-xl w-full  p-2 lg:p-4  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white" }`} onClick={()=>setForm(!form)}>Non-Executive</button>
         </div>
         <div className="w-full  ">
-          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-4 ${form?" bg-purple-600 rounded-full text-white":""} `} onClick={()=>setForm(!form)}>Executive</button>
+          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-4 ${form?" bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white":""} `} onClick={()=>setForm(!form)}>Executive</button>
         </div>
       </div>
 
@@ -100,9 +100,9 @@ const Form = () => {
               <input
                 id="mobile-number"
                 name="mobile-number"
-                placeholder="Sample@gmail.com"
+                placeholder="91xxxxxxxx"
                 className="rounded-3xl bg-gray-100 border  border-gray-300 p-4 w-full"
-                type="text"
+                type="number"
               />
             </div>
             <div className="flex flex-col text-left gap-y-5 mb-5">
@@ -161,6 +161,21 @@ const Form = () => {
           </label>
           <input
             placeholder="Write here......"
+            className="rounded-3xl bg-gray-100 border border-gray-300 p-4 "
+            type="text"
+            name="transfer-subsidiary"
+            id="tsf-subsidiary"
+          />
+        </div>
+        <div className="flex flex-col text-left gap-y-5 mb-16">
+          <label
+            className="font-poppins font-medium text-xl"
+            htmlFor="tsf-subsidiary"
+          >
+            Preferred Transfer Mine
+          </label>
+          <input
+            placeholder="Enter mine name"
             className="rounded-3xl bg-gray-100 border border-gray-300 p-4 "
             type="text"
             name="transfer-subsidiary"

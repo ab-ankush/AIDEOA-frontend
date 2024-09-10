@@ -10,7 +10,7 @@ function Sidebar(props) {
     props.setit(data)
   }
   return (
-    <div className=" h-full flex flex-col justify-between items-center  rounded-lg shadow-xl">
+    <div className=" h-full flex flex-col justify-between items-centershadow-inner  rounded-tr-3xl rounded-br-3xl shadow-2xl">
       <div className="py-4 space-y-5 flex flex-col justify-around items-center">
         <img src="/images/logo.png" className="w-10 h-10" alt="" />
         <button id='member' onClick={() => { changeColor({ m: true, u: false, t: false }); }} ><FiPieChart className={`w-8 h-8 bg-white ${color.m ? 'text-red-600' : 'text-purple-600'} `} /></button>

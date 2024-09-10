@@ -6,7 +6,7 @@ const Footer = () => {
   return ( <div>
     <div className="bg-black h-full grid grid-cols-4 px-28 py-10 max-xl:px-15 max-lg:px-10 max-md:px-5 max-sm:grid-cols-2 max-sm:gap-5">
       <div className="pr-3 border-r-2 ">
-        <h1 className="text-white font-medium text-xl mb-2">Key words</h1>
+        <p className="text-white font-medium text-xl mb-2">Key words</p>
         <div className="grid grid-cols-2 gap-2 ">
           {Array(12)
             .fill("")
@@ -25,9 +25,9 @@ const Footer = () => {
       <div className="flex justify-center px-3 border-r-2 ">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-6">
-            <h1 className="font-medium text-xl rounded text-white">
+            <p className="font-medium text-xl rounded text-white">
               Subscribe now
-            </h1>
+            </p>
             <div className="max-w-64 h-9 relative">
               <input className="w-full h-full rounded" />
               <button className="bg-purple-700 absolute rounded right-0 w-11 h-full top-0 flex items-center justify-center">
@@ -36,9 +36,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col gap-6 mb-8">
-            <h1 className="font-mdeium text-xl text-white">
+            <p className="font-mdeium text-xl text-white">
               Lorem Ipsum is simple
-            </h1>
+            </p>
             <p className="text-base text-gray-400">
               Go to our official Announcements
             </p>
@@ -48,15 +48,15 @@ const Footer = () => {
       <div className="flex justify-center px-3 border-r-2 ">
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-6">
-            <h1 className="font-mdeium text-xl text-white">
+            <p className="font-mdeium text-xl text-white">
               Lorem Ipsum is simple
-            </h1>
+            </p>
             <p className="text-base text-gray-400">Go to DID requirements</p>
           </div>
           <div className="flex flex-col gap-6 mb-8">
-            <h1 className="font-mdeium text-xl text-white">
+            <p className="font-mdeium text-xl text-white">
               Lorem Ipsum is simple
-            </h1>
+            </p>
             <p className="text-base text-gray-400">Go to DID requirements</p>
           </div>
         </div>

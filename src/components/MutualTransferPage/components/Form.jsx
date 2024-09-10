@@ -34,25 +34,13 @@ setOpen(true)
   }
 
   return (
-    <div className="text-center relative m-auto w-[95%] lg:w-2/3">
-      <div className="flex justify-center w-full mb-10">
-        <div className="p-1 border-2 flex border-gray-200 max-w-full rounded-full">
-          <button
-            className={`w-72 h-10 rounded-full text-sm text-black font-medium ${
-              formType && "membershipBtn text-white"
-            }`}
-            onClick={() => setFormType(true)}
-          >
-            Non-Executive
-          </button>
-          <button
-            className={`w-72 h-10 rounded-full text-sm text-black font-medium ${
-              !formType && "membershipBtn text-white"
-            }`}
-            onClick={() => setFormType(false)}
-          >
-            Executive
-          </button>
+    <div id="form-section" className=" text-center m-auto w-[95%] lg:w-2/3">
+      <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
+        <div className=" w-full ">
+          <button className={`lg:text-xl w-full  p-2 lg:p-4  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white" }`} onClick={()=>setForm(!form)}>Non-Executive</button>
+        </div>
+        <div className="w-full  ">
+          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-4 ${form?" bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white":""} `} onClick={()=>setForm(!form)}>Executive</button>
         </div>
       </div>
       <form onSubmit={handleReview}>
@@ -140,13 +128,11 @@ setOpen(true)
                 Mobile Number
               </label>
               <input
-                id="mobile"
-                name="mobile"
-                placeholder="Sample@gmail.com"
-                className="rounded-3xl bg-gray-100 border border-gray-300 p-4 w-full"
-                type="text"
-                value={formData.mobile}
-                onChange={handleChange}
+                id="mobile-number"
+                name="mobile-number"
+                placeholder="91xxxxxxxx"
+                className="rounded-3xl bg-gray-100 border  border-gray-300 p-4 w-full"
+                type="number"
               />
             </div>
 
@@ -226,7 +212,21 @@ setOpen(true)
             onChange={handleChange}
           />
         </div>
-
+        <div className="flex flex-col text-left gap-y-5 mb-16">
+          <label
+            className="font-poppins font-medium text-xl"
+            htmlFor="tsf-subsidiary"
+          >
+            Preferred Transfer Mine
+          </label>
+          <input
+            placeholder="Enter mine name"
+            className="rounded-3xl bg-gray-100 border border-gray-300 p-4 "
+            type="text"
+            name="transfer-subsidiary"
+            id="tsf-subsidiary"
+          />
+        </div>
         <div>
           <button
             className="bg-gradient-to-r text-xl font-normal from-purple-800 via-purple-500 to-purple-400 p-2 rounded-full w-60 text-white"

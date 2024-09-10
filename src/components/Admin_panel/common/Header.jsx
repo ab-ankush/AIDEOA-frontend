@@ -7,7 +7,7 @@ const Header = (props) => {
     <>
       {data.m ? (
         <div className="flex overflow-x-hidden justify-between items-center p-[10px] ml-7 my-2 mx-5">
-          <h1 className="text-[30px] ">Dashboard</h1>
+          <p className="text-[30px] ">Dashboard</p>
           <div className="flex justify-center items-center my-[20px] px-[10px] pr-[30px]">
             {/* <img src="images/logo.png" className='w-[44px] h-[44px] rounded-full' alt="" /> */}
             {/* <p className='text-[25px]'>Anna</p> */}

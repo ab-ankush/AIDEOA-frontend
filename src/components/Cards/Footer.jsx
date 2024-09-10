@@ -23,7 +23,7 @@ const Footer = () => {
         <div className='pr-3 flex border-r-2  gap-3 max-sm:border-none'>
            
             <div className='flex flex-col gap-1 '>
-            <h1 className='text-white font-semibold text-xl mb-2'>Organization</h1>
+            <p className='text-white font-semibold text-xl mb-2'>Organization</p>
             {
                 orgainization.map((item,idx)=>{
                     return <span key={idx} className='text-gray-400  text-lg hover:text-purple-700'>{item.name}</span>
@@ -31,7 +31,7 @@ const Footer = () => {
             }
             </div>
             <div className='flex flex-col gap-1'>
-            <h1 className='text-white font-semibold text-xl mb-2'>Memberhsip</h1>
+            <p className='text-white font-semibold text-xl mb-2'>Memberhsip</p>
             {
                 membership.map((item,idx)=>{
                     return <span key={idx} className='text-gray-400  text-lg hover:text-purple-700'>{item.name}</span>
@@ -43,14 +43,14 @@ const Footer = () => {
         <div className='flex px-3 border-r-2 max-xl:border-none max-sm:px-0 max-sm:py-3'>
             <div className='flex flex-col gap-3 justify-between'>
                 <div className='flex flex-col gap-3'>
-                <h1 className='font-medium text-xl rounded text-white'>Subscribe now</h1>
+                <p className='font-medium text-xl rounded text-white'>Subscribe now</p>
                 <div className='max-w-64 h-9 relative'>
                     <input  className='w-full h-full rounded border-none px-2 focus:outline-none'/>
                     <button className='bg-purple-700 absolute border-none rounded right-0 w-11 h-full top-0 flex items-center justify-center' ><CiSearch size={22} className='text-white '/></button>
                 </div>
                 </div>
                 <div className='flex flex-col gap-2 mb-3'>
-                <h1 className='font-mdeium text-xl text-white'>Lorem Ipsum is simple</h1>
+                <p className='font-mdeium text-xl text-white'>Lorem Ipsum is simple</p>
                 <p className='text-base text-gray-400'>Go to our official Announcements</p>
            
                 </div>
@@ -59,12 +59,12 @@ const Footer = () => {
         <div className='flex px-3 border-r-2 pt-3 max-xl:px-0 max-sm:border-none'>
             <div className='flex flex-col gap-3 justify-between'>
             <div className='flex flex-col gap-1'>
-                <h1 className='font-mdeium text-xl text-white'>Lorem Ipsum is simple</h1>
+                <p className='font-mdeium text-xl text-white'>Lorem Ipsum is simple</p>
                 <p className='text-base text-gray-400'>Go to DID requirements</p>
            
                 </div>
                 <div className='flex flex-col gap-1 mb-8'>
-                <h1 className='font-mdeium text-xl text-white'>Office Address</h1>
+                <p className='font-mdeium text-xl text-white'>Office Address</p>
                 <p className='text-base text-gray-400'>Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
            
                 </div>

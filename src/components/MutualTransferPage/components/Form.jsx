@@ -6,10 +6,10 @@ const Form = () => {
     <div id="form-section" className=" text-center m-auto w-[95%] lg:w-2/3">
       <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
         <div className=" w-full ">
-          <button className={`lg:text-xl w-full  p-2 lg:p-4  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white" }`} onClick={()=>setForm(!form)}>Non-Executive</button>
+          <button className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white" }`} onClick={()=>setForm(false)}>Non-Executive</button>
         </div>
         <div className="w-full  ">
-          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-4 ${form?" bg-gradient-to-r from-purple-950 via-purple-600 to-purple-400 rounded-full text-white":""} `} onClick={()=>setForm(!form)}>Executive</button>
+          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-3 ${form?" bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white":""} `} onClick={()=>setForm(true)}>Executive</button>
         </div>
       </div>
 

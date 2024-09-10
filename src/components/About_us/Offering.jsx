@@ -1,61 +1,37 @@
 import React from "react";
 
+const data = [
+  {
+    title: "Rich Study Resources",
+    description: "Dive into our extensive collection of study materials tailored to help you conquer your mining examinations and advance your career.",
+    icon: "./images/send/Icon.svg" 
+  },
+  {
+    title: "Interactive Online Classes",
+    description: "Participate in our lively online classes where students from across the country come together to discuss mining topics, share insights, etc.",
+    icon: "./images/send/Icon (1).svg"
+  }
+];
+
 const Offering = () => {
  
   return (
-    <>
-      <div className="text-center text-[35px]  my-10 ">Our Offerings</div>
-      <div>
-        <div className="flex overflow-y-hidden justify-evenly items-center max-md:flex-col  max-lg:flex-col lg:flex-row xl:mx-[100px] xl:flex-row 2xl:mx-[150px]">
-          <div
-            id="dib1"
-            className="container my-4  rounded-lg flex flex-col bg-[#0000000D] justify-center items-center border max-sm:w-[300px] sm:w-[350px] max-md:mx-auto sm:flex-col md:w-[400px] lg:w-[400px] lg:flex-row lg:justify-evenly xl:flex-col xl:px-[100px] xl:w-[400px] xl:h-[400px] 2xl:w-[400px]"
-          >
-            <div className="flex max-sm:my-2 sm:mb-3  sm:mt-4 lg:mx-3  ">
-              <img
-                src="./images/send/Icon.svg"
-                className=" w-[88px] h-[88px] "
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col lg:w-[250px]  ">
-              <p className="p-4 font-bold text-justify">
-                Empower and Advocate{" "}
-              </p>
-              <p className="p-4 text-[#00000099] ">
-                We tackle the unique challenges faced by mining students, from
-                examination hurdles and promotion pathways to certificate
-                issuance by D.G.M.S and job vacancies. We stand with you every
-                step of the way.
-              </p>
-            </div>
-          </div>
-          <div
-            id="dib2"
-            className="container my-4 rounded-lg bg-[#0000000D] flex flex-col justify-center items-center border max-md:mx-auto max-sm:w-[300px] sm:w-[350px] sm:flex-col md:w-[400px] lg:w-[400px] lg:flex-row lg:justify-evenly xl:flex-col xl:px-[100px] xl:w-[400px] xl:h-[400px] 2xl:w-[400px]"
-          >
-            <div className="flex max-sm:my-2 sm:mb-3 sm:mt-4 lg:mx-3 ">
-              <img
-                src="./images/send/Icon (1).svg"
-                className=" w-[88px] "
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col lg:w-[250px]  ">
-              <p className="p-4 font-bold ">
-                Educational Excellence{" "}
-              </p>
-              <p className="p-4 text-[#00000099] ">
-                We offer a wealth of study materials, including free books, MCQ
-                questions, and detailed notes for a variety of mining exams like
-                Mining Sirdar, Overman, Gas Testing, Surveyor, 2nd Class
-                Manager, and 1st Class Manager.
-              </p>
-            </div>
-          </div>
+    <div className="flex flex-col container mx-auto items-center  justify-center my-10">
+    <h2 className="text-3xl font-semibold mb-8">Our Offerings</h2>
+    <div className="flex gap-8 flex-wrap justify-evenly w-full max-sm:p-4 max-xl:gap-10">
+      {data.map((item, index) => (
+        <div
+          key={index}
+          className=" flex flex-col justify-center gap-5 items-center bg-[#0000000D] p-6 rounded-2xl lightdropshadowbox max-w-[450px] max-h-[340px] max-xl:max-w-[400px]"
+        >
+          <img className="text-purple-600 text-3xl mb-4" src={item.icon}/>
+          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+          <p className="text-[#00000099] px-8 text-lg text-center ">{item.description}</p>
         </div>
-      </div>
-    </>
+      ))}
+    </div>
+  </div>
+   
   );
 };
 

@@ -1,80 +1,55 @@
 import React from "react";
-
+const data = [
+  {
+    title: "Empower and Advocate",
+    description: "We tackle the unique challenges faced by mining students, from examination hurdles and promotion pathways to certificate issuance by D.G.M.S and job vacancies. We stand with you every step of the way.",
+    icon: "./images/send/setting.png" 
+  },
+  {
+    title: "Community Leadership",
+    description: "Our involvement in key events related to promotions, examinations, and grievance resolutions, ensures that voices from every corner of the mining sector are heard and respected.",
+    icon: "./images/send/profile-2user.png" 
+  },
+  {
+    title: "Educational Excellence",
+    description: "We offer a wealth of study materials, including free books, MCQ questions, and detailed notes for a variety of mining exams like Mining Sirdar, Overman, Gas Testing, Surveyor, 2nd Class Manager, and 1st Class Manager.",
+    icon: "./images/send/Icon.svg" 
+  }
+];
 const Mission = () => {
   
   return (
     <>
-      <div className="text-center text-[35px]  my-10 ">Our Mission</div>
-      <div className="flex overflow-x-hidden  max-md:flex-col md:grid md:grid-cols-2 lg:flex   lg:flex-row xl:mx-[120px] xl:flex-row 2xl:mx-[200px]">
-        <div
+      <div className="text-center text-[35px] font-semibold my-10 ">Our Mission</div>
+      <div className="flex items-center justify-center flex-wrap gap-10">
+       
+     {
+      data.map((item,idx)=>{
+        return (
+          <div
           id="line1"
-          className="container my-4 rounded-lg bg-[#0000000D] 
-          max-sm:w-[300px] max-sm:mx-auto max-sm:flex-wrap max-md:w-full max-md:h-[400px]  justify-around items-center border  flex sm:w-[300px] sm:mx-auto max-md:flex-col md:w-[300px] md:h-[400px] max-lg:flex-col lg:w-[300px] lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
+          className="  my-4 lightdropshadowbox rounded-2xl bg-[#0000000D] flex flex-col px-7  items-center w-80 h-[470px] justify-center gap-10"
+         key={idx}
         >
-          <div className="flex max-md:flex-col sm:mb-3  sm:mt-4 lg:mx-3  ">
-            <img src="./images/send/setting.png" className=" " alt="" />
+          <div className="flex max-md:flex-col  lg:mx-3  ">
+            <img src={item.icon} className="w-[50px] " alt="" />
           </div>
-          <div className="flex flex-col lg:w-[250px]  ">
-            <p className="p-4 font-bold text-justify">
-              Empower and Advocate{" "}
-            </p>
-            <p className="p-4 text-[#00000099] text-justify">
-              We tackle the unique challenges faced by mining students, from
-              examination hurdles and promotion pathways to certificate issuance
-              by D.G.M.S and job vacancies. We stand with you every step of the
-              way.
+          <div className="flex flex-col   ">
+            <h1 className=" text-xl font-semibold text-center">
+            {item.title}
+            </h1>
+            <p className="p-4 text-[#00000099] text-lg  text-center">
+             {item.description}
             </p>
           </div>
-        </div>
-        <div
-          id="line2"
-          className="container my-4 rounded-lg justify-around items-center border  flex bg-[#0000000D] 
-          max-sm:w-[300px] max-sm:mx-auto max-sm:flex-wrap
-          sm:w-[300px]  max-md:h-[400px] max-md:mx-auto  max-md:flex-col md:w-[300px] md:h-[400px] md:mx-auto max-lg:flex-col lg:w-[300px] lg:mx-auto lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
-        >
-          <div className="flex sm:mb-3 sm:mt-4 lg:mx-3 ">
-            <img
-              src="./images/send/profile-2user.png"
-              className="w-[88px]"
-              alt=""
-            />
           </div>
-          <div className="flex flex-col lg:w-[250px]  ">
-            <p className="p-4 font-bold text-justify">
-              Community Leadership{" "}
-            </p>
-            <p className="p-4 text-[#00000099] text-justify">
-              Our involvement in key events related to promotions, examinations,
-              and grievance resolutions, ensures that voices from every corner
-              of the mining sector are heard and respected.
-            </p>
-          </div>
-        </div>
-        <div
-          id="line3"
-          className="container my-4   items-center border  flex 
-          max-sm:w-[300px] max-sm:mx-auto max-sm:flex-wrap justify-around rounded-lg bg-[#0000000D] sm:w-[300px] max-md:flex-col  max-md:h-[400px] max-md:mx-auto md:w-[300px] md:h-[400px] max-lg:flex-col 
-          max-lg:mx-auto lg:w-[300px] lg:mx-auto lg:flex-col lg:justify-evenly xl:flex-col xl:w-[300px] xl:h-[500px] 2xl:w-[350px]"
-        >
-          <div className="flex sm:mb-3 sm:mt-4 lg:mx-3 ">
-            <img
-              src="./images/send/Icon.svg"
-              className="bg-[#0000000D] w-[88px] "
-              alt=""
-            />
-          </div>
-          <div className="flex flex-col lg:w-[250px]  ">
-            <p className="p-4 font-bold text-justify">
-              Educational Excellence{" "}
-            </p>
-            <p className="p-4 text-[#00000099] text-justify">
-              We offer a wealth of study materials, including free books, MCQ
-              questions, and detailed notes for a variety of mining exams like
-              Mining Sirdar, Overman, Gas Testing, Surveyor, 2nd Class Manager,
-              and 1st Class Manager.
-            </p>
-          </div>
-        </div>
+        )
+      })
+     }
+
+
+
+      
       </div>
     </>
   );

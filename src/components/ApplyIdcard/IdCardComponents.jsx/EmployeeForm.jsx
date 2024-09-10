@@ -93,7 +93,7 @@ const EmployeeForm = () => {
     
     <div className='flex flex-col gap-2' >
       <label className="text-base text-gray-700 text-base font-bold ">
-       { "Student's Photo"}
+       { "Employee's Photo"}
       </label>
       <div  onDrop={handleDrop}
       onDragOver={handleDragOver} className="flex justify-center items-center w-full h-32 bg-gray-100 rounded-2xl cursor-pointer hover:border-blue-300">

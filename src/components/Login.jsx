@@ -9,6 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
     <div className="min-h-screen mainBackgroundImg pt-14 flex justify-center items-center">
@@ -83,6 +84,7 @@ const Login = () => {
           <FaYoutube className="cursor-pointer" />
         </div>
       </div>
+   
     </div>
   );
 };

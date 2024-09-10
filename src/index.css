@@ -35,4 +35,33 @@ body {
   .dropshadowbox{
     box-shadow: 0px 0px 15px 0px #00000040;
   }
+  .lightdropshadowbox{
+    box-shadow: 0px 0px 7px 0px #00000040;
+  }
 }
+
+ .customScrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #434242 #cdcdcd;
+  }
+
+
+   .customScrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+
+   .customScrollbar::-webkit-scrollbar-track {
+    background: #696969;
+  }
+
+   .customScrollbar::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 20px;
+    border: 1px groove #a6a6a6;
+  }
+
+  .no-scroll {
+
+    position: absolute; 
+    width: 100%; 
+  }

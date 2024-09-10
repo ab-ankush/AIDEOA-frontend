@@ -1,13 +1,13 @@
 
 import TopImageCard from '../../components/Cards/TopImageCard'
-import BottomFooter from '../Cards/BottomFooter'
+import DownloadIdCardButton from '../Cards/DownloadIdCardButton'
 import Footer from '../Cards/Footer'
-
 import FormContainer from './IdCardComponents.jsx/FormContainer'
 const ApplyIdCard = () => {
   return (
     <div className='pt-14'>
-    <TopImageCard title={"Apply ID Card"} description={"Join Aidoea Membership "}/>
+    <TopImageCard title={"Apply ID Card"} description={"Join Aidoea Membership "} downloadBtn={
+         <DownloadIdCardButton />}/>
     <FormContainer />
     <Footer />
    

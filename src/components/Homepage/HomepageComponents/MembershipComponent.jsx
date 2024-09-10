@@ -2,6 +2,7 @@ import React from "react";
 import { FiDownload } from "react-icons/fi";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { Link } from "react-router-dom";
+import DownloadIdCardButton from "../../Cards/DownloadIdCardButton";
 const MembershipComponent = () => {
   return (
     <div className="max-sm:h-[90%] min-h-screen mainBackgroundImg  flex justify-center max-sm:justify-start flex-col items-center">
@@ -24,10 +25,7 @@ const MembershipComponent = () => {
             </div>
           </Link>
 
-          <div className="text-white flex items-center gap-2 cursor-pointer">
-            <button className="font-semibold">Download ID</button>
-            <FiDownload />
-          </div>
+         <DownloadIdCardButton />
         </div>
       </div>
     </div>

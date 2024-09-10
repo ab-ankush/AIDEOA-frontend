@@ -7,7 +7,7 @@ import Homepage2 from "./HomepageComponents/HomePage2/HomePage2.jsx";
 
 const Homepage = () => {
   return (
-    <div className="pt-14">
+    <div className="pt-14 " >
   
       <MembershipComponent />
       <About />

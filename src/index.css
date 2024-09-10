@@ -36,7 +36,7 @@ body {
     box-shadow: 0px 0px 15px 0px #00000040;
   }
   .lightdropshadowbox{
-    box-shadow: 0px 0px 10px 0px #00000040;
+    box-shadow: 0px 0px 7px 0px #00000040;
   }
 }
 
@@ -58,4 +58,10 @@ body {
     background-color: #000000;
     border-radius: 20px;
     border: 1px groove #a6a6a6;
+  }
+
+  .no-scroll {
+
+    position: fixed; 
+    width: 100%; 
   }

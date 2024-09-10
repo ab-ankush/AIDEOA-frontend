@@ -38,8 +38,6 @@ export default function App() {
           <Route path="home" element={<Landingpage />} />
         </Route>
         <Route path="/admin" element={<Dashboard />} />
-        <Route path="/transaction" element={<Transactions />} />
-   
       </Routes>
     </ScrollToTop>
   );

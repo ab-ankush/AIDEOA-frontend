@@ -5,6 +5,7 @@ import DownloadIdButton from "./components/DownloadIdButton"
 import Header from "./components/Header"
 import LinkButton from "./components/LinkButton"
 import LinkButtonv2 from "./components/LinkButtonv2"
+import MutualTransfer from "./components/MutualTransfer"
 
 const Landingpage = () => {
   return (
@@ -24,6 +25,9 @@ const Landingpage = () => {
             </Link>
             <Link to="/idcard">
               <LinkButtonv2 />
+            </Link>
+            <Link to="/mutualtransfer">
+             <MutualTransfer />
             </Link>
             {/* <Link to="#">
           <DownloadIdButton />

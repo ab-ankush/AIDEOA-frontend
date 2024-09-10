@@ -8,6 +8,7 @@ import EmailNotiCard from "../Cards/EmailNotiCard";
 import Footer from "../Cards/Footer";
 import TopImageCard from "../Cards/TopImageCard";
 import Slider from "../Cards/Slider/Slider";
+import ReviewForm from "./components/ReviewForm";
 
 const MutualTransferPage = () => {
   return (
@@ -17,6 +18,7 @@ const MutualTransferPage = () => {
       <FormDescription />
       {/* <SelectSwitch /> */}
       <Form />
+
      <Slider />
       <EmailNotiCard />
       <Footer />

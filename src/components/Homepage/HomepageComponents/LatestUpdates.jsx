@@ -42,7 +42,7 @@ const LatestUpdates = () => {
                 alt="Conference"
                 className="rounded-lg mb-8 w-full h-[211px]"
               />
-              <div className="text-base flex flex-col gap-2 font-normal mb-4  leading-7 max-lg:text-sm">
+              <div className="text-base flex flex-col gap-2 font-normal mb-4  leading-7 max-lg:text-sm ">
                <p className="font-semibold text-lg">1. Introduction</p> 
                <p>
                1.1 Purpose The purpose of this SRS is to
@@ -52,7 +52,7 @@ const LatestUpdates = () => {
                 informative, and interactive platform for Mining Diploma and
                 Degree holders. 
                </p>
-               <p>
+               <p className=" ">
                1.2 Scope AIDEOA is a platform designed to bring
                 together Mining Sirdar, Overman, Surveyor, Assistant Manager,
                 and other professionals for optimistic decision-making, issue

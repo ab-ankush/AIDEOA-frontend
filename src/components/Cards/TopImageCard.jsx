@@ -12,8 +12,7 @@ const TopImageCard = ({title="Contact us",description,downloadBtn}) => {
         { downloadBtn && downloadBtn}
         </div>
       
-        <h1 className=' font-extrabold text-xl lg:text-4xl '> {title}</h1>
-        <p className='text-center text-base lg:text-lg text-slate-200 font-normal'>{description}</p>
+      
         </div>
        
     </div>

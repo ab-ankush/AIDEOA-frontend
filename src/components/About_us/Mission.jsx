@@ -32,7 +32,7 @@ const Mission = () => {
                 key={idx}
               >
                 <div className="flex max-md:flex-col  lg:mx-3  ">
-                  <img src={item.icon} className="w-[50px] " alt="" />
+                  <img src={item.icon} className="w-[50px] " alt="icon" />
                 </div>
                 <div className="flex flex-col   ">
                   <h3 className=" text-xl font-semibold text-center">

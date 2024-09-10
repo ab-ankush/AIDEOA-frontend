@@ -9,15 +9,15 @@ const IdCard = () => {
           id="frontcover"
           onMouseEnter={() => { setShow(false) }}
           className=" 
-            bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] "
+            bg-red-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] "
         >
           <div className="relative">
-            <img src="/card/lower.svg" className="max-xsm:w-full" alt="" />
+            <img src="/card/lower.svg" className="max-xsm:w-full" alt="lower" />
             <div className="absolute flex top-[10px] ">
               <img
                 src="/images/logo.png"
                 className="h-[50px] w-[50px] "
-                alt=""
+                alt="logo"
               />
             </div>
             <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
@@ -28,7 +28,7 @@ const IdCard = () => {
               <img
                 src=""
                 className=" absolute  border-[2px] border-purple-400 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
-                alt=""
+                alt="image"
               />
               <p className="my-10px absolute  text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold">
                 VICTOR ANIH
@@ -55,27 +55,27 @@ const IdCard = () => {
                 </div>
               </div>
               <div className="absolute flex flex-col justify-start items-start left-[130px] top-[420px] absolute transform -translate-x-1/2 -translate-y-1/2 max-xsm:left-[105px] max-xsm:top-[390px]">
-                <img src="/images/send/sign.png" className=" bg-white w-[70px] h-[45px] mx-auto" alt="" />
+                <img src="/images/send/sign.png" className=" bg-white w-[70px] h-[45px] mx-auto" alt="signature" />
                 <p className="text-[10px] text-purple-700 font-medium">National General Secretary AIDEOA</p>
               </div>
             </div>
             <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
               <p className="text-[11px] ">Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
             </div>
-            <img src="/card/upper.svg" className="max-xsm:w-full" alt="" />
+            <img src="/card/upper.svg" className="max-xsm:w-full" alt="upper" />
           </div>
         </div> : <div
           id="backcover"
           onMouseLeave={() => { setShow(true) }}
-          className="  bg-purple-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit "
+          className="  bg-red-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit "
         >
           <div className="relative">
-            <img src="/card/lower.svg" className=" max-xsm:w-full w-[391px] h-[190px] max-sm:h-fit" alt="" />
+            <img src="/card/lower.svg" className=" max-xsm:w-full w-[391px] h-[190px] max-sm:h-fit" alt="lower svg" />
             <div className="absolute flex top-[10px] max-sm:w-full ">
               <img
                 src="/images/logo.png"
                 className="h-[50px] w-[50px] "
-                alt=""
+                alt="logo"
               />
 
             </div>
@@ -113,7 +113,7 @@ const IdCard = () => {
             <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
               <p className="text-[11px] ">Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
             </div>
-            <img src="/card/upper.svg" className=" max-xsm:w-full w-[391px] h-[91px] max-xsm:h-fit" alt="" />
+            <img src="/card/upper.svg" className=" max-xsm:w-full w-[391px] h-[91px] max-xsm:h-fit" alt="upper" />
           </div>
         </div>}
 

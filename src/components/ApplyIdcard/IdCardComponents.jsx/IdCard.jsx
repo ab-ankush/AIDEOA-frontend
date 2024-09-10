@@ -28,7 +28,7 @@ const IdCard = () => {
               <img
                 src=""
                 className=" absolute  border-[2px] border-purple-400 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
-                alt="image"
+                alt="i"
               />
               <p className="my-10px absolute  text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center  font-bold">
                 VICTOR ANIH

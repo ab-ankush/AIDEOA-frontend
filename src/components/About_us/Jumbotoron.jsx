@@ -30,7 +30,7 @@ const Jumbotoron = () => {
           <img
             src="./images/home.jpeg"
             className="rounded-2xl w-full h-full"
-            alt=""
+            alt="home"
           />
         </div>
       </div>

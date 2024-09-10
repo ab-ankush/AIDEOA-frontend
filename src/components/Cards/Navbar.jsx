@@ -23,7 +23,7 @@ const Navbar = () => {
             className=" adeiou flex  flex-row justify-center items-center"
             id="brand"
           >
-            <img src="./images/logo.png" className="max-sm:h-[50px]   pl-2" alt="" />
+            <img src="./images/logo.png" className="max-sm:h-[50px]   pl-2" alt="logo" />
           </div>
         </Link>
 
@@ -98,7 +98,7 @@ const Navbar = () => {
               className="flex flex-row justify-center items-center"
               id="brand"
             >
-              <img src="./images/logo.png" className="pl-2 h-[50px] " alt="" />
+              <img src="./images/logo.png" className="pl-2 h-[50px] " alt="logo" />
             </div>
             <div onClick={sethamfunc} id="hamicon lg:block ">
               {ham ? (

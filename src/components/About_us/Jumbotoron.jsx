@@ -13,7 +13,7 @@ const Jumbotoron = () => {
       >
         <div className="flex flex-col h-full  gap-10 max-xl:gap-2 pt-10 max-lg:pt-0 md:w-[40%] lg:w-[50%] xl:mx-[10px] 2xl:w-[50%] 2xl:mx-[20px]  ">
           <h1 className="py-4 pl-4 items-start text-start w-full font-semibold text-3xl max-lg:text-2xl">
-            Aideoa is dedicated!{" "}
+          AIDEOA  is dedicated!{" "}
           </h1>
           <p
             className="px-4 pb-2 text-[#00000099]   lg:text-[15px] xl:text-[18px] 2xl:text-[20px]

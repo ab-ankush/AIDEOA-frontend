@@ -1,6 +1,6 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { MdCalendarMonth } from "react-icons/md";
-
+import { CiShare1 } from "react-icons/ci";
 const Card = () => {
   return (
     <div className="  m-auto max-w-lg mb-24 shadow-md  shadow-gray-600 rounded-2xl">
@@ -21,6 +21,7 @@ const Card = () => {
         <div className="text-xl font-semibold">
           <p>AIDEOA Hosts Successful Annual Conference</p>
         </div>
+        <div className="flex gap-2 items-center">
         <div className="flex flex-col justify-between h-10">
           <div className="flex text-sm">
             <IoLocationOutline size={15} />
@@ -31,6 +32,9 @@ const Card = () => {
             <p className="ml-1 font-light">2:00 PM - 1:00 PM</p>
           </div>
         </div>
+        <CiShare1 size={22} className="cursor-pointer"/>
+        </div>
+        
         <div className="text-sm font-light pb-5">
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting

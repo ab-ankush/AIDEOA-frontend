@@ -2,6 +2,7 @@ import { useState } from "react";
 import IDform from "./IDform";
 import IdCard from "./IdCard";
 import EmployeeForm from "./EmployeeForm";
+import EmployeeIdCard from "./EmployeeIdCard";
 // import DownloadIdButton from "../../Landingpage/components/DownloadIdButton"
 // import { Link } from 'react-router-dom'
 const FormContainer = () => {
@@ -9,7 +10,7 @@ const FormContainer = () => {
   const [submit, setsubmit] = useState(false)
   return (
     <div className="my-20 relative mx-32 flex flex-col gap-6 max-xl:mx-8 max-lg:mx-8 max-md:mx-4 max-sm:mx-2 ">
-      <p className="text-xl font-medium">ID Card form</p>
+      <p className="text-2xl font-bold text-center ">ID Card form</p>
       <div className="flex justify-center w-full  ">
         <div className="p-1 border-2 flex border-gray-200 max-w-full  rounded-full">
           <button
@@ -32,8 +33,10 @@ const FormContainer = () => {
         {
           formType ? <IDform /> : <EmployeeForm />
         }
-
-        <IdCard />
+ {
+          formType ?    <IdCard /> : <EmployeeIdCard />
+        }
+     
 
       </div>
       <div className=" flex ">

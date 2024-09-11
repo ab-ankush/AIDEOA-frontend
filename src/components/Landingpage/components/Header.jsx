@@ -7,7 +7,7 @@ const Header = () => {
         <Logo />
       </div>
       <div className="text-white font-semibold text-4xl flex items-center text-center flex-col gap-3">
-        <p>All India Diploma Engineers And Officials Association </p>
+        <h1>All India Diploma Engineers And Officials Association </h1>
         <span> (AIDEOA)</span>
       </div>
       <div className="text-white text-xl font-medium">

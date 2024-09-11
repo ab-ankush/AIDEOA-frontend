@@ -21,10 +21,10 @@ const Login = () => {
               alt="logo"
             />
         </div>
-        <h2 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
+        <h1 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
           {" "}
           All India Diploma Engineers And Officials Association
-        </h2>
+        </h1>
         <p className="text-center mb-3 text-white font-semibold ">Sign In</p>
         <form>
           <div className="relative">

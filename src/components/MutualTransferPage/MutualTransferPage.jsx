@@ -18,7 +18,7 @@ const MutualTransferPage = () => {
       <FormDescription />
       {/* <SelectSwitch /> */}
       <Form />
-
+    <ReviewForm />
      <Slider />
       <EmailNotiCard />
       <Footer />

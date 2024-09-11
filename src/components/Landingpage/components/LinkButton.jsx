@@ -3,14 +3,14 @@ import { FaArrowUp   } from "react-icons/fa";
 
 const LinkButton = () => {
   return (
-    <div className="flex bg-purplebtn rounded-full w-80 pl-4 pr-4 p-2 items-center cursor-pointer justify-between">
+    <div className="flex bg-purplebtn rounded-full max-w-80 pl-4 pr-4 p-2 items-center cursor-pointer justify-between">
         <div className=" flex gap-3 items-center ">
         <div>
         <VscAccount className="text-white" size={25}/>
         </div>
         <div className="flex flex-col ">
             <div className="text-white font-normal text-lg">
-                <p>Join Membership</p>
+                <h3>Join Membership</h3>
             </div>
             <div className="text-gray-300 text-xs">
                 <p>

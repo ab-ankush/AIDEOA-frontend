@@ -6,13 +6,13 @@ import Section3 from "./Section3";
 import Footer from "../../../Cards/Footer";
 import Slider from "../../../Cards/Slider/Slider";
 import Carousel from "../../..//carousel/Carousel";
-
+import ImageCarousel from "../../../carousel/ImageCarousel";
 const HomePage2 = () => {
   return (
     <>
       <Section1 />
    <Slider />
-      <Section3 />
+     <ImageCarousel />
       <Carousel />
       <Footer />
     </>

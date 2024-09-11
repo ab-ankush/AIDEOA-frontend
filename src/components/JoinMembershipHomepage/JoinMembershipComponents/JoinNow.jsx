@@ -17,7 +17,7 @@ const JoinNow = () => {
                         </div>
                     </div>
 
-                    <h1 className='text-4xl font-semibold'>100₹</h1>
+                    <p className='text-4xl font-semibold'>100₹</p>
             </div>
 
           

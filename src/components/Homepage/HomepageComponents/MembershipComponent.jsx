@@ -7,7 +7,7 @@ const MembershipComponent = () => {
   return (
     <div className="max-sm:h-[90%] min-h-screen mainBackgroundImg  flex justify-center max-sm:justify-start flex-col items-center">
       <div className="flex justify-center mt-3">
-        <img src={"logoback.png"} className="w-25 " alt="logo" />
+        <img src={"logoback.png"} className="w-25 " alt="Aideoalogo" />
       </div>
       <div className=" p-2  flex flex-col gap-4 max-w-[831px]  items-center text-center">
         <h1 className="font-black text-3xl text-white leading-relaxed ">

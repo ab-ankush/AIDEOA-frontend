@@ -30,40 +30,40 @@ const newsData = [
 const EventPage = () => {
   return (
     <div className="pt-14">
-      <TopImageCard image={'/enhanceimage/Events.png'} title={"AIDEOA  Events"}/>
-        <div className=" flex px-5 flex-wrap gap-2 mt-12  content-center max-w-7xl  m-auto">
- 
-       {
-        Array(4).fill("").map((_,idx)=>{
-          return <Card key={idx}/>
-        })
-       }
-        </div>
-        <div className=" bg-blue-950 ">
-  
-       <Slider textColor={"white"} shadowColor={"blue-900"}/>
-        </div>
-        <InfoHeader/>
-
-        <div className="flex gap-10 flex-col">
-          {newsData.map((newsItem, index) => (
-            <NewsCard
-              key={index}
-              imageSrc={newsItem.imageSrc}
-              headline={newsItem.headline}
-              content={newsItem.content}
-            />
-          ))}
-          <a
-            className="text-center text-lg text-gray-100 mx-auto bg-[#9333EA] hover:bg-midpurple p-4 rounded-full"
-            href="#"
-          >
-            Read More...
-          </a>
-        </div>
-        <EmailNotiCard />
-        <Footer />
+      <TopImageCard
+        image={"/enhanceimage/Events.png"}
+        title={"AIDEOA  Events"}
+      />
+      <div className=" flex px-5 flex-wrap gap-2 mt-12  content-center max-w-7xl  m-auto">
+        {Array(4)
+          .fill("")
+          .map((_, idx) => {
+            return <Card key={idx} />;
+          })}
       </div>
+      <div className=" bg-blue-950 ">
+        <Slider textColor={"white"} shadowColor={"blue-900"} />
+      </div>
+      <InfoHeader />
+
+      <div className="flex gap-10 flex-col">
+        {newsData.map((newsItem, index) => (
+          <NewsCard
+            key={index}
+            imageSrc={newsItem.imageSrc}
+            headline={newsItem.headline}
+            content={newsItem.content}
+          />
+        ))}
+        <a
+          className="text-center text-lg text-gray-100 mx-auto bg-[#9333EA] hover:bg-midpurple p-4 rounded-full"
+          href="#"
+        >
+          Read More...
+        </a>
+      </div>
+      <EmailNotiCard />
+      <Footer />
     </div>
   );
 };

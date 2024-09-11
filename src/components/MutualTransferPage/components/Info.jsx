@@ -20,7 +20,10 @@ const Info = () => {
         </div>
         <div className="flex gap-4  justify-center flex-col max-md:m-auto  md:flex-row md:gap-x-4">
           <div>
-            <button onClick={handleScroll} className="font-medium text-gray-600 text-lg p-4 w-64 border border-purple-500 rounded-full">
+            <button
+              onClick={handleScroll}
+              className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full"
+            >
               Start Applying
             </button>
           </div>

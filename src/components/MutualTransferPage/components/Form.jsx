@@ -14,6 +14,7 @@ const Form = () => {
     transferarea: "",
     transfersubsidiary: "",
     transfermine: "",
+    designationType: "executive",
   });
 
   const [formType, setFormType] = useState(false);
@@ -37,32 +38,6 @@ const Form = () => {
 
   return (
     <div id="form-section" className=" text-center m-auto w-[95%] lg:w-2/3">
-      <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
-        <div className=" w-full ">
-          <button
-            className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium    ${
-              form
-                ? ""
-                : "bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white"
-            }`}
-            onClick={() => setForm(false)}
-          >
-            Non-Executive
-          </button>
-        </div>
-        <div className="w-full  ">
-          <button
-            className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium ${
-              form
-                ? " bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white"
-                : ""
-            } `}
-            onClick={() => setForm(true)}
-          >
-            Executive
-          </button>
-        </div>
-      </div>
       <form onSubmit={handleReview}>
         <div className="flex flex-col text-left mb-5 gap-y-5">
           <label className="font-poppins font-medium text-xl" htmlFor="name">
@@ -85,6 +60,30 @@ const Form = () => {
           >
             Your Designation
           </label>
+          <div className="flex items-center gap-x-4">
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="designationType"
+                value="executive"
+                className="form-radio h-5 w-5 text-purple-600"
+                checked={formData.designationType === "executive"}
+                onChange={handleChange}
+              />
+              <span className="ml-2 text-md font-medium">Executive</span>
+            </label>
+            <label className="flex items-center">
+              <input
+                type="radio"
+                name="designationType"
+                value="non-executive"
+                className="form-radio h-5 w-5 text-purple-600"
+                checked={formData.designationType === "non-executive"}
+                onChange={handleChange}
+              />
+              <span className="ml-2 text-md font-medium">Non-Executive</span>
+            </label>
+          </div>
         </div>
 
         <div className="flex flex-col xl:flex-row justify-between w-full gap-x-20 m-auto">

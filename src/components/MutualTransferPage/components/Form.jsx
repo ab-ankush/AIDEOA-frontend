@@ -1,17 +1,17 @@
 import { useState } from "react";
 
 const Form = () => {
-  const [form,setForm]=useState(false);
+  const [form, setForm] = useState(false);
   return (
     <div id="form-section" className=" text-center m-auto w-[95%] lg:w-2/3">
-      <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
+      {/* <div className="flex   border w-[95%] lg:w-[50%] justify-evenly m-auto mb-10 rounded-full border-gray-500">
         <div className=" w-full ">
           <button className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white" }`} onClick={()=>setForm(false)}>Non-Executive</button>
         </div>
         <div className="w-full  ">
           <button className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium ${form?" bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white":""} `} onClick={()=>setForm(true)}>Executive</button>
         </div>
-      </div>
+      </div> */}
 
       <form>
         <div className="flex flex-col text-left mb-5 gap-y-5">
@@ -28,6 +28,14 @@ const Form = () => {
             placeholder="Write your name"
             className="rounded-3xl bg-gray-100 border border-gray-300 p-4 "
           />
+        </div>
+        <div className="flex flex-col text-left mb-5 gap-y-5">
+          <label
+            className="font-poppins font-medium text-xl"
+            htmlFor="your-designation"
+          >
+            Your Designation
+          </label>
         </div>
         <div className="flex  flex-col  xl:flex-row justify-between  w-full gap-x-20 m-auto ">
           <div className="w-full ">

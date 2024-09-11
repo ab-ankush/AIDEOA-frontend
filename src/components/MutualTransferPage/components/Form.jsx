@@ -9,7 +9,7 @@ const Form = () => {
           <button className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium    ${form ? "":"bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white" }`} onClick={()=>setForm(false)}>Non-Executive</button>
         </div>
         <div className="w-full  ">
-          <button className={`text-center font-medium w-full lg:text-xl p-2 lg:p-3 ${form?" bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white":""} `} onClick={()=>setForm(true)}>Executive</button>
+          <button className={`lg:text-xl w-full  p-2 lg:p-3  text-center font-medium ${form?" bg-gradient-to-r from-purple-950 via-purple-400 to-purple-200 rounded-full text-white":""} `} onClick={()=>setForm(true)}>Executive</button>
         </div>
       </div>
 

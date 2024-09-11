@@ -11,6 +11,7 @@ import Slider from "../Cards/Slider/Slider";
 import ReviewForm from "./components/ReviewForm";
 
 const MutualTransferPage = () => {
+  
   return (
     <div className="pt-14">
       <TopImageCard
@@ -23,7 +24,7 @@ const MutualTransferPage = () => {
       <FormDescription />
       {/* <SelectSwitch /> */}
       <Form />
-      <ReviewForm />
+     
       <Slider />
       <EmailNotiCard />
       <Footer />

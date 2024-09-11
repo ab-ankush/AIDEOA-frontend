@@ -6,7 +6,7 @@ import Footer from '../Cards/Footer'
 const DonationComponent = () => {
   return (
     <div className='pt-14'>
-        <TopImageCard title={"Donation"} description={"Join Aidoea Membership "}/>
+        <TopImageCard image={'/enhanceimage/donation.png'} title={"Donation"} description={"Join Aidoea Membership "}/>
             <DonationForm />
             <Footer />
         

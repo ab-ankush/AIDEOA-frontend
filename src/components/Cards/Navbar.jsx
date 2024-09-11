@@ -58,7 +58,7 @@ const Navbar = () => {
                 } `}
               to="/education"
             >
-              Education Team
+              Our Team
             </NavLink>
             <NavLink
               className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/about" &&
@@ -145,7 +145,7 @@ const Navbar = () => {
                   to="/education"
                   onClick={sethamfunc}
                 >
-                  Education Team
+                  Our Team
                 </NavLink>
                 <NavLink
                   className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"

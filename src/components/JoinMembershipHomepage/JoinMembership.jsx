@@ -6,7 +6,7 @@ import Footer from '../Cards/Footer'
  const JoinMembership = () => {
   return (
     <div className='pt-14'>
-        <TopimageCard title={"Join Membership "} description={"Join Aideoa Membership "}/>
+        <TopimageCard image={'/enhanceimage/JoinMem.png'} title={"Join Membership "} description={"Join Aideoa Membership "}/>
         <JoinNow />
         <ApplyNow />
         <Footer />

@@ -1,14 +1,13 @@
 import { FaChevronDown } from "react-icons/fa6";
 const Info = () => {
-
-  const handleScroll=()=>{
-    const section=document.getElementById("form-section");
-    section.scrollIntoView({behavior:"smooth"});
-  } 
+  const handleScroll = () => {
+    const section = document.getElementById("form-section");
+    section.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="w-11/12 my-20 m-auto">
       <div className="flex  text-center xl:text-left flex-col xl:flex-row justify-between gap-20">
-        <div className="flex flex-col gap-y-2 ">
+        <div>
           <div className="font-medium text-xl text-gray-800">
             <p>आल इंडिया डिप्लोमा इंजिनियर्स एंड ऑफिसियलस एसोसिएशन </p>
           </div>
@@ -19,9 +18,9 @@ const Info = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 flex-col max-md:m-auto  md:flex-row md:gap-x-4">
+        <div className="flex gap-4  justify-center flex-col max-md:m-auto  md:flex-row md:gap-x-4">
           <div>
-            <button onClick={handleScroll} className="font-medium text-gray-600 text-xl p-4 w-80 border border-purple-500 rounded-full">
+            <button onClick={handleScroll} className="font-medium text-gray-600 text-lg p-4 w-64 border border-purple-500 rounded-full">
               Start Applying
             </button>
           </div>

@@ -6,7 +6,7 @@ import FormContainer from './IdCardComponents.jsx/FormContainer'
 const ApplyIdCard = () => {
   return (
     <div className='pt-14'>
-      <TopImageCard title={"Apply ID Card"} description={"Join Aidoea Membership "} downloadBtn={
+      <TopImageCard image={'./enhanceimage/Idcard.png'} title={"Apply ID Card"} description={"Join Aidoea Membership "} downloadBtn={
         <DownloadIdCardButton />} />
       <FormContainer />
       <Footer />

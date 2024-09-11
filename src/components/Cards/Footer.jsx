@@ -69,17 +69,7 @@ const Footer = () => {
         </div>
         <div className="flex w-full px-3 mx-3 border-r-2 max-xl:mx-0  max-xl:px-0 max-xl:py-3 max-md:border-none">
           <div className="flex x flex-col gap-3 justify-between">
-            <div className="flex flex-col gap-3">
-              <h1 className="font-medium text-xl rounded text-white">
-                Subscribe now
-              </h1>
-              <div className="max-w-64 h-9 relative">
-                <input placeholder="Enter email" className="w-full  h-full rounded border-none px-2 focus:outline-none" />
-                <button className="bg-purple-700 absolute border-none rounded right-0 w-11 h-full top-0 flex items-center justify-center">
-                  <CiSearch size={22} className="text-white " />
-                </button>
-              </div>
-            </div>
+            
             <div className="flex flex-col gap-2 mb-3">
               <h1 className="font-mdeium text-xl text-white">
                 Lorem Ipsum is simple

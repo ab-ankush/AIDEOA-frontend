@@ -1,9 +1,11 @@
 import React from 'react';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const ReviewForm = ({ formData }) => {
+const ReviewForm = ({ formData,setOpen }) => {
   return (
    
-      <form className="grid gap-6 p-6 bg-gray-100  rounded-2xl shadow-lg ">
+      <form className="grid gap-6 p-6 bg-white  relative rounded-2xl shadow-2xl ">
+        <AiOutlineCloseCircle onClick={()=>setOpen(false)} size={35} className="absolute cursor-pointer left-1/2 top-[-20px] transform -translate-x-1/2 -translate-y-1/2"/>
           <h1 className='font-semibold text-3xl'>Review your data</h1>
         <div className="flex text-xl">
           <label className="mb-2 font-semibold">Your Name :</label>

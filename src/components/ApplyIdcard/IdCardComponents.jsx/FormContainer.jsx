@@ -3,6 +3,7 @@ import IDform from "./IDform";
 import IdCard from "./IdCard";
 import EmployeeForm from "./EmployeeForm";
 import IdCardPurple from "./IdCardPurple";
+import EmployeeIdCard from "./EmployeeIdCard";
 // import DownloadIdButton from "../../Landingpage/components/DownloadIdButton"
 // import { Link } from 'react-router-dom'
 const FormContainer = () => {
@@ -14,7 +15,7 @@ const FormContainer = () => {
         submit ? (<div className="my-20 relative mx-32 flex flex-col gap-6 max-xl:mx-8 max-lg:mx-8 max-md:mx-4 max-sm:mx-2">
           <div className="">
             {
-              formType ? <IdCardPurple /> : <IdCard />
+              formType ? <IdCardPurple /> : <EmployeeIdCard />
             }
           </div>
 
@@ -49,10 +50,8 @@ const FormContainer = () => {
               formType ? <IDform /> : <EmployeeForm />
             }
             {
-              formType ? <IdCardPurple /> : <IdCard />
+              formType ? <IdCardPurple /> : <EmployeeIdCard />
             }
-
-
           </div>
           <div className=" flex ">
             <button className="w-52 max-sm:w-full h-12 membershipBtn rounded-2xl text-white font-medium text-lg">

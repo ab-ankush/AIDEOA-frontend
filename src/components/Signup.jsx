@@ -16,6 +16,7 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    otp:""
   });
 
   const [error, setError] = useState("");
@@ -49,6 +50,7 @@ const Signup = () => {
       setError("Passwords do not match");
       return;
     }
+   
 
     alert("Submitted");
   };
@@ -64,9 +66,9 @@ const Signup = () => {
               alt="logo"
             />
           </div>
-          <h2 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
+          <h1 className="font-poppins text-white text-[22px] font-semibold leading-[33px] text-center mb-3">
             All India Diploma Engineers And Officials Association
-          </h2>
+          </h1>
           <p className="text-center mb-3 text-white font-semibold">Sign Up</p>
           <form onSubmit={handleSubmit}>
             <div className="relative">
@@ -126,6 +128,21 @@ const Signup = () => {
                 className="absolute top-3 text-gray-300 right-3 cursor-pointer"
                 size={15}
               />
+            </div>
+            <div className="relative">
+              <input
+                className="glass-effect bg-white w-full mb-3 px-20 py-2 text-white rounded-3xl focus:outline-none"
+                name="otp"
+                type="text"
+                placeholder="Enter OTP"
+                value={formData.otp}
+                onChange={handleChange}
+              />
+              <button
+                className="absolute bg-AIDEOTYPO  px-5 py-2 text-white rounded-3xl text-gray-300 left-0"
+                size={14}
+                type="button"
+              >Send</button>
             </div>
             <span className="text-center text-sm text-red-500">{error}</span>
 

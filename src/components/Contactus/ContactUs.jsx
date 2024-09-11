@@ -8,7 +8,7 @@ const ContactUs = () => {
   return (
     <div className="pt-14">
     
-      <TopImageCard />
+      <TopImageCard title={"Contact Us"} image={'/enhanceimage/Contact.png'}/>
       <ContactForm />
       <EmailNotiCard />
       <Footer />

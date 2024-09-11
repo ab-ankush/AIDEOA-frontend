@@ -11,7 +11,7 @@ const Contactus = () => {
   return (
     <div className="overflow-x-hidden relative pt-14">
     
-      <TopImageCard title={"About us"}/>
+      <TopImageCard image={'/enhanceimage/About.png'} title={"About us"}/>
       <Jumbotoron />
       <Mission />
       <Offering />

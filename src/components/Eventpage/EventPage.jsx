@@ -30,20 +30,20 @@ const newsData = [
 const EventPage = () => {
   return (
     <div className="pt-14">
-      <TopImageCard title={"Aideoa Events"} />
-      <div className=" grid grid-cols-1 lg:grid-cols-2 w-[90%] sm:w-[60%] md:w-[50%] xl:w-[90%] 2xl:w-[70%] lg:w-[100%] gap-x-10 justify-start place-items-center m-auto">
-        {Array(4)
-          .fill("")
-          .map((_, idx) => {
-            return <Card key={idx} />;
-          })}
-      </div>
-      <div className=" bg-blue-950 ">
-        <Slider textColor={"white"} shadowColor={"blue-900"} />
-      </div>
-
-      <div>
-        <InfoHeader />
+      <TopImageCard image={'/enhanceimage/Events.png'} title={"AIDEOA  Events"}/>
+        <div className=" flex px-5 flex-wrap gap-2 mt-12  content-center max-w-7xl  m-auto">
+ 
+       {
+        Array(4).fill("").map((_,idx)=>{
+          return <Card key={idx}/>
+        })
+       }
+        </div>
+        <div className=" bg-blue-950 ">
+  
+       <Slider textColor={"white"} shadowColor={"blue-900"}/>
+        </div>
+        <InfoHeader/>
 
         <div className="flex gap-10 flex-col">
           {newsData.map((newsItem, index) => (

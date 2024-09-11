@@ -1,6 +1,6 @@
 import React from "react";
 const Jumbotoron = () => {
-  
+
   return (
     <>
       <div className=" mx-auto rounded-lg  text-3xl justify-start items-center text-AIDEOTYPO  flex flex-row max-sm:m-2 max-sm:mx-auto max-sm:w-[80%] max-sm:text-center sm:w-[450px]
@@ -30,7 +30,7 @@ const Jumbotoron = () => {
           <img
             src="./images/home.jpeg"
             className="rounded-2xl w-full h-full"
-            alt=""
+            alt="home"
           />
         </div>
       </div>

@@ -34,7 +34,7 @@ const Carousel = () => {
                   width="100%"
                   url={url}
                   playing={activeSlide === idx} 
-                  controls
+                 
                 />
               </SplideSlide>
             ))}

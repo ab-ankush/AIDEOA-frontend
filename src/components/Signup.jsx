@@ -131,7 +131,7 @@ const Signup = () => {
             </div>
             <div className="relative">
               <input
-                className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
+                className="glass-effect bg-white w-full mb-3 px-20 py-2 text-white rounded-3xl focus:outline-none"
                 name="otp"
                 type="text"
                 placeholder="Enter OTP"
@@ -139,7 +139,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <button
-                className="absolute hover:bg-purple-700 bg-AIDEOTYPO  px-5 py-2 text-white rounded-3xl text-gray-300 right-0"
+                className="absolute bg-AIDEOTYPO  px-5 py-2 text-white rounded-3xl text-gray-300 left-0"
                 size={14}
                 type="button"
               >Send</button>

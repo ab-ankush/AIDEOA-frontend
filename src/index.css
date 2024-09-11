@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.myimg{
+.myimg {
   background-image: url(../public/images/2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.active {
+  background-color: white;
+  color: purple;
 }
 body {
   .glass-effect {
@@ -15,14 +19,19 @@ body {
     background: rgba(79, 77, 77, 0.3);
   }
   .membershipBtn {
-    background: linear-gradient(270deg, rgba(87, 0, 199, 0.32) 6.44%, rgba(86, 0, 196, 0.4) 24.14%, rgba(65, 0, 148, 0.8) 100%);
-
+    background: linear-gradient(
+      270deg,
+      rgba(87, 0, 199, 0.32) 6.44%,
+      rgba(86, 0, 196, 0.4) 24.14%,
+      rgba(65, 0, 148, 0.8) 100%
+    );
   }
   .mainBackgroundImg {
-    background-image: url(/Rectangle128.png);
+    background: linear-gradient(rgba(31, 31, 31, 0.85), rgba(31, 31, 31, 0.65)) ,url(/enhanceimage/Homepage.png);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: brightness(10%) contrast(200%) saturate(150%);
+  
   }
 
   .imagefilter {
@@ -32,37 +41,36 @@ body {
   .bottomshadowgradient {
     background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
   }
-  .dropshadowbox{
+  .dropshadowbox {
     box-shadow: 0px 0px 15px 0px #00000040;
   }
-  .lightdropshadowbox{
+  .lightdropshadowbox {
     box-shadow: 0px 0px 7px 0px #00000040;
   }
 }
 
- .customScrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #434242 #cdcdcd;
-  }
-
-
-   .customScrollbar::-webkit-scrollbar {
-    width: 10px;
-  }
-
-   .customScrollbar::-webkit-scrollbar-track {
-    background: #696969;
-  }
-
-   .customScrollbar::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 20px;
-    border: 1px groove #a6a6a6;
-  }
-
-
-  .react-gallery-el {
-    width: 100%;
-    height: 0;
-    padding-bottom: 65%;
+.customScrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #434242 #cdcdcd;
 }
+
+.customScrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  background: #696969;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 20px;
+  border: 1px groove #a6a6a6;
+}
+
+  .no-scroll {
+
+    position: absolute; 
+    width: 100%; 
+  }
+  

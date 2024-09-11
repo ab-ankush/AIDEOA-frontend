@@ -6,7 +6,7 @@ const images=['/images/1.jpg','/images/2.jpg','/images/3.jpg','/images/4.jpg','/
 
 const ImageCarousel = () => {
   return (
-<div className='flex justify-center  '>
+<div className='flex justify-center pb-20 '>
     <div className='max-w-4xl flex flex-col gap-4 justify-center text-center items-center' >
             <h1 className="font-semibold text-[35px] leading-15">Photo Gallery</h1>
             <p className='text-normal text-gray-400'>Loremuisquam soluta quae eos?</p>

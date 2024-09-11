@@ -78,7 +78,6 @@ const EmployeeIdCard = () => {
                 className="h-[50px] w-[50px] "
                 alt=""
               />
-
             </div>
             <p className=" absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
               All india diploma engineers & Officials Association (AIDEOA)

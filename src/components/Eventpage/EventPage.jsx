@@ -14,7 +14,7 @@ const EventPage = () => {
   const getData="Already team up and moving forward!"
   return (
     <div className="pt-14">
-      <TopImageCard title={"AIDEOA  Events"}/>
+      <TopImageCard image={'/enhanceimage/Events.png'} title={"AIDEOA  Events"}/>
         <div className=" flex px-5 flex-wrap gap-2 mt-12  content-center max-w-7xl  m-auto">
  
        {

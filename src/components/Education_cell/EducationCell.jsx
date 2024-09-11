@@ -38,9 +38,9 @@ const EducationCell = () => {
 
   return (
     <div className="pt-14">
-      <TopImageCard title={"Education Cell"} />
+      <TopImageCard image={'./enhanceimage/Education.png'} title={"Education Cell"} />
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
-        Executive Members
+        Executive Members/Founder Members
       </div>
 
       <div className=" mx-auto w-[90%] flex flex-row flex-wrap justify-evenly items-center ">
@@ -53,7 +53,7 @@ const EducationCell = () => {
         )}
       </div>
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
-        Education Cell Members
+        Our Members
       </div>
 
       <div className=" mx-auto w-[90%]  flex flex-row flex-wrap justify-evenly items-center ">

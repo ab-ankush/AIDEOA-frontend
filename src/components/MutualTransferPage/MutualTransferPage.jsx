@@ -13,13 +13,18 @@ import ReviewForm from "./components/ReviewForm";
 const MutualTransferPage = () => {
   return (
     <div className="pt-14">
-    <TopImageCard title="AIDEOA Mutual Transfer Portal" description="Welcome to the Aidoea Mutual Transfer Portal"/>
+      <TopImageCard
+        image={"enhanceimage/Mutual.png"}
+        title="AIDEOA Mutual Transfer Portal"
+        description="Welcome to the Aidoea Mutual Transfer Portal"
+        position={"center"}
+      />
       <Info />
       <FormDescription />
       {/* <SelectSwitch /> */}
       <Form />
-    <ReviewForm />
-     <Slider />
+      <ReviewForm />
+      <Slider />
       <EmailNotiCard />
       <Footer />
     </div>

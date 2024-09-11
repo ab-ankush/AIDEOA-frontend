@@ -11,7 +11,7 @@ const Card = (props) => {
           <img
             src="/images/2.jpg"
             className="rounded-full w-[200px] h-[200px]"
-            alt=""
+            alt="card"
           />
         </div>
         <div className="flex flex-col">

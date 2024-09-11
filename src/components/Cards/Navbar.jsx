@@ -69,6 +69,14 @@ const Navbar = () => {
               About us
             </NavLink>
             <NavLink
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/about" &&
+                "text-purple-600 border-purple-600 border-b"
+                } `}
+              to="/query"
+            >
+              Query
+            </NavLink>
+            <NavLink
               className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/contact" &&
                 "text-purple-600 border-purple-600 border-b"
                 } `}
@@ -145,6 +153,13 @@ const Navbar = () => {
                   onClick={sethamfunc}
                 >
                   About us
+                </NavLink>
+                <NavLink
+                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  to="/query"
+                  onClick={sethamfunc}
+                >
+                  Query
                 </NavLink>
                 <NavLink
                   className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"

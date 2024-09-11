@@ -8,10 +8,11 @@
   background-size: cover;
   background-position: center;
 }
-.active {
-  /* background-color: gray; */
-  color: black;
+.active{
+  border-bottom:purple;
+  background:white;
 }
+  
 body {
   .glass-effect {
     -webkit-backdrop-filter: blur(15px);

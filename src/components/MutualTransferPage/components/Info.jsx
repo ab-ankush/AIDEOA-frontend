@@ -25,7 +25,7 @@ const Info = () => {
             </button>
           </div>
           <div className="relative">
-            <button className="font-medium text-gray-600 text-lg p-4 w-64 border border-purple-500 rounded-full">
+            <button className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full">
               Submitted Data List
             </button>
             <FaChevronDown className="text-purple-600 absolute top-6 right-5" />

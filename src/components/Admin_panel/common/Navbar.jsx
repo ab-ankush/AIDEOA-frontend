@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
-import '../../../src/index.css'
+import '../../../index.css'
 const Navbar = () => {
   const [ham, setham] = useState(true);
   const { pathname } = useLocation();
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed z-10 w-full bg-white opacity-100 flex  flex-row justify-between items-center">
+      <nav className="absolute z-10 w-full bg-white opacity-100 flex  flex-row justify-between items-center">
         <Link to="/">
           <div
             className=" adeiou flex  flex-row justify-center items-center"
@@ -58,7 +58,7 @@ const Navbar = () => {
                 } `}
               to="/education"
             >
-              Education Team
+              Education cell
             </NavLink>
             <NavLink
               className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/about" &&
@@ -137,7 +137,7 @@ const Navbar = () => {
                   to="/education"
                   onClick={sethamfunc}
                 >
-                  Education Team
+                  Education cell
                 </NavLink>
                 <NavLink
                   className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"

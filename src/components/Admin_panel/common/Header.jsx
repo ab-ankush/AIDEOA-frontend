@@ -65,6 +65,27 @@ const Header = (props) => {
       ) : (
         ""
       )}
+      {data.T ? (
+        <div className=" w-[90%] flex overflow-x-hidden justify-between items-center p-4 ml-7 my-2 mx-5">
+          <div className="flex">
+            <input
+              type="text"
+              placeholder="search by name or id"
+              className="rounded-lg px-4 mx-3 ml-0 py-3"
+            />
+          </div>
+          <div>
+            <button className="border border-gray-200 rounded-2xl p-4 mx-3 shadow bg-white text-purple-600">
+              <FaDownload />
+            </button>
+            <button className="border border-gray-200 rounded-2xl px-3 py-3 mx-3 shadow text-white bg-purple-600">
+              New User
+            </button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 };

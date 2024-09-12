@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import SubmissionTable from '../Mutual_transfer/ShowTable'
 const Info = () => {
   const navigate=useNavigate();
+  const [show,setshow]=useState(false);
+  const showtable=()=>{
+    setshow(!show);
+    console.log(!show);
+  }
   const handleScroll = () => {
     const section = document.getElementById("form-section");
     section.scrollIntoView({ behavior: "smooth" });
@@ -20,7 +27,8 @@ const Info = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 w-full xl:w-[40%] justify-center flex-col max-md:m-auto  md:flex-row md:gap-x-4">
+
+  <div className="flex gap-4 w-full xl:w-[40%] justify-center flex-col max-md:m-auto  md:flex-row md:gap-x-4">
           <div className="sm:w-80 w-full m-auto">
             <button
               onClick={handleScroll}
@@ -35,8 +43,19 @@ const Info = () => {
             </button>
             <FaChevronDown className="text-purple-600 absolute top-6 right-5" />
           </div>
+          <div>
+            <button
+              onClick={showtable}
+              className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full"
+            >
+             My Submission
+            </button>
+          </div>
         </div>
       </div>
+      {
+        show ? <SubmissionTable/>:""
+      }
     </div>
   );
 };

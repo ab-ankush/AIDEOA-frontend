@@ -1,4 +1,4 @@
-export const coalIndiaSubsidiaries = [
+const coalIndiaSubsidiaries = [
   {
     name: "Eastern Coalfields Ltd. ",
     headquarters: "Sanctoria, West Bengal",
@@ -61,3 +61,4 @@ export const coalIndiaSubsidiaries = [
   },
 ];
 
+export default coalIndiaSubsidiaries;

@@ -17,8 +17,8 @@ const Mutual_table=()=>{
     const [search, setSearch] = useState("");
 
     return (
-        <div>
-        <div className="w-full mb-10">
+        <div className='m-5 mx-12'>
+        <div className="w-full my-4">
           <input
             type="text"
             value={search}

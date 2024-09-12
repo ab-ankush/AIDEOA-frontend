@@ -65,7 +65,7 @@ const Header = (props) => {
       ) : (
         ""
       )}
-      {data.T ? (
+      {/* {data.T ? (
         <div className=" w-[90%] flex overflow-x-hidden justify-between items-center p-4 ml-7 my-2 mx-5">
           <div className="flex">
             <input
@@ -85,7 +85,7 @@ const Header = (props) => {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </>
   );
 };

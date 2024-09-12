@@ -9,7 +9,6 @@ import Footer from "../Cards/Footer";
 import TopImageCard from "../Cards/TopImageCard";
 import Slider from "../Cards/Slider/Slider";
 import ReviewForm from "./components/ReviewForm";
-
 const MutualTransferPage = () => {
   
   return (

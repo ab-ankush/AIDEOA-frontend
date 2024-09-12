@@ -38,7 +38,7 @@ const EducationCell = () => {
 
   return (
     <div className="pt-14">
-      <TopImageCard title={"Our Members"} />
+      <TopImageCard image={'./enhanceimage/Education.png'} title={"Our Team"} />
       <div className=" eduheading font-bold text-[25px] text-purple-500 text-center my-[20px]">
         Executive / Founder Members
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
-import '../../../src/index.css'
+import "../../../src/index.css";
 const Navbar = () => {
   const [ham, setham] = useState(true);
   const { pathname } = useLocation();
@@ -23,47 +23,56 @@ const Navbar = () => {
             className=" adeiou flex  flex-row justify-center items-center"
             id="brand"
           >
-            <img src="./images/logo.png" className="max-sm:h-[50px]   pl-2" alt="logo" />
+            <img
+              src="./images/logo.png"
+              className="max-sm:h-[50px]   pl-2"
+              alt="logo"
+            />
           </div>
         </Link>
 
         <div className="  max-lg:hidden lg:flex  lg:flex-row  gap-2 ">
           <div className=" adeiou flex flex-row justify-between items-center">
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600  ${pathname === "/" && "text-purple-600 border-purple-600 border-b"
-                } `}
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600  ${
+                pathname === "/" && "text-purple-600 border-purple-600 border-b"
+              } `}
               to="/"
             >
               Home
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/event" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/event" &&
                 "text-purple-600 border-purple-600 border-b"
-                } `}
+              } `}
               to="/event"
             >
               AIDEOA Events
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/mutualtransfer" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/mutualtransfer" &&
                 "text-purple-600 border-purple-600 border-b"
-                } `}
+              } `}
               to="/mutualtransfer"
             >
               Mutual Transfer
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/education" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/education" &&
                 "text-purple-600 border-purple-600 border-b"
-                } `}
+              } `}
               to="/education"
             >
-              Education Team
+              Our Team
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/about" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/about" &&
                 "text-purple-600 border-purple-600 border-b"
-                } `}
+              } `}
               to="/about"
             >
               About us
@@ -71,15 +80,16 @@ const Navbar = () => {
             <NavLink
               className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/query" &&
                 "text-purple-600 border-purple-600 border-b"
-                } `}
+              } `}
               to="/query"
             >
               Query
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/contact" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/contact" &&
                 "text-purple-600 border-purple-600 border-b"
-                } `}
+              } `}
               to="/contact"
             >
               Contact us
@@ -98,15 +108,20 @@ const Navbar = () => {
           <RxHamburgerMenu className="w-[44px] cursor-pointer mx-3 h-[44px]" />
         </div>
         <div
-          className={`fixed bg-white flex flex-col lg:hidden  inset-0 ${ham ? "hidden" : "block"
-            } `}
+          className={`fixed bg-white flex flex-col lg:hidden  inset-0 ${
+            ham ? "hidden" : "block"
+          } `}
         >
           <div className="flex flex-row border-b border-gray-300 justify-between items-center ">
             <div
               className="flex flex-row justify-center items-center"
               id="brand"
             >
-              <img src="./images/logo.png" className="pl-2 h-[50px] " alt="logo" />
+              <img
+                src="./images/logo.png"
+                className="pl-2 h-[50px] "
+                alt="logo"
+              />
             </div>
             <div onClick={sethamfunc} id="hamicon lg:block ">
               {ham ? (
@@ -120,49 +135,63 @@ const Navbar = () => {
             <div className="flex flex-col-reverse max-lg:flex-col gap-2 ">
               <div className="flex flex-col">
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/" && "text-purple-600 "
+                  }`}
                   to="/"
                   onClick={sethamfunc}
                 >
                   Home
                 </NavLink>
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/event" && "text-purple-600 "
+                  }`}
                   to="/event"
                   onClick={sethamfunc}
                 >
                   AIDEOA Events
                 </NavLink>
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/mutualtransfer" && "text-purple-600 "
+                  }`}
                   to="/mutualtransfer"
                   onClick={sethamfunc}
                 >
                   Mutual Transfer
                 </NavLink>
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/education" && "text-purple-600 "
+                  }`}
                   to="/education"
                   onClick={sethamfunc}
                 >
-                  Education Team
+                  Our Team
                 </NavLink>
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/about" && "text-purple-600 "
+                  }`}
                   to="/about"
                   onClick={sethamfunc}
                 >
                   About us
                 </NavLink>
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/query" && "text-purple-600 "
+                  }`}
                   to="/query"
                   onClick={sethamfunc}
                 >
                   Query
                 </NavLink>
                 <NavLink
-                  className=" do block py-3 px-6 hover:text-purple-600 hover:bg-gray-100"
+                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/contact" && "text-purple-600 "
+                  }`}
                   to="/contact"
                   onClick={sethamfunc}
                 >
@@ -175,7 +204,7 @@ const Navbar = () => {
                     signupfunc();
                     sethamfunc();
                   }}
-                  className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+                  className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3  px-6 text-purple-600 border border-purple-600"
                 >
                   Sign up
                 </button>

@@ -40,22 +40,21 @@ const IdCardPurple = () => {
   };
 
   return (
-    <div className="flex flex-col w-full justify-around ">
-      <div className="flex flex-col justify-center items-center">
+    <div className="flex  flex-col w-full justify-start ">
+      <div className="flex  flex-col justify-start items-center">
         <button
           onClick={generatePdf}
           className="bg-purple-600 text-white py-2 px-4 mb-4 rounded-lg"
         >
           Download ID Card PDF
         </button>
-
-        {show ? (
-          <div
+        <div className="relative w-full flex justify-center items-center h-[600px]">
+        <div
             id="frontcover"
             onMouseEnter={() => {
               setShow(false);
             }}
-            className="bg-purple-200 border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%]"
+            className={`bg-purple-200 absolute   ${show?" z-10":" z-0"} border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%]`}
           >
             <div className="relative min-height-[549px]">
               <img src="/card/lower.svg" className="max-xsm:w-full" alt="lower" />
@@ -99,7 +98,7 @@ const IdCardPurple = () => {
                 <div className="absolute flex flex-col justify-start items-start left-[130px] top-[420px] absolute transform -translate-x-1/2 -translate-y-1/2 max-xsm:left-[105px] max-xsm:top-[390px]">
                   <img
                     src="/images/send/sign.png"
-                    className="bg-white w-[70px] h-[45px] mx-auto"
+                    className=" w-[70px] h-[45px] mx-auto"
                     alt="signature"
                   />
                   <p className="text-[10px] text-purple-700 font-medium">
@@ -115,13 +114,12 @@ const IdCardPurple = () => {
               <img src="/card/upper.svg" className="max-xsm:w-full" alt="upper" />
             </div>
           </div>
-        ) : (
           <div
             id="backcover"
             onMouseLeave={() => {
               setShow(true);
             }}
-            className="bg-purple-200 border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit"
+            className={`  bg-purple-200 absolute ${show ? " z-0":" z-10"} border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit`}
           >
             <div className="relative min-height-[549px]">
               <img
@@ -168,7 +166,8 @@ const IdCardPurple = () => {
               <img src="/card/upper.svg" className="max-xsm:w-full" alt="upper svg" />
             </div>
           </div>
-        )}
+        </div>
+        
       </div>
     </div>
   );

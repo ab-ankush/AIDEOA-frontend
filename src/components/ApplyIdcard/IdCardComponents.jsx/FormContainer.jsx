@@ -45,7 +45,7 @@ const FormContainer = () => {
               </button>
             </div>
           </div>
-          <div className="flex  w-full justify-between gap-16 max-md:flex-col max-md:flex-col-reverse max-lg:gap-10 max-lg:">
+          <div className="flex  w-full justify-between gap-16 max-md:flex-col-reverse  max-lg:gap-10 max-lg:">
             {
               formType ? <IDform /> : <EmployeeForm />
             }

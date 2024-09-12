@@ -12,8 +12,8 @@ const EmployeeIdCard = () => {
           className=" 
             bg-red-100 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] "
         >
-          <div className="relative">
-            <img src="/card/employeelower.svg" className="max-xsm:w-full" alt="" />
+          <div className="relative min-h-[549px]">
+            {/* <img src="/card/employeelower.svg" className="max-xsm:w-full" alt="" /> */}
             <div className="absolute flex top-[10px] ">
               <img
                 src="/images/logo.png"

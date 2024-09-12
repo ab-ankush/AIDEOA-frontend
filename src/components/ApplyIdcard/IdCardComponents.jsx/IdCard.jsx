@@ -11,7 +11,7 @@ const IdCard = () => {
           className=" 
             bg-red-200 border   border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] "
         >
-          <div className="relative">
+          <div className="relative min-h-[549px]">
             <img src="/card/lower.svg" className="max-xsm:w-full" alt="lower" />
             <div className="absolute flex top-[10px] ">
               <img

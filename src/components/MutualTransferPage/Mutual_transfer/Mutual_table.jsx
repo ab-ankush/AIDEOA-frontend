@@ -21,14 +21,7 @@ const Mutual_table = () => {
 
   return (
     <div className="m-5 mx-12 ">
-      <div className="lg:w-[90%] my-4 flex flex-wrap justify-center gap-4 items-center ">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="p-3 rounded-xl text-xl border max-sm:w-[300px] w-[20%] shadow-xl border-gray-200"
-          placeholder="Search"
-        />
+      <div className="lg:w-[90%] my-4 mx-auto flex flex-wrap justify-start gap-4 items-center ">
         <select name="" id=""  className="p-3 overflow-y-scroll max-sm:w-[300px] rounded-xl text-xl border w-[20%] shadow-xl bg-white text-gray-400 border-gray-200">
           <option className="w-[300px]overflow-x-hidden" value="">From</option>
           {
@@ -45,6 +38,8 @@ const Mutual_table = () => {
             ))
           }
         </select>
+        <button className="p-3  max-sm:w-[300px] rounded-xl text-xl border w-[20%] shadow-xl bg-purple-600 text-white border-gray-200">Submit</button>
+        
       </div>
 
       <div className="lg:w-[90%] mx-auto overflow-x-auto">

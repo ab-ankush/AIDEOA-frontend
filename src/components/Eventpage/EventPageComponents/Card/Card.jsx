@@ -42,6 +42,9 @@ const Card = () => {
             the 1500s, when an unknown printer took a galley of ..
           </p>
         </div>
+        <div>
+          <button className="bg-purple-600 text-white px-4 py-3 rounded-xl ">Share</button>
+        </div>
       </div>
     </div>
   );

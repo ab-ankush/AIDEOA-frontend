@@ -1,5 +1,7 @@
 import { FaChevronDown } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 const Info = () => {
+  const navigate=useNavigate();
   const handleScroll = () => {
     const section = document.getElementById("form-section");
     section.scrollIntoView({ behavior: "smooth" });
@@ -27,8 +29,8 @@ const Info = () => {
               Start Applying
             </button>
           </div>
-          <div className="relative">
-            <button className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full">
+          <div onClick={()=>navigate("/datalist")} className="relative ">
+            <button  className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full">
               Submitted Data List
             </button>
             <FaChevronDown className="text-purple-600 absolute top-6 right-5" />

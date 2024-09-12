@@ -21,9 +21,9 @@ function Sidebar(props) {
         <button id="trans" onClick={() => { changeColor({ m: false, u: false, t: true, T: false }); }}>
           <AiOutlineDollar className={`w-8 h-8  ${color.t ? 'text-red-600' : 'text-purple-600'} `} />
         </button>
-        <button id="Trans" onClick={() => { changeColor({ m: false, u: false, t: false, T: true }); }}>
+        {/* <button id="Trans" onClick={() => { changeColor({ m: false, u: false, t: false, T: true }); }}>
           <TbArrowsTransferUp className={`w-8 h-8  ${color.T ? 'text-red-600' : 'text-purple-600'} `} />
-        </button>
+        </button> */}
       </div>
       <IoSettingsOutline className="w-8 h-8  text-purple-600 mb-4 mx-auto " />
     </div>

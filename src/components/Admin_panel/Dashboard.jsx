@@ -5,7 +5,6 @@ import Chart from './Membership/Chart.jsx'
 import Trans from "./Transaction/Trans";
 import User from "./Users/User";
 import MutualLayout from './common/MainLayout.jsx'
-import Mutual from "./Mutual_transfer/Mutual";
 const Dashboard = () => {
     const [data, setdata] = useState({ m: true, u: false, t: false, T: false })
     const setit = (x) => {
@@ -29,9 +28,9 @@ const Dashboard = () => {
                     {
                         data.t ? <Trans /> : ''
                     }
-                    {
+                    {/* {
                         data.T ? <Mutual /> : ''
-                    }
+                    } */}
                 </div>
             </div>
         </div>

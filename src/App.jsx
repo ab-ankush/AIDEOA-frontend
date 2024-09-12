@@ -16,7 +16,12 @@ import Dashboard from "./components/Admin_panel/Dashboard.jsx";
 import MainLayout from "./layout/MainLayout.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
 import DataList from "./components/MutualTransferPage/DataList";
-
+import Onlinetest from "./components/Onlinetest/Onlinetest"
+import StudentCorner from "./components/studentcorner/StudentCorner";
+import Employeecorner from "./components/Employeecorner/Employeecorner";
+import Education from "./components/Education/Education";
+import QueryForm from "./components/queryform/QueryForm";
+import NotFound from "./components/notfound/Notfound";
 export default function App() {
   return (
     <ScrollToTop>

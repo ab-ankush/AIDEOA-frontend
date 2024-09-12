@@ -20,8 +20,8 @@ const Mutual_table = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="m-5 mx-12">
-      <div className="w-full my-4 flex flex-wrap max-sm:justify-center max-sm:items-center ">
+    <div className="m-5 mx-12 ">
+      <div className="lg:w-[90%] my-4 flex flex-wrap justify-center gap-4 items-center ">
         <input
           type="text"
           value={search}
@@ -47,8 +47,8 @@ const Mutual_table = () => {
         </select>
       </div>
 
-      <div className="w-full overflow-x-auto">
-        <table className="   ">
+      <div className="lg:w-[90%] mx-auto overflow-x-auto">
+        <table className=" w-full  ">
           <tr className="  ">
             <th className=" items-center min-w-1 rounded-tl-2xl rounded-bl-2xl bg-purple-400 p-5 ">
               <p className=" size-6 " />

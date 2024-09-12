@@ -15,99 +15,98 @@ const membership = [
   { name: "Donation", link: "/donation" },
 ];
 const policy = [
-  { name: "Privacy Policy", link: "/" },
-  { name: "Refund Policy", link: "/" },
-  { name: "Terms & Conditions", link: "/" },
+  { name: "Privacy Policy", link: "/policies/privacy policy vinay.pdf" },
+  { name: "Refund Policy", link: "/policies/Refund Policy Vinay.pdf" },
+  { name: "Terms & Conditions", link: "/policies/T&C Vinay.pdf" },
 ];
 const Footer = () => {
   return (
     <>
       <div className="bg-black  w-full h-full grid grid-cols-2 justify-between max-xl:grid-cols-2 py-14 px-20 max-lg:px-10 max-md:grid-cols-1">
-     
         <div className="flex  w-full max-xl:flex-col ">
-        <div className="pr-3 flex border-r-2  w-full gap-3 flex-wrap  max-md:border-none">
-          <div className="flex flex-col gap-1 ">
-            <h1 className="text-white font-semibold text-xl mb-2">
-              Organization
-            </h1>
-            {orgainization.map((item, idx) => {
-              return (
-                <Link to={item.link} key={idx}>
-                  <span className="text-gray-400  text-base hover:text-purple-700">
-                    {item.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="flex flex-col gap-1">
-            <h1 className="text-white font-semibold text-xl mb-2">
-              Membership
-            </h1>
-            {membership.map((item, idx) => {
-              return (
-                <Link to={item.link} key={idx}>
-                  <span className="text-gray-400  text-base hover:text-purple-700">
-                    {item.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="flex flex-col gap-1">
-            <h1 className="text-white font-semibold text-xl mb-2">Policy</h1>
-            {policy.map((item, idx) => {
-              return (
-                <Link to={item.link} key={idx}>
-                  <span className="text-gray-400  text-base hover:text-purple-700">
-                    {item.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-        <div className="flex w-full px-3 mx-3 border-r-2 max-xl:mx-0  max-xl:px-0 max-xl:py-3 max-md:border-none">
-          <div className="flex x flex-col gap-3 justify-between">
-            
-            <div className="flex flex-col gap-2 mb-3">
-              <h1 className="font-mdeium text-xl text-white">
-                Lorem Ipsum is simple
+          <div className="pr-3 flex border-r-2  w-full gap-3 flex-wrap  max-md:border-none">
+            <div className="flex flex-col gap-1 ">
+              <h1 className="text-white font-semibold text-xl mb-2">
+                Organization
               </h1>
-              <p className="text-base text-gray-400">
-                Go to our official Announcements
-              </p>
+              {orgainization.map((item, idx) => {
+                return (
+                  <Link to={item.link} key={idx}>
+                    <span className="text-gray-400  text-base hover:text-purple-700">
+                      {item.name}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="flex flex-col gap-1">
+              <h1 className="text-white font-semibold text-xl mb-2">
+                Membership
+              </h1>
+              {membership.map((item, idx) => {
+                return (
+                  <Link to={item.link} key={idx}>
+                    <span className="text-gray-400  text-base hover:text-purple-700">
+                      {item.name}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="flex flex-col gap-1">
+              <h1 className="text-white font-semibold text-xl mb-2">Policy</h1>
+              {policy.map((item, idx) => {
+                return (
+                  <a href={item.link} key={idx} target="_blank">
+                    <span className="text-gray-400  text-base hover:text-purple-700">
+                      {item.name}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
-        </div>
+          <div className="flex w-full px-3 mx-3 border-r-2 max-xl:mx-0  max-xl:px-0 max-xl:py-3 max-md:border-none">
+            <div className="flex x flex-col gap-3 justify-between">
+              <div className="flex flex-col gap-2 mb-3">
+                <h1 className="font-mdeium text-xl text-white">
+                  Lorem Ipsum is simple
+                </h1>
+                <p className="text-base text-gray-400">
+                  Go to our official Announcements
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="flex gap-2 w-full max-xl:flex-col max-xl:justify-between">
-        <div className="flex  px-3 w-1/2  border-r-2 max-md:px-0  max-xl:border-none">
-          <div className="flex flex-col gap-3 justify-between ">
-            <div className="flex flex-col gap-1">
-              <h1 className="font-mdeium text-xl text-white">
-                Lorem Ipsum is simple
-              </h1>
-              <p className="text-base text-gray-400">Go to DID requirements</p>
+          <div className="flex  px-3 w-1/2  border-r-2 max-md:px-0  max-xl:border-none">
+            <div className="flex flex-col gap-3 justify-between ">
+              <div className="flex flex-col gap-1">
+                <h1 className="font-mdeium text-xl text-white">
+                  Lorem Ipsum is simple
+                </h1>
+                <p className="text-base text-gray-400">
+                  Go to DID requirements
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className=" flex flex-col justify-between  pl-3  max-md:pl-0">
+            <div className="flex flex-col justify-start  gap-1 mb-8">
+              <h1 className="font-mdeium text-xl text-white">Office Address</h1>
+              <p className="text-base text-gray-400 text-start  ">
+                Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
+              </p>
+            </div>
+            <div className="flex gap-4  w-full justify-center text-white ">
+              <FaInstagram className="cursor-pointer" />
+              <FaDribbble className="cursor-pointer" />
+              <FaTwitter className="cursor-pointer" />
+              <FaYoutube className="cursor-pointer" />
             </div>
           </div>
         </div>
-        <div className=" flex flex-col justify-between  pl-3  max-md:pl-0">
-          <div className="flex flex-col justify-start  gap-1 mb-8">
-            <h1 className="font-mdeium text-xl text-white">Office Address</h1>
-            <p className="text-base text-gray-400 text-start  ">
-              Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
-            </p>
-          </div>
-          <div className="flex gap-4  w-full justify-center text-white ">
-            <FaInstagram className="cursor-pointer" />
-            <FaDribbble className="cursor-pointer" />
-            <FaTwitter className="cursor-pointer" />
-            <FaYoutube className="cursor-pointer" />
-          </div>
-        </div>
-        </div>
-        
       </div>
       <BottomFooter />
     </>

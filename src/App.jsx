@@ -35,7 +35,7 @@ export default function App() {
           <Route path="/mutualtransfer/datalist" element={<DataList/>}/>
           <Route path="membership" element={<JoinMembership />} />
           <Route path="donation" element={<DonationComponent />} />
-          <Route path="mutualtransfer" element={<MutualTransferPage />} />
+          <Route path="mutualtransfer" element={<MutualTransferPage />}/ >
           <Route path="about" element={<About />} />
           <Route path="education" element={<EducationCell />} />
           <Route path="idcard" element={<ApplyIdCard />} />

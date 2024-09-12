@@ -12,7 +12,15 @@
   border-bottom:purple;
   background:white;
 }
-  
+select[multiple] {
+  width: 100%;
+  height: 100px;
+  overflow-y: scroll;
+}
+
+select[multiple] option {
+  padding: 10px;
+}
 body {
   .glass-effect {
     -webkit-backdrop-filter: blur(15px);

@@ -1,115 +1,121 @@
 import React from "react";
-import { CiSearch } from "react-icons/ci";
-import { FaDribbble, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import BottomFooter from "./BottomFooter";
+import { FaInstagram, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
-const orgainization = [
+
+const companyLinks = [
   { name: "About Us", link: "/about" },
-  { name: "Events", link: "/events" },
+  { name: "Careers", link: "/careers" },
+  { name: "Services", link: "/services" },
+  { name: "Blog", link: "/blog" },
+  { name: "Our Story", link: "/story" },
   { name: "Contact Us", link: "/contact" },
-  { name: "Education Cell", link: "/education" },
 ];
-const membership = [
-  { name: "Join Membership", link: "/membership" },
-  { name: "Apply ID Card", link: "/idcard" },
-  { name: "Donation", link: "/donation" },
+
+const servicesLinks = [
+  { name: "Consulting", link: "/consulting" },
+  { name: "Investment Banking", link: "/investment" },
+  { name: "Audit", link: "/audit" },
 ];
-const policy = [
-  { name: "Privacy Policy", link: "/policies/privacy policy vinay.pdf" },
-  { name: "Refund Policy", link: "/policies/Refund Policy Vinay.pdf" },
-  { name: "Terms & Conditions", link: "/policies/T&C Vinay.pdf" },
+
+const legalLinks = [
+  { name: "Privacy", link: "/privacy" },
+  { name: "Legal Policy", link: "/legal" },
 ];
+
 const Footer = () => {
   return (
-    <>
-      <div className="bg-black  w-full h-full grid grid-cols-2 justify-between max-xl:grid-cols-2 py-14 px-20 max-lg:px-10 max-md:grid-cols-1">
-        <div className="flex  w-full max-xl:flex-col ">
-          <div className="pr-3 flex border-r-2  w-full gap-3 flex-wrap  max-md:border-none">
-            <div className="flex flex-col gap-1 ">
-              <h1 className="text-white font-semibold text-xl mb-2">
-                Organization
-              </h1>
-              {orgainization.map((item, idx) => {
-                return (
-                  <Link to={item.link} key={idx}>
-                    <span className="text-gray-400  text-base hover:text-purple-700">
-                      {item.name}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-            <div className="flex flex-col gap-1">
-              <h1 className="text-white font-semibold text-xl mb-2">
-                Membership
-              </h1>
-              {membership.map((item, idx) => {
-                return (
-                  <Link to={item.link} key={idx}>
-                    <span className="text-gray-400  text-base hover:text-purple-700">
-                      {item.name}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-            <div className="flex flex-col gap-1">
-              <h1 className="text-white font-semibold text-xl mb-2">Policy</h1>
-              {policy.map((item, idx) => {
-                return (
-                  <a href={item.link} key={idx} target="_blank">
-                    <span className="text-gray-400  text-base hover:text-purple-700">
-                      {item.name}
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
+    <footer className="bg-black text-gray-400 py-14 px-20 max-lg:px-10">
+      <div className="grid grid-cols-2 gap-10 max-md:grid-cols-1">
+        {/* Left Section */}
+        <div className="space-y-8">
+          <div>
+            <h1 className="text-white text-lg font-semibold">HedgeMyFunds</h1>
+            <p className="mt-2">
+              Empower Yourself, Your Investments, Your Skills & Career. <br />
+              Bringing Financial Freedom <br /> For India, By India
+            </p>
           </div>
-          <div className="flex w-full px-3 mx-3 border-r-2 max-xl:mx-0  max-xl:px-0 max-xl:py-3 max-md:border-none">
-            <div className="flex x flex-col gap-3 justify-between">
-              <div className="flex flex-col gap-2 mb-3">
-                <h1 className="font-mdeium text-xl text-white">
-                  Lorem Ipsum is simple
-                </h1>
-                <p className="text-base text-gray-400">
-                  Go to our official Announcements
-                </p>
-              </div>
+          <div className="flex gap-16">
+            {/* Company */}
+            <div>
+              <h2 className="text-white font-semibold">Company</h2>
+              <ul className="mt-2 space-y-2">
+                {companyLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <Link to={link.link} className="hover:text-white">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Services */}
+            <div>
+              <h2 className="text-white font-semibold">Services</h2>
+              <ul className="mt-2 space-y-2">
+                {servicesLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <Link to={link.link} className="hover:text-white">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Legal */}
+            <div>
+              <h2 className="text-white font-semibold">Legal</h2>
+              <ul className="mt-2 space-y-2">
+                {legalLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <Link to={link.link} className="hover:text-white">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-        <div className="flex gap-2 w-full max-xl:flex-col max-xl:justify-between">
-          <div className="flex  px-3 w-1/2  border-r-2 max-md:px-0  max-xl:border-none">
-            <div className="flex flex-col gap-3 justify-between ">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-mdeium text-xl text-white">
-                  Lorem Ipsum is simple
-                </h1>
-                <p className="text-base text-gray-400">
-                  Go to DID requirements
-                </p>
-              </div>
-            </div>
+
+        {/* Right Section */}
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-white font-semibold">Get In Touch</h2>
+            <p className="mt-2">
+              <a href="mailto:contact@hedgemyfunds.com" className="block">
+                contact@hedgemyfunds.com
+              </a>
+              <a href="tel:+919888334677" className="block">
+                +91-9888334677
+              </a>
+              Chandigarh, India
+            </p>
           </div>
-          <div className=" flex flex-col justify-between  pl-3  max-md:pl-0">
-            <div className="flex flex-col justify-start  gap-1 mb-8">
-              <h1 className="font-mdeium text-xl text-white">Office Address</h1>
-              <p className="text-base text-gray-400 text-start  ">
-                Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
-              </p>
-            </div>
-            <div className="flex gap-4  w-full justify-center text-white ">
-              <FaInstagram className="cursor-pointer" />
-              <FaDribbble className="cursor-pointer" />
-              <FaTwitter className="cursor-pointer" />
-              <FaYoutube className="cursor-pointer" />
-            </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.423381281603!2d76.77941757504961!3d30.732964593514448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feef9e2727af1%3A0x87b24a2086be8053!2sChandigarh!5e0!3m2!1sen!2sin!4v1694496306329"
+              width="300"
+              height="150"
+              className="w-full"
+              allowFullScreen=""
+              loading="lazy"
+              title="map"
+            ></iframe>
+          </div>
+          <div className="flex gap-4 text-white">
+            <FaInstagram className="cursor-pointer" />
+            <FaFacebookF className="cursor-pointer" />
+            <FaLinkedin className="cursor-pointer" />
           </div>
         </div>
       </div>
-      <BottomFooter />
-    </>
+
+      <div className="text-center text-gray-600 text-sm mt-10">
+        © 2021-2024 Hedgemyfunds.com - A sub-venture of Luxury Hotel Concierge
+        (OPC) Pvt. Ltd.
+      </div>
+    </footer>
   );
 };
 

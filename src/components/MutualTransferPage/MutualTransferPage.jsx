@@ -15,7 +15,7 @@ const MutualTransferPage = () => {
     <div className="pt-14">
       <TopImageCard
         image={"enhanceimage/Mutual.png"}
-        
+        pos={'30% 30%'}
         title="AIDEOA Mutual Transfer Portal"
         description="Welcome to the Aidoea Mutual Transfer Portal"
         position={"custom-pos"}

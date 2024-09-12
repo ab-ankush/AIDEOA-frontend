@@ -12,16 +12,17 @@ import Slider from "../Cards/Slider/Slider";
 
 const EducationCell = () => {
   const data3 = [
-    ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
-    ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
-    ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
-    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
-    ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
-    ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
-    ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
-    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
-    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
-    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+    ["Shri Rajeev Kumar Tiwari", "National General Secretary"],
+    ["Shri Bikash Das", "National President"],
+    ["Shri Sunil Kumar", "Founder Board Member"],
+    ["Shri Sanjay Sahu", "Founder Board Member"],
+    ["Shri Ashok Kumar Shaw", "Founder Board Member"],
+    ["ShriPradeep Kumar Singh", "Founder Board Member"],
+    ["Shri Nishant Kumar Singh", "Founder Board Member"],
+    ["Shri Nilkanth Akela", "Founder Board Member"],
+    ["Shri S.R. Chourasia", "Founder Board Member"],
+    ["Shri Rewati Ram Das", "Founder Board Member"],
+ 
 
   ];
   const data1 = [
@@ -29,9 +30,12 @@ const EducationCell = () => {
     ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
     ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
     ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
+    ["Shri Manish Kumar Yadav", "Aideoa Ed. Cell"],
+    ["Shri Sovan Chatterjee", "Aideoa Ed. Cell"],
+
   ];
   const data2 = [
-    ["Shri Manish Kumar", "Aideoa Ed. Cell"],
+    ["Shri Manish Kumar", "Aideoa IT Cell"],
     ["Vinay Nath Tiwary", "Aideoa IT Cell "],
     ["Adrash Kulshrestha", "Aideoa IT Cell "],
   ];

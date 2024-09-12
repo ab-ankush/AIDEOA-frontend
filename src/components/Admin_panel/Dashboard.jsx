@@ -13,7 +13,7 @@ const Dashboard = () => {
     return (
         <div className=" relative grid grid-cols-[1fr_19fr] w-screen h-screen bg-gray-100 ">
             <Sidebar setit={setit} />
-            <div>
+            <div className="w-[90%] m-auto">
                 {/* {
                     data.T ? <MutualLayout className="absolute top-0" /> : ''
                 } */}

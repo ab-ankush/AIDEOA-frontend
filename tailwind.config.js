@@ -25,6 +25,9 @@ export default {
         "3/2": "3 / 2",
         "16/9": "16 / 9",
       },
+      backgroundPosition: {
+        'custom-pos': '30% 30%',  // Example: custom position at 30% horizontally and 50% vertically
+      },
       backgroundImage: {
         "custom-gradient":
           "linear-gradient(270deg, rgba(87, 0, 199, 0.4) 6.44%, rgba(86, 0, 196, 0.5) 46.74%, #410094 100%)",

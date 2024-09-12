@@ -27,17 +27,18 @@ const Info = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 flex-wrap justify-center flex-col max-md:m-auto  md:flex-row md:gap-x-4">
-          <div>
+
+  <div className="flex gap-4 w-full xl:w-[40%] justify-center flex-col max-md:m-auto  md:flex-row md:gap-x-4">
+          <div className="sm:w-80 w-full m-auto">
             <button
               onClick={handleScroll}
-              className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full"
+              className="font-medium text-gray-600 text-lg p-4 w-[95%] sm:w-80 border border-purple-500 rounded-full"
             >
               Start Applying
             </button>
           </div>
-          <div onClick={()=>navigate("/datalist")} className="relative ">
-            <button  className="font-medium text-gray-600 text-lg p-4 w-80 border border-purple-500 rounded-full">
+          <div onClick={()=>navigate("/datalist")} className="relative w-full sm:w-80 m-auto ">
+            <button  className="font-medium text-gray-600 text-lg p-4 w-[95%] sm:w-80 border border-purple-500 rounded-full">
               Submitted Data List
             </button>
             <FaChevronDown className="text-purple-600 absolute top-6 right-5" />

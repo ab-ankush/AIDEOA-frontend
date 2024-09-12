@@ -18,7 +18,7 @@ const ShowTable = () => {
     const [search, setSearch] = useState("");
   return (
     <div className='m-5 mx-12'>
-        <div>
+        <div className='overflow-y-scroll'>
           <table className=" w-full  ">
             <thead>
             <tr className="  ">

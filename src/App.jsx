@@ -18,6 +18,7 @@ import Transactions from "./adminpanel/Transactions";
 import Dashboard from "./components/Admin_panel/Dashboard.jsx";
 import MainLayout from "./layout/MainLayout.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
+import DataList from "./components/MutualTransferPage/DataList";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="contact" element={<ContactUs />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="datalist" element={<DataList/>}/>
           <Route path="membership" element={<JoinMembership />} />
           <Route path="donation" element={<DonationComponent />} />
           <Route path="mutualtransfer" element={<MutualTransferPage />} />

@@ -69,7 +69,7 @@ const Navbar = () => {
               About us
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/about" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/query" &&
                 "text-purple-600 border-purple-600 border-b"
                 } `}
               to="/query"

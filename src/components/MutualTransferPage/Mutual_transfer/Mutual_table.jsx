@@ -27,7 +27,7 @@ const Mutual_table = () => {
   return (
     <div className="m-5 mx-12 ">
       <div className="lg:w-[90%] my-4 mx-auto flex flex-wrap justify-start gap-4 items-center ">
-      <input type="text" placeholder="Search Here..." className="p-3  max-sm:w-[300px] rounded-xl text-xl border w-[20%] shadow-xl  text-white border-gray-200"/>
+      <input type="text" placeholder="Search Here..." className="p-3  max-sm:w-[300px] rounded-xl sm:max-lg:text-[16px] text-xl border w-[20%] shadow-xl  text-white border-gray-200"/>
         <select name="" id=""  className="p-3 overflow-y-scroll max-sm:w-[300px] rounded-xl text-xl border w-[20%] shadow-xl bg-white text-gray-400 border-gray-200">
           <option className="w-[300px]overflow-x-hidden" value="">From</option>
           {

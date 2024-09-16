@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@splidejs/react-splide": "^0.7.12",
+    "firebase": "^10.13.1",
     "gsap": "^3.12.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",

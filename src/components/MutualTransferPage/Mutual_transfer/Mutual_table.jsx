@@ -5,7 +5,7 @@ const tableData = [
   {
     id: "1",
     name: "Jone Doe",
-    designation:"excutive",
+   
     current_subsidiary:"bccl",
     current_posted_area:"jharkhand",
     current_mine_name:"mine",
@@ -31,16 +31,16 @@ const Mutual_table = () => {
         <select name="" id=""  className="p-3 overflow-y-scroll max-sm:w-[300px] rounded-xl text-xl border w-[20%] shadow-xl bg-white text-gray-400 border-gray-200">
           <option className="w-[300px]overflow-x-hidden" value="">From</option>
           {
-            SubData.map((data)=>(
-            <option className="w-[300px] overflow-x-hidden" value={data.name}>{data.name}</option>
+            SubData.map((data,idx)=>(
+            <option key={idx} className="w-[300px] overflow-x-hidden" value={data.name}>{data.name}</option>
             ))
           }
         </select>
         <select name="" id=""  className="p-3 overflow-y-scroll max-sm:w-[300px] rounded-xl text-xl border w-[20%] shadow-xl bg-white text-gray-400 border-gray-200">
           <option value="">To</option>
           {
-            SubData.map((data)=>(
-            <option value={data.name}>{data.name}</option>
+            SubData.map((data,idx)=>(
+            <option key={idx} value={data.name}>{data.name}</option>
             ))
           }
         </select>
@@ -102,7 +102,7 @@ const Mutual_table = () => {
 
           <tbody>
           {tableData.map((data, index) => (
-            <tr className="border p-1 text-center rounded-tr-2xl rounded-br-2xl rounded-tl-2xl min-w-1 rounded-bl-2xl  border-gray-300">
+            <tr key={index}  className="border p-1 text-center rounded-tr-2xl rounded-br-2xl rounded-tl-2xl min-w-1 rounded-bl-2xl  border-gray-300">
               
 
               <td className="border p-1 text-center rounded-tl-2xl rounded-bl-2xl min-w-1 border-gray-300">

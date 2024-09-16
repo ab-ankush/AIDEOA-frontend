@@ -6,9 +6,12 @@ import {
   FaDribbble,
   FaTwitter,
   FaYoutube,
+  FaRegEye,
+  FaUniversity,
 } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import GoogleSignInButton from "./Cards/SignInwithGoogle";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +19,9 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    otp:""
+    otp:"",
+    usertype:"student",
+    orgname:""
   });
 
   const [error, setError] = useState("");
@@ -57,7 +62,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="min-h-dvh mainBackgroundImg pt-14 flex justify-center items-center">
+      <div className="min-h-dvh mainBackgroundImg relative pt-14 flex justify-center items-center">
         <div className="p-8 w-[50%] max-w-[353px] min-w-[300px]">
           <div className="flex justify-center">
             <img
@@ -100,35 +105,70 @@ const Signup = () => {
               />
             </div>
             <div className="relative">
+              <select
+                className="glass-effect  w-full mb-3 pl-3 py-2  text-white rounded-3xl focus:outline-none"
+                name="usertype"
+         
+                onChange={handleChange}
+              >
+                <option value="student" className="text-black bg-purple-200 rounded-3xl ">Student</option>
+                <option value="employee" className="text-black bg-purple-200 rounded-3xl">Employee</option>
+             </select>
+            </div>
+            <div className="relative">
               <input
-                className="w-full glass-effect px-3 mb-3 py-2 text-black rounded-3xl focus:outline-none"
+                className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
+                name="orgname"
+                type="text"
+                placeholder={formData.usertype==='student'?"Enter university name":"Enter company name"}
+                value={formData.orgname}
+                onChange={handleChange}
+              />
+              <FaUniversity
+                className="absolute top-3 text-gray-300 right-3"
+                size={13}
+              />
+            </div>
+            <div className="relative">
+              <input
+                className="w-full glass-effect px-3 mb-3 py-2 text-white rounded-3xl focus:outline-none"
                 name="password"
                 type={pass ? "text" : "password"}
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
               />
-              <FaRegEyeSlash
+              {
+                pass?<FaRegEye   onClick={() => setPass(!pass)}
+                className="absolute top-3 text-gray-300 right-3 cursor-pointer"
+                size={15}/>: <FaRegEyeSlash
                 onClick={() => setPass(!pass)}
                 className="absolute top-3 text-gray-300 right-3 cursor-pointer"
                 size={15}
               />
+              }
+             
             </div>
             <div className="relative">
               <input
-                className="w-full glass-effect px-3 mb-3 py-2 text-black rounded-3xl focus:outline-none"
+                className="w-full glass-effect px-3 mb-3 py-2 text-white rounded-3xl focus:outline-none"
                 name="confirmPassword"
                 type={ConPass ? "text" : "password"}
                 placeholder="Confirm Password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />
-              <FaRegEyeSlash
+               {
+                ConPass?<FaRegEye   onClick={() => setConPass(!ConPass)}
+                className="absolute top-3 text-gray-300 right-3 cursor-pointer"
+                size={15}/>: <FaRegEyeSlash
                 onClick={() => setConPass(!ConPass)}
                 className="absolute top-3 text-gray-300 right-3 cursor-pointer"
                 size={15}
               />
+              }
             </div>
+            
             <div className="relative">
               <input
                 className="glass-effect bg-white w-full mb-3 px-20 py-2 text-white rounded-3xl focus:outline-none"
@@ -154,7 +194,9 @@ const Signup = () => {
                 Sign Up
               </button>
             </div>
-            <div className="mt-4 text-center text-white">
+            </form>
+            <GoogleSignInButton />
+            <div className="mt-4 text-center text-white pb-10">
               <span>
                 Already have account {" "}
                 <Link to="/login" className="underline hover:text-purple-600 ">
@@ -162,15 +204,16 @@ const Signup = () => {
                 </Link>
               </span>
             </div>
-          </form>
+        
 
-          <div className="flex gap-4 absolute text-white bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] ">
+         
+        </div>
+        <div className="flex gap-4 absolute text-white bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] ">
             <FaInstagram className="cursor-pointer" />
             <FaDribbble className="cursor-pointer" />
             <FaTwitter className="cursor-pointer" />
             <FaYoutube className="cursor-pointer" />
           </div>
-        </div>
       </div>
     </>
   );

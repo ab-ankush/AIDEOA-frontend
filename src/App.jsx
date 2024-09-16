@@ -22,6 +22,7 @@ import Employeecorner from "./components/Employeecorner/Employeecorner";
 import Education from "./components/Education/Education";
 import QueryForm from "./components/queryform/QueryForm";
 import NotFound from "./components/notfound/Notfound";
+import Forgotpassword from "./components/forgotpassword/Forgotpassword";
 export default function App() {
   return (
     <ScrollToTop>
@@ -35,7 +36,7 @@ export default function App() {
           <Route path="/mutualtransferviewportal" element={<DataList/>}/>
           <Route path="membership" element={<JoinMembership />} />
           <Route path="donation" element={<DonationComponent />} />
-          <Route path="mutualtransfer" element={<MutualTransferPage />}/ >
+          <Route path="mutualtransfer" element={<MutualTransferPage />}/>
           <Route path="about" element={<About />} />
           <Route path="education" element={<EducationCell />} />
           <Route path="idcard" element={<ApplyIdCard />} />
@@ -45,8 +46,10 @@ export default function App() {
           <Route path="employeecorner" element={<Employeecorner />} />
           <Route path="educationpage" element={<Education />} />
           <Route path="query" element={<QueryForm />} />
+          <Route path="forgotpassword" element={<Forgotpassword />} />
         </Route>
         <Route path="/admin" element={<Dashboard />} />
+      
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ScrollToTop>

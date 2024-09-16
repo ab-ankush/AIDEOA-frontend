@@ -1,8 +1,9 @@
-import React from "react";
-import { CiUser } from "react-icons/ci";
+import React, { useState } from "react";
+
 import {
   FaDribbble,
   FaInstagram,
+  FaRegEye,
   FaRegEyeSlash,
   FaTwitter,
   FaUser,
@@ -11,6 +12,39 @@ import {
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [formData, setFormData] = useState({
+    
+    email: "",
+    password: "",
+  
+ 
+ 
+ 
+  });
+
+  const [error, setError] = useState("");
+  const [pass, setPass] = useState(false);
+ 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const {  email, } = formData;
+
+ 
+
+    if (!email.includes("@") || !email.includes(".") || email.length < 5) {
+      setError("Email format error");
+      return;
+    }
+
+ 
+   
+
+    alert("Submitted");
+  };
   return (
     <div className="min-h-screen mainBackgroundImg pt-14 flex justify-center items-center">
       <div className=" p-8 w-[50%] max-w-[353px] min-w-[300px]">
@@ -26,13 +60,14 @@ const Login = () => {
           All India Diploma Engineers And Officials Association
         </h1>
         <p className="text-center mb-3 text-white font-semibold ">Sign In</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="relative">
             <input
-              className=" glass-effect  bg-white w-full mb-3 px-3 py-2 text-black rounded-3xl focus:outline-none"
+              className=" glass-effect  bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
               id="email"
               type="email"
               placeholder="Email"
+              onChange={handleChange}
             />
             <FaUser
               className="absolute top-3 text-gray-300 right-3"
@@ -40,25 +75,31 @@ const Login = () => {
             />
           </div>
           <div className="relative">
-            <input
-              className="w-full glass-effect  px-3 mb-3 py-2 text-black rounded-3xl focus:outline-none"
-              id="password"
-              type="password"
-              placeholder="Password"
-            />
-            <FaRegEyeSlash
-              className="absolute top-3 text-gray-300 right-3"
-              size={15}
-            />
+          <input
+                className="w-full glass-effect px-3 mb-3 py-2 text-white rounded-3xl focus:outline-none"
+                name="password"
+                type={pass ? "text" : "password"}
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+             {  pass?<FaRegEye   onClick={() => setPass(!pass)}
+                className="absolute top-3 text-gray-300 right-3 cursor-pointer"
+                size={15}/>: <FaRegEyeSlash
+                onClick={() => setPass(!pass)}
+                className="absolute top-3 text-gray-300 right-3 cursor-pointer"
+                size={15}
+              />
+              }
           </div>
 
           <div className="text-center">
-            <a
+            <Link
               className="text-white hover:text-purple-600 text-sm font-semibold"
-              href=""
+             to="/forgotpassword"
             >
               Forgot password?
-            </a>
+            </Link>
           </div>
           <div className="mt-4">
             <button

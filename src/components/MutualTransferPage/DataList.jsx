@@ -6,7 +6,7 @@ import Mutual from './Mutual_transfer/Mutual';
 const DataList = () => {
   return (
     <>
-    <TopImageCard title="DataList" description=""/>
+    <TopImageCard title="Mutual Transfer View Portal" description="Welcome to the Aidoea Mutual Transfer View Portal"/>
     <Mutual/>
     <EmailNotiCard />
     <Footer />

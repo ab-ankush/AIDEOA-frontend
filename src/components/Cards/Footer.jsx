@@ -1,25 +1,29 @@
 import React from "react";
 import { FaInstagram, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { FaYoutube } from "react-icons/fa";
+import Map from "../Contactus/ContactComponent/Map";
 const companyLinks = [
+  { name: "Home", link: "/home" },
   { name: "About Us", link: "/about" },
-  { name: "Careers", link: "/careers" },
-  { name: "Services", link: "/services" },
-  { name: "Blog", link: "/blog" },
-  { name: "Our Story", link: "/story" },
+  { name: "Our Team", link: "/education" },
   { name: "Contact Us", link: "/contact" },
+  { name: "Query", link: "/query" },
+  { name: "Apply ID Card", link: "/idcard" },
+  { name: "AIDEOA Events", link: "/event" },
+ 
 ];
 
 const servicesLinks = [
-  { name: "Consulting", link: "/consulting" },
-  { name: "Investment Banking", link: "/investment" },
-  { name: "Audit", link: "/audit" },
+  { name: "Join Membership", link: "/membership" },
+  { name: "Donation", link: "/donation" },
+  { name: "Mutual Transfer Portal", link: "/mutualtransfer" },
 ];
 
 const legalLinks = [
-  { name: "Privacy", link: "/privacy" },
-  { name: "Legal Policy", link: "/legal" },
+  { name: "Privacy Policy", link: "/pdf/privacy.pdf" },
+  { name: "Refund Policy", link: "/pdf/Refund.pdf" },
+  { name: "Terms & Conditions", link: "/pdf/T&C.pdf" },
 ];
 
 const Footer = () => {
@@ -29,16 +33,15 @@ const Footer = () => {
         {/* Left Section */}
         <div className="space-y-8">
           <div>
-            <h1 className="text-white text-lg font-semibold">HedgeMyFunds</h1>
+            <h1 className="text-white text-lg font-semibold">All India Diploma Engineers & Officials Association</h1>
             <p className="mt-2">
-              Empower Yourself, Your Investments, Your Skills & Career. <br />
-              Bringing Financial Freedom <br /> For India, By India
+            At AIDEOA, we strive to address and resolve issues faced by<br/> mining students and professionals.
             </p>
           </div>
           <div className="flex gap-16">
             {/* Company */}
             <div>
-              <h2 className="text-white font-semibold">Company</h2>
+              <h2 className="text-white font-semibold">Organization</h2>
               <ul className="mt-2 space-y-2">
                 {companyLinks.map((link, idx) => (
                   <li key={idx}>
@@ -68,7 +71,7 @@ const Footer = () => {
               <ul className="mt-2 space-y-2">
                 {legalLinks.map((link, idx) => (
                   <li key={idx}>
-                    <Link to={link.link} className="hover:text-white">
+                    <Link to={link.link} className="hover:text-white" target="_blank" reloadDocument>
                       {link.name}
                     </Link>
                   </li>
@@ -84,16 +87,14 @@ const Footer = () => {
             <h2 className="text-white font-semibold">Get In Touch</h2>
             <p className="mt-2">
               <a href="mailto:contact@hedgemyfunds.com" className="block">
-                contact@hedgemyfunds.com
+                aideoa2020@gmail.com
               </a>
-              <a href="tel:+919888334677" className="block">
-                +91-9888334677
-              </a>
-              Chandigarh, India
+             
+              Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
             </p>
           </div>
           <div>
-            <iframe
+            {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.423381281603!2d76.77941757504961!3d30.732964593514448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feef9e2727af1%3A0x87b24a2086be8053!2sChandigarh!5e0!3m2!1sen!2sin!4v1694496306329"
               width="300"
               height="150"
@@ -101,19 +102,29 @@ const Footer = () => {
               allowFullScreen=""
               loading="lazy"
               title="map"
-            ></iframe>
+            ></iframe> */}
+            <div className=" w-1/2 relative bg-blue-200 lg:rounded-r-2xl max-h-full max-lg:h-64 max-lg:rounded-b-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
+        <Map />
+           <Link to="https://maps.app.goo.gl/kiStTc8tcc2L2dUN8" target="_blank"><button className='absolute top-1/2 left-1/2  transform  -translate-x-1/2 -translate-y-1/2 hover:scale-105 duration-500 px-6 py-3 text-lg text-white bg-black cursor-pointer opacity-85 rounded-2xl ' size={70} >View on map</button></Link> 
+          </div>
           </div>
           <div className="flex gap-4 text-white">
-            <FaInstagram className="cursor-pointer" />
+            {/* <FaInstagram className="cursor-pointer" /> */}
+            <Link to="https://www.youtube.com/@aideoa" target="_blank">
+            <FaYoutube className="cursor-pointer"/>
+            </Link>
+           
+            <Link to="https://www.facebook.com/groups/234765374272589/" target="_blank">
             <FaFacebookF className="cursor-pointer" />
-            <FaLinkedin className="cursor-pointer" />
+            </Link>
+           
+            {/* <FaLinkedin className="cursor-pointer" /> */}
           </div>
         </div>
       </div>
 
-      <div className="text-center text-gray-600 text-sm mt-10">
-        © 2021-2024 Hedgemyfunds.com - A sub-venture of Luxury Hotel Concierge
-        (OPC) Pvt. Ltd.
+      <div className="text-center text-gray-400 text-sm mt-10">
+      © Copyright ©2024 All rights reserved | Powered by AIDEOA
       </div>
     </footer>
   );

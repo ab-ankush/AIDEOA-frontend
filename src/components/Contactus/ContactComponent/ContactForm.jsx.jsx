@@ -3,6 +3,7 @@ import { BsChatSquareText } from "react-icons/bs";
 import Map from "./Map";
 import Form from "./Form";
 import { MdOutlineLocationOn } from "react-icons/md";
+import { Link } from "react-router-dom";
 const ContactForm = () => {
   return (
     <div className="px-20 max-md:px-10 max-sm:px-5">
@@ -23,7 +24,7 @@ const ContactForm = () => {
           </div>
           <div className=" w-1/2 relative bg-blue-200 lg:rounded-r-2xl max-h-full max-lg:h-64 max-lg:rounded-b-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
         <Map />
-            <button className='absolute top-1/2 left-1/2  transform  -translate-x-1/2 -translate-y-1/2 hover:scale-105 duration-500 px-6 py-3 text-lg text-white bg-black cursor-pointer opacity-85 rounded-2xl ' size={70} >View on map</button>
+           <Link to="https://maps.app.goo.gl/kiStTc8tcc2L2dUN8" target="_blank"><button className='absolute top-1/2 left-1/2  transform  -translate-x-1/2 -translate-y-1/2 hover:scale-105 duration-500 px-6 py-3 text-lg text-white bg-black cursor-pointer opacity-85 rounded-2xl ' size={70} >View on map</button></Link> 
           </div>
         </div>
       </div>

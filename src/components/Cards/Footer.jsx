@@ -20,9 +20,9 @@ const servicesLinks = [
 ];
 
 const legalLinks = [
-  { name: "Privacy Policy", link: "/policies/privacypolicy.pdf" },
-  { name: "Refund Policy", link: "/policies/RefundpolicyAIDEOA.pdf" },
-  { name: "Terms & Conditions", link: "/policies/T&C.pdf" },
+  { name: "Privacy Policy", link: "/policies/Privacy Policy AIDEOA.pdf" },
+  { name: "Refund Policy", link: "/policies/Refund Policy AIDEOA.pdf" },
+  { name: "Terms & Conditions", link: "/policies/Terms and Conditions AIDEOA.pdf" },
 ];
 
 const Footer = () => {

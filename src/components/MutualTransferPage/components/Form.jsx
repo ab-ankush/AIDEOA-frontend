@@ -283,7 +283,7 @@ const Form = () => {
       </form>
 
       {open && (
-        <div className="fixed container w-[90%] h-[80%] top-[50%] z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="fixed container w-[90%]  top-[50%] z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <ReviewForm formData={formData} setOpen={setOpen} />
         </div>
       )}

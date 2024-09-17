@@ -41,7 +41,7 @@ const EmployeeIdCard = () => {
   };
 
   return (
-    <div className="flex  flex-col w-full justify-start ">
+    <div className="flex  flex-col w-full justify-start z-0">
       <div className="flex  flex-col justify-start items-center">
         <button
           onClick={generatePdf}

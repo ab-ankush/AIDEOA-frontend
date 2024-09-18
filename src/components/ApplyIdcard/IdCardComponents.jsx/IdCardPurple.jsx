@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 const IdCardPurple = () => {
     const [show, setShow] = useState(true);
     const navigate =useNavigate();
+    const name="james";
+    const id="45678"
+    const value=`Employee name is ${name} and AIDEOA ID is ${id}`;
     const incrementfunc=(expiryDate)=> {
       // Convert the expiry date string to a Date object
       let date = new Date(expiryDate);
@@ -124,7 +127,7 @@ const IdCardPurple = () => {
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[72%] left-[75%] max-xsm:left-[78%]">
-                    <Qrcode value={`working`} size={50} />
+                    <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
@@ -179,7 +182,7 @@ const IdCardPurple = () => {
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[100%] left-[72%] max-xsm:left-[78%]">
-                    <Qrcode value={`working`} size={50} />
+                    <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">

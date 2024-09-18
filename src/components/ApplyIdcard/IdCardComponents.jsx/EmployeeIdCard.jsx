@@ -53,7 +53,10 @@ const EmployeeIdCard = () => {
   }
 const currentExpiryDate = "2024-09-17"; // Current expiry date in YYYY-MM-DD format
 const updatedExpiryDate = incrementfunc(currentExpiryDate);
-
+const name="james";
+    const id="45678"
+    const value=`Employee name is ${name} and AIDEOA ID is ${id}`;
+    
 
   return (
     <div className="flex  flex-col w-full justify-start z-0">
@@ -122,7 +125,7 @@ const updatedExpiryDate = incrementfunc(currentExpiryDate);
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[72%] left-[75%] max-xsm:left-[78%]">
-                    <Qrcode value={`working`} size={50} />
+                    <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
@@ -177,7 +180,7 @@ const updatedExpiryDate = incrementfunc(currentExpiryDate);
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[100%] left-[72%] max-xsm:left-[78%]">
-                    <Qrcode value={`working`} size={50} />
+                    <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">

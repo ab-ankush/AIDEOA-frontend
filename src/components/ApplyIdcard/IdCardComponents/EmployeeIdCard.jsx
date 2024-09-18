@@ -39,6 +39,24 @@ const EmployeeIdCard = () => {
       alert(`Error generating PDF: ${error.message}`);
     }
   };
+  const incrementfunc=(expiryDate)=> {
+    // Convert the expiry date string to a Date object
+    let date = new Date(expiryDate);
+  
+    // Increment the year by 1
+    date.setFullYear(date.getFullYear() + 1);
+  
+    // Format the new date back to the desired format (YYYY-MM-DD)
+    let newExpiryDate = date.toISOString().split('T')[0];
+  
+    return newExpiryDate;
+  }
+const currentExpiryDate = "2024-09-17"; // Current expiry date in YYYY-MM-DD format
+const updatedExpiryDate = incrementfunc(currentExpiryDate);
+const name="james";
+    const id="45678"
+    const value=`Employee name is ${name} and AIDEOA ID is ${id}`;
+    
 
   return (
     <div className="flex  flex-col w-full justify-start z-0">
@@ -107,7 +125,7 @@ const EmployeeIdCard = () => {
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[72%] left-[75%] max-xsm:left-[78%]">
-                    <Qrcode value={`working`} size={50} />
+                    <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
@@ -158,11 +176,11 @@ const EmployeeIdCard = () => {
                 <div className="max-xsm:m-[5px] mx-5 flex items-center gap-2">
                   <p className="text-purple-800 font-bold">Valid Upto</p>
                   <p className="bg-white text-centerrouded-full px-2 py-1 rounded-full text-xs">
-                    31 March 2025
+                    {updatedExpiryDate}
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[100%] left-[72%] max-xsm:left-[78%]">
-                    <Qrcode value={`working`} size={50} />
+                    <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">

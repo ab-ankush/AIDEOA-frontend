@@ -59,7 +59,7 @@ const IdCard = () => {
                 <p className="text-[10px] text-purple-700 font-medium">National General Secretary AIDEOA</p>
               </div>
             </div>
-            <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
+            <div className=" text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
               <p className="text-[11px] ">Sijua more, katrasgarh, Dhanbad, jharkhand, 828113</p>
             </div>
             <img src="/card/upper.svg" className="max-xsm:w-full" alt="upper" />

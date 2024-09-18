@@ -2,7 +2,7 @@
 import TopImageCard from '../../components/Cards/TopImageCard'
 import DownloadIdCardButton from '../Cards/DownloadIdCardButton'
 import Footer from '../Cards/Footer'
-import FormContainer from './IdCardComponents.jsx/FormContainer'
+import FormContainer from './IdCardComponents/FormContainer'
 const ApplyIdCard = () => {
   return (
     <div className='pt-14'>

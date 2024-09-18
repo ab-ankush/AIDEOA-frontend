@@ -8,7 +8,6 @@ const tableData = [
     current_subsidiary:"bccl",
     current_posted_area:"jharkhand",
     current_mine_name:"mine",
-    designation:"worker",
     grade:"A",
     Transfer_Area:"Chandigarh",
     Transfer_Subsidiary:"Kerala",

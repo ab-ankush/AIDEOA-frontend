@@ -93,7 +93,7 @@ const IdCardPurple = () => {
 
               <div className="h-[266px] w-[391px] ">
                 <img
-                  src=""
+                  src="/user1.png"
                   className="absolute border-[2px] border-purple-400 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
                   alt="i"
                 />

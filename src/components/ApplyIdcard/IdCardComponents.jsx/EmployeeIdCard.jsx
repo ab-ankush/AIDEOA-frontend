@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import  Qrcode from "react-qr-code"
 const EmployeeIdCard = () => {
     const [show, setShow] = useState(true);
 
@@ -40,7 +41,7 @@ const EmployeeIdCard = () => {
   };
 
   return (
-    <div className="flex  flex-col w-full justify-start ">
+    <div className="flex  flex-col w-full justify-start z-0">
       <div className="flex  flex-col justify-start items-center">
         <button
           onClick={generatePdf}
@@ -105,6 +106,9 @@ const EmployeeIdCard = () => {
                     National General Secretary AIDEOA
                   </p>
                 </div>
+                <div id="qrcode " className="absolute top-[72%] left-[75%] max-xsm:left-[78%]">
+                    <Qrcode value={`working`} size={50} />
+                </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
                 <p className="text-[11px]">
@@ -156,6 +160,9 @@ const EmployeeIdCard = () => {
                   <p className="bg-white text-centerrouded-full px-2 py-1 rounded-full text-xs">
                     31 March 2025
                   </p>
+                </div>
+                <div id="qrcode " className="absolute top-[100%] left-[72%] max-xsm:left-[78%]">
+                    <Qrcode value={`working`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">

@@ -26,7 +26,11 @@ const newsData = [
       "आज दिनांक 18 जुलाई 2023 को CIL HQ में , कोल इंडिया लिमिटेड के अध्यक्ष- सह प्रबंध निदेशक (चेयरमैन ) आदरणीय श्री पीएम प्रसाद सर से AIDEOA के राष्ट्रीय महासचिव श्री आर के तिवारी एवं कार्यकारिणी अध्यक्ष श्री प्रदीप सिंह के साथ मीटिंग हुआ। जिसमें 08 सूत्री मांग पत्र का ज्ञापन सह धरना-प्रदर्शन का पत्र शौपा गया , जिसमें मुद्दा कोल इंडिया लिमिटेड के द्वारा लाया गया नया प्रमोशन पॉलिसी से संबंधित के संबंध में बातचीत किया गया.",
   },
 ];
-
+const arr=[{head:"Day 2",title:"AIDEOA Hosts Successful Annual Conference",date:"March 18th, 2025",time:"10:00AM - 5:00PM",location:"Grand Ballon Hotel",description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survive. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of .."},
+  {head:"Day 2",title:"AIDEOA Hosts Successful Annual Conference",date:"March 18th, 2025",time:"10:00AM - 5:00PM",location:"Grand Ballon Hotel",description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survive. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of .."},
+  {head:"Day 2",title:"AIDEOA Hosts Successful Annual Conference",date:"March 18th, 2025",time:"10:00AM - 5:00PM",location:"Grand Ballon Hotel",description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survive. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of .."},
+  {head:"Day 2",title:"AIDEOA Hosts Successful Annual Conference",date:"March 18th, 2025",time:"10:00AM - 5:00PM",location:"Grand Ballon Hotel",description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survive. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of .."}
+]
 const EventPage = () => {
   return (
     <div className="pt-14">
@@ -35,10 +39,9 @@ const EventPage = () => {
         title={"AIDEOA  Events"}
       />
       <div className=" flex px-5 flex-wrap gap-2 mt-12  content-center max-w-7xl  m-auto">
-        {Array(4)
-          .fill("")
-          .map((_, idx) => {
-            return <Card key={idx} />;
+        {arr
+          .map((item, idx) => {
+            return <Card key={idx} item={item}/>;
           })}
       </div>
       <div className=" bg-blue-950 ">

@@ -2,7 +2,7 @@ import React from "react";
 
 const Section1 = () => {
   return (
-    <div className="centerdiv mx-4 overflow-x-hidden flex flex-col justify-center items-center">
+    <div className="centerdiv mx-4 overflow-x-hidden my-10 flex flex-col justify-center items-center">
       <h1 className="font-semibold text-[35px] leading-15">Our Mission</h1>
       <div className="pdiv flex justify-center items-center my-5">
         <p className="text-sm text-center ">

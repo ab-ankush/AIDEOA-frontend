@@ -4,9 +4,13 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 const ReviewForm = ({ formData,setOpen }) => {
   return (
    
-      <form className="grid gap-6 p-6 bg-white  relative rounded-2xl shadow-2xl ">
-        <AiOutlineCloseCircle onClick={()=>setOpen(false)} size={35} className="absolute cursor-pointer left-1/2 top-[-20px] transform -translate-x-1/2 -translate-y-1/2"/>
-          <h1 className='font-semibold text-3xl'>Review your data</h1>
+    <div className=" bg-white border  border-1 dropshadowbox rounded-2xl w-full my-20 customScrollbar  overflow-y-scroll  scroll-smooth  h-[80vh] ">
+    <div className=" overflow-x-hidden gap-5 flex flex-col py-5 justify-center items-center">
+    <AiOutlineCloseCircle onClick={()=>setOpen(false)} size={35} className="absolute cursor-pointer top-[40px]"/>
+  <h1 className='font-semibold text-3xl'>Review your data</h1>
+  <div className='flex flex-col px-5 gap-5 w-full'>
+
+
         <div className="flex text-xl">
           <label className="mb-2 font-semibold">Your Name :</label>
           <p className="ml-2">{formData?.name}</p>
@@ -71,7 +75,9 @@ const ReviewForm = ({ formData,setOpen }) => {
           <label className="mb-2 font-semibold">Preferred Transfer Mine :</label>
           <p className="ml-2">{formData?.transfermine}</p>
         </div>
+        </div>
         <div>
+       
           <button
             className="bg-gradient-to-r text-xl font-normal from-purple-800 via-purple-500 to-purple-400 p-2 rounded-full w-60 text-white"
             type="submit"
@@ -79,7 +85,8 @@ const ReviewForm = ({ formData,setOpen }) => {
             Submit
           </button>
         </div>
-      </form>
+</div>
+</div>
 
   );
 };

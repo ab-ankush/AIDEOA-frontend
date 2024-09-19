@@ -37,7 +37,7 @@ const Info = () => {
               Start Applying
             </button>
           </div>
-          <div onClick={()=>navigate("/mutualtransfer/datalist")} className="relative w-full sm:w-80 m-auto ">
+          <div onClick={()=>navigate("/mutualtransferviewportal")} className="relative w-full sm:w-80 m-auto ">
             <button  className="font-medium text-gray-600 text-lg p-4 w-[95%] sm:w-80 border border-purple-500 rounded-full">
               Submitted Data List
             </button>

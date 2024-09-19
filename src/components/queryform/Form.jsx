@@ -21,8 +21,8 @@ const Form = () => {
       };
     
       return (
-        <div className="   bg-gray-100 p-8  shadow-md ">
-          <h2 className="text-2xl font-bold mb-6 text-center text-black">Query Form</h2>
+        <div className=" h-full  bg-gray-100 p-8  shadow-md ">
+        
           <form onSubmit={handleSubmit} className="space-y-4">
            
             <div>

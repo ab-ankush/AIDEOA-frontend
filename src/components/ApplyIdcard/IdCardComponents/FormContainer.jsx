@@ -1,6 +1,6 @@
 import { useState } from "react";
 import IDform from "./IDform";
-import IdCard from "./IdCard";
+
 import EmployeeForm from "./EmployeeForm";
 import IdCardPurple from "./IdCardPurple";
 import EmployeeIdCard from "./EmployeeIdCard";

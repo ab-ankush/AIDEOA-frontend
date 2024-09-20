@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import  Qrcode from "react-qr-code"
+import Qrcode from "react-qr-code";
 const EmployeeIdCard = () => {
-    const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true);
 
   // Function to generate and download PDF
   const generatePdf = async () => {
     try {
       const frontCoverElement = document.getElementById("frontcover");
       const backCoverElement = document.getElementById("backcover");
-        console.log(frontCoverElement)
-        console.log(backCoverElement)
+      console.log(frontCoverElement);
+      console.log(backCoverElement);
       // Ensure both elements exist before proceeding
       if (!frontCoverElement || !backCoverElement) {
         throw new Error("ID card elements not found on the page.");
@@ -39,25 +39,31 @@ const EmployeeIdCard = () => {
       alert(`Error generating PDF: ${error.message}`);
     }
   };
-  const incrementfunc=(expiryDate)=> {
-    // Convert the expiry date string to a Date object
-    let date = new Date(expiryDate);
-  
-    // Increment the year by 1
-    date.setFullYear(date.getFullYear() + 1);
-  
-    // Format the new date back to the desired format (YYYY-MM-DD)
-    let newExpiryDate = date.toISOString().split('T')[0];
-  
-    return newExpiryDate;
-  }
-const currentExpiryDate = "2024-09-17"; // Current expiry date in YYYY-MM-DD format
-const updatedExpiryDate = incrementfunc(currentExpiryDate);
-const name="james";
-    const id="45678"
-    const value=`Employee name is ${name} and AIDEOA ID is ${id}`;
-    
 
+  const name = "james";
+  const id = "45678";
+  const value = `Employee name is ${name} and AIDEOA ID is ${id}`;
+  function getExpiryDate(currentDate) {
+    const year = currentDate.getFullYear();
+    const expiryMonth = 2;
+    const expiryDay = 31;
+  
+   
+    let expiryDate = new Date(year, expiryMonth, expiryDay);
+  
+   
+    if (currentDate > expiryDate) {
+     
+      expiryDate = new Date(year + 1, expiryMonth, expiryDay);
+    }
+  
+    return expiryDate;
+  }
+  const currentDate = new Date()
+
+  const updatedExpiryDate = getExpiryDate(currentDate)
+
+  
   return (
     <div className="flex  flex-col w-full justify-start z-0">
       <div className="flex  flex-col justify-start items-center">
@@ -68,17 +74,27 @@ const name="james";
           Download ID Card PDF
         </button>
         <div className="relative w-full flex justify-center items-center h-[600px]">
-        <div
+          <div
             id="frontcover"
             onMouseEnter={() => {
               setShow(false);
             }}
-            className={`bg-red-200 absolute   ${show?" z-10":" z-0"} border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%]`}
+            className={`bg-red-200 absolute   ${
+              show ? " z-10" : " z-0"
+            } border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%]`}
           >
             <div className="relative min-height-[549px]">
-              <img src="/card/lower.svg" className="max-xsm:w-full" alt="lower" />
+              <img
+                src="/card/lower.svg"
+                className="max-xsm:w-full"
+                alt="lower"
+              />
               <div className="absolute flex top-[10px]">
-                <img src="/images/logo.png" className="h-[50px] w-[50px]" alt="logo" />
+                <img
+                  src="/images/logo.png"
+                  className="h-[50px] w-[50px]"
+                  alt="logo"
+                />
               </div>
               <p className="absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
                 All india diploma engineers & Officials Association (AIDEOA)
@@ -86,8 +102,8 @@ const name="james";
 
               <div className="h-[266px] w-[391px] ">
                 <img
-                  src=""
-                  className="absolute border-[2px] border-purple-400 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
+                  src="/user1.png"
+                  className="absolute border-[2px] border-red-200 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
                   alt="i"
                 />
                 <p className="my-10px absolute text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-bold">
@@ -124,8 +140,11 @@ const name="james";
                     National General Secretary AIDEOA
                   </p>
                 </div>
-                <div id="qrcode " className="absolute top-[72%] left-[75%] max-xsm:left-[78%]">
-                    <Qrcode value={`${value}`} size={50} />
+                <div
+                  id="qrcode "
+                  className="absolute top-[72%] left-[75%] max-xsm:left-[78%]"
+                >
+                  <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
@@ -133,7 +152,11 @@ const name="james";
                   Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
                 </p>
               </div>
-              <img src="/card/upper.svg" className="max-xsm:w-full" alt="upper" />
+              <img
+                src="/card/upper.svg"
+                className="max-xsm:w-full"
+                alt="upper"
+              />
             </div>
           </div>
           <div
@@ -141,7 +164,9 @@ const name="james";
             onMouseLeave={() => {
               setShow(true);
             }}
-            className={`  bg-red-200 absolute ${show ? " z-0":" z-10"} border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit`}
+            className={`  bg-red-200 absolute ${
+              show ? " z-0" : " z-10"
+            } border border-gray-500 rounded-[30px] overflow-hidden max-xsm:w-[90%] max-xsm:h-fit`}
           >
             <div className="relative min-height-[549px]">
               <img
@@ -150,7 +175,11 @@ const name="james";
                 alt="lower svg"
               />
               <div className="absolute flex top-[10px] max-sm:w-full ">
-                <img src="/images/logo.png" className="h-[50px] w-[50px]" alt="logo" />
+                <img
+                  src="/images/logo.png"
+                  className="h-[50px] w-[50px]"
+                  alt="logo"
+                />
               </div>
               <p className="absolute top-4 left-6 mx-2 px-3 text-sm text-white text-center font-semibold">
                 All india diploma engineers & Officials Association (AIDEOA)
@@ -161,26 +190,32 @@ const name="james";
                   Terms and Conditions
                 </p>
                 <p className="max-xsm:m-[5px] mx-5 my-2 text-[12px]">
-                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam nonummy nibh eulsmod.
-                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam nonummy nibh eulsmod.
+                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad
+                  diam nonummy nibh eulsmod. Lorem ipsum dolor sit amet,
+                  consectetul adipicing elit, sad diam nonummy nibh eulsmod.
                 </p>
                 <p className="max-xsm:m-[5px] mx-5 my-2 text-[12px]">
-                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam nonummy nibh eulsmod.
-                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam nonummy nibh eulsmod.
+                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad
+                  diam nonummy nibh eulsmod. Lorem ipsum dolor sit amet,
+                  consectetul adipicing elit, sad diam nonummy nibh eulsmod.
                 </p>
                 <p className="max-xsm:m-[5px] mx-5 my-2 text-[12px]">
-                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam nonummy nibh eulsmod.
-                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad diam nonummy nibh eulsmod.
+                  Lorem ipsum dolor sit amet, consectetul adipicing elit, sad
+                  diam nonummy nibh eulsmod. Lorem ipsum dolor sit amet,
+                  consectetul adipicing elit, sad diam nonummy nibh eulsmod.
                 </p>
 
                 <div className="max-xsm:m-[5px] mx-5 flex items-center gap-2">
                   <p className="text-purple-800 font-bold">Valid Upto</p>
                   <p className="bg-white text-centerrouded-full px-2 py-1 rounded-full text-xs">
-                    {updatedExpiryDate}
+                    {updatedExpiryDate.toLocaleString().slice(0, 9)}
                   </p>
                 </div>
-                <div id="qrcode " className="absolute top-[100%] left-[72%] max-xsm:left-[78%]">
-                    <Qrcode value={`${value}`} size={50} />
+                <div
+                  id="qrcode "
+                  className="absolute top-[100%] left-[72%] max-xsm:left-[78%]"
+                >
+                  <Qrcode value={`${value}`} size={50} />
                 </div>
               </div>
               <div className="absolute text-white text-center left-1/2 bottom-[-16px] absolute transform -translate-x-1/2 -translate-y-1/2">
@@ -188,11 +223,14 @@ const name="james";
                   Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
                 </p>
               </div>
-              <img src="/card/upper.svg" className="max-xsm:w-full" alt="upper svg" />
+              <img
+                src="/card/upper.svg"
+                className="max-xsm:w-full"
+                alt="upper svg"
+              />
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );

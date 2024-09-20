@@ -12,13 +12,26 @@ import Slider from "../Cards/Slider/Slider";
 
 const EducationCell = () => {
   const data3 = [
-    ["Shri Rajeev Kumar Tiwari", "National General Secretary"],
-    ["Shri Bikash Das", "National President"],
-    ["Shri Sunil Kumar", "Founder Board Member"],
+    ["Shri Rajeev Kumar Tiwari", "National General Secretary","./aideoapics/rktiwary.jpg"],
+    ["Shri Bikash Das", "National President","./aideoapics/BIKASHFDAS.jpg"],
+    ["Shri Sunil Kumar", "Founder Board Member","./aideoapics/Sunil kumar.jpg"],
+    ["Shri Sovan Chatterjee ", "Founder Board Member","./aideoapics/sovan chatterjee.jpeg"],
+    ["Shri Niranjan Kumar Verma", "Founder Board Member","./aideoapics/NIRANJAN KUMAR VERMA.jpeg"],
     ["Shri Sanjay Sahu", "Founder Board Member"],
-    ["Shri Ashok Kumar Shaw", "Founder Board Member"],
+    ["Shri Ashok Kumar Sahu", "Central Board Member","./aideoapics/ashok sahu.jpg"],
+    ["Shri Anand Kumar Prajapati ", "Central Board Member","./aideoapics/Anand Kumar.jpg"],
+    ["Shri Jitendra Kumar Yadav ", "Central Board Member","./aideoapics/Jitendar.jpg"],
+    ["Shri Nishant Kumar Singh ", "Central Board Member","./aideoapics/Nishant Singh.jpg"],
+    ["Shri Rahul Kumar Pal", "Central Board Member","./aideoapics/ER.RAHUL PAL.jpg"],
+    ["Shri Rajkumar Paswan", "Central Board Member","./aideoapics/rajkumar paswan.jpg"],
+    ["Shri Ramesh Suryavanshi", "Central Board Member","./aideoapics/RAMESH SURYAVANSHI.jpg"],
+    ["Shri Rakccha Biun Das", "Central Board Member","./aideoapics/rakccha.jpg"],
+    ["Shri Subrat Kumar Dash", "Central Board Member","./aideoapics/S K Dash.jpeg"],
+    ["Shri Prem Jyoti Mohanty", "Central Board Member","./aideoapics/prem mohanty.jpg"],
+    ["Shri Satyendra Prajapati", "Central Board Member","./aideoapics/satyendra prajapati.jpg"],
+    ["Shri Kameshwar Prasad Keshari", "Central Board Member","./aideoapics/Kameshwar Keshari.jpg"],
     ["ShriPradeep Kumar Singh", "Founder Board Member"],
-    ["Shri Nishant Kumar Singh", "Founder Board Member"],
+
     ["Shri Nilkanth Akela", "Founder Board Member"],
     ["Shri S.R. Chourasia", "Founder Board Member"],
     ["Shri Rewati Ram Das", "Founder Board Member"],
@@ -31,7 +44,7 @@ const EducationCell = () => {
     ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
     ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
     ["Shri Manish Kumar Yadav", "Aideoa Ed. Cell"],
-    ["Shri Sovan Chatterjee", "Aideoa Ed. Cell"],
+    ["Shri Sovan Chatterjee", "Aideoa Ed. Cell","./aideoapics/sovan chatterjee.jpeg"],
 
   ];
   const data2 = [

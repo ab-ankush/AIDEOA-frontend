@@ -9,20 +9,25 @@ const IdCardPurple = () => {
     const name="james";
     const id="45678"
     const value=`Employee name is ${name} and AIDEOA ID is ${id}`;
-    const incrementfunc=(expiryDate)=> {
-      // Convert the expiry date string to a Date object
-      let date = new Date(expiryDate);
+    function getExpiryDate(currentDate) {
+      const year = currentDate.getFullYear();
+      const expiryMonth = 2;
+      const expiryDay = 31;
     
-      // Increment the year by 1
-      date.setFullYear(date.getFullYear() + 1);
+     
+      let expiryDate = new Date(year, expiryMonth, expiryDay);
     
-      // Format the new date back to the desired format (YYYY-MM-DD)
-      let newExpiryDate = date.toISOString().split('T')[0];
+     
+      if (currentDate > expiryDate) {
+       
+        expiryDate = new Date(year + 1, expiryMonth, expiryDay);
+      }
     
-      return newExpiryDate;
+      return expiryDate;
     }
-    const currentExpiryDate = "2024-09-17"; // Current expiry date in YYYY-MM-DD format
-    const updatedExpiryDate = incrementfunc(currentExpiryDate);
+    const currentDate = new Date()
+  
+    const updatedExpiryDate = getExpiryDate(currentDate)
 
 
   // Function to generate and download PDF
@@ -88,7 +93,7 @@ const IdCardPurple = () => {
 
               <div className="h-[266px] w-[391px] ">
                 <img
-                  src=""
+                  src="/user1.png"
                   className="absolute border-[2px] border-purple-400 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
                   alt="i"
                 />
@@ -178,7 +183,7 @@ const IdCardPurple = () => {
                 <div className="max-xsm:m-[5px] mx-5 flex items-center gap-2">
                   <p className="text-purple-800 font-bold">Valid Upto</p>
                   <p className="bg-white text-centerrouded-full px-2 py-1 rounded-full text-xs">
-                    {updatedExpiryDate}
+                    {updatedExpiryDate.toLocaleString().slice(0,9)}
                   </p>
                 </div>
                 <div id="qrcode " className="absolute top-[100%] left-[72%] max-xsm:left-[78%]">

@@ -8,22 +8,22 @@ import EmployeeIdCard from "./EmployeeIdCard";
 // import { Link } from 'react-router-dom'
 const FormContainer = () => {
   const [formType, SetFormType] = useState(true);
-  const [submit, setsubmit] = useState(false)
+  const [submit, setsubmit] = useState(true)
   return (
     <div>
       {
         submit ? (<div className="my-20 relative mx-32 flex flex-col gap-6 max-xl:mx-8 max-lg:mx-8 max-md:mx-4 max-sm:mx-2">
-          <div className="">
+          {/* <div className="">
             {
               formType ? <IdCardPurple /> : <EmployeeIdCard />
             }
-          </div>
-
-          <div className=" flex ">
+          </div> */}
+          <p className="text-center text-[50px] text-purple-600">It will be Processed in 1 Week.</p>
+          {/* <div className=" flex ">
             <button className="w-52 max-sm:w-full h-12 membershipBtn rounded-2xl text-white font-medium text-lg">
               Download Id Card
             </button>
-          </div>
+          </div> */}
 
         </div>) : (<div className="my-20 relative mx-32 flex flex-col gap-6 max-xl:mx-8 max-lg:mx-8 max-md:mx-4 max-sm:mx-2 ">
           <p className="text-xl font-medium">ID Card form</p>

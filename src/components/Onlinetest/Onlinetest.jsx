@@ -3,7 +3,7 @@ import TopImageCard from '../Cards/TopImageCard'
 
 const Onlinetest = () => {
   return (
-    <div className='pt-14 min-h-screen'>
+    <div className='py-14 min-h-screen'>
         <TopImageCard image={'./enhanceimage/Educationcomp.png'} title={"Online Test"}/>
 
       <div className="text-center ">

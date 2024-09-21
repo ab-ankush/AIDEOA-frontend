@@ -13,7 +13,7 @@ const flow =[{head:"Aideoa Events",p:"1200+  events",link:"/event"},
 const aboutArray=[
   {head:"Our Mission",tag:"At AIDEOA, we strive to address and resolve issues faced by mining students and professionals.",icon:"/flag.png"},
   {head:"Our Support and Resources",tag:"We offer a wide range of study materials to aid mining students and professionals in their preparation for various examinations",icon:"/laptop.png",link:"/contact"},
-  {head:"Online Classes",tag:"JWe conduct online classes where students can engage in discussions about different mining topics and field-related issues.",icon:"/headset.png"},
+  {head:"Online Classes",tag:"JWe conduct online classes where students can engage in discussions about different mining topics and field-related issues.",icon:"/headset.png",link:"/onlineclass"},
 ]
 
 const About = () => {

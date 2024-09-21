@@ -15,7 +15,7 @@ const DonationForm = () => {
                         donationAmount.map((item,idx)=>{
                             return <div onClick={()=>{setAmount(item)}} key={idx} className='border-2 flex px-3 items-center gap-2 border-AIDEOTYPO w-28 h-14 rounded-2xl items-center'>
                                      <FaCircleCheck size={20} className={`${amount===item?'text-AIDEOTYPO ':'  text-gray-500'} ` } />
-                                     <h5 className='font-semibold text-xl'>{item}</h5>
+                                     <h5 className='font-semibold text-xl'>{item}₹</h5>
                             </div>  
                         })
                     }

@@ -24,8 +24,8 @@ const UserRoleSelect = ({ setUserTypeModal }) => {
     onChange={(e) => setUserType(e.target.value)}
     className="p-3 border rounded-md focus:outline-none w-full "
   >
-    <option value="student">Student</option>
-    <option value="employee">Employee</option>
+    <option value="student" className="">Student</option>
+    <option value="employee" className="">Employee</option>
   </select>
 </div>
 

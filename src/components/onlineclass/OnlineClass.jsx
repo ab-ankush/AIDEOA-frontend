@@ -9,7 +9,7 @@ const OnlineClass = () => {
     };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-    <div className="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
+    <div className="bg-white shadow-lg rounded-xl p-6 max-w-md w-full">
       <h1 className="text-2xl font-semibold mb-2 text-AIDEOTYPO">Dear Member,</h1>
       <p className="text-gray-700 mb-6">
         If you are interested in attending online classes through the AIDEOA platform, kindly enter your email address below and submit your feedback. Based on the majority of recommendations, we will consider developing an online learning platform to offer these classes.

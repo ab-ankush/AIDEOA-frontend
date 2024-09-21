@@ -1,4 +1,6 @@
 import React, { useMemo, useState } from "react";
+import { MdDeleteOutline } from "react-icons/md";
+import { MdOutlineModeEdit } from "react-icons/md";
 // import { useTable } from "react-table";
 
 const tableData = [
@@ -120,8 +122,8 @@ const Table = () => {
                 <td className="p-3">{data.aideoaId}</td>
                 <td className="p-3">{data.status}</td>
                 <td className="p-3 flex justify-center gap-x-4">
-                  <p>{data.action.deleteId}</p>
-                  <p>{data.action.editId}</p>
+                  <button id={data.action.deleteId} className="text-purple-500" >< MdDeleteOutline size={20}/></button>
+                  <button id="{data.action.editId}" className="text-purple-500"><MdOutlineModeEdit size={20}/></button>
                 </td>
               </tr>
             ))}

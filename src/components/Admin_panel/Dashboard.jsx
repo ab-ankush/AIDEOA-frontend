@@ -5,20 +5,23 @@ import Chart from './Membership/Chart.jsx'
 import Trans from "./Transaction/Trans";
 import User from "./Users/User";
 import MutualLayout from './common/MainLayout.jsx'
+import EventPanel from "./Events/EventPanel";
+import Query from "./Query/Query";
+import Contacts from "./Contacts/Contacts";
 const Dashboard = () => {
-    const [data, setdata] = useState({ m: true, u: false, t: false, T: false })
+    const [data, setdata] = useState({ m: true, u: false, t: false,T: false, e: false,q: false,c: false })
     const setit = (x) => {
         setdata(x);
     }
     return (
-        <div className=" relative grid grid-cols-[1fr_19fr] w-screen h-screen bg-gray-100 ">
+        <div className=" relative flex gap-10  bg-gray-100 ">
             <Sidebar setit={setit} />
-            <div className="w-[90%] m-auto">
+            <div className="w-full m-auto">
                 {/* {
                     data.T ? <MutualLayout className="absolute top-0" /> : ''
                 } */}
                 <Header data={data} />
-                <div className="bg-white w-[90%]  h-[600px] ml-7 m-5 p-4 shadow-lg rounded-lg">
+                <div className="bg-white w-[90%] h-screen  ml-7 m-5 p-4 shadow-lg rounded-lg">
                     {
                         data.m ? <Chart /> : ''
                     }
@@ -28,9 +31,15 @@ const Dashboard = () => {
                     {
                         data.t ? <Trans /> : ''
                     }
-                    {/* {
-                        data.T ? <Mutual /> : ''
-                    } */}
+                    {
+                        data.e ? <EventPanel /> : ''
+                    },
+                    {
+                        data.q ? <Query /> : ''
+                    },
+                    {
+                        data.c ? <Contacts /> : ''
+                    }
                 </div>
             </div>
         </div>

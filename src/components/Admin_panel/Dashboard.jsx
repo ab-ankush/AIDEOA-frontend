@@ -8,13 +8,14 @@ import MutualLayout from './common/MainLayout.jsx'
 import EventPanel from "./Events/EventPanel";
 import Query from "./Query/Query";
 import Contacts from "./Contacts/Contacts";
+import IdCardTable from "./IdCardTable/IdCardTable";
 const Dashboard = () => {
-    const [data, setdata] = useState({ m: true, u: false, t: false,T: false, e: false,q: false,c: false })
+    const [data, setdata] = useState({ m: true, u: false, t: false,T: false, e: false,q: false,i:false,c: false })
     const setit = (x) => {
         setdata(x);
     }
     return (
-        <div className=" relative flex gap-10  bg-gray-100 ">
+        <div className=" relative flex flex-col md:flex-row gap-10  bg-gray-100 ">
             <Sidebar setit={setit} />
             <div className="w-full m-auto">
                 {/* {
@@ -36,6 +37,9 @@ const Dashboard = () => {
                     },
                     {
                         data.q ? <Query /> : ''
+                    },
+                    {
+                        data.i ? <IdCardTable /> : ''
                     },
                     {
                         data.c ? <Contacts /> : ''

@@ -16,7 +16,7 @@ const companyLinks = [
 
 const servicesLinks = [
   { name: "Join Membership", link: "/membership" },
-  { name: "Donation", link: "/donation" },
+  // { name: "Donation", link: "/donation" },
   { name: "Mutual Transfer Portal", link: "/mutualtransfer" },
 ];
 

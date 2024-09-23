@@ -11,8 +11,8 @@ const NewsCard = ({ imageSrc, headline, content }) => {
   return (
     <div className="flex-col xl:flex-row w-[90%] lg:w-[70%] gap-x-5 flex max-w-screen-xl bg-gray-200 rounded-xl lg:w-11/12 m-auto p-5 lg:p-10 justify-between">
       <div className="rounded-xl mb-6 flex justify-center  m-auto items-center max-w-[600px] max-h-[600px] overflow-hidden">
-      {/* <img src={imageSrc[0]} alt="slider-image" className=""/> */}
-    <Splide aria-label="My Favorite Images" className="w-full max-h-[600px]">
+      <img src={imageSrc[0]} alt="slider-image" className=""/>
+    {/* <Splide aria-label="My Favorite Images" className="w-full max-h-[600px]">
       {
         imageSrc.map((image,idx)=>{
           return <SplideSlide key={idx} >
@@ -22,7 +22,7 @@ const NewsCard = ({ imageSrc, headline, content }) => {
       }
   
 
-</Splide>
+</Splide> */}
       </div>
       <div className="flex flex-col gap-y-6  xl:w-2/4">
         <div className="font-medium">

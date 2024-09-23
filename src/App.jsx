@@ -23,6 +23,7 @@ import Education from "./components/Education/Education";
 import QueryForm from "./components/queryform/QueryForm";
 import NotFound from "./components/notfound/Notfound";
 import Forgotpassword from "./components/forgotpassword/Forgotpassword";
+import OnlineClass from "./components/onlineclass/OnlineClass";
 export default function App() {
   return (
     <ScrollToTop>
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="educationpage" element={<Education />} />
           <Route path="query" element={<QueryForm />} />
           <Route path="forgotpassword" element={<Forgotpassword />} />
+          <Route path="onlineclass" element={<OnlineClass />} />
         </Route>
         <Route path="/admin" element={<Dashboard />} />
       

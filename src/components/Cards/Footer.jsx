@@ -2,6 +2,7 @@ import React from "react";
 import { FaInstagram, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import Map from "../Contactus/ContactComponent/Map";
 const companyLinks = [
   { name: "Home", link: "/home" },
@@ -22,7 +23,10 @@ const servicesLinks = [
 const legalLinks = [
   { name: "Privacy Policy", link: "/policies/Privacy Policy AIDEOA.pdf" },
   { name: "Refund Policy", link: "/policies/Refund Policy AIDEOA.pdf" },
-  { name: "Terms & Conditions", link: "/policies/Terms and Conditions AIDEOA.pdf" },
+  {
+    name: "Terms & Conditions",
+    link: "/policies/Terms and Conditions AIDEOA.pdf",
+  },
 ];
 
 const Footer = () => {
@@ -92,7 +96,7 @@ const Footer = () => {
         {/* Right Section */}
         <div className="   flex justify-center ">
           <div className="space-y-8  xl:w-3/4 ">
-            <div className="" >
+            <div className="">
               <h2 className="text-white font-semibold">Get In Touch</h2>
               <p className="mt-2">
                 <a href="mailto:aideoa2020@gmail.com" className="block">
@@ -101,22 +105,26 @@ const Footer = () => {
                 Sijua more, katrasgarh, Dhanbad, jharkhand, 828113
               </p>
             </div>
+
            
             <div className="  bg-red-200 w-1/2 bg-red-200 lg:min-w-80 bg-gray-400 relative bg-blue-200 lg:rounded-2xl max-h-full max-lg:h-64 max-lg:rounded-b-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
+
+
+            
+
               <Map />
               <Link
                 to="https://maps.app.goo.gl/kiStTc8tcc2L2dUN8"
                 target="_blank"
               >
                 <button
-                  className="absolute top-1/2 left-1/2  transform  -translate-x-1/2 -translate-y-1/2 hover:scale-105 duration-500 px-6 py-3 text-lg text-white bg-black cursor-pointer opacity-85 rounded-2xl "
+                  className="absolute top-1/2 left-1/2 max-sm:text-sm  transform  -translate-x-1/2 -translate-y-1/2 hover:scale-105 duration-500 px-6 py-3 text-lg text-white bg-black cursor-pointer opacity-85 rounded-2xl "
                   size={70}
                 >
                   View on map
                 </button>
               </Link>
-           
-</div>
+            </div>
             <div className="flex gap-4 text-white ">
               {/* <FaInstagram className="cursor-pointer" /> */}
               <Link to="https://www.youtube.com/@aideoa" target="_blank">
@@ -129,8 +137,12 @@ const Footer = () => {
               >
                 <FaFacebookF className="cursor-pointer" />
               </Link>
-
-              {/* <FaLinkedin className="cursor-pointer" /> */}
+              <Link to="">
+                <FaLinkedin className="cursor-pointer" />
+              </Link>
+              <Link to="https://x.com/Aideoa2020" target="_blank">
+                <FaXTwitter className="cursor-pointer" />
+              </Link>
             </div>
           </div>
         </div>

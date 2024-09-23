@@ -107,7 +107,7 @@ const Footer = () => {
             </div>
 
            
-            <div className="  bg-red-200 w-1/2 bg-red-200 lg:min-w-80 bg-gray-400 relative bg-blue-200 lg:rounded-2xl max-h-full max-lg:h-64 max-lg:rounded-b-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
+            <div className="  bg-red-200 w-1/2 bg-red-200 lg:min-w-80 bg-gray-400 relative bg-blue-200 lg:rounded-2xl max-h-full max-lg:h-64 rounded-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
 
 
             

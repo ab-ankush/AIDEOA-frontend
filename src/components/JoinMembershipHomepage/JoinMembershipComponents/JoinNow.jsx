@@ -35,6 +35,12 @@ const JoinNow = () => {
           placeholder="eg. 0"
           type="number"
           value={amount}
+          style={{
+            appearance: 'textfield',
+            MozAppearance: 'textfield',
+            WebkitAppearance: 'none', 
+            margin: 0
+          }}
           onChange={(e) => {
             if (+e.target.value < 0) {
               setAmount(0);

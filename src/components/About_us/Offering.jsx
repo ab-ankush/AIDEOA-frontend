@@ -17,7 +17,7 @@ const Offering = () => {
 
   return (
     <div className="flex flex-col container mx-auto items-center  justify-center my-10">
-      <h3 className="text-3xl font-semibold mb-8">Our Offerings</h3>
+      <h3 className="text-3xl font-semibold mb-20">Our Offerings</h3>
       <div className="flex gap-8 flex-wrap justify-evenly w-full max-sm:p-4 max-xl:gap-10">
         {data.map((item, index) => (
           <div

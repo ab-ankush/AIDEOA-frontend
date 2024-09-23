@@ -28,9 +28,9 @@ function Sidebar(props) {
   };
 
   return (
-    <div className="max-md:absolute z-50">
+    <div>
       {/* Hamburger menu for small screens */}
-      <div className="md:hidden flex justify-center items-center p-2 m-1 bg-purple-200 rounded-full">
+      <div className="md:hidden p-4">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-3xl text-purple-600"

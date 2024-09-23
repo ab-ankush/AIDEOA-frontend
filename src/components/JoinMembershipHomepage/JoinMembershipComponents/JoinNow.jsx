@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 const JoinNow = () => {
-  const [fee, setFee] = useState(100);
+  const [fee, setFee] = useState(500);
   const [amount, setAmount] = useState();
 
   return (
@@ -19,14 +19,14 @@ const JoinNow = () => {
             <div className="flex flex-col">
               <p className="font-bold  text-base">One year membership</p>
               <p className="text-sm font-semibold -mt-1 text-slate-600">
-                Pay 100 for 1 year
+                Pay 500 for 1 year
               </p>
             </div>
           </div>
 
           <p className="text-4xl font-semibold">{fee}₹</p>
         </div>
-
+{/* 
         <p className="text-AIDEOTYPO  text-lg">
           Enter a custom donation amount
         </p>
@@ -49,11 +49,11 @@ const JoinNow = () => {
             setAmount(e.target.value);
           }}
           className="h-14 px-4 rounded-2xl focus:outline-none border-2 border-AIDEOTYPO"
-        />
+        /> */}
         {
-          <p className="text-AIDEOTYPO text-sm ">
-            Your total Membership and Donation amount is <span className="font-bold">{!amount ? fee :fee + +amount}₹</span>.
-          </p>
+          // <p className="text-AIDEOTYPO text-sm ">
+          //   Your total Membership and Donation amount is <span className="font-bold">{!amount ? fee :fee + +amount}₹</span>.
+          // </p>
         }
         <button className="h-16 membershipBtn rounded-2xl text-white font-semibold">
           Join now

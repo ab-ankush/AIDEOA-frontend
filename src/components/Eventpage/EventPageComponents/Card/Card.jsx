@@ -12,7 +12,7 @@ const targetDivRef=useRef([])
     const currentUrl = window.location.href;
 
     const message = ` ${title} \n${location}\n${date}-${time} \n ${
-      currentUrl + `?id=${head}`
+      currentUrl + `?id=${idx}`
     }`;
 
     const encodedText = encodeURIComponent(message);

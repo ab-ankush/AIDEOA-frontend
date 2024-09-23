@@ -20,9 +20,9 @@ const Landingpage = () => {
             <Link to="/membership">
               <LinkButton />
             </Link>
-            <Link to="/donation">
+            {/* <Link to="/donation">
               <DonationButton />
-            </Link>
+            </Link> */}
             <Link to="/idcard">
               <LinkButtonv2 />
             </Link>

@@ -14,14 +14,14 @@ const Dashboard = () => {
         setdata(x);
     }
     return (
-        <div className=" relative flex gap-10  bg-gray-100 ">
+        <div className=" relative flex  bg-gray-100 ">
             <Sidebar setit={setit} />
-            <div className="w-full m-auto">
+            <div className="w-full  max-md:mt-10  ">
                 {/* {
                     data.T ? <MutualLayout className="absolute top-0" /> : ''
                 } */}
                 <Header data={data} />
-                <div className="bg-white w-[90%] h-screen  ml-7 m-5 p-4 shadow-lg rounded-lg">
+                <div className="bg-white w-[95%] h-screen  md:ml-7  p-2 shadow-lg rounded-lg">
                     {
                         data.m ? <Chart /> : ''
                     }

@@ -11,7 +11,7 @@ const targetDivRef=useRef([])
     const { title, location, date, time, head } = item;
     const currentUrl = window.location.href;
 
-    const message = ` ${title} \n${location}\n${date}-${time} \n ${
+    const message = ` ${title} \n${location}\n${date}\n${time} \n ${
       currentUrl + `?id=${idx}`
     }`;
 
@@ -22,32 +22,38 @@ const targetDivRef=useRef([])
     window.open(shareUrl, "_blank");
   };
   const query = searchParams.get('id'); 
-  const scrollToDiv = () => {
-    if (targetDivRef.current[+query]) {
-    
-        targetDivRef.current[+query].scrollIntoView({ behavior: 'smooth' });
-     
-     
-    }
+  const handleScroll = () => {
+    const section = document.getElementById(query);
+    if (!section) return;
+
+    // Use requestAnimationFrame to ensure the DOM is ready before scrolling
+    requestAnimationFrame(() => {
+      const topPosition = section.getBoundingClientRect().top + window.scrollY; // Get the position of the element relative to the top of the document
+      window.scrollTo({
+        top: topPosition - 100, // Add a 100px offset before scrolling
+        behavior: 'smooth'
+      });
+    });
   };
   useEffect(() => {
    
-    const onPageLoad = () => {
-      scrollToDiv();
-    };
+    handleScroll()
+    // const onPageLoad = () => {
+    //   scrollToDiv();
+    // };
 
    
-    window.addEventListener('load', onPageLoad);
+    // window.addEventListener('load', onPageLoad);
 
    
-    return () => window.removeEventListener('load', onPageLoad);
+    // return () => window.removeEventListener('load', onPageLoad);
   }, [query]); 
 
 
   return (
     <div
     ref={(el)=>(targetDivRef.current[idx]=el)}
-
+id={idx}
       className="  m-auto max-w-lg mb-24 shadow-md  shadow-gray-600 rounded-2xl"
     >
       <div className="flex justify-between  px-4 lg:px-8 w-full  pt-5 pb-5 bg-customgradient-background rounded-t-2xl">

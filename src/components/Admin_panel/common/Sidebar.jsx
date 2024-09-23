@@ -7,6 +7,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { MdEventAvailable } from "react-icons/md";
 import { MdOutlineQueryBuilder } from "react-icons/md";
 import { IoIosContact } from "react-icons/io";
+import { FaIdCard } from "react-icons/fa";
 
 function Sidebar(props) {
   const [isOpen, setIsOpen] = useState(false); // To toggle the menu in smaller screens
@@ -17,6 +18,7 @@ function Sidebar(props) {
     T: false,
     e: false,
     q: false,
+    i:false,
     c: false,
   });
 
@@ -57,6 +59,7 @@ function Sidebar(props) {
                 T: false,
                 e: false,
                 q: false,
+                i:false,
                 c: false,
               });
             }}
@@ -80,6 +83,7 @@ function Sidebar(props) {
                 T: false,
                 e: false,
                 q: false,
+                i:false,
                 c: false,
               });
             }}
@@ -102,6 +106,7 @@ function Sidebar(props) {
                 T: false,
                 e: false,
                 q: false,
+                i:false,
                 c: false,
               });
             }}
@@ -124,6 +129,7 @@ function Sidebar(props) {
                 T: false,
                 e: true,
                 q: false,
+                i:false,
                 c: false,
               });
             }}
@@ -146,6 +152,7 @@ function Sidebar(props) {
                 T: false,
                 e: false,
                 q: true,
+                i:false,
                 c: false,
               });
             }}
@@ -153,6 +160,29 @@ function Sidebar(props) {
             <MdOutlineQueryBuilder size={35}  />
             <span className="absolute left-[60px] bottom-[5px] opacity-0 -translate-x-1/2 w-max bg-gray-700 text-white text-xs rounded-lg px-2 py-1 transition-opacity  group-hover:opacity-100">
               Query
+            </span>
+          </button>
+          <button
+            id="contact"
+            className={`relative w-8 h-8 group  ${
+              color.i ? "text-red-600" : "text-purple-600"
+            } `}
+            onClick={() => {
+              changeColor({
+                m: false,
+                u: false,
+                t: false,
+                T: false,
+                e: false,
+                q: false,
+                i:true,
+                c: false,
+              });
+            }}
+          >
+            <FaIdCard  size={35} />
+            <span className="absolute left-[60px] bottom-[5px] opacity-0 -translate-x-1/2 w-max bg-gray-700 text-white text-xs rounded-lg px-2 py-1 transition-opacity  group-hover:opacity-100">
+              IdCards
             </span>
           </button>
           <button

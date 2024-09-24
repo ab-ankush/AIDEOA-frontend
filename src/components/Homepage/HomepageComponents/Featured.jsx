@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const featuredArr=[{head:"Our Team",tag:"Access a wide range of free study materials and resources to enhance your knowledge.",icon:"/Group.png",link:"/education"},
   {head:"Join Membership",tag:"Join our interactive online classes & get more exposure to real-world problem & solve it.",icon:"/laptop.png",link:"/membership"},
   {head:"Mutual Transfer Portal",tag:"The Mutual Transfer Portal helps mining professionals find and manage transfer opportunities efficiently.",icon:"/startup 1.png",link:"/mutualtransfer"}
-  ,{head:"Donation",tag:"Aideoa platform is free to use, but if you want to support us, you can donate us.",btn:<BsJournalArrowDown size={40} className="text-AIDEOTYPO"/>,link:"/donation"}
+  // ,{head:"Donation",tag:"Aideoa platform is free to use, but if you want to support us, you can donate us.",btn:<BsJournalArrowDown size={40} className="text-AIDEOTYPO"/>,link:"/donation"}
 ]
 
 const Featured = () => {

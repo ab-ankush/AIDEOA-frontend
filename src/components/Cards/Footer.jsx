@@ -16,7 +16,7 @@ const companyLinks = [
 
 const servicesLinks = [
   { name: "Join Membership", link: "/membership" },
-  { name: "Donation", link: "/donation" },
+  // { name: "Donation", link: "/donation" },
   { name: "Mutual Transfer Portal", link: "/mutualtransfer" },
 ];
 
@@ -106,7 +106,12 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className=" w-1/2  lg:min-w-80  relative  lg:rounded-r-2xl max-h-full max-lg:h-64 rounded-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
+           
+            <div className="  bg-red-200 w-1/2 bg-red-200 lg:min-w-80 bg-gray-400 relative bg-blue-200 lg:rounded-2xl max-h-full max-lg:h-64 rounded-2xl overflow-hidden max-lg:w-full opacity-70 hover:opacity-95  cursor-pointer">
+
+
+            
+
               <Map />
               <Link
                 to="https://maps.app.goo.gl/kiStTc8tcc2L2dUN8"

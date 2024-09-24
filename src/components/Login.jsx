@@ -10,6 +10,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import GoogleSignInButton from "./Cards/SignInwithGoogle";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -108,6 +109,7 @@ const Login = () => {
             >
               Sign in
             </button>
+            <GoogleSignInButton title={"SignIn"}/>
           </div>
           <div className="mt-4 text-center text-white">
             <span>

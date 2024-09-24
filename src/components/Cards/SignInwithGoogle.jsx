@@ -1,7 +1,7 @@
 // import { auth } from "../../firebase";
 // import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
-const GoogleSignInButton = () => {
+const GoogleSignInButton = ({title="SignUp"}) => {
     // const handleSignin=()=>{
         
     //     const provider = new GoogleAuthProvider()
@@ -23,7 +23,7 @@ const GoogleSignInButton = () => {
         alt="Google logo"
         className="w-5 h-5 mr-2"
       />
-      <span className="text-gray-800">Sign in with Google</span>
+      <span className="text-gray-800">{title} with Google</span>
     </button>
     </div>
   );

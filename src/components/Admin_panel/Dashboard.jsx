@@ -8,20 +8,21 @@ import MutualLayout from './common/MainLayout.jsx'
 import EventPanel from "./Events/EventPanel";
 import Query from "./Query/Query";
 import Contacts from "./Contacts/Contacts";
+import IdCardTable from "./IdCardTable/IdCardTable";
 const Dashboard = () => {
-    const [data, setdata] = useState({ m: true, u: false, t: false,T: false, e: false,q: false,c: false })
+    const [data, setdata] = useState({ m: true, u: false, t: false,T: false, e: false,q: false,i:false,c: false })
     const setit = (x) => {
         setdata(x);
     }
     return (
-        <div className=" relative flex gap-10  bg-gray-100 ">
+        <div className=" relative flex flex-col md:flex-row gap-10  bg-gray-100 ">
             <Sidebar setit={setit} />
-            <div className="w-full m-auto">
+            <div className="w-full  max-md:mt-10  ">
                 {/* {
                     data.T ? <MutualLayout className="absolute top-0" /> : ''
                 } */}
                 <Header data={data} />
-                <div className="bg-white w-[90%] h-screen  ml-7 m-5 p-4 shadow-lg rounded-lg">
+                <div className="bg-white w-[95%] h-screen  md:ml-7  p-2 shadow-lg rounded-lg">
                     {
                         data.m ? <Chart /> : ''
                     }
@@ -36,6 +37,9 @@ const Dashboard = () => {
                     },
                     {
                         data.q ? <Query /> : ''
+                    },
+                    {
+                        data.i ? <IdCardTable /> : ''
                     },
                     {
                         data.c ? <Contacts /> : ''

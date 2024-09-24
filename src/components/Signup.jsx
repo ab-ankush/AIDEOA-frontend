@@ -16,7 +16,7 @@ import { SignUpFunc } from "../services/axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -52,10 +52,10 @@ const Signup = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { username, email, password, confirmPassword } = formData;
+    const { fullName, email, password, confirmPassword } = formData;
 
-    if (username.length < 3) {
-      setError("Username is required and must be at least 3 characters");
+    if (fullName.length < 3) {
+      setError("fullName is required and must be at least 3 characters");
       return;
     }
 
@@ -99,10 +99,10 @@ const Signup = () => {
             <div className="relative">
               <input
                 className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
-                name="username"
+                name="fullName"
                 type="text"
                 placeholder="Name"
-                value={formData.username}
+                value={formData.fullName}
                 onChange={handleChange}
               />
               <FaUser

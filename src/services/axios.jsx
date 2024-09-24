@@ -10,6 +10,7 @@ export const SignUpFunc = async (user)=>{
 }
 export const loginfunc = async (user)=>{
     try{
+        
         return await axios.post(`${url}/login`,user)
     }catch(error){
         console.log(`error in Loginfunc ${error}`)

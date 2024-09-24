@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import GoogleSignInButton from "./Cards/SignInwithGoogle";
+import { loginfunc } from "../services/axios";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const {  email, } = formData;
 
@@ -39,6 +40,12 @@ const Login = () => {
     if (!email.includes("@") || !email.includes(".") || email.length < 5) {
       setError("Email format error");
       return;
+    }
+    try{
+      const data=await loginfunc(formData)
+      console.log(data)
+    }catch(error){
+      console.log(`error in Login.jsx :- ${error}`)
     }
 
  

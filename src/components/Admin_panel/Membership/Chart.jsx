@@ -44,7 +44,7 @@ const Tabletemp = () => {
         },
     ]
     return (
-        <ResponsiveContainer width={`100%`} height={`100%`}>
+        <ResponsiveContainer className={`sm:max-lg:overflow-x-scroll sm:max-lg:w-[800px]`} width={`100%`} height={`80%`}>
             <LineChart data={arr} width={100}>
                 <XAxis dataKey={`name`} />
                 <YAxis />

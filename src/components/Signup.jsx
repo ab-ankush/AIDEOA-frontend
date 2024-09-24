@@ -12,6 +12,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import GoogleSignInButton from "./Cards/SignInwithGoogle";
 import UserRoleSelect from "./Cards/UserRoleSelect";
+import { SignUpFunc } from "../services/axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const Signup = () => {
     setSeconds(30);
     setResend(true);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, email, password, confirmPassword } = formData;
 
@@ -72,8 +73,15 @@ const Signup = () => {
       setError("Passwords do not match");
       return;
     }
+    try{
+      const data=await SignUpFunc(formData);
+      console.log(data);
+    }catch(error){
+      console.log(`error in handlesubmit function ${error}`)
+    }
+   
 
-    alert("Submitted");
+    // alert("Submitted");
   };
 
   return (
@@ -187,7 +195,7 @@ const Signup = () => {
             </div>
             <span className="text-center text-sm text-red-500">{error}</span>
 {userTypemodal&& <div>
-  <UserRoleSelect />
+  {/* <UserRoleSelect /> */}
 </div>}
             <div className="mt-4">
               <button

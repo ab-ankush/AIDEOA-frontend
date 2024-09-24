@@ -8,7 +8,7 @@ import EmployeeIdCard from "./EmployeeIdCard";
 // import { Link } from 'react-router-dom'
 const FormContainer = () => {
   const [formType, SetFormType] = useState(true);
-  const [submit, setsubmit] = useState(true)
+  const [submit, setsubmit] = useState(false)
   return (
     <div>
       {
@@ -18,7 +18,7 @@ const FormContainer = () => {
               formType ? <IdCardPurple /> : <EmployeeIdCard />
             }
           </div> */}
-          <p className="text-center text-[50px] text-purple-600">It will be Processed in 1 Week.</p>
+          <p className="text-center text-[40px] text-purple-600 px-[20%]">Congratulations,You have successfully applied for the IdCard. It will be Processed in 1 Week.</p>
           {/* <div className=" flex ">
             <button className="w-52 max-sm:w-full h-12 membershipBtn rounded-2xl text-white font-medium text-lg">
               Download Id Card

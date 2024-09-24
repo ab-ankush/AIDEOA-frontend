@@ -32,7 +32,7 @@ const Signup = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, email, password, confirmPassword } = formData;
 
@@ -54,6 +54,11 @@ const Signup = () => {
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
+    }
+    try{
+      console.log(formData);
+    }catch(error){
+      console.log(`error in handlesubmit function ${error}`)
     }
    
 

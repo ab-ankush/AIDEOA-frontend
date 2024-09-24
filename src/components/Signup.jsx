@@ -53,7 +53,6 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, email, password, confirmPassword } = formData;
-
     if (username.length < 3) {
       setError("Username is required and must be at least 3 characters");
       return;
@@ -79,9 +78,6 @@ const Signup = () => {
     }catch(error){
       console.log(`error in handlesubmit function ${error}`)
     }
-   
-
-    // alert("Submitted");
   };
 
   return (
@@ -209,7 +205,10 @@ const Signup = () => {
               </button>
             </div>
           </form>
+          <Link to="http://localhost:4000/api/social/google">
           <GoogleSignInButton />
+          </Link>
+        
           <div className="mt-4 text-center text-white pb-10">
             <span>
               Already have account{" "}

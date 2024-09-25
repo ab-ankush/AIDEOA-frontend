@@ -73,6 +73,7 @@ const Login = () => {
             <input
               className=" glass-effect  bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
               id="email"
+              name="email"
               type="email"
               placeholder="Email"
               onChange={handleChange}
@@ -112,7 +113,7 @@ const Login = () => {
           <div className="mt-4">
             <button
               className="bg-purplebtn hover:bg-purple-700 text-white  py-2 px-4 rounded-full w-full "
-              type="button"
+              type="submit"
             >
               Sign in
             </button>

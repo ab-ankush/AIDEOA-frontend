@@ -63,6 +63,7 @@ const Login = () => {
             <input
               className=" glass-effect  bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
               id="email"
+              name="email"
               type="email"
               name="email"
               placeholder="Email"

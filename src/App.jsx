@@ -25,6 +25,7 @@ import NotFound from "./components/notfound/Notfound";
 import Forgotpassword from "./components/forgotpassword/Forgotpassword";
 import OnlineClass from "./components/onlineclass/OnlineClass";
 import UserRoleSelect from "./components/Cards/UserRoleSelect";
+import { Toaster } from "react-hot-toast";
 export default function App() {
   return (
     <ScrollToTop>
@@ -56,6 +57,7 @@ export default function App() {
       
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Toaster />
     </ScrollToTop>
   );
 }

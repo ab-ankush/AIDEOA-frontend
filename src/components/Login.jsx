@@ -108,7 +108,9 @@ const Login = () => {
             >
               Sign in
             </button>
+            <Link to="http://localhost:4000/api/social/google">
             <GoogleSignInButton title={"SignIn"}/>
+            </Link>
           </div>
           <div className="mt-4 text-center text-white">
             <span>

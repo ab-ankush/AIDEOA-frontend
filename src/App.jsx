@@ -16,7 +16,7 @@ import Dashboard from "./components/Admin_panel/Dashboard.jsx";
 import MainLayout from "./layout/MainLayout.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
 import DataList from "./components/MutualTransferPage/DataList";
-import Onlinetest from "./components/Onlinetest/Onlinetest"
+import Onlinetest from "./components/Onlinetest/Onlinetest";
 import StudentCorner from "./components/studentcorner/StudentCorner";
 import Employeecorner from "./components/Employeecorner/Employeecorner";
 import Education from "./components/Education/Education";
@@ -26,7 +26,67 @@ import Forgotpassword from "./components/forgotpassword/Forgotpassword";
 import OnlineClass from "./components/onlineclass/OnlineClass";
 import UserRoleSelect from "./components/Cards/UserRoleSelect";
 import { Toaster } from "react-hot-toast";
+import { useContext, useEffect } from "react";
+import axios from "axios";
+import { AuthContext } from "./context/authContext";
+
+
+
+
 export default function App() {
+  useEffect(() => {
+    getUser();
+    
+  }, []);
+  const {refreshAccessToken}=useContext(AuthContext);
+  const getUser = async () => {
+      try {
+        const token = localStorage.getItem("accessToken"); // Get token from localStorage
+
+        // Send request to the "Get Current User" API endpoint
+        const response = await axios.get("http://localhost:4000/api/auth/getuser", {
+          headers: {
+            Authorization: `Bearer ${token}`, // Set token in Authorization header
+          },
+        });
+        console.log(response.data);
+        return response.data; // Return the user data from the response
+      } catch (error) {
+        console.error('Error fetching current user:', error);
+        throw error;
+      }
+    };
+
+   // Set up axios interceptor to handle token expiration
+axios.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config;
+
+    if (error.response.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true; // Prevent retry loop
+
+      try {
+        const newAccessToken = await refreshAccessToken();
+        
+        // Set the Authorization header to the new access token
+        axios.defaults.headers.common["Authorization"] = `Bearer ${newAccessToken}`;
+        originalRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
+
+        // Retry the original request with the new token
+        return axios(originalRequest);
+      } catch (err) {
+        // Handle token refresh failure (e.g., logout the user)
+        console.error("Token refresh failed:", err);
+      }
+    }
+
+    return Promise.reject(error);
+  }
+);
+ 
+    
+
   return (
     <ScrollToTop>
       <Routes>
@@ -36,10 +96,10 @@ export default function App() {
           <Route path="contact" element={<ContactUs />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="/mutualtransferviewportal" element={<DataList/>}/>
+          <Route path="/mutualtransferviewportal" element={<DataList />} />
           <Route path="membership" element={<JoinMembership />} />
           {/* <Route path="donation" element={<DonationComponent />} /> */}
-          <Route path="mutualtransfer" element={<MutualTransferPage />}/>
+          <Route path="mutualtransfer" element={<MutualTransferPage />} />
           <Route path="about" element={<About />} />
           <Route path="education" element={<EducationCell />} />
           <Route path="idcard" element={<ApplyIdCard />} />
@@ -54,7 +114,7 @@ export default function App() {
           <Route path="additional" element={<UserRoleSelect />} />
         </Route>
         <Route path="/admin" element={<Dashboard />} />
-      
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

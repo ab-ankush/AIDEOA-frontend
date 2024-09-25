@@ -12,7 +12,6 @@ import { MdAlternateEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import GoogleSignInButton from "./Cards/SignInwithGoogle";
 import UserRoleSelect from "./Cards/UserRoleSelect";
-import { SignUpFunc } from "../services/axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -73,17 +72,8 @@ const Signup = () => {
       setError("Passwords do not match");
       return;
     }
-    try{
-      const data=await SignUpFunc(formData);
-      console.log(data);
-    }catch(error){
-      console.log(`error in handlesubmit function ${error}`)
-    }
-   
 
-    // alert("Submitted");
-  };
-
+  }
   return (
     <>
       <div className="min-h-dvh mainBackgroundImg relative pt-14 flex justify-center items-center">
@@ -194,13 +184,11 @@ const Signup = () => {
               </button>
             </div>
             <span className="text-center text-sm text-red-500">{error}</span>
-{userTypemodal&& <div>
-  {/* <UserRoleSelect /> */}
-</div>}
+
             <div className="mt-4">
               <button
                 className="bg-purplebtn hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
-                type="submit"
+                type="button"
                 onClick={() => {
                   setUserTypeModal(true);
                 }}
@@ -209,7 +197,13 @@ const Signup = () => {
               </button>
             </div>
           </form>
+          {userTypemodal&& <div>
+  <UserRoleSelect formData={formData} userTypemodal={userTypemodal}/>
+</div>}
+          <Link to="http://localhost:4000/api/social/google">
           <GoogleSignInButton />
+                </Link>
+        
           <div className="mt-4 text-center text-white pb-10">
             <span>
               Already have account{" "}

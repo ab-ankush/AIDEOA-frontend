@@ -12,11 +12,10 @@ import { MdAlternateEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import GoogleSignInButton from "./Cards/SignInwithGoogle";
 import UserRoleSelect from "./Cards/UserRoleSelect";
-import { SignUpFunc } from "../services/axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -52,10 +51,10 @@ const Signup = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { username, email, password, confirmPassword } = formData;
+    const { fullName, email, password, confirmPassword } = formData;
 
-    if (username.length < 3) {
-      setError("Username is required and must be at least 3 characters");
+    if (fullName.length < 3) {
+      setError("fullName is required and must be at least 3 characters");
       return;
     }
 
@@ -73,17 +72,8 @@ const Signup = () => {
       setError("Passwords do not match");
       return;
     }
-    try{
-      const data=await SignUpFunc(formData);
-      console.log(data);
-    }catch(error){
-      console.log(`error in handlesubmit function ${error}`)
-    }
-   
 
-    // alert("Submitted");
-  };
-
+  }
   return (
     <>
       <div className="min-h-dvh mainBackgroundImg relative pt-14 flex justify-center items-center">
@@ -99,10 +89,10 @@ const Signup = () => {
             <div className="relative">
               <input
                 className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
-                name="username"
+                name="fullName"
                 type="text"
                 placeholder="Name"
-                value={formData.username}
+                value={formData.fullName}
                 onChange={handleChange}
               />
               <FaUser
@@ -194,13 +184,11 @@ const Signup = () => {
               </button>
             </div>
             <span className="text-center text-sm text-red-500">{error}</span>
-{userTypemodal&& <div>
-  {/* <UserRoleSelect /> */}
-</div>}
+
             <div className="mt-4">
               <button
                 className="bg-purplebtn hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
-                type="submit"
+                type="button"
                 onClick={() => {
                   setUserTypeModal(true);
                 }}
@@ -209,7 +197,13 @@ const Signup = () => {
               </button>
             </div>
           </form>
+          {userTypemodal&& <div>
+  <UserRoleSelect formData={formData} userTypemodal={userTypemodal}/>
+</div>}
+          <Link to="http://localhost:4000/api/social/google">
           <GoogleSignInButton />
+                </Link>
+        
           <div className="mt-4 text-center text-white pb-10">
             <span>
               Already have account{" "}

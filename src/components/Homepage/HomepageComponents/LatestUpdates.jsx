@@ -36,7 +36,7 @@ const LatestUpdates = () => {
                 className={`max-h-fit  w-full border-b-[0.5px] border-[#FFFFFF99] bg-gray-800 hover:bg-[#FFFFFF1A] ${expandIndex === idx ? "bg-gray-700" : ""}`}
               >
                 <div className="flex my-5 justify-between mx-5 items-center h-full cursor-pointer" onClick={() => handleItemClick(idx)}>
-                  <h5 className="font-semibold text-[18px] max-lg:text-sm">{notification.title}</h5>
+                  <h5 className="font-medium text-[18px] max-lg:text-sm">{notification.title}</h5>
                   <span className="text-gray-400">&gt;</span>
                 </div>
                 {expandIndex === idx && (
@@ -68,17 +68,11 @@ const LatestUpdates = () => {
             <div className={`text-base flex flex-col gap-2 font-normal mb-4 leading-7 max-lg:text-sm overflow-hidden`}>
               <p className="font-semibold text-lg">1. Introduction</p>
               <p>
-                1.1 Purpose: The purpose of this SRS is to provide a detailed
-                description of the requirements for the AIDEOA website. It will
-                outline the features, functionalities, and design specifications
-                necessary to create a user-friendly, informative, and interactive
-                platform for Mining Diploma and Degree holders.
+              हमें यह बताते हुए खुशी हो रही है कि SECL हसदेव प्रबंधन ने आखिरकार माइनिंग सरदारों की ओवरमैन ग्रेड-B में पदोन्नति का आदेश 12/02/2024 को जारी कर दिया है। यह आदेश AIDEOA द्वारा 25/01/2024 को किए गए धरना-प्रदर्शन के बाद मिला, जहाँ प्रबंधन ने 31/01/2024 तक पदोन्नति आदेश जारी करने का आश्वासन दिया था। हालाँकि, प्रबंधन द्वारा समय पर आदेश जारी नहीं किया जा सका, लेकिन पदोन्नति की तिथि को 25/01/2024 से प्रभावी माना गया है।लेकिन, मैनपावर बजट 2023-24 के तहत ओवरमैन ग्रेड-B में 28 माइनिंग सरदारों की पदोन्नति होनी थी, जिसमें से केवल 16 का ही प्रमोशन पत्र जारी किया गया है।
               </p>
-              <p>
-                1.2 Scope: AIDEOA is a platform designed to bring together
-                Mining Sirdar, Overman, Surveyor, Assistant Manager, and other
-                professionals for optimistic decision-making and issue resolution.
-              </p>
+              {/* <p>
+              कोयला खनन क्षेत्र में सुरक्षा एक प्रमुख चिंता का विषय है, और सुरक्षा मानकों में सुधार के लिए कोल इंडिया लिमिटेड ने इस एक दिवसीय सुरक्षित कोयला खनन कार्यशाला का आयोजन किया है। इस कार्यशाला का उद्देश्य खनन उद्योग में नवीनतम सुरक्षा उपायों को अपनाना, श्रमिकों को सुरक्षा प्रथाओं से अवगत कराना, और खनन के दौरान होने वाली दुर्घटनाओं की रोकथाम पर ध्यान केंद्रित करना है।इस कार्यक्रम में खनन क्षेत्र के विशेषज्ञ, सुरक्षा अधिकारी, इंजीनियर, और कोल इंडिया के वरिष्ठ अधिकारियों की भागीदारी रहेगी, जो सुरक्षा मानकों को और अधिक सुदृढ़ करने के लिए अपने अनुभव और ज्ञान साझा करेंगे।
+              </p> */}
             </div>
           </div>
           <button

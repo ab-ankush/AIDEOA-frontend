@@ -5,10 +5,10 @@ const CrouselHeader = ({textColor="black"}) => {
         <h3 className={`text-${textColor}  text-center`}>Already team up and moving forward!</h3>
       </div>
       <div className={`text-center text-[12px] lg:text-sm font-normal text-${textColor} px-1`}>
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod
-        </p>
+        </p> */}
         <span>tempor incididunt</span>
       </div>
     </div>

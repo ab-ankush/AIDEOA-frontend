@@ -7,7 +7,7 @@ const Education = () => {
     <TopImageCard image={'/enhanceimage/Classroom.png'} title={"Education"}/>
 
   <div className="text-center ">
-    <h1 className="text-4xl font-bold  text-purple-600">Coming Soon</h1>
+    <h1 className="text-4xl font-bold  text-purple-600">We are Launching soon.</h1>
   
 
 </div>

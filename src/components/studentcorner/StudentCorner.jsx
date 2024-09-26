@@ -7,7 +7,7 @@ const StudentCorner = () => {
     <TopImageCard image={'/enhanceimage/Student.png'} title={"Student Corner"}/>
 
   <div className="text-center ">
-    <h1 className="text-4xl font-bold  text-purple-600">Coming Soon</h1>
+    <h1 className="text-4xl font-bold  text-purple-600">We are launching soon.</h1>
   
 
 </div>

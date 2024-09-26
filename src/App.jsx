@@ -35,56 +35,11 @@ import { AuthContext } from "./context/authContext";
 
 export default function App() {
   useEffect(() => {
-    getUser();
-    
+
   }, []);
-  const {refreshAccessToken}=useContext(AuthContext);
-  const getUser = async () => {
-      try {
-        const token = localStorage.getItem("accessToken"); // Get token from localStorage
+  const {user}=useContext(AuthContext);
+  console.log(user)
 
-        // Send request to the "Get Current User" API endpoint
-        const response = await axios.get("http://localhost:4000/api/auth/getuser", {
-          headers: {
-            Authorization: `Bearer ${token}`, // Set token in Authorization header
-          },
-        });
-        console.log(response.data);
-        return response.data; // Return the user data from the response
-      } catch (error) {
-        console.error('Error fetching current user:', error);
-        throw error;
-      }
-    };
-
-   // Set up axios interceptor to handle token expiration
-axios.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    const originalRequest = error.config;
-
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true; // Prevent retry loop
-
-      try {
-        const newAccessToken = await refreshAccessToken();
-        
-        // Set the Authorization header to the new access token
-        axios.defaults.headers.common["Authorization"] = `Bearer ${newAccessToken}`;
-        originalRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
-
-        // Retry the original request with the new token
-        return axios(originalRequest);
-      } catch (err) {
-        // Handle token refresh failure (e.g., logout the user)
-        console.error("Token refresh failed:", err);
-      }
-    }
-
-    return Promise.reject(error);
-  }
-);
- 
     
 
   return (

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import "../../../src/index.css";
+import { AuthContext } from "../../context/authContext";
 const Navbar = () => {
   const [ham, setham] = useState(true);
   const { pathname } = useLocation();
-
+  const {user}=useContext(AuthContext)
   const navigate = useNavigate();
   const sethamfunc = () => {
     setham(!ham);
@@ -96,14 +97,21 @@ const Navbar = () => {
               Contact us
             </NavLink>
           </div>
-          <div className=" wo py-3 px-4">
+        {user ?   <div className=" wo py-3 px-4">
+            <button
+              onClick={signupfunc}
+              className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+            >
+              Sign out
+            </button>
+          </div> :   <div className=" wo py-3 px-4">
             <button
               onClick={signupfunc}
               className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
             >
               Sign up
             </button>
-          </div>
+          </div>}
         </div>
         <div id="hamicon  " onClick={sethamfunc} className="sm:block lg:hidden">
           <RxHamburgerMenu className="w-[44px] cursor-pointer mx-3 h-[44px]" />

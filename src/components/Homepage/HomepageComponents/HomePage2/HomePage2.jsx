@@ -13,7 +13,7 @@ const HomePage2 = () => {
    <Slider />
    <div className="flex flex-col items-center gap-4">
    <h1 className="font-semibold text-[35px] leading-15">Photo Gallery</h1>
-   <p className='text-normal text-gray-400'>Loremuisquam soluta quae eos?</p>
+   {/* <p className='text-normal text-gray-400'>Loremuisquam soluta quae eos?</p> */}
    <ImageCarousel images={images}/>
     </div>
    

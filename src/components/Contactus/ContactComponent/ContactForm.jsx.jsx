@@ -17,7 +17,7 @@ const ContactForm = () => {
               <BsChatSquareText className="min-w-5 text-purple-500" />
               <p className="text-gray-500 text-lg font-normal max-lg:text-base max-md:text-sm ">
                 Hi, wanna talk? Use the below form or email us -
-                support@aideoa.com
+                aideoa2020@gmail.com
               </p>
             </div>
             <Form />

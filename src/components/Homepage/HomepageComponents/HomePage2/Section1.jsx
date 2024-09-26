@@ -6,8 +6,8 @@ const Section1 = () => {
       <h1 className="font-semibold text-[35px] leading-15">Our Mission</h1>
       <div className="pdiv flex justify-center items-center my-5">
         <p className="text-sm text-center ">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, ad?
-          Optio, cupiditate.
+          {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, ad?
+          Optio, cupiditate. */}
         </p>
       </div>
       <div className="uldiv p-2">

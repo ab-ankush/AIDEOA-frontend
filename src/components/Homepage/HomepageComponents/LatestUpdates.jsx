@@ -40,14 +40,14 @@ const LatestUpdates = () => {
                   <span className="text-gray-400">&gt;</span>
                 </div>
                 {expandIndex === idx && (
-                  <div className="mx-5 h-[120px]  text-gray-300">
+                  <div className="mx-5 my-2 max-h-fit  text-gray-300">
                     <div className="w-full my-2">
                       <h1>{notification.head}</h1>
                       <p>{notification.title}</p>
                     </div>
                     <button
                     onClick={()=>{navigate("/event")}}
-            className="bg-white text-[#6E00FA] border p-3 font-semibold text-start text-[18px] hover:underline max-lg:text-sm"
+            className="bg-white rounded-2xl text-[#6E00FA] border sm:p-3 max-sm:p-2 font-semibold text-start text-[18px] hover:underline max-lg:text-sm"
           >
             Continue Reading
           </button>

@@ -9,7 +9,7 @@ const CrouselHeader = ({textColor="black"}) => {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod
         </p> */}
-        <span>tempor incididunt</span>
+        {/* <span>tempor incididunt</span> */}
       </div>
     </div>
   );

@@ -54,7 +54,7 @@ const targetDivRef=useRef([])
     <div
     ref={(el)=>(targetDivRef.current[idx]=el)}
 id={idx}
-      className="  m-auto max-w-lg mb-24 shadow-md h-[550px] flex flex-col   shadow-gray-600 rounded-2xl"
+      className="  m-auto max-w-lg mb-24 shadow-md min-h-[550px] flex flex-col   shadow-gray-600 rounded-2xl"
     >
       <div className="flex justify-between  px-4 lg:px-8 w-full  pt-5 pb-5 bg-customgradient-background rounded-t-2xl">
         <p className="font-semibold w-full text-white w-14 text-3xl ">

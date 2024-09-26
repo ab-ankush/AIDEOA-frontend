@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaInstagram, FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Map from "../Contactus/ContactComponent/Map";
+import PrivacyPolicy from "../../utils/PrivacyPolicy";
+import RefundPolicy from "../../utils/RefundPolicy";
+import TermsCondition from "../../utils/TermsCondition";
 const companyLinks = [
   { name: "Home", link: "/home" },
   { name: "About Us", link: "/about" },
@@ -19,19 +22,29 @@ const servicesLinks = [
   // { name: "Donation", link: "/donation" },
   { name: "Mutual Transfer Portal", link: "/mutualtransfer" },
 ];
-
 const legalLinks = [
-  { name: "Privacy Policy", link: "/policies/Privacy Policy AIDEOA.pdf" },
-  { name: "Refund Policy", link: "/policies/Refund Policy AIDEOA.pdf" },
+  { name: "Privacy Policy", link: "/policies/Privacy Policy AIDEOA.pdf",id:"privacy" },
+  { name: "Refund Policy", link: "/policies/Refund Policy AIDEOA.pdf",id:"refund" },
   {
     name: "Terms & Conditions",
-    link: "/policies/Terms and Conditions AIDEOA.pdf",
+    link: "/policies/Terms and Conditions AIDEOA.pdf" ,id:"tnc",
   },
 ];
-
 const Footer = () => {
+  const [privacy,setPrivacy]=useState(false)
+  const [tnc,setTnc]=useState(false)
+  const [refund,setRefund]=useState(false)
+  const bodyStyle=document.body.style;
+  useEffect(() => {
+    console.log(privacy,tnc,refund)
+    if(privacy||tnc||refund)
+  bodyStyle.overflowY=(privacy||tnc||refund)?"hidden":"auto"
+    else bodyStyle.overflowY="auto"
+  }, [privacy,tnc,refund]);
+
+
   return (
-    <footer className="bg-black flex flex-col  text-gray-400 py-14 px-20 max-lg:px-10">
+    <footer className="bg-black flex flex-col  text-gray-700 py-14 px-20 max-lg:px-10">
       <div className="grid grid-cols-2 gap-40 max-lg:gap-20  max-md:grid-cols-1">
         {/* Left Section */}
         <div className=" flex flex-col  items-center ">
@@ -78,14 +91,14 @@ const Footer = () => {
                 <ul className="mt-2 space-y-2">
                   {legalLinks.map((link, idx) => (
                     <li key={idx}>
-                      <Link
-                        to={link.link}
+                      <div
+                      onClick={()=>{
+                        link.id ==="privacy"? setPrivacy(true): link.id==="tnc" ? setTnc(true): setRefund(true)
+                      }}
                         className="hover:text-white"
-                        target="_blank"
-                        reloadDocument
                       >
                         {link.name}
-                      </Link>
+                      </div>
                     </li>
                   ))}
                 </ul>
@@ -93,6 +106,15 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
+          {       (privacy || tnc || refund )&&     <div className="fixed container z-50 px-48 max-lg:px-14 max-lg:px-6 top-[57%] left-1/2  transform -translate-x-1/2 -translate-y-1/2 transition ease-in duration-500 ">
+            {
+              privacy ? <PrivacyPolicy  setPrivacy={setPrivacy}/> : refund ? <RefundPolicy setRefund={setRefund}/> :<TermsCondition setTnc={setTnc} />
+            }
+          </div>
+          
+          }
+        
         {/* Right Section */}
         <div className="   flex justify-center ">
           <div className="space-y-8  xl:w-3/4 ">

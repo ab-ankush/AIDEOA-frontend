@@ -7,10 +7,10 @@ const InfoHeader = () => {
         <h3>AIDEOA Latest News</h3>
       </div>
       <div className="text-center text-sm font-normal text-gray-500">
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod
-        </p>
+        </p> */}
         <span>tempor incididunt</span>
       </div>
     </div>

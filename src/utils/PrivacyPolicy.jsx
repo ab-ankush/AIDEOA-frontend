@@ -6,7 +6,7 @@ const PrivacyPolicy = ({setPrivacy}) => {
     <div className=" bg-white border  border-1 dropshadowbox rounded-2xl w-full my-20 customScrollbar  overflow-y-scroll  scroll-smooth  h-[80vh] ">
     <div className=" overflow-x-hidden  flex flex-col justify-center items-center">
     <AiOutlineCloseCircle onClick={()=>setPrivacy(false)} size={35} className="absolute cursor-pointer top-[40px]"/>
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
       <h1 className="text-3xl text-center underline font-bold mb-6 text-green-800">Privacy Policy - AIDEOA</h1>
 
       <section className="mb-8">

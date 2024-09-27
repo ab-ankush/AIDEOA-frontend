@@ -12,14 +12,14 @@ import CommonLinks from './Commanlinks'
 const AdminComponents = () => {
   return (
     <div>
-      {/* <Resources /> */}
-      {/* <Query /> */}
-      {/* <IdCard /> */}
-      {/* <IdCardDetails /> */}
-      {/* <IdCardUpdate /> */}
-      {/* <AdminLogin /> */}
-      {/* <Events /> */}
-      {/* <EventDetails /> */}
+      <Resources />
+      <Query />
+      <IdCard />
+      <IdCardDetails />
+      <IdCardUpdate />
+      <AdminLogin />
+      <Events />
+      <EventDetails />
       <CommonLinks />
     </div>
   )

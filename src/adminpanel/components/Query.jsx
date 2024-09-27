@@ -184,7 +184,7 @@ const Query = () => {
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200">
-              <th className="p-2 font-medium text-sm text-gray-400">
+              <th className="p-2 px-4 font-medium text-sm text-gray-400">
                 <input type="checkbox" className="" />
               </th>
               <th className="p-2 font-medium text-sm text-gray-400 w-52">
@@ -209,7 +209,7 @@ const Query = () => {
           <tbody>
             {data.slice(0, 7).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
-                <td className="p-2 font-medium text-sm text-gray-600">
+                <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input type="checkbox" />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600  max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">

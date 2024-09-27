@@ -167,11 +167,11 @@ const Resources = () => {
             <div className="bg-white text-gray-700 text-center  border shadow-md  rounded-xl  flex flex-col justify-center p-2 h-16 items-center"><p className='text-nowrap'>Employee Corner </p><p className='font-bold'>100</p></div>
             <div className="bg-white text-gray-700 text-center shadow-md border rounded-xl  flex flex-col justify-center p-2 h-16 items-center"><p className='text-nowrap'>Education </p><p className='font-bold'>100</p></div>
             </div>
-            <div className="flex justify-between items-center space-x-4 w-full">
+            <div className="flex justify-end flex-1  items-center space-x-4 ">
             <input
               type="text"
               placeholder="Search"
-              className="border border-gray-300 flex-1 rounded-full  p-2 font-medium text-sm text-gray-600 "
+              className="border border-gray-300 bg-gray-100 flex-1 rounded-full max-w-lg  p-2 font-medium text-sm text-gray-600 "
             />
             <div className='flex'>
               <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
@@ -186,7 +186,7 @@ const Resources = () => {
             <table className="min-w-full bg-white border border-gray-300">
               <thead>
                 <tr className="text-left border-b bg-gray-100 border-gray-200">
-                  <th className="p-2 font-medium text-sm text-gray-600">
+                  <th className="p-2 px-4 font-medium text-sm text-gray-600">
                     <input type="checkbox"  className='' />
                   </th>
                   <th className="p-2 font-medium text-sm text-gray-600 w-52">Title</th>
@@ -201,7 +201,7 @@ const Resources = () => {
               <tbody>
                 {data.slice(0,7).map((item, index) => (
                   <tr key={index} className="border-b border-gray-200 h-16">
-                    <td className="p-2 font-medium text-sm text-gray-600">
+                    <td className="p-2 px-4  font-medium text-sm text-gray-600">
                       <input type="checkbox" />
                     </td>
                     <td className="p-2 font-medium text-sm text-gray-600  max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</td>

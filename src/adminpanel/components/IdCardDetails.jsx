@@ -5,7 +5,7 @@ import { CiFileOn } from "react-icons/ci";
 import { LuPen } from "react-icons/lu";
 const IdCardDetails = () => {
   return (
-    <div className="max-w-4xl mx-auto p-4 bg-gray-50 min-h-screen">
+    <div className=" p-4 bg-gray-50 min-h-screen">
       <div className="flex  md:flex-row justify-between items-start md:items-center mb-4">
         <div className="flex gap-2">
           <FaArrowLeft className="mt-2" />

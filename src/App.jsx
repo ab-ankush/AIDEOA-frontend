@@ -29,6 +29,7 @@ import { Toaster } from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "./context/authContext";
+import AdminPanel from "./adminpanel/AdminPanel";
 
 
 
@@ -68,7 +69,7 @@ export default function App() {
           <Route path="onlineclass" element={<OnlineClass />} />
           <Route path="additional" element={<UserRoleSelect />} />
         </Route>
-        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/admin" element={<AdminPanel  />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

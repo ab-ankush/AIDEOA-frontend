@@ -2,13 +2,15 @@ import  { createContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { jwtDecode } from 'jwt-decode';
 import Cookies from 'js-cookie';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
-const params= useLocation()
+const location= useLocation()
+const navigate = useNavigate();
+
   const [authToken, setAuthToken] = useState(() =>
     localStorage.getItem("authToken")
       ? JSON.parse(localStorage.getItem("authToken"))
@@ -41,22 +43,27 @@ const params= useLocation()
       }
     };
   const handleLogin = (token) => {
-    console.log("loginResponse",token);
     setAuthToken(token);
     setUser(jwtDecode(token.accessToken))
     localStorage.setItem("authToken", JSON.stringify(token));
   };
-  console.log(params)
+
   useEffect(()=>{
     const urlParams = new URLSearchParams(location.search);
 
-    const paramValue = urlParams.get('way');
-    console.log(paramValue)
-    if(paramValue==='google')
+    const way = urlParams.get('way');
+
+    if(way==='google')
     {
       const accessToken = Cookies.get("accessToken");
       const refreshToken = Cookies.get("refreshToken");
       handleLogin({accessToken,refreshToken})
+      console.log(accessToken)
+      Cookies.remove("accessToken") 
+      Cookies.remove("refreshToken") 
+      navigate({
+        pathname:location.pathname, 
+      }, { replace: true });
     }
    
   },[])

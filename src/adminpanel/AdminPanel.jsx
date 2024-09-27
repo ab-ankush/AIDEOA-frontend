@@ -7,6 +7,9 @@ import CommonLinks from './components/Commanlinks'
 import Events from './components/Events/Events'
 import Query from './components/Query'
 import IDCard from './components/IDCard'
+import ContactUs from "../components/Admin_panel/Main-Content/Contact_Us/Contact-us";
+import Notifications from "../components/Admin_panel/Main-Content/Notifications/Notifications";
+import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -24,11 +27,13 @@ const AdminPanel = () => {
       case "ID Card":
         return <IDCard />;
       case "Contact us":
-        return <></>;
+        return <ContactUs/>;
       case "Notification":
-        return <></>;
+        return <Notifications/>;
       case "Common Links":
         return <CommonLinks />;
+        case "Our Teams":
+          return <OurTeams />;
       
       default:
         return <></>;

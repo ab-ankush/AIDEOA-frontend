@@ -83,11 +83,9 @@ const OurTeams = () => {
   ]);
 
   return (
-    <div className="w-[81.5%] h-full p-8">
+    <div className="w-full bg-gray-100 h-screen p-8">
       {/* Dashboard Heading */}
-      <div className="text-center text-[26px] font-bold mb-10">
-        <span className="text-[#7C3AED]">AIDEOA</span> DASHBOARD
-      </div>
+     
 
       {/* Events Section */}
       <div className="w-full bg-white shadow-md rounded-lg ">

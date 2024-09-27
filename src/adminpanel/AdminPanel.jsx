@@ -6,10 +6,10 @@ import Resources from "./components/Resources";
 import CommonLinks from './components/Commanlinks'
 import Events from './components/Events/Events'
 import Query from './components/Query'
-import IDCard from './components/IDCard'
 import ContactUs from "../components/Admin_panel/Main-Content/Contact_Us/Contact-us";
 import Notifications from "../components/Admin_panel/Main-Content/Notifications/Notifications";
 import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams";
+import IDCard from "./components/IdCard";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  

@@ -24,15 +24,15 @@ const sidebar = [
 const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
   return (
     <div className="flex">
-      {/* Sidebar */}
-      <div className="bg-white w-[250px] h-screen p-4 shadow-lg">
+ 
+      <div className="bg-white w-full h-screen p-4 shadow-lg">
         <div className="text-[#5A2175] text-2xl font-bold mb-6 flex items-center">
           <img src="/public/AIDEOA LOGO 3.png" className="w-10" alt="Logo" />
           AIDEOA
         </div>
         <ul className="flex flex-col gap-2">
           {sidebar.map((item, index) => {
-            const Icon = item.icon; // Reference the icon component
+            const Icon = item.icon;
             return (
               <li
                 key={index}
@@ -49,7 +49,6 @@ const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
                 />
                 <span className={`ml-4 text-lg font-semibold ${activeComponent === item.heading ? "text-white" : "text-[#5A2175]"}`}>
                   {item.heading}
-                 
                 </span>
                 </div>
         

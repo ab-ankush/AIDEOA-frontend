@@ -41,14 +41,14 @@ const AdminPanel = () => {
   };
   return (
     <div className=" flex">
-      <div className="w-1/5 px-3 ">
+      <div className="w-1/5 ">
         <AdminSidebar activeComponent={activeComponent} setActiveComponent={setActiveComponent}/>
       </div>
-      <div className="w-4/5 ">
-        <div className="">
+      <div className="w-4/5 h-screen bg-gray-200">
+      
           <AdminNavbar />
-        </div>
-        <div>
+       
+        <div className="p-8 bg-gray-200">
         {renderComponent()}
         </div>
       </div>

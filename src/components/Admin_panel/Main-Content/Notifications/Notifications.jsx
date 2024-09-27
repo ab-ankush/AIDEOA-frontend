@@ -52,11 +52,8 @@ const Notifications = () => {
   ]);
 
   return (
-    <div className="w-[81.5%] h-full p-8">
-      {/* Dashboard Heading */}
-      <div className="text-center text-[26px] font-bold mb-10">
-        <span className="text-[#7C3AED]">AIDEOA</span> DASHBOARD
-      </div>
+    <div >
+      
 
       {/* Events Section */}
       <div className="w-full bg-white shadow-md rounded-lg ">
@@ -70,8 +67,8 @@ const Notifications = () => {
           </div>
 
           {/* Search Bar and Action Buttons */}
-          <div className="flex gap-4 items-center w-[42%]">
-            <div className="relative w-[60%]">
+          <div className="flex justify-between items-center w-[42%]">
+            <div className="relative w-[55%]">
               <CiSearch className="absolute top-3 left-3" />
               <input
                 type="text"
@@ -83,8 +80,8 @@ const Notifications = () => {
             <button className="border border-gray-300 px-4 py-2 rounded-lg text-sm">
               Download all
             </button>
-            <div className="flex items-center gap-2 bg-[#7C3AED] text-white px-4 py-2 rounded-lg text-sm">
-              <IoCloudUploadOutline />
+            <div className="flex items-center gap-2 bg-purple-800 text-white px-4 py-2 rounded-lg text-sm">
+              <IoCloudUploadOutline size={18}/>
               <button className="">Create</button>
             </div>
           </div>

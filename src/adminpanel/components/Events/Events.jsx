@@ -157,7 +157,7 @@ const Resources = () => {
    
     
       return (
-        <div className="p-4 bg-white rounded-xl lightdropshadowbox">
+        <div className="p-4 bg-white rounded-xl ">
    
           <div className="flex space-x-4 mb-4  ">
             <div className='flex space-x-4   '>

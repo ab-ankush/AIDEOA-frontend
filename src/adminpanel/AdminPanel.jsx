@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
-import AdminComponents from "./components/AdminComponents";
+
 import Resources from "./components/Resources";
 import CommonLinks from './components/Commanlinks'
 import Events from './components/Events/Events'
 import Query from './components/Query'
-import ContactUs from "../components/Admin_panel/Main-Content/Contact_Us/Contact-us";
-import Notifications from "../components/Admin_panel/Main-Content/Notifications/Notifications";
-import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams";
-import IDCard from "./components/IdCard";
+import IdCard from './components/IdCard'
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -25,20 +22,18 @@ const AdminPanel = () => {
       case "Query":
         return <Query />;
       case "ID Card":
-        return <IDCard />;
+        return <IdCard />;
       case "Contact us":
-        return <ContactUs/>;
+        return <></>;
       case "Notification":
-        return <Notifications/>;
+        return <></>;
       case "Common Links":
         return <CommonLinks />;
-        case "Our Teams":
-          return <OurTeams />;
-      
       default:
         return <></>;
     }
   };
+
   return (
     <div className=" flex">
       <div className="w-1/5 ">
@@ -48,7 +43,7 @@ const AdminPanel = () => {
       
           <AdminNavbar />
        
-        <div className="p-8 bg-gray-200">
+        <div className="p-8 bg-gray-200 h-screen">
         {renderComponent()}
         </div>
       </div>

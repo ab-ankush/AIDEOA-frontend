@@ -25,7 +25,7 @@ const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
   return (
     <div className="flex">
  
-      <div className="bg-white w-full h-screen p-4 shadow-lg">
+      <div className="bg-white w-full h-screen p-4 ">
         <div className="text-[#5A2175] text-2xl font-bold mb-6 flex items-center">
           <img src="/public/AIDEOA LOGO 3.png" className="w-10" alt="Logo" />
           AIDEOA

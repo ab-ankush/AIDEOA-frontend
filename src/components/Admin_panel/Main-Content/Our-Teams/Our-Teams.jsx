@@ -83,13 +83,13 @@ const OurTeams = () => {
   ]);
 
   return (
-    <div className="w-full bg-gray-100 h-screen p-8">
+    <div className="">
       {/* Dashboard Heading */}
      
 
       {/* Events Section */}
       <div className="w-full bg-white shadow-md rounded-lg ">
-        <div className="w-full flex justify-between items-center p-6 pb-2">
+        <div className="w-full flex justify-between items-center  p-6 pb-5">
           {/* Table Title */}
           <div className="flex items-center space-x-2">
             <h2 className="text-xl font-semibold">Team</h2>
@@ -116,24 +116,24 @@ const OurTeams = () => {
           </div>
         </div>
 
-        <div className="flex gap-x-6">
-          <div className="px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
+        <div className="flex ">
+          <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
             <button>All</button>
             <sup className="bg-white text-black ml-2 px-2 rounded-full">
               302
             </sup>
           </div>
-          <div className="px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
+          <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
             <button>Executive/Founder Members</button>
             <sup className="bg-white text-black ml-2 px-2 rounded-full">95</sup>
           </div>
-          <div className="px-5 pt-2 text-text  rounded-t-lg">
+          <div className="mx-6 px-5 pt-2 text-text  rounded-t-lg">
             <button>Education Cell Members</button>
             <sup className="bg-purple-200 text-purple ml-2 px-2 rounded-full">
               20
             </sup>
           </div>
-          <div className="px-5 pt-2 text-text  rounded-t-lg">
+          <div className="mx-6 px-5 pt-2 text-text  rounded-t-lg">
             <button>IT Cell Members</button>
             <sup className="bg-purple-200 text-purple ml-2 px-2 rounded-full">
               13
@@ -141,9 +141,9 @@ const OurTeams = () => {
           </div>
         </div>
         {/* Table Section */}
-        <div className="">
+        <div className="h-full">
           <table className="min-w-full">
-            <thead className="border-b">
+            <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4 text-left font-normal text-gray-400">
                   <input
@@ -175,15 +175,15 @@ const OurTeams = () => {
               {contactData.map((contact, index) => (
                 <tr
                   key={index}
-                  className="border-b text-gray-500 hover:bg-gray-50"
+                  className="border-b h-16 hover:bg-gray-50 "
                 >
                   <td className="py-3 px-4">{contact.checkbox}</td>
-                  <td className="py-3 px-4">{contact.name}</td>
-                  <td className="py-3 px-4">{contact.category}</td>
-                  <td className="py-3 px-4 truncate">{contact.mobile}</td>
-                  <td className="py-3 px-4">{contact.email}</td>
-                  <td className="py-3 px-4">{contact.selfAddress}</td>
-                  <td className="py-3 px-4">
+                  <td className="py-3 px-4 font-medium">{contact.name}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.category}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.mobile}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.email}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.selfAddress}</td>
+                  <td className="py-3 px-4 text-gray-500 ">
                     <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
                       {contact.action}
                     </button>

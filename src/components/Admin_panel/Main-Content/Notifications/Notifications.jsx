@@ -57,7 +57,7 @@ const Notifications = () => {
 
       {/* Events Section */}
       <div className="w-full bg-white shadow-md rounded-lg ">
-        <div className="w-full flex justify-between items-center p-6 pb-2">
+        <div className="w-full flex justify-between items-center  p-6 pb-5">
           {/* Table Title */}
           <div className="flex items-center space-x-2">
             <h2 className="text-xl font-semibold">Events</h2>
@@ -77,10 +77,10 @@ const Notifications = () => {
               />
             </div>
 
-            <button className="border border-gray-300 px-4 py-2 rounded-lg text-sm">
+            <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
               Download all
             </button>
-            <div className="flex items-center gap-2 bg-purple-800 text-white px-4 py-2 rounded-lg text-sm">
+            <div className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
               <IoCloudUploadOutline size={18}/>
               <button className="">Create</button>
             </div>
@@ -90,44 +90,44 @@ const Notifications = () => {
         {/* Table Section */}
         <div className="">
           <table className="min-w-full">
-            <thead className="border-b">
+            <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                <th className="py-3 px-4  text-left font-normal text-gray-500">
                   <input
                     type="checkbox"
                     className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
                   />
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                <th className="py-3 px-4  text-left font-normal text-gray-500">
                   Heading
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                <th className="py-3 px-4  text-left font-normal text-gray-500">
                   Date & Time
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                <th className="py-3 px-4  text-left font-normal text-gray-500">
                   Content
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                <th className="py-3 px-4  text-left font-normal text-gray-500">
                   User Type
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                <th className="py-3 px-4  text-left font-normal text-gray-500">
                   Actions
                 </th>
               </tr>
             </thead>
             <tbody>
               {contactData.map((contact, index) => (
-                <tr key={index} className="border-b hover:bg-gray-50">
-                  <td className="py-3 px-4">{contact.checkbox}</td>
-                  <td className="py-3 px-4">{contact.name}</td>
-                  <td className="py-3 px-4">{contact.date}</td>
-                  <td className="py-3 px-4 truncate">{contact.message}</td>
-                  <td className="py-3 px-4">
-                    <span className={` font-medium ${contact.user_type == "membership" ?"text-purple-800 bg-purple-100" :"text-green-800 bg-green-100"} px-3 py-1 rounded-full`}>
+                <tr key={index} className="border-b h-16 hover:bg-gray-50">
+                  <td className="py-3 px-4 text-gray-500">{contact.checkbox}</td>
+                  <td className="py-3 px-4 font-medium">{contact.name}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.date}</td>
+                  <td className="py-3 px-4 text-gray-500">{contact.message}</td>
+                  <td className="py-3 px-4 text-gray-500">
+                    <span className={` font-medium  ${contact.user_type == "membership" ?"text-purple-800 bg-purple-100" :"text-green-800 bg-green-100"} px-3 py-1 rounded-full`}>
                       {contact.user_type}
                     </span>
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-3 px-4 font-medium">
                     <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
                     <RiDeleteBinLine  />  <FiEdit2 />
                     </button>

@@ -3,12 +3,13 @@ import { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { LuUploadCloud } from "react-icons/lu";
-const IDCard = () => {
+const IdCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userType, setUserType] = useState("Employees");
   const totalPages = 3;
   const Students = new Array(20).fill("");
   const employees = new Array(30).fill("");
+
   const data = [
     {
       name: "Olivia Rhye",
@@ -268,4 +269,4 @@ const IDCard = () => {
   );
 };
 
-export default IDCard;
+export default IdCard;

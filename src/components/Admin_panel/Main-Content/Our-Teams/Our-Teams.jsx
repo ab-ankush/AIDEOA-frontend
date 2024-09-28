@@ -16,6 +16,7 @@ const OurTeams = () => {
       email: "olivia@untitledui.com",
       selfAddress: "candice The roads in our area...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -25,6 +26,7 @@ const OurTeams = () => {
       email: "phoenix@untitledui.com",
       selfAddress: "our area have developed...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -34,6 +36,7 @@ const OurTeams = () => {
       email: "lana@untitledui.com",
       selfAddress: "candice The roads in our area...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -43,6 +46,7 @@ const OurTeams = () => {
       email: "demi@untitledui.com",
       selfAddress: "area have developed...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -52,6 +56,7 @@ const OurTeams = () => {
       email: "candice@untitledui.com",
       selfAddress: "candice The roads in our area...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -61,6 +66,7 @@ const OurTeams = () => {
       email: "natali@untitledui.com",
       selfAddress: "natali The roads in our area...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -70,6 +76,7 @@ const OurTeams = () => {
       email: "drew@untitledui.com",
       selfAddress: "drew candice The roads in our area...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -79,13 +86,13 @@ const OurTeams = () => {
       email: "kate@untitledui.com",
       selfAddress: "kate candice The roads in our area...",
       action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
     },
   ]);
 
   return (
     <div className="">
       {/* Dashboard Heading */}
-     
 
       {/* Events Section */}
       <div className="w-full bg-white shadow-md rounded-lg ">
@@ -173,16 +180,17 @@ const OurTeams = () => {
             </thead>
             <tbody>
               {contactData.map((contact, index) => (
-                <tr
-                  key={index}
-                  className="border-b h-16 hover:bg-gray-50 "
-                >
+                <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
                   <td className="py-3 px-4">{contact.checkbox}</td>
-                  <td className="py-3 px-4 font-medium">{contact.name}</td>
-                  <td className="py-3 px-4 text-gray-500 ">{contact.category}</td>
+                  <td className="py-3 px-4 font-medium flex gap-x-2"><img src="/public/user.png" className="w-5 rounded-full" /> {" "} {contact.name}</td>
+                  <td className="py-3 px-4 text-gray-500 ">
+                    {contact.category}
+                  </td>
                   <td className="py-3 px-4 text-gray-500 ">{contact.mobile}</td>
                   <td className="py-3 px-4 text-gray-500 ">{contact.email}</td>
-                  <td className="py-3 px-4 text-gray-500 ">{contact.selfAddress}</td>
+                  <td className="py-3 px-4 text-gray-500 ">
+                    {contact.selfAddress}
+                  </td>
                   <td className="py-3 px-4 text-gray-500 ">
                     <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
                       {contact.action}

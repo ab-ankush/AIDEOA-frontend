@@ -1,30 +1,24 @@
 import React, { useState } from "react";
 import SideBar from "./SideBar";
+import Main from "./DashBoardpageComponent/Main";
+import Transaction_page from "./Transaction/Transaction_page";
+
 const Dashboard = () => {
-    const [data, setdata] = useState({ m: true, u: false, t: false,T: false, e: false,q: false,i:false,c: false })
-    const setit = (x) => {
-        setdata(x);
-    }
-    return (
-       <div className="w-screen flex   h-screen ">
-        <div className="w-[18.5%] flex justify-center border border-black h-full py-[30px] ">
-            <SideBar/>
+  return (
+    <div className="w-screen flex max-lg:max-h-fit   lg:h-screen ">
+      <div className="lg:w-[18.5%] max-lg:hidden flex justify-center  h-full py-[30px] ">
+        <SideBar />
+      </div>
+      <div className="lg:w-[81.5%] max-lg:w-full flex flex-col justify-between items-center  h-full">
+        <div className="text-center flex justify-center items-center text-[26px] h-[8.55%] w-full bg-white">
+          <p>AIDEOA DASHBOARD</p>
         </div>
-        <div className="w-[81.5%] border border-black h-full">
-            <div className="text-center text-[26px] h-[8.55%] w-full border border-black">AIDEOA DASHBOARD</div>
-            <div className="h-[15%] w-full flex justify-evenly items-center">
-                <div className="w-[20%] border border-black h-[80%] "><h3>heading</h3>
-                <p>data</p></div>
-                <div className="w-[20%] border border-black h-[80%] "><h3>heading</h3>
-                <p>data</p></div>
-                <div className="w-[20%] border border-black h-[80%] "><h3>heading</h3>
-                <p>data</p></div>
-                <div className="w-[20%] border border-black h-[80%] "><h3>heading</h3>
-                <p>data</p></div>
-            </div>
+        <div className="flex bg-[#F7F7FA] flex-col w-full h-[90%] justify-evenly items-center">
+          <Transaction_page />
         </div>
-       </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;

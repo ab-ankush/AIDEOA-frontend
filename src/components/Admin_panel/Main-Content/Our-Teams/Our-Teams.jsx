@@ -4,9 +4,10 @@ import { CiSearch } from "react-icons/ci";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { LuUploadCloud } from "react-icons/lu";
 
 const OurTeams = () => {
-  // Define the dynamic data as an array of objects
+
   const [contactData, setContactData] = useState([
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -105,22 +106,26 @@ const OurTeams = () => {
             </sup>
           </div>
 
-          {/* Search Bar and Action Buttons */}
-          <div className="flex gap-4 items-center w-[35%]">
-            <div className="relative w-[80%]">
-              <CiSearch className="absolute top-3 left-3" />
-              <input
-                type="text"
-                className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
-                placeholder="Search"
-              />
-            </div>
-
-            <div className="flex items-center gap-2 bg-[#7C3AED] text-white px-4 py-2 rounded-lg text-sm">
-              <IoCloudUploadOutline />
-              <button className="">Create</button>
-            </div>
+       
+          <div className="flex justify-end flex-1  items-center space-x-4 ">
+          <div className="relative w-[55%]">
+            <CiSearch className="absolute  top-3 left-3" />
+            <input
+              type="text"
+              className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
+              placeholder="Search"
+            />
           </div>
+          <div className="flex max-lg:flex-col gap-2">
+            <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+              Download all
+            </button>
+            <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
+              <LuUploadCloud size={18} className="" />
+              <span>Create</span>
+            </button>
+          </div>
+        </div>
         </div>
 
         <div className="flex ">

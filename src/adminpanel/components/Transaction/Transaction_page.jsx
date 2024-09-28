@@ -4,6 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { LuUploadCloud } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
 
 const data = [
   {
@@ -103,33 +104,35 @@ const Transaction_page = () => {
   const employees = new Array(30).fill("");
 
   return (
-    <>
-      <div className=" bg-white w-[95%] h-[95%] p-4 rounded-xl lightdropshadowbox">
+
+      <div className=" bg-white p-4 rounded-xl lightdropshadowbox">
         <div className="flex flex-col">
           <div className="flex  space-x-4 mb-4 items-center">
             <div className="flex w-[34%] h-[40%] items-center  gap-2">
-              <h3 className="h-full  text-[18px] font-[500]">Member</h3>
+              <h3 className="h-full  text-[18px] font-[500]">Transactions</h3>
               <p className="text-[14px] px-3 text-purple-800 rounded-lg bg-purple-200 my-auto">
                 100 users
               </p>
             </div>
-            <div className="flex justify-end items-center space-x-4 w-full">
-              <div className="flex justify-end items-center">
-                <input
-                  type="text"
-                  placeholder={`  Search`}
-                  className="border border-gray-300 flex rounded-full  p-2 font-medium text-sm text-gray-600 w-[400px] bg-gray-100"
-                />
-                <p className=" mx-3 text-[18px]">Filter By </p>
-                <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-                  Download all
-                </button>
-                <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
-                  <LuUploadCloud size={18} className="" />
-                  <span>Create</span>
-                </button>
-              </div>
-            </div>
+            <div className="flex justify-end flex-1  items-center space-x-4 ">
+          <div className="relative w-[55%]">
+            <CiSearch className="absolute  top-3 left-3" />
+            <input
+              type="text"
+              className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
+              placeholder="Search"
+            />
+          </div>
+          <div className="flex max-lg:flex-col gap-2">
+            <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+              Download all
+            </button>
+            <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
+              <LuUploadCloud size={18} className="" />
+              <span>Create</span>
+            </button>
+          </div>
+        </div>
           </div>
           <div className="flex justify-between px-4">
             <div className="flex space-x-3 items-center ">
@@ -176,8 +179,8 @@ const Transaction_page = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-300">
+        <div className="overflow-x-auto ">
+          <table className="min-w-full bg-white border border-gray-300 ">
             <thead>
               <tr className="text-left border-b bg-gray-100 border-gray-200">
                 <th className="p-2 font-medium text-sm text-gray-400">
@@ -209,7 +212,7 @@ const Transaction_page = () => {
               </tr>
             </thead>
             <tbody>
-              {data.slice(0, 7).map((item, index) => (
+              {data.slice(0, 5).map((item, index) => (
                 <tr key={index} className="border-b border-gray-200 h-16">
                   <td className="p-2 font-medium text-sm text-gray-600">
                     <input type="checkbox" />
@@ -257,9 +260,9 @@ const Transaction_page = () => {
               ))}
             </tbody>
           </table>
+          
         </div>
-
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-4 ">
           <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">
             Previous
           </button>
@@ -281,8 +284,9 @@ const Transaction_page = () => {
             Next
           </button>
         </div>
+        
       </div>
-    </>
+ 
   );
 };
 

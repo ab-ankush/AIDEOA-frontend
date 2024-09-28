@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
+import { CiSearch } from 'react-icons/ci';
 const Resources = () => {
     const data = [
         {
@@ -159,7 +160,7 @@ const Resources = () => {
       return (
         <div className="rounded-xl p-4 bg-gray-50 ">
    
-          <div className="flex space-x-4 mb-4">
+          <div className="flex space-x-4 mb-4  max-lg:flex-col-reverse max-lg:gap-2">
             <div className='flex space-x-4'>
 
 
@@ -168,12 +169,15 @@ const Resources = () => {
             <div className="bg-white text-gray-700 text-center shadow-md border rounded-xl  flex flex-col justify-center p-2 h-16 items-center"><p className='text-nowrap'>Education </p><p className='font-bold'>100</p></div>
             </div>
             <div className="flex justify-end flex-1  items-center space-x-4 ">
-            <input
-              type="text"
-              placeholder="Search"
-              className="border border-gray-300 bg-gray-100 flex-1 rounded-full max-w-lg  p-2 font-medium text-sm text-gray-600 "
-            />
-            <div className='flex'>
+            <div className="relative w-[55%]" >
+            <CiSearch  className="absolute  top-3 left-3"/>
+              <input
+                type="text"
+                className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
+                placeholder="Search"
+              />
+            </div>
+            <div className='flex max-lg:flex-col gap-2'>
               <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
               <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md"><LuUploadCloud size={18} className=''/><span>Create</span></button>
             </div>
@@ -183,7 +187,7 @@ const Resources = () => {
     
       
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-300">
+            <table className="min-w-full bg-white border border-gray-300  ">
               <thead>
                 <tr className="text-left border-b bg-gray-100 border-gray-200">
                   <th className="p-2 px-4 font-medium text-sm text-gray-600">

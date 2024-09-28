@@ -24,11 +24,10 @@ const sidebar = [
 const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
   return (
     <div className="flex">
- 
-      <div className="bg-white w-full h-screen p-4 ">
+      <div className="bg-white w-full h-screen p-4 max-md:px-2">
         <div className="text-[#5A2175] text-2xl font-bold mb-6 flex items-center">
           <img src="AIDEOA LOGO 3.png" className="w-10" alt="Logo" />
-          AIDEOA
+          <span className="hidden lg:inline">AIDEOA</span> {/* Text hidden on smaller screens */}
         </div>
         <ul className="flex flex-col gap-2">
           {sidebar.map((item, index) => {
@@ -36,23 +35,33 @@ const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
             return (
               <li
                 key={index}
-                className={`flex justify-between items-center p-2 py-3 rounded-lg cursor-pointer ${
-                  activeComponent === item.heading ? "bg-[#5A2175] text-white" : "hover:bg-gray-200"
-                }`} 
-                onClick={() => setActiveComponent(item.heading)} 
+                className={`flex justify-between max-md:min-w-10 items-center p-2 py-3 rounded-lg cursor-pointer ${
+                  activeComponent === item.heading
+                    ? "bg-[#5A2175] text-white"
+                    : "hover:bg-gray-200"
+                }`}
+                onClick={() => setActiveComponent(item.heading)}
               >
-                <div className="flex  items-center justify-start">
-                <Icon
-                  className={`w-[24px] h-[24px] ml-1 ${
-                    activeComponent === item.heading ? "text-white" : "text-black"
-                  }`} 
-                />
-                <span className={`ml-4 text-lg font-semibold ${activeComponent === item.heading ? "text-white" : "text-[#5A2175]"}`}>
-                  {item.heading}
-                </span>
+                <div className="flex items-center justify-start">
+                  <Icon
+                    className={`w-[24px] h-[24px] md:ml-1 ${
+                      activeComponent === item.heading
+                        ? "text-white"
+                        : "text-black"
+                    }`}
+                    title={item.heading} 
+                  />
+                  <span
+                    className={`ml-4 text-lg font-semibold hidden lg:inline ${
+                      activeComponent === item.heading
+                        ? "text-white"
+                        : "text-[#5A2175]"
+                    }`}
+                  >
+                    {item.heading}
+                  </span>
                 </div>
-        
-                <span>{'>'}</span>
+                <span className="max-lg:hidden">{">"}</span>
               </li>
             );
           })}

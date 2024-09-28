@@ -10,6 +10,9 @@ import IdCard from './components/IdCard'
 import Notifications from "../components/Admin_panel/Main-Content/Notifications/Notifications";
 import ContactUs from "../components/Admin_panel/Main-Content/Contact_Us/Contact-us";
 import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams";
+import Main from "./DashBoardpageComponent/Main";
+import Transaction_page from "./components/Transaction/Transaction_page";
+import Member from "./components/Members/Member";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -17,11 +20,15 @@ const AdminPanel = () => {
   const renderComponent = () => {
     switch (activeComponent) {
       case "Dashboard":
-        return <></> ;
+        return <Main /> ;
       case "Events":
         return <Events />;
+        case "Transaction":
+          return <Transaction_page />;
       case "Resource":
         return <Resources />;
+        case "Members":
+          return <Member />;
       case "Query":
         return <Query />;
       case "ID Card":
@@ -41,14 +48,14 @@ const AdminPanel = () => {
 
   return (
     <div className=" flex">
-      <div className="w-1/5 ">
+      <div className="lg:w-[20%] max-lg:w-[10%]">
         <AdminSidebar activeComponent={activeComponent} setActiveComponent={setActiveComponent}/>
       </div>
-      <div className="w-4/5 h-screen bg-gray-200">
+      <div className="lg:w-[80%] max-lg:w-[90%] h-screen bg-gray-200">
       
           <AdminNavbar />
        
-        <div className="p-8 bg-gray-200 h-screen">
+        <div className="p-8 max-lg:px-4 bg-gray-200 h-screen">
         {renderComponent()}
         </div>
       </div>

@@ -43,8 +43,8 @@ const data =  [
 
   return (
    
-    <div className="p-4 bg-white rounded-xl lightdropshadowbox">
-      <div className="flex  space-x-4 mb-4 items-center">
+    <div className=" bg-white rounded-xl  shadow-sm">
+      <div className="w-full flex justify-between items-center  p-6 pb-5">
         <div className="flex space-x-3 items-center w-full">
             <h2 className="font-bold text-lg">Common Links</h2>
             <span className="bg-purple-200 px-2  text-xs rounded-full" >{data.length}</span>
@@ -65,7 +65,7 @@ const data =  [
         </div>
       </div>
 
-      <div className="overflow-x-scroll">
+      <div className="overflow-x-scroll rounded-b-2xl">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200">

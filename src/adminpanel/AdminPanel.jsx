@@ -10,6 +10,9 @@ import IdCard from './components/IdCard'
 import Notifications from "../components/Admin_panel/Main-Content/Notifications/Notifications";
 import ContactUs from "../components/Admin_panel/Main-Content/Contact_Us/Contact-us";
 import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams";
+import Main from "./DashBoardpageComponent/Main";
+import Transaction_page from "./components/Transaction/Transaction_page";
+import Member from "./components/Members/Member";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -17,11 +20,15 @@ const AdminPanel = () => {
   const renderComponent = () => {
     switch (activeComponent) {
       case "Dashboard":
-        return <></> ;
+        return <Main /> ;
       case "Events":
         return <Events />;
+        case "Transaction":
+          return <Transaction_page />;
       case "Resource":
         return <Resources />;
+        case "Members":
+          return <Member />;
       case "Query":
         return <Query />;
       case "ID Card":

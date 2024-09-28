@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
-import AdminComponents from "./components/AdminComponents";
+
 import Resources from "./components/Resources";
 import CommonLinks from './components/Commanlinks'
 import Events from './components/Events/Events'
@@ -35,7 +35,7 @@ const AdminPanel = () => {
   };
   return (
     <div className=" flex">
-      <div className="w-1/5 ">
+      <div className="lg:w-1/5  ">
         <AdminSidebar activeComponent={activeComponent} setActiveComponent={setActiveComponent}/>
       </div>
       <div className="w-4/5 ">

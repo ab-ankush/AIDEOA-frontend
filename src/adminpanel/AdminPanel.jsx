@@ -9,6 +9,7 @@ import Query from './components/Query'
 import IdCard from './components/IdCard'
 import Notifications from "../components/Admin_panel/Main-Content/Notifications/Notifications";
 import ContactUs from "../components/Admin_panel/Main-Content/Contact_Us/Contact-us";
+import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -31,6 +32,8 @@ const AdminPanel = () => {
         return <Notifications/>;
       case "Common Links":
         return <CommonLinks />;
+        case "Our Teams":
+          return <OurTeams />;  
       default:
         return <></>;
     }

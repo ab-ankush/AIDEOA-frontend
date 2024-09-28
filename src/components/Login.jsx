@@ -9,10 +9,11 @@ import {
   FaUser,
   FaYoutube,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import GoogleSignInButton from "./Cards/SignInwithGoogle";
 import { loginfunc } from "../services/axios";
 import { AuthContext } from "../context/authContext";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+  const navigate=useNavigate()
   const [error, setError] = useState("");
   const [pass, setPass] = useState(false);
   const {handleLogin}=useContext(AuthContext);
@@ -32,15 +33,24 @@ const Login = () => {
     e.preventDefault();
 
     const { email } = formData;
-    console.log(formData);
+ 
     if (!email.includes("@") || !email.includes(".") || email.length < 5) {
       setError("Email format error");
       return;
     }
     try {
       const data = await loginfunc(formData);
-      console.log("datadata  :",data);
+
+      if(data?.error)
+      {
+        setError(data.error)
+        throw new Error(data?.error)
+      }
       handleLogin(data?.data);
+      if(data.status===200)
+      { 
+        toast.success("logIn Successfull")
+        navigate("/")}
     } catch (error) {
       console.log(`error in Login.jsx :- ${error}`);
     }
@@ -94,7 +104,14 @@ const Login = () => {
               />
             )}
           </div>
-
+          <div className="">
+            <p
+              className="text-red-400 text-sm font-semibold"
+           
+            >
+            {error}
+            </p>
+          </div>
           <div className="text-center">
             <Link
               className="text-white hover:text-purple-600 text-sm font-semibold"

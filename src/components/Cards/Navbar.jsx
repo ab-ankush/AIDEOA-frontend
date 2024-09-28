@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/authContext";
 const Navbar = () => {
   const [ham, setham] = useState(true);
   const { pathname } = useLocation();
-  const {user}=useContext(AuthContext)
+  const {user,handleLogout}=useContext(AuthContext)
   const navigate = useNavigate();
   const sethamfunc = () => {
     setham(!ham);
@@ -98,8 +98,9 @@ const Navbar = () => {
             </NavLink>
           </div>
         {user ?   <div className=" wo py-3 px-4">
+
             <button
-              onClick={signupfunc}
+            onClick={handleLogout}
               className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
             >
               Sign out

@@ -9,6 +9,7 @@ const IdCard = () => {
   const totalPages = 3;
   const Students = new Array(20).fill("");
   const employees = new Array(30).fill("");
+
   const data = [
     {
       name: "Olivia Rhye",
@@ -268,4 +269,4 @@ const IdCard = () => {
   );
 };
 
-export default IdCard;
+export default IdCard;

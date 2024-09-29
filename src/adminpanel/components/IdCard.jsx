@@ -103,7 +103,7 @@ const IdCard = () => {
   ];
 
   return (
-    <div className="p-4 bg-white rounded-xl lightdropshadowbox">
+    <div className=" bg-white rounded-xl lightdropshadowbox">
       <div className="flex flex-col">
         <div className="flex  space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center "></div>
@@ -166,12 +166,11 @@ const IdCard = () => {
           <button className="text-sm font-semibold">Filter by</button>
         </div>
       </div>
-
-      <div className="overflow-x-auto">
+      <div className="overflow-x-scroll rounded-b-2xl">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200">
-              <th className="p-2 px-4 font-medium text-sm text-gray-400">
+              <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input type="checkbox" className="" />
               </th>
               <th className="p-2 font-medium text-sm text-gray-400 w-52">

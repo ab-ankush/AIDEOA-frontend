@@ -157,8 +157,8 @@ const Query = () => {
 
   return (
    
-    <div className="p-4 bg-white rounded-xl lightdropshadowbox">
-      <div className="flex  space-x-4 mb-4 items-center">
+    <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+      <div className="flex px-4 space-x-4 mb-4 items-center">
         <div className="flex space-x-3 items-center ">
             <h2 className="font-bold text-lg">Query</h2>
             <span className="bg-purple-200 px-2  text-xs rounded-full" >{data.length} Users</span>
@@ -182,7 +182,7 @@ const Query = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
-            <tr className="text-left border-b bg-gray-100 border-gray-200">
+            <tr className="text-left border-b bg-gray-200 border-gray-200">
               <th className="p-2 px-4 font-medium text-sm text-gray-400">
                 <input type="checkbox" className="" />
               </th>

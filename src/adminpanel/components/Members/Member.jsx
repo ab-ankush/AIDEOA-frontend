@@ -105,8 +105,8 @@ const Member = () => {
 
   return (
     <>
-      <div className=" bg-white  p-4 rounded-xl lightdropshadowbox">
-        <div className="flex flex-col">
+      <div className=" bg-white  py-4 rounded-xl lightdropshadowbox">
+        <div className="flex px-4 flex-col">
           <div className="flex  space-x-4 mb-4 items-center">
             <div className="flex w-[34%] h-[40%] items-center gap-2">
               <h3 className="h-full  text-[18px] font-[500]">Member</h3>
@@ -124,6 +124,9 @@ const Member = () => {
               />
             </div>
             <div className="flex max-lg:flex-col gap-2">
+            <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+               Filter by
+              </button>
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
               </button>
@@ -134,58 +137,16 @@ const Member = () => {
             </div>
           </div>
           </div>
-          <div className="flex justify-between px-4">
-            <div className="flex space-x-3 items-center ">
-              <button
-                onClick={() => setUserType("Employees")}
-                className={` ${
-                  userType === "Employees"
-                    ? "bg-[#4B0082]  text-white"
-                    : "bg-white text-[#4B0082]"
-                } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
-              >
-                <span>Employees</span>
-                <span
-                  className={`text-xs  font-bold px-2 rounded-md   ${
-                    userType == "Employees"
-                      ? "bg-white text-[#4B0082]"
-                      : "bg-[#4B0082]  text-white"
-                  }`}
-                >
-                  {employees.length}
-                </span>
-              </button>
-              <button
-                onClick={() => setUserType("Students")}
-                className={` ${
-                  userType !== "Employees"
-                    ? "bg-[#4B0082]  text-white"
-                    : "bg-white text-[#4B0082]"
-                } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
-              >
-                <span>Students</span>
-                <span
-                  className={`text-xs  font-bold px-2 rounded-md   ${
-                    userType != "Employees"
-                      ? "bg-white text-[#4B0082]"
-                      : "bg-[#4B0082]  text-white"
-                  }`}
-                >
-                  {Students.length}
-                </span>
-              </button>
-            </div>
-            <button className="text-sm font-semibold">Filter by</button>
-          </div>
+         
         </div>
 
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-300">
             <thead>
               <tr className="text-left border-b bg-gray-100 border-gray-200">
-                <th className="p-2 font-medium text-sm text-gray-400">
-                  <input type="checkbox" className="" />
-                </th>
+              <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input type="checkbox" />
+                </td>
                 <th className="p-2 font-medium text-sm text-gray-400 w-52">
                   Name & Photo
                 </th>
@@ -212,9 +173,9 @@ const Member = () => {
             <tbody>
               {data.slice(0, 7).map((item, index) => (
                 <tr key={index} className="border-b border-gray-200 h-16">
-                  <td className="p-2 font-medium text-sm text-gray-600">
-                    <input type="checkbox" />
-                  </td>
+                  <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input type="checkbox" />
+                </td>
                   <td className="p-2 font-medium text-sm text-gray-600  max-w-52 ">
                     <td className="flex items-center gap-1 whitespace-nowrap overflow-hidden text-ellipsis">
                       <img
@@ -237,15 +198,15 @@ const Member = () => {
                     {item.company}
                   </td>
 
-                  <td className="p-2 font-medium text-xs text-gray-400">
+                  <td className="p-2 font-medium text-xs ">
                     <td
-                      className={` rounded-full px-1 ${
+                      className={` rounded-full px-1 mb-1 ${
                         item.status === "Approve"
                           ? "bg-green-100 text-green-700 "
                           : "bg-red-100 text-red-700"
                       }`}
                     >
-                      {item.status === "Approve" ? "Approve" : "Rejected"}
+                      {item.status === "Approve" ? "Active" : "Inactive"}
                     </td>
                   </td>
 

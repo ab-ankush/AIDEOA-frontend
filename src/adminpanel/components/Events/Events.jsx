@@ -29,8 +29,8 @@ const Resources = () => {
     const totalPages = 3;
 
     return (
-        <div className="p-4 bg-white rounded-xl">
-          <div className="flex space-x-4 mb-4 max-lg:flex-col-reverse max-lg:gap-2">
+        <div className="py-4 bg-white rounded-xl">
+          <div className="flex space-x-4 mb-4 max-lg:flex-col-reverse max-lg:gap-2 px-4">
             <div className='flex space-x-4'>
               <div className="bg-[#4B0082] w-32 text-center text-white shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16">
                 <p className='text-nowrap'>AIDEOA Events</p>
@@ -58,11 +58,11 @@ const Resources = () => {
             </div>
           </div>
 
-          <div className=" rounded-lg overflow-x-scroll  w-full">
+          <div className=" overflow-x-scroll  w-full">
             <table className="min-w-full  bg-white border  border-gray-300">
               <thead>
-                <tr className="text-left border-b bg-gray-100  border-gray-200">
-                  <th className="p-2 px-4 font-medium text-sm text-gray-600">
+                <tr className="text-left border-b bg-gray-200  border-gray-200">
+                  <th className="p-2 px-4 font-medium text-sm text-gray-300">
                     <input type="checkbox" />
                   </th>
                   <th className="p-2 font-medium text-sm text-gray-600 w-52">Title</th>

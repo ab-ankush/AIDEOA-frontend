@@ -47,10 +47,10 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div className="p-4 bg-white rounded-xl lightdropshadowbox">
-        <div className="flex  space-x-4 mb-4 items-center">
+      <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+        <div className="flex px-4 space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center ">
-            <h2 className="font-bold text-lg">Query</h2>
+            <h2 className="font-bold text-lg">Contact us</h2>
             <span className="bg-purple-200 px-2  text-xs rounded-full">
               {contactData.length} Users
             </span>

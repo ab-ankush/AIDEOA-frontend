@@ -158,9 +158,9 @@ const Resources = () => {
    
     
       return (
-        <div className="rounded-xl p-4 bg-gray-50 ">
+        <div className="rounded-xl py-4 bg-gray-50 ">
    
-          <div className="flex space-x-4 mb-4  max-lg:flex-col-reverse max-lg:gap-2">
+          <div className="flex space-x-4 mb-4  px-4 max-lg:flex-col-reverse max-lg:gap-2">
             <div className='flex space-x-4'>
 
 
@@ -189,7 +189,7 @@ const Resources = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-300  ">
               <thead>
-                <tr className="text-left border-b bg-gray-100 border-gray-200">
+                <tr className="text-left border-b bg-gray-200 border-gray-200">
                   <th className="p-2 px-4 font-medium text-sm text-gray-600">
                     <input type="checkbox"  className='' />
                   </th>

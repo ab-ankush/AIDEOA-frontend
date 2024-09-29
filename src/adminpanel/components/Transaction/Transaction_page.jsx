@@ -105,13 +105,13 @@ const Transaction_page = () => {
 
   return (
 
-      <div className=" bg-white p-4 rounded-xl lightdropshadowbox">
-        <div className="flex flex-col">
+      <div className=" bg-white py-4 rounded-xl lightdropshadowbox">
+        <div className="flex px-4 flex-col">
           <div className="flex  space-x-4 mb-4 items-center">
             <div className="flex w-[34%] h-[40%] items-center  gap-2">
               <h3 className="h-full  text-[18px] font-[500]">Transactions</h3>
               <p className="text-[14px] px-3 text-purple-800 rounded-lg bg-purple-200 my-auto">
-                100 users
+                100 tx
               </p>
             </div>
             <div className="flex justify-end flex-1  items-center space-x-4 ">
@@ -134,60 +134,18 @@ const Transaction_page = () => {
           </div>
         </div>
           </div>
-          <div className="flex justify-between px-4">
-            <div className="flex space-x-3 items-center ">
-              <button
-                onClick={() => setUserType("Employees")}
-                className={` ${
-                  userType === "Employees"
-                    ? "bg-[#4B0082]  text-white"
-                    : "bg-white text-[#4B0082]"
-                } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
-              >
-                <span>Employees</span>
-                <span
-                  className={`text-xs  font-bold px-2 rounded-md   ${
-                    userType == "Employees"
-                      ? "bg-white text-[#4B0082]"
-                      : "bg-[#4B0082]  text-white"
-                  }`}
-                >
-                  {employees.length}
-                </span>
-              </button>
-              <button
-                onClick={() => setUserType("Students")}
-                className={` ${
-                  userType !== "Employees"
-                    ? "bg-[#4B0082]  text-white"
-                    : "bg-white text-[#4B0082]"
-                } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
-              >
-                <span>Students</span>
-                <span
-                  className={`text-xs  font-bold px-2 rounded-md   ${
-                    userType != "Employees"
-                      ? "bg-white text-[#4B0082]"
-                      : "bg-[#4B0082]  text-white"
-                  }`}
-                >
-                  {Students.length}
-                </span>
-              </button>
-            </div>
-            <button className="text-sm font-semibold">Filter by</button>
-          </div>
+         
         </div>
 
-        <div className="overflow-x-auto ">
-          <table className="min-w-full bg-white border border-gray-300 ">
-            <thead>
-              <tr className="text-left border-b bg-gray-100 border-gray-200">
-                <th className="p-2 font-medium text-sm text-gray-400">
+        <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr className="text-left border-b bg-gray-200 border-gray-200">
+              <th className="p-2 px-4 font-medium text-sm text-gray-400">
                   <input type="checkbox" className="" />
                 </th>
                 <th className="p-2 font-medium text-sm text-gray-400 w-52">
-                  Name & Photo
+                  Name 
                 </th>
                 <th className="p-2 font-medium text-sm text-gray-400 ">
                   Aideoa ID
@@ -214,9 +172,9 @@ const Transaction_page = () => {
             <tbody>
               {data.slice(0, 5).map((item, index) => (
                 <tr key={index} className="border-b border-gray-200 h-16">
-                  <td className="p-2 font-medium text-sm text-gray-600">
-                    <input type="checkbox" />
-                  </td>
+                  <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input type="checkbox" />
+                </td>
                   <td className="p-2 font-medium text-sm text-gray-600  max-w-52 ">
                     <td className="flex items-center gap-1 whitespace-nowrap overflow-hidden text-ellipsis">
                       <img
@@ -249,7 +207,7 @@ const Transaction_page = () => {
                           : "bg-red-100 text-red-700"
                       }`}
                     >
-                      {item.status === "Approve" ? "Approve" : "Rejected"}
+                      {item.status === "Approve" ? "Completed" : "Cancelled"}
                     </td>
                   </td>
 

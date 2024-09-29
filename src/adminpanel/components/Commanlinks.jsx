@@ -69,7 +69,7 @@ const data =  [
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200">
-              <th className="p-2 px-4 font-medium text-sm text-gray-400">
+              <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input type="checkbox" className="" />
               </th>
               <th className="p-2 font-medium text-sm text-gray-400">

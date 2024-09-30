@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuUploadCloud } from "react-icons/lu";
+import Pagination from "../../Pagination/Pagination";
 
 const ContactUs = () => {
   const [contactData, setContactData] = useState([
@@ -45,19 +46,37 @@ const ContactUs = () => {
     },
   ]);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3; 
+  const totalPages = Math.ceil(contactData.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Function to handle page change
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+
   return (
     <div>
-      <div className="py-4 bg-white rounded-xl lightdropshadowbox">
-        <div className="flex px-4 space-x-4 mb-4 items-center">
-          <div className="flex space-x-3 items-center ">
-            <h2 className="font-bold text-lg">Contact us</h2>
-            <span className="bg-purple-200 px-2  text-xs rounded-full">
-              {contactData.length} Users
-            </span>
+      {/* Contact Us Section */}
+      <div className="w-full bg-white shadow-md rounded-lg ">
+        <div className="w-full flex justify-between items-center flex-col lg:flex-row  p-6 pb-5">
+          {/* Table Title */}
+          <div className="flex flex-col m-auto lg:m-0  lg:flex-row items-center mb-5 lg:mb-0 space-x-2">
+            <h2 className="text-xl font-semibold">
+              Contact Us
+              <sup className="text-xs text-purple-500 font-medium bg-purple-100 p-1 px-2  rounded-full">
+                {contactData.length} users
+              </sup>
+            </h2>
           </div>
 
-          <div className="flex justify-end flex-1  items-center space-x-4 ">
-            <div className="relative w-[55%]">
+          {/* Search Bar and Action Buttons */}
+          <div className="flex justify-between gap-x-5 flex-col lg:flex-row items-center text-end w-full lg:w-[50%]">
+            <div className="relative w-full lg:w-[55%]">
               <CiSearch className="absolute  top-3 left-3" />
               <input
                 type="text"
@@ -65,22 +84,27 @@ const ContactUs = () => {
                 placeholder="Search"
               />
             </div>
-            <div className="flex max-lg:flex-col gap-2">
-              <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-                Download all
-              </button>
-              <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
-                <LuUploadCloud size={18} className="" />
-                <span>Create</span>
-              </button>
+
+            <div className="flex  justify-evenly mt-5 lg:mt-0  lg:gap-2 items-center  w-full lg:w-[50%]">
+              <div>
+                <button className="bg-white text-xs font-semibold border shadow-md text-black py-2 px-4 rounded-md ">
+                  Download all
+                </button>
+              </div>
+              <div className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
+                <IoCloudUploadOutline size={18} />
+                <button className="">Create</button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-full ">
-            <thead className="border-b">
-              <tr className="border-b bg-gray-200 border-gray-200 h-16 ">
+        {/* Table Section */}
+        <div>
+        <div className="overflow-x-scroll">
+          <table className="  min-w-[1232px]  w-full ">
+            <thead className="border-b ">
+              <tr className="border-b min-w-[1232px] bg-gray-200  border-gray-200 h-16 ">
                 <th className="py-3 px-4 text-left font-normal text-gray-500">
                   <input
                     type="checkbox"
@@ -108,7 +132,7 @@ const ContactUs = () => {
               </tr>
             </thead>
             <tbody>
-              {contactData.map((contact, index) => (
+              {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50">
                   <td className="py-3 px-4">{contact.checkbox}</td>
                   <td className="py-3 px-4 font-medium">{contact.name}</td>
@@ -128,41 +152,15 @@ const ContactUs = () => {
             </tbody>
           </table>
 
-  
-       
+          
         </div>
-        <div className="flex justify-between items-center mt-6 p-6">
-            <div className="relative border border-gray-400 p-2 justify-evenly items-center rounded-md w-24 flex">
-              <FaArrowRight size={15} className="text-gray-500 rotate-180" />
-              <button className="text-gray-500  text-sm">Previous</button>
-            </div>
-            <div className="space-x-2 flex gap-x-1 items-baseline">
-              <button className="px-3 py-1 rounded-md bg-purple-100 text-purple-800">
-                1
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                2
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                3
-              </button>
-              <button>.....</button>
-
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                8
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                9
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                10
-              </button>
-            </div>
-            <div className="relative border border-gray-400 p-2 justify-evenly items-center rounded-lg w-24 flex">
-              <button className="text-gray-500  text-sm">Next</button>
-              <FaArrowRight size={15} className="text-gray-500" />
-            </div>
-          </div>
+        {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+        </div>
       </div>
     </div>
   );

@@ -182,7 +182,7 @@ const OurTeams = () => {
               {contactData.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
                   <td className="py-3 px-4">{contact.checkbox}</td>
-                  <td className="py-3 px-4 font-medium flex gap-x-2"><img src="/public/user.png" className="w-5 rounded-full" /> {" "} {contact.name}</td>
+                  <td className="py-3 px-4 font-medium items-center  flex gap-x-2"><img src="/public/user.png" className="w-5 rounded-full" /> {" "} {contact.name}</td>
                   <td className="py-3 px-4 text-gray-500 ">
                     {contact.category}
                   </td>

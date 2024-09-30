@@ -4,6 +4,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
+import { CiSearch } from "react-icons/ci";
 const CommonLinks = ({setActiveComponent}) => {
   
 const data =  [
@@ -44,26 +45,29 @@ const data =  [
   return (
    
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
-    <div className="flex px-4 space-x-4 mb-4 items-center">
-      <div className="flex space-x-3 items-center ">
-        <h2 className="font-bold text-lg">Common Links</h2>
-        
-      </div>
-        <div className="flex  items-center space-x-4 w-full">
-        <input
-              type="text"
-              placeholder="Search"
-              className="border border-gray-300 flex-1 rounded-full  p-2 font-medium text-sm text-gray-600 bg-gray-100"
-            />
-            <div className='flex'>
+       <div className="flex px-4 space-x-4 mb-4 items-center">
+        <div className="flex space-x-3 items-center ">
+            <h2 className="font-bold text-lg">Common Links</h2>
            
-            <button onClick={()=>setActiveComponent("Add Common Links")} className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
-              <LuUploadCloud size={18} className="" />
-              <span className="text-nowrap">Add new</span>
-            </button>
-            </div>
         </div>
+        <div className="flex justify-end flex-1  items-center space-x-4 ">
+            <div className="relative w-[55%]" >
+            <CiSearch  className="absolute  top-3 left-3"/>
+              <input
+                type="text"
+                className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
+                placeholder="Search"
+              />
+            </div>
+            <div className='flex max-lg:flex-col gap-2'>
+             
+              <button 
+              onClick={()=>setActiveComponent("Add Common Links")}
+              className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md"><LuUploadCloud size={18} className=''/><span>Add new</span></button>
+            </div>
+            </div>
       </div>
+
 
       <div className="overflow-x-scroll rounded-b-2xl">
         <table className="min-w-full bg-white border border-gray-300 ">

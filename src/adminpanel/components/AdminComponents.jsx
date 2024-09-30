@@ -7,7 +7,7 @@ import IdCardUpdate from './IdcardUpdate'
 import AdminLogin from './AdminLogin'
 import Events from './Events/Events'
 import EventDetails from './Events/EventsDetails'
-import CommonLinks from './Commanlinks'
+import CommonLinks from './commonlinks/Commonlinks'
 
 const AdminComponents = () => {
   return (

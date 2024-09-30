@@ -3,7 +3,7 @@ import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
 
 import Resources from "./components/Resources";
-import CommonLinks from './components/Commanlinks'
+import CommonLinks from './components/commonlinks/Commonlinks'
 import Events from './components/Events/Events'
 import Query from './components/Query'
 import IdCard from './components/IdCard'
@@ -14,6 +14,7 @@ import Main from "./DashBoardpageComponent/Main";
 import Transaction_page from "./components/Transaction/Transaction_page";
 import Member from "./components/Members/Member";
 import AddEvent from "./components/Events/AddEvents";
+import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -39,12 +40,14 @@ const AdminPanel = () => {
       case "Notification":
         return <Notifications/>;
       case "Common Links":
-        return <CommonLinks />;
+        return <CommonLinks setActiveComponent={setActiveComponent}/>;
         case "Our Teams":
           return <OurTeams />;  
           case "Add Events":
             return <AddEvent setActiveComponent={setActiveComponent}/>;  
-             
+            case "Add Common Links":
+              return <AddCommonLinks setActiveComponent={setActiveComponent}/>;  
+               
       default:
         return <></>;
     }

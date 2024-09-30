@@ -107,7 +107,7 @@ const IdCard = () => {
       <div className="flex flex-col">
         <div className="flex  space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center "></div>
-          <div className="flex justify-end flex-1  items-center space-x-4 ">
+          <div className="flex justify-end flex-1 px-4  items-center space-x-4 ">
             <div className="relative w-[55%]" >
             <CiSearch  className="absolute  top-3 left-3"/>
               <input
@@ -167,9 +167,9 @@ const IdCard = () => {
         </div>
       </div>
       <div className="overflow-x-scroll rounded-b-2xl">
-        <table className="min-w-full bg-white border border-gray-300">
+        <table className="min-w-full bg-white border border-gray-300 ">
           <thead>
-            <tr className="text-left border-b bg-gray-100 border-gray-200">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
               <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input type="checkbox" className="" />
               </th>
@@ -241,7 +241,7 @@ const IdCard = () => {
         </table>
       </div>
 
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-4 px-4">
         <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">
           Previous
         </button>

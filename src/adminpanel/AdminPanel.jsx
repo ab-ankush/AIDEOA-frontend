@@ -13,6 +13,7 @@ import OurTeams from "../components/Admin_panel/Main-Content/Our-Teams/Our-Teams
 import Main from "./DashBoardpageComponent/Main";
 import Transaction_page from "./components/Transaction/Transaction_page";
 import Member from "./components/Members/Member";
+import AddEvent from "./components/Events/AddEvents";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
  
@@ -22,7 +23,7 @@ const AdminPanel = () => {
       case "Dashboard":
         return <Main /> ;
       case "Events":
-        return <Events />;
+        return <Events setActiveComponent={setActiveComponent}/>;
         case "Transaction":
           return <Transaction_page />;
       case "Resource":
@@ -41,6 +42,9 @@ const AdminPanel = () => {
         return <CommonLinks />;
         case "Our Teams":
           return <OurTeams />;  
+          case "Add Events":
+            return <AddEvent setActiveComponent={setActiveComponent}/>;  
+             
       default:
         return <></>;
     }

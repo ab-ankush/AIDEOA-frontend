@@ -103,7 +103,7 @@ const IdCard = () => {
   ];
 
   return (
-    <div className=" bg-white rounded-xl lightdropshadowbox">
+    <div className=" bg-white rounded-xl py-4 lightdropshadowbox">
       <div className="flex flex-col">
         <div className="flex  space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center "></div>

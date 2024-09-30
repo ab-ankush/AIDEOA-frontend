@@ -4,7 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
 import { CiSearch } from 'react-icons/ci';
 
-const Resources = () => {
+const Resources = ({setActiveComponent}) => {
     const data = [
         {
           title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -53,7 +53,7 @@ const Resources = () => {
             </div>
             <div className='flex max-lg:flex-col gap-2'>
               <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
-              <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md"><LuUploadCloud size={18} className=''/><span>Create</span></button>
+              <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md" onClick={()=>setActiveComponent("Add Events")}><LuUploadCloud size={18} className=''/><span>Create</span></button>
             </div>
             </div>
           </div>

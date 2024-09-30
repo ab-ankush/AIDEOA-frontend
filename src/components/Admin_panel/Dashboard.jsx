@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SideBar from "./SideBar";
+
 import { HiOutlineDotsVertical } from "react-icons/hi";
 
 import ContactUs from "./Main-Content/Contact_Us/Contact-us";
@@ -10,7 +11,7 @@ const Dashboard = () => {
   // Define the dynamic data as an array of objects
   const [contactData, setContactData] = useState([
     {
-      checkbox: <input type="checkbox" className=" size-4  bg-col"  />,
+      checkbox: <input type="checkbox" className=" size-4  bg-col" />,
       name: "Olivia Rhye",
       mobile: "9876541230",
       email: "olivia@untitledui.com",
@@ -19,7 +20,7 @@ const Dashboard = () => {
       action: <HiOutlineDotsVertical />,
     },
     {
-        checkbox: <input type="checkbox" className=" size-4  bg-col"  />,
+      checkbox: <input type="checkbox" className=" size-4  bg-col" />,
       name: "Phoenix Baker",
       mobile: "9876541230",
       email: "phoenix@untitledui.com",
@@ -28,7 +29,7 @@ const Dashboard = () => {
       action: <HiOutlineDotsVertical />,
     },
     {
-        checkbox: <input type="checkbox" className=" size-4  bg-col"  />,
+      checkbox: <input type="checkbox" className=" size-4  bg-col" />,
       name: "Lana Steiner",
       mobile: "9876541230",
       email: "lana@untitledui.com",
@@ -37,7 +38,7 @@ const Dashboard = () => {
       action: <HiOutlineDotsVertical />,
     },
     {
-        checkbox: <input type="checkbox" className=" size-4  bg-col"  />,
+      checkbox: <input type="checkbox" className=" size-4  bg-col" />,
       name: "Demi Wilkinson",
       mobile: "9876541230",
       email: "demi@untitledui.com",
@@ -55,10 +56,9 @@ const Dashboard = () => {
         <SideBar />
       </div>
       {/* Main Content Area */}
-        {/* <ContactUs/> */}
-        <Notification/>
-        {/* <OurTeams/> */}
-      
+      {/* <ContactUs /> */}
+      {/* <Notification/> */}
+      <OurTeams />
     </div>
   );
 };

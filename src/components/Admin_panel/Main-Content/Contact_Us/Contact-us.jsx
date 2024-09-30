@@ -3,9 +3,9 @@ import { FaArrowRight } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import { LuUploadCloud } from "react-icons/lu";
 
 const ContactUs = () => {
-  // Define the dynamic data as an array of objects
   const [contactData, setContactData] = useState([
     {
       checkbox: <input type="checkbox" className=" size-4  bg-col" />,
@@ -43,7 +43,6 @@ const ContactUs = () => {
       date: "12 Nov 6:00 pm",
       action: <HiOutlineDotsVertical />,
     },
-    // Add more objects here as needed
   ]);
 
   return (

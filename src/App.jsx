@@ -30,6 +30,7 @@ import { useContext, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "./context/authContext";
 import AdminPanel from "./adminpanel/AdminPanel";
+import Payment from "./data/Payment";
 
 
 
@@ -70,6 +71,7 @@ export default function App() {
           <Route path="additional" element={<UserRoleSelect />} />
         </Route>
         <Route path="/admin" element={<AdminPanel  />} />
+        <Route path="/pay" element={<Payment  />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

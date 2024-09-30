@@ -14,7 +14,7 @@ const data={
     end_time: "5:30 pm",
     location_venue: "Grand Ballon Hotel",
     url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
-    host_name: "Phoenix Baker",
+
     host_organization: "AIDEOA Hosts",
     details_description: "The roads in our area have developed numerous potholes, making it unsafe for vehicles and pedestrians. Despite several complaints, no action has been taken. We request immediate repair work to avoid accidents and improve road safety. The roads in our area have developed numerous potholes, making it unsafe for vehicles and pedestrians. Despite several complaints, no action has been taken. We request immediate repair work to avoid accidents and improve road safety."
   }

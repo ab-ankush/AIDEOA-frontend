@@ -5,9 +5,10 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
+import { LuUploadCloud } from "react-icons/lu";
 
 const Notifications = () => {
-  // Define the dynamic data as an array of objects
+  
   const [contactData, setContactData] = useState([
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -55,40 +56,41 @@ const Notifications = () => {
     <div >
       
 
-      {/* Events Section */}
+   
       <div className="w-full bg-white shadow-md rounded-lg ">
         <div className="w-full flex justify-between items-center  p-6 pb-5">
-          {/* Table Title */}
+      
           <div className="flex items-center space-x-2">
-            <h2 className="text-xl font-semibold">Events</h2>
+            <h2 className="text-xl font-semibold">Notifications</h2>
             <sup className="text-xs text-purple-500 font-medium bg-purple-100 p-1 px-2 rounded-full">
               100 users
             </sup>
           </div>
 
-          {/* Search Bar and Action Buttons */}
-          <div className="flex justify-between items-center w-[42%]">
+      
+          <div className="flex justify-end flex-1  items-center space-x-4 ">
             <div className="relative w-[55%]">
-              <CiSearch className="absolute top-3 left-3" />
+              <CiSearch className="absolute  top-3 left-3" />
               <input
                 type="text"
                 className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
                 placeholder="Search"
               />
             </div>
-
-            <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-              Download all
-            </button>
-            <div className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
-              <IoCloudUploadOutline size={18}/>
-              <button className="">Create</button>
+            <div className="flex max-lg:flex-col gap-2">
+              <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+                Download all
+              </button>
+              <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
+                <LuUploadCloud size={18} className="" />
+                <span>Create</span>
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Table Section */}
-        <div className="">
+    
+        <div className="overflow-x-auto">
           <table className="min-w-full">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
@@ -137,8 +139,10 @@ const Notifications = () => {
             </tbody>
           </table>
 
-          {/* Pagination */}
-          <div className="flex justify-between items-center mt-6 p-6">
+  
+          
+        </div>
+        <div className="flex justify-between items-center mt-6 p-6">
             <div className="relative border border-gray-500 p-2 justify-evenly items-center rounded-md w-24 flex">
               <FaArrowRight size={15} className="rotate-180" />
               <button className="text-gray-500 text-sm">Previous</button>
@@ -170,7 +174,6 @@ const Notifications = () => {
               <FaArrowRight size={15} />
             </div>
           </div>
-        </div>
       </div>
     </div>
   );

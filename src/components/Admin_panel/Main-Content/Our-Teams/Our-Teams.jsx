@@ -153,8 +153,9 @@ const OurTeams = () => {
           </div>
         </div>
         {/* Table Section */}
-        <div className="h-full">
-          <table className="min-w-full">
+        <div>
+        <div className="overflow-x-scroll">
+          <table className="  min-w-[1232px]  w-full ">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4 text-left font-normal text-gray-400">
@@ -205,7 +206,7 @@ const OurTeams = () => {
               ))}
             </tbody>
           </table>
-
+          </div>
           {/* Pagination */}
           <div className="flex justify-between items-center mt-6 p-6">
             <div className="relative border border-gray-500 p-2 justify-evenly items-center rounded-md w-24 flex">
@@ -238,8 +239,9 @@ const OurTeams = () => {
               <button className="text-gray-500 text-sm">Next</button>
               <FaArrowRight size={15} />
             </div>
-          </div>
         </div>
+        </div>
+         
       </div>
     </div>
   );

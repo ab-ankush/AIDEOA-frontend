@@ -90,8 +90,9 @@ const Notifications = () => {
         </div>
 
     
-        <div className="overflow-x-auto">
-          <table className="min-w-full">
+        <div>
+        <div className="overflow-x-scroll">
+          <table className="  min-w-[1232px]  w-full ">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4  text-left font-normal text-gray-500">
@@ -174,6 +175,7 @@ const Notifications = () => {
               <FaArrowRight size={15} />
             </div>
           </div>
+        </div>
       </div>
     </div>
   );

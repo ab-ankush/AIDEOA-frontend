@@ -29,7 +29,7 @@ const applications = [
 
 const ID_CARD = () => {
   return (
-    <div className=" h-[95%] max-lg:h-[400px] px-2 self-center w-full flex flex-col justify-between items-center bg-white rounded-lg shadow-md ">
+    <>
       {/* Header */}
       <div className="flex w-[94.4%] h-[16.67%] flex-col  justify-between items-center mb-1">
         <div className="h-[53.57%] w-full flex justify-between items-center  my-1">
@@ -79,7 +79,7 @@ const ID_CARD = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

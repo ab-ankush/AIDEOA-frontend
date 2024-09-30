@@ -3,7 +3,7 @@ import MyAreaChart from "./LineChart";
 
 const Tr = () => {
   return (
-    <div className="lg:w-[62.5%] max-lg:w-[95%] max-lg:h-[300px] h-full bg-white p-5 rounded-lg shadow-md">
+    <div className="w-[65%]  bg-white p-5 rounded-lg shadow-md">
       <div className="flex justify-between items-center mb-4">
         <h2 className="lg:text-lg max-lg:text-sm font-semibold">Report</h2>
         <div className="flex space-x-2">
@@ -24,7 +24,7 @@ const Tr = () => {
           Export PDF
         </button>
       </div>
-      <div className="h-[calc(100%-2.5rem)]">
+      <div className="h-[180px]">
         <MyAreaChart />
       </div>
     </div>

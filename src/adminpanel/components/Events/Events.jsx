@@ -4,7 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
 import { CiSearch } from 'react-icons/ci';
 
-const Resources = ({setActiveComponent}) => {
+const Resources = ({setActiveComponent,setEventsData}) => {
     const data = [
         {
           title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -63,7 +63,10 @@ const Resources = ({setActiveComponent}) => {
               <thead>
                 <tr className="text-left border-b bg-gray-200  border-gray-200 h-16">
                   <th className="p-2 px-4 font-medium text-sm text-gray-300">
-                    <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
                   </th>
                   <th className="p-2 font-medium text-sm text-gray-600 w-52">Title</th>
                   <th className="p-2 font-medium text-sm text-gray-600">Event Date & Time</th>
@@ -76,9 +79,17 @@ const Resources = ({setActiveComponent}) => {
               </thead>
               <tbody>
                 {data.slice(0, 7).map((item, index) => (
-                  <tr key={index} className="border-b border-gray-200 h-16">
+                  <tr 
+                  onClick={()=>{
+                    setEventsData(item)
+                    setActiveComponent("Events Details")
+                  }}
+                  key={index} className="border-b border-gray-200 h-16 cursor-pointer">
                     <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                      <input type="checkbox" />
+                    <input
+                    type="checkbox"
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
                     </td>
                     <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</td>
                     <td className="p-2 font-medium text-sm text-gray-400">{item.eventDateTime}</td>

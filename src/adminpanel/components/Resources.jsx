@@ -191,7 +191,10 @@ const Resources = () => {
               <thead>
                 <tr className="text-left border-b bg-gray-200 border-gray-200 h-16">
                   <th className="p-2 px-4 font-medium text-sm text-gray-600">
-                    <input type="checkbox"  className='' />
+                  <input
+                    type="checkbox"
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
                   </th>
                   <th className="p-2 font-medium text-sm text-gray-600 w-52">Title</th>
                   <th className="p-2 font-medium text-sm text-gray-600">Event Date & Time</th>
@@ -206,7 +209,10 @@ const Resources = () => {
                 {data.slice(0,7).map((item, index) => (
                   <tr key={index} className="border-b border-gray-200 h-16">
                     <td className="p-2 px-4  font-medium text-sm text-gray-600">
-                      <input type="checkbox" />
+                    <input
+                    type="checkbox"
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
                     </td>
                     <td className="p-2 font-medium text-sm text-gray-600  max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</td>
                     <td className="p-2 font-medium text-sm text-gray-400 ">{item.eventDateTime}</td>

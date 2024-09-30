@@ -79,7 +79,7 @@ const AddCommonLinks = ({setActiveComponent}) => {
         </button>
         <button
           type="button"
-          onClick={()=>setActiveComponent("Add Common Links")}
+          onClick={()=>setActiveComponent("Common Links")}
           className="text-[#4B0082] bg-white  px-4 py-2 border border-[#4B0082] rounded-md hover:opacity-75 focus:outline-none "
         >
           Cancel

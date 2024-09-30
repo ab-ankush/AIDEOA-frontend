@@ -4,7 +4,7 @@ import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
-const CommonLinks = () => {
+const CommonLinks = ({setActiveComponent}) => {
   
 const data =  [
   {
@@ -57,18 +57,18 @@ const data =  [
             />
             <div className='flex'>
            
-            <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
+            <button onClick={()=>setActiveComponent("Add Common Links")} className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
               <LuUploadCloud size={18} className="" />
-              <span>Add new</span>
+              <span className="text-nowrap">Add new</span>
             </button>
             </div>
         </div>
       </div>
 
       <div className="overflow-x-scroll rounded-b-2xl">
-        <table className="min-w-full bg-white border border-gray-300">
+        <table className="min-w-full bg-white border border-gray-300 ">
           <thead>
-            <tr className="text-left border-b bg-gray-100 border-gray-200">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
               <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input type="checkbox" className="" />
               </th>

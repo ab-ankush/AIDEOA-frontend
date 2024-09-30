@@ -189,7 +189,7 @@ const Resources = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-300  ">
               <thead>
-                <tr className="text-left border-b bg-gray-200 border-gray-200">
+                <tr className="text-left border-b bg-gray-200 border-gray-200 h-16">
                   <th className="p-2 px-4 font-medium text-sm text-gray-600">
                     <input type="checkbox"  className='' />
                   </th>
@@ -226,7 +226,7 @@ const Resources = () => {
           </div>
     
       
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex justify-between items-center mt-4 px-4">
             <button
               className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-const url=`http://localhost:4000/api/auth`
+import toast from "react-hot-toast";
+const url=`http://localhost:4000/api`
 const AddEvent = ({setActiveComponent}) => {
   const [formData, setFormData] = useState({
     title: "",
@@ -19,11 +20,17 @@ const AddEvent = ({setActiveComponent}) => {
 
   const handleSubmit =async (e) => {
     e.preventDefault();
+    console.log(formData)
    try {
-      const res= await axios.post(`${url}/signup`,formData)
+      const res= await axios.post(`${url}/events/add`,formData)
+      if(res.status===200)
+      {
+        toast.success(res.data.message)
+        setActiveComponent("Events")
+      }
       
    } catch (error) {
-    console.log(error)
+    toast.error(error.response.data.message)
    }
   };
 

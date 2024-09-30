@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuUploadCloud } from "react-icons/lu";
+import Pagination from "../../Pagination/Pagination";
 
 const ContactUs = () => {
   const [contactData, setContactData] = useState([
@@ -44,6 +45,19 @@ const ContactUs = () => {
       action: <HiOutlineDotsVertical />,
     },
   ]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3; 
+  const totalPages = Math.ceil(contactData.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Function to handle page change
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
 
   return (
     <div>
@@ -118,7 +132,7 @@ const ContactUs = () => {
               </tr>
             </thead>
             <tbody>
-              {contactData.map((contact, index) => (
+              {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50">
                   <td className="py-3 px-4">{contact.checkbox}</td>
                   <td className="py-3 px-4 font-medium">{contact.name}</td>
@@ -141,38 +155,11 @@ const ContactUs = () => {
           
         </div>
         {/* Pagination */}
-        <div className="flex justify-between items-center mt-6 p-6">
-            <div className="relative border border-gray-400 p-2 justify-evenly items-center rounded-md w-24 flex">
-              <FaArrowRight size={15} className="text-gray-500 rotate-180" />
-              <button className="text-gray-500  text-sm">Previous</button>
-            </div>
-            <div className="space-x-2 flex gap-x-1 items-baseline">
-              <button className="px-3 py-1 rounded-md bg-purple-100 text-purple-800">
-                1
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                2
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                3
-              </button>
-              <button>.....</button>
-
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                8
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                9
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                10
-              </button>
-            </div>
-            <div className="relative border border-gray-400 p-2 justify-evenly items-center rounded-lg w-24 flex">
-              <button className="text-gray-500  text-sm">Next</button>
-              <FaArrowRight size={15} className="text-gray-500" />
-            </div>
-          </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
         </div>
       </div>
     </div>

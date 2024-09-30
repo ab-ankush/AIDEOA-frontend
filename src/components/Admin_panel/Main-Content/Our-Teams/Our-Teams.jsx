@@ -5,6 +5,7 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
+import Pagination from "../../Pagination/Pagination";
 
 const OurTeams = () => {
 
@@ -89,7 +90,179 @@ const OurTeams = () => {
       action: <BsThreeDotsVertical />,
       profileImage: "url-to-olivia-image",
     },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Olivia Rhye",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "olivia@untitledui.com",
+      selfAddress: "candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Phoenix Baker",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "phoenix@untitledui.com",
+      selfAddress: "our area have developed...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Lana Steiner",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "lana@untitledui.com",
+      selfAddress: "candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Demi Wilkinson",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "demi@untitledui.com",
+      selfAddress: "area have developed...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Candice Wu",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "candice@untitledui.com",
+      selfAddress: "candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Natali Craig",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "natali@untitledui.com",
+      selfAddress: "natali The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Drew Cano",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "drew@untitledui.com",
+      selfAddress: "drew candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Kate Morrison",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "kate@untitledui.com",
+      selfAddress: "kate candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Olivia Rhye",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "olivia@untitledui.com",
+      selfAddress: "candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Phoenix Baker",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "phoenix@untitledui.com",
+      selfAddress: "our area have developed...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Lana Steiner",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "lana@untitledui.com",
+      selfAddress: "candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Demi Wilkinson",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "demi@untitledui.com",
+      selfAddress: "area have developed...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Candice Wu",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "candice@untitledui.com",
+      selfAddress: "candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Natali Craig",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "natali@untitledui.com",
+      selfAddress: "natali The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Drew Cano",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "drew@untitledui.com",
+      selfAddress: "drew candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
+    {
+      checkbox: <input type="checkbox" className="size-4 bg-col" />,
+      name: "Kate Morrison",
+      category: "Executive / Founder Member",
+      mobile: "9876541230",
+      email: "kate@untitledui.com",
+      selfAddress: "kate candice The roads in our area...",
+      action: <BsThreeDotsVertical />,
+      profileImage: "url-to-olivia-image",
+    },
   ]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3; 
+  const totalPages = Math.ceil(contactData.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Function to handle page change
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div className="">
@@ -153,9 +326,8 @@ const OurTeams = () => {
           </div>
         </div>
         {/* Table Section */}
-        <div>
-        <div className="overflow-x-scroll">
-          <table className="  min-w-[1232px]  w-full ">
+        <div className="">
+          <table className="min-w-full">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4 text-left font-normal text-gray-400">
@@ -185,7 +357,7 @@ const OurTeams = () => {
               </tr>
             </thead>
             <tbody>
-              {contactData.map((contact, index) => (
+              {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
                   <td className="py-3 px-4">{contact.checkbox}</td>
                   <td className="py-3 px-4 font-medium items-center  flex gap-x-2"><img src="/public/user.png" className="w-5 rounded-full" /> {" "} {contact.name}</td>
@@ -206,42 +378,14 @@ const OurTeams = () => {
               ))}
             </tbody>
           </table>
-          </div>
-          {/* Pagination */}
-          <div className="flex justify-between items-center mt-6 p-6">
-            <div className="relative border border-gray-500 p-2 justify-evenly items-center rounded-md w-24 flex">
-              <FaArrowRight size={15} className="rotate-180" />
-              <button className="text-gray-500 text-sm">Previous</button>
-            </div>
-            <div className="space-x-2 flex gap-x-1 items-baseline">
-              <button className="px-3 py-1 rounded-md bg-purple-100 text-purple-800">
-                1
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                2
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                3
-              </button>
-              <button>.....</button>
 
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                8
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                9
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                10
-              </button>
-            </div>
-            <div className="relative border border-gray-500 p-2 justify-evenly items-center rounded-md w-24 flex">
-              <button className="text-gray-500 text-sm">Next</button>
-              <FaArrowRight size={15} />
-            </div>
+          {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
         </div>
-        </div>
-         
       </div>
     </div>
   );

@@ -43,12 +43,12 @@ const data =  [
 
   return (
    
-    <div className=" bg-white rounded-xl  shadow-sm">
-      <div className="w-full flex justify-between items-center  p-6 pb-5">
-        <div className="flex space-x-3 items-center w-full">
-            <h2 className="font-bold text-lg">Common Links</h2>
-            <span className="bg-purple-200 px-2  text-xs rounded-full" >{data.length}</span>
-        </div>
+    <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+    <div className="flex px-4 space-x-4 mb-4 items-center">
+      <div className="flex space-x-3 items-center ">
+        <h2 className="font-bold text-lg">Common Links</h2>
+        
+      </div>
         <div className="flex  items-center space-x-4 w-full">
         <input
               type="text"
@@ -70,7 +70,10 @@ const data =  [
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
               <th className="p-2 px-4 font-medium text-sm text-gray-200">
-                <input type="checkbox" className="" />
+                <input
+                    type="checkbox"
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
               </th>
               <th className="p-2 font-medium text-sm text-gray-400">
                 Title
@@ -90,7 +93,10 @@ const data =  [
             {data.slice(0, 7).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16 ">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                  <input type="checkbox" />
+                 <input
+                    type="checkbox"
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600   whitespace-nowrap overflow-hidden text-ellipsis">
                   {item.title}

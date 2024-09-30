@@ -57,14 +57,13 @@ const Notifications = () => {
       
 
    
-      <div className="w-full bg-white shadow-md rounded-lg ">
-        <div className="w-full flex justify-between items-center  p-6 pb-5">
-      
-          <div className="flex items-center space-x-2">
-            <h2 className="text-xl font-semibold">Notifications</h2>
-            <sup className="text-xs text-purple-500 font-medium bg-purple-100 p-1 px-2 rounded-full">
-              100 users
-            </sup>
+      <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+        <div className="flex px-4 space-x-4 mb-4 items-center">
+          <div className="flex space-x-3 items-center ">
+            <h2 className="font-bold text-lg">Notifications</h2>
+            <span className="bg-purple-200 px-2  text-xs rounded-full">
+              {contactData.length} Users
+            </span>
           </div>
 
       

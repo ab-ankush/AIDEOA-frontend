@@ -5,8 +5,11 @@ import { LuUploadCloud } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoMdSearch } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
+import { MdDelete } from "react-icons/md";
 const CommonLinks = ({setActiveComponent}) => {
-  
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
+
 const data =  [
   {
     title: "YouTube",
@@ -41,7 +44,23 @@ const data =  [
 ]
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(data.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
 
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
   return (
    
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
@@ -59,6 +78,7 @@ const data =  [
                 placeholder="Search"
               />
             </div>
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className='flex max-lg:flex-col gap-2'>
              
               <button 
@@ -76,6 +96,8 @@ const data =  [
               <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                     type="checkbox"
+                    checked={selectAll}
+                    onChange={handleSelectAll}
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
               </th>
@@ -97,9 +119,11 @@ const data =  [
             {data.slice(0, 7).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16 ">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                 <input
+                <input
                     type="checkbox"
-                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
                   />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600   whitespace-nowrap overflow-hidden text-ellipsis">

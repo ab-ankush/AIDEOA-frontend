@@ -5,6 +5,7 @@ import { FaArrowDownLong } from "react-icons/fa6";
 import { LuUploadCloud } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
+import { MdDelete } from "react-icons/md";
 
 const data = [
   {
@@ -99,9 +100,29 @@ const data = [
 const Member = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userType, setUserType] = useState("Employees");
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
+
   const totalPages = 3;
   const Students = new Array(20).fill("");
   const employees = new Array(30).fill("");
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(data.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
+
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
 
   return (
     <>
@@ -123,6 +144,7 @@ const Member = () => {
                 placeholder="Search"
               />
             </div>
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className="flex max-lg:flex-col gap-2">
             <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                Filter by
@@ -145,10 +167,12 @@ const Member = () => {
             <thead>
               <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
               <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                 <input
-                    type="checkbox"
-                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
-                  />
+              <input
+                  type="checkbox"
+                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                />
                 </td>
                 <th className="p-2 font-medium text-sm text-gray-400 w-52">
                   Name & Photo
@@ -177,9 +201,11 @@ const Member = () => {
               {data.slice(0, 7).map((item, index) => (
                 <tr key={index} className="border-b border-gray-200 h-16">
                   <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                 <input
+                  <input
                     type="checkbox"
-                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
                   />
                 </td>
                   <td className="p-2 font-medium text-sm text-gray-600  max-w-52 ">

@@ -4,13 +4,33 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { LuUploadCloud } from "react-icons/lu";
+import { MdDelete } from "react-icons/md";
 const IdCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userType, setUserType] = useState("Employees");
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
+
   const totalPages = 3;
   const Students = new Array(20).fill("");
   const employees = new Array(30).fill("");
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(data.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
 
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
   const data = [
     {
       name: "Olivia Rhye",
@@ -116,6 +136,7 @@ const IdCard = () => {
                 placeholder="Search"
               />
             </div>
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className='flex max-lg:flex-col gap-2'>
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
               <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md"><LuUploadCloud size={18} className=''/><span>Create</span></button>
@@ -173,6 +194,8 @@ const IdCard = () => {
               <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                     type="checkbox"
+                    checked={selectAll}
+                    onChange={handleSelectAll}
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
               </th>
@@ -207,6 +230,8 @@ const IdCard = () => {
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                  <input
                     type="checkbox"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
                 </td>

@@ -16,6 +16,7 @@ import Member from "./components/Members/Member";
 import AddEvent from "./components/Events/AddEvents";
 import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 import EventDetails from "./components/Events/EventsDetails";
+import UpdateEvents from "./components/Events/UpdateEvents";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -50,7 +51,9 @@ const AdminPanel = () => {
         return <AddCommonLinks setActiveComponent={setActiveComponent} />;
         case "Events Details":
           return <EventDetails setActiveComponent={setActiveComponent} eventsData={eventsData}/>;
-  
+          case "Update Events":
+            return <UpdateEvents setActiveComponent={setActiveComponent} eventsData={eventsData}/>;
+    
       default:
         return <></>;
     }

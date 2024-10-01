@@ -262,7 +262,6 @@ const OurTeams = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Function to handle page change
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };

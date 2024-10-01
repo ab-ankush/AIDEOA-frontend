@@ -109,7 +109,7 @@ const EventDetails = ({ setActiveComponent, eventsData }) => {
             Delete
           </button>
 
-          <button className="bg-[#4B0082] flex font-medium duration-300 items-center gap-1 text-white justify-center w-24 rounded-lg py-1 hover:bg-purple-700">
+          <button onClick={()=>setActiveComponent("Update Events")} className="bg-[#4B0082] flex font-medium duration-300 items-center gap-1 text-white justify-center w-24 rounded-lg py-1 hover:bg-purple-700">
             <LuPen className="mt-1" />
             Update
           </button>

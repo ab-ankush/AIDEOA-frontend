@@ -4,13 +4,33 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { LuUploadCloud } from "react-icons/lu";
+import { MdDelete } from "react-icons/md";
 const IdCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userType, setUserType] = useState("Employees");
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
+
   const totalPages = 3;
   const Students = new Array(20).fill("");
   const employees = new Array(30).fill("");
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(data.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
 
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
   const data = [
     {
       name: "Olivia Rhye",
@@ -107,7 +127,7 @@ const IdCard = () => {
       <div className="flex flex-col">
         <div className="flex  space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center "></div>
-          <div className="flex justify-end flex-1  items-center space-x-4 ">
+          <div className="flex justify-end flex-1 px-4  items-center space-x-4 ">
             <div className="relative w-[55%]" >
             <CiSearch  className="absolute  top-3 left-3"/>
               <input
@@ -116,6 +136,7 @@ const IdCard = () => {
                 placeholder="Search"
               />
             </div>
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className='flex max-lg:flex-col gap-2'>
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
               <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md"><LuUploadCloud size={18} className=''/><span>Create</span></button>
@@ -167,11 +188,16 @@ const IdCard = () => {
         </div>
       </div>
       <div className="overflow-x-scroll rounded-b-2xl">
-        <table className="min-w-full bg-white border border-gray-300">
+        <table className="min-w-full bg-white border border-gray-300 ">
           <thead>
-            <tr className="text-left border-b bg-gray-100 border-gray-200">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
               <th className="p-2 px-4 font-medium text-sm text-gray-200">
-                <input type="checkbox" className="" />
+                <input
+                    type="checkbox"
+                    checked={selectAll}
+                    onChange={handleSelectAll}
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
               </th>
               <th className="p-2 font-medium text-sm text-gray-400 w-52">
                 Name & Photo
@@ -202,7 +228,12 @@ const IdCard = () => {
             {data.slice(0, 7).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                  <input type="checkbox" />
+                 <input
+                    type="checkbox"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
+                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
+                  />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600  max-w-52 ">
                   <td className="flex items-center gap-1 whitespace-nowrap overflow-hidden text-ellipsis">
@@ -241,7 +272,7 @@ const IdCard = () => {
         </table>
       </div>
 
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-4 px-4">
         <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">
           Previous
         </button>

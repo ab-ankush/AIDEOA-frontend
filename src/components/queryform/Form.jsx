@@ -1,12 +1,14 @@
+import axios from 'axios';
 import  { useState } from 'react'
-
+import toast from 'react-hot-toast';
+const url=`http://localhost:4000/api`
 const Form = () => {
     const [formdata, setFormData] = useState({
         name: '',
         mobile: '',
         email: '',
-        company: '',
-        area: '',
+        companyName: '',
+        workingArea: '',
         query: ''
       });
     
@@ -14,10 +16,24 @@ const Form = () => {
         setFormData({ ...formdata, [e.target.name]: e.target.value });
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async(e) => {
            e.preventDefault();
-       
-       
+          try {
+            const res= await axios.post(`${url}/query/add`,formdata)
+            if(res.status===200)
+            {
+              toast.success(res.data.message)
+              setFormData({  name: '',
+                mobile: '',
+                email: '',
+                companyName: '',
+                workingArea: '',
+                query: ''})
+            }
+          } catch (error) {
+            console.log(error)
+            toast.error(error.response.data.message)
+          }
       };
     
       return (
@@ -67,9 +83,10 @@ const Form = () => {
               <label htmlFor="company" className=" text-sm font-medium text-gray-700">Company Name</label>
               <input
                 type="text"
-                name="company"
-                value={formdata.company}
+                name="companyName"
+                value={formdata.companyName}
                 onChange={handleChange}
+                required
                 className="mt-1  w-full px-3 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none  sm:text-sm"
                 placeholder="Enter company name"
               />
@@ -79,9 +96,10 @@ const Form = () => {
               <label htmlFor="area" className=" text-sm font-medium text-gray-700">Working Area / Office Address</label>
               <input
                 type="text"
-                name="area"
-                value={formdata.area}
+                name="workingArea"
+                value={formdata.workingArea}
                 onChange={handleChange}
+                required
                 className="mt-1  w-full px-3 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none  sm:text-sm"
                 placeholder="Enter working area or office address"
               />

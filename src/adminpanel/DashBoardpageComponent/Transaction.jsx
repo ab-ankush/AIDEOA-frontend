@@ -35,10 +35,10 @@ const transactions = [
 
 const TransactionTable = () => {
   return (
-    <div className=" h-full bg-white max-lg:p-2 max-lg:h-[300px] w-full">
+    <>
       {/* Header with See All Transactions */}
-      <div className="flex justify-between h-[23.44%] items-center ">
-        <div className="w-[95%] h-[63.29%] flex justify-between items-center">
+      <div className="flex justify-between  items-center  p-4">
+        <div className="w-full  flex justify-between items-center">
           <div className="flex flex-col justify-start items-start">
             <h1 className="text-lg font-semibold">Transactions</h1>
             <p className="text-sm text-gray-500">
@@ -52,11 +52,11 @@ const TransactionTable = () => {
       </div>
 
       {/* Transaction List */}
-      <div className="h-[76.55%] w-[95%]">
+      <div className=" ">
         {transactions.map((transaction, index) => (
           <div
             key={index}
-            className="flex h-[25.51%] items-center justify-between p-1 bg-white rounded-lg shadow-sm"
+            className="flex  items-center justify-between p-1 bg-white rounded-lg shadow-sm"
           >
             {/* Left: Status Icon and Name */}
             <div className="flex w-[45%] items-center justify-between space-x-4">
@@ -108,7 +108,7 @@ const TransactionTable = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,16 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 const url=`http://localhost:4000/api`
-const AddEvent = ({setActiveComponent}) => {
-  const [formData, setFormData] = useState({
-    title: "",
-    date: "",
-    starttime: "",
-    endtime: "",
-    location: "",
-    description: "",
-    days:""
-  });
+const UpdateEvents = ({setActiveComponent,eventsData}) => {
+  const [formData, setFormData] = useState(eventsData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +14,7 @@ const AddEvent = ({setActiveComponent}) => {
     e.preventDefault();
     console.log(formData)
    try {
-      const res= await axios.post(`${url}/events/add`,formData)
+      const res= await axios.post(`${url}/events/update`,formData)
       if(res.status===200)
       {
         toast.success(res.data.message)
@@ -36,7 +28,7 @@ const AddEvent = ({setActiveComponent}) => {
 
   return (
     <div className="rounded-xl p-4 bg-gray-50 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4 text-[#4B0082]">Add New Event</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-[#4B0082]">Update Event</h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <div>
           <label className="block text-gray-600">Title</label>
@@ -112,7 +104,7 @@ const AddEvent = ({setActiveComponent}) => {
           <input
             type="number"
             name="days"
-            value={formData.days}
+            value={Number(formData.days)}
             onChange={handleChange}
             className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-500"
             placeholder="Enter days"
@@ -153,4 +145,4 @@ const AddEvent = ({setActiveComponent}) => {
   );
 };
 
-export default AddEvent;
+export default UpdateEvents;

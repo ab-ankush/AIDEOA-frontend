@@ -6,6 +6,8 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
+import Pagination from "../../Pagination/Pagination";
+import { MdDelete } from "react-icons/md";
 
 const Notifications = () => {
   
@@ -51,20 +53,49 @@ const Notifications = () => {
       action: <HiOutlineDotsVertical />,
     },
   ]);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3; 
+  const totalPages = Math.ceil(contactData.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(contactData.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
+
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
   return (
     <div >
       
 
    
-      <div className="w-full bg-white shadow-md rounded-lg ">
-        <div className="w-full flex justify-between items-center  p-6 pb-5">
-      
-          <div className="flex items-center space-x-2">
-            <h2 className="text-xl font-semibold">Notifications</h2>
-            <sup className="text-xs text-purple-500 font-medium bg-purple-100 p-1 px-2 rounded-full">
-              100 users
-            </sup>
+      <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+        <div className="flex px-4 space-x-4 mb-4 items-center">
+          <div className="flex space-x-3 items-center ">
+            <h2 className="font-bold text-lg">Notifications</h2>
+            <span className="bg-purple-200 px-2  text-xs rounded-full">
+              {contactData.length} Users
+            </span>
           </div>
 
       
@@ -77,6 +108,7 @@ const Notifications = () => {
                 placeholder="Search"
               />
             </div>
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className="flex max-lg:flex-col gap-2">
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
@@ -90,15 +122,18 @@ const Notifications = () => {
         </div>
 
     
-        <div className="overflow-x-auto">
-          <table className="min-w-full">
+        <div>
+        <div className="overflow-x-scroll">
+          <table className="  min-w-[1232px]  w-full ">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4  text-left font-normal text-gray-500">
-                  <input
-                    type="checkbox"
-                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                  />
+                <input
+                  type="checkbox"
+                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                />
                 </th>
                 <th className="py-3 px-4  text-left font-normal text-gray-500">
                   Heading
@@ -118,9 +153,16 @@ const Notifications = () => {
               </tr>
             </thead>
             <tbody>
-              {contactData.map((contact, index) => (
+              {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50">
-                  <td className="py-3 px-4 text-gray-500">{contact.checkbox}</td>
+                <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input
+                    type="checkbox"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
+                  />
+                </td>
                   <td className="py-3 px-4 font-medium">{contact.name}</td>
                   <td className="py-3 px-4 text-gray-500 ">{contact.date}</td>
                   <td className="py-3 px-4 text-gray-500">{contact.message}</td>
@@ -142,38 +184,13 @@ const Notifications = () => {
   
           
         </div>
-        <div className="flex justify-between items-center mt-6 p-6">
-            <div className="relative border border-gray-500 p-2 justify-evenly items-center rounded-md w-24 flex">
-              <FaArrowRight size={15} className="rotate-180" />
-              <button className="text-gray-500 text-sm">Previous</button>
-            </div>
-            <div className="space-x-2 flex gap-x-1 items-baseline">
-              <button className="px-3 py-1 rounded-md bg-purple-100 text-purple-800">
-                1
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                2
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                3
-              </button>
-              <button>.....</button>
-
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                8
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                9
-              </button>
-              <button className="px-3 py-1 rounded-md  text-purple-800">
-                10
-              </button>
-            </div>
-            <div className="relative border border-gray-500 p-2 justify-evenly items-center rounded-md w-24 flex">
-              <button className="text-gray-500 text-sm">Next</button>
-              <FaArrowRight size={15} />
-            </div>
-          </div>
+         {/* Pagination */}
+         <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+        </div>
       </div>
     </div>
   );

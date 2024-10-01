@@ -6,8 +6,11 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
 import Pagination from "../../Pagination/Pagination";
+import { MdDelete } from "react-icons/md";
 
 const OurTeams = () => {
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
 
   const [contactData, setContactData] = useState([
     {
@@ -263,7 +266,23 @@ const OurTeams = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(contactData.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
 
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
   return (
     <div className="">
       {/* Dashboard Heading */}
@@ -289,6 +308,7 @@ const OurTeams = () => {
               placeholder="Search"
             />
           </div>
+          {selectedItems.length>=2 &&  <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
             <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
               Download all
@@ -331,10 +351,12 @@ const OurTeams = () => {
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4 text-left font-normal text-gray-400">
-                  <input
-                    type="checkbox"
-                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                  />
+                <input
+                  type="checkbox"
+                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                />
                 </th>
                 <th className="py-3 px-4 text-left font-normal text-gray-400">
                   Name & photo
@@ -359,7 +381,14 @@ const OurTeams = () => {
             <tbody>
               {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
-                  <td className="py-3 px-4">{contact.checkbox}</td>
+                   <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input
+                    type="checkbox"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
+                  />
+                </td>
                   <td className="py-3 px-4 font-medium items-center  flex gap-x-2"><img src="/public/user.png" className="w-5 rounded-full" /> {" "} {contact.name}</td>
                   <td className="py-3 px-4 text-gray-500 ">
                     {contact.category}

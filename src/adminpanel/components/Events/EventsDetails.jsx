@@ -20,6 +20,7 @@ const data = {
 };
 
 const EventDetails = ({ setActiveComponent, eventsData }) => {
+  
   return (
     <div className="rounded-xl p-4 bg-gray-50 min-h-screen">
       <div className="flex  md:flex-row justify-between items-start md:items-center mb-4">

@@ -7,6 +7,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
 import Pagination from "../../Pagination/Pagination";
+import { MdDelete } from "react-icons/md";
 
 const Notifications = () => {
   
@@ -52,6 +53,8 @@ const Notifications = () => {
       action: <HiOutlineDotsVertical />,
     },
   ]);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3; 
@@ -60,7 +63,24 @@ const Notifications = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Function to handle page change
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(contactData.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
+
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -88,6 +108,7 @@ const Notifications = () => {
                 placeholder="Search"
               />
             </div>
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className="flex max-lg:flex-col gap-2">
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
@@ -107,10 +128,12 @@ const Notifications = () => {
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
               <tr>
                 <th className="py-3 px-4  text-left font-normal text-gray-500">
-                  <input
-                    type="checkbox"
-                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                  />
+                <input
+                  type="checkbox"
+                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                />
                 </th>
                 <th className="py-3 px-4  text-left font-normal text-gray-500">
                   Heading
@@ -132,7 +155,14 @@ const Notifications = () => {
             <tbody>
               {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50">
-                  <td className="py-3 px-4 text-gray-500">{contact.checkbox}</td>
+                <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input
+                    type="checkbox"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
+                  />
+                </td>
                   <td className="py-3 px-4 font-medium">{contact.name}</td>
                   <td className="py-3 px-4 text-gray-500 ">{contact.date}</td>
                   <td className="py-3 px-4 text-gray-500">{contact.message}</td>

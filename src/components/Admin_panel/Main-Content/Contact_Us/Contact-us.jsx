@@ -5,6 +5,7 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { LuUploadCloud } from "react-icons/lu";
 import Pagination from "../../Pagination/Pagination";
+import { MdDelete } from "react-icons/md";
 
 const ContactUs = () => {
   const [contactData, setContactData] = useState([
@@ -45,6 +46,8 @@ const ContactUs = () => {
       action: <HiOutlineDotsVertical />,
     },
   ]);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3; 
@@ -53,11 +56,30 @@ const ContactUs = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Function to handle page change
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
+
+
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedItems([]); 
+    } else {
+      setSelectedItems(contactData.map((_, index) => index)); 
+    }
+    setSelectAll(!selectAll);
+  };
+
+
+  const handleSelectItem = (index) => {
+    if (selectedItems.includes(index)) {
+      setSelectedItems(selectedItems.filter((item) => item !== index));
+    } else {
+      setSelectedItems([...selectedItems, index]);
+    }
+  };
 
   return (
     <div>
@@ -84,7 +106,7 @@ const ContactUs = () => {
                 placeholder="Search"
               />
             </div>
-
+            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className="flex  justify-evenly mt-5 lg:mt-0  lg:gap-2 items-center  w-full lg:w-[50%]">
               <div>
                 <button className="bg-white text-xs font-semibold border shadow-md text-black py-2 px-4 rounded-md ">
@@ -99,7 +121,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        {/* Table Section */}
+  
         <div>
         <div className="overflow-x-scroll">
           <table className="  min-w-[1232px]  w-full ">
@@ -108,6 +130,7 @@ const ContactUs = () => {
                 <th className="py-3 px-4 text-left font-normal text-gray-500">
                   <input
                     type="checkbox"
+                    onChange={handleSelectAll}
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
                 </th>
@@ -134,7 +157,14 @@ const ContactUs = () => {
             <tbody>
               {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50">
-                  <td className="py-3 px-4">{contact.checkbox}</td>
+                  <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input
+                    type="checkbox"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
+                  />
+                </td>
                   <td className="py-3 px-4 font-medium">{contact.name}</td>
                   <td className="py-3 px-4 text-gray-500">{contact.mobile}</td>
                   <td className="py-3 px-4 text-gray-500">{contact.email}</td>

@@ -19,7 +19,7 @@ const data = [
 
 const TrafficSourceChart = () => {
   return (
-    <div className="w-[32%] ">
+    <div className="w-[32%] max-lg:w-full ">
       <div className="bg-white p-4 rounded-lg h-full shadow-md w-full">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold">Traffic Sources</h2>

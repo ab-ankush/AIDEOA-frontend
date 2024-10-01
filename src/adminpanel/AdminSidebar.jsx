@@ -27,7 +27,8 @@ const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
       <div className="bg-white w-full h-screen p-4 max-md:px-2">
         <div className="text-[#5A2175] text-2xl font-bold mb-6 flex items-center">
           <img src="AIDEOA LOGO 3.png" className="w-10" alt="Logo" />
-          <span className="hidden lg:inline">AIDEOA</span> {/* Text hidden on smaller screens */}
+          <span className="hidden lg:inline">AIDEOA</span>{" "}
+          {/* Text hidden on smaller screens */}
         </div>
         <ul className="flex flex-col gap-2">
           {sidebar.map((item, index) => {
@@ -49,7 +50,7 @@ const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
                         ? "text-white"
                         : "text-black"
                     }`}
-                    title={item.heading} 
+                    title={item.heading}
                   />
                   <span
                     className={`ml-4 text-lg font-semibold hidden lg:inline ${

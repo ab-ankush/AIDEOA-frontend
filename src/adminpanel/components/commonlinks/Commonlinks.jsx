@@ -101,14 +101,14 @@ const data =  [
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">
+           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Title
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">
+           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Last update
               </th>
            
-              <th className="p-2 font-medium text-sm text-gray-400">
+           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
              Url
               </th>
              

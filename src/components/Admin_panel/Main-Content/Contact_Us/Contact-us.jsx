@@ -84,21 +84,17 @@ const ContactUs = () => {
   return (
     <div>
       {/* Contact Us Section */}
-      <div className="w-full bg-white shadow-md rounded-lg ">
-        <div className="w-full flex justify-between items-center flex-col lg:flex-row  p-6 pb-5">
-          {/* Table Title */}
-          <div className="flex flex-col m-auto lg:m-0  lg:flex-row items-center mb-5 lg:mb-0 space-x-2">
-            <h2 className="text-xl font-semibold">
-              Contact Us
-              <sup className="text-xs text-purple-500 font-medium bg-purple-100 p-1 px-2  rounded-full">
-                {contactData.length} users
-              </sup>
-            </h2>
+      <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+        <div className="flex px-4 space-x-4 mb-4 items-center">
+          <div className="flex space-x-3 items-center ">
+            <h2 className="font-bold text-lg">Contact us</h2>
+            <span className="bg-purple-200 px-2  text-xs rounded-full">
+              {contactData.length} Users
+            </span>
           </div>
 
-          {/* Search Bar and Action Buttons */}
-          <div className="flex justify-between gap-x-5 flex-col lg:flex-row items-center text-end w-full lg:w-[50%]">
-            <div className="relative w-full lg:w-[55%]">
+          <div className="flex justify-end flex-1  items-center space-x-4 ">
+            <div className="relative w-[55%]">
               <CiSearch className="absolute  top-3 left-3" />
               <input
                 type="text"
@@ -107,16 +103,14 @@ const ContactUs = () => {
               />
             </div>
             {selectedItems.length>=2 &&  <MdDelete size={26} />}
-            <div className="flex  justify-evenly mt-5 lg:mt-0  lg:gap-2 items-center  w-full lg:w-[50%]">
-              <div>
-                <button className="bg-white text-xs font-semibold border shadow-md text-black py-2 px-4 rounded-md ">
-                  Download all
-                </button>
-              </div>
-              <div className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md">
-                <IoCloudUploadOutline size={18} />
-                <button className="">Create</button>
-              </div>
+            <div className="flex max-lg:flex-col gap-2">
+              <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+                Download all
+              </button>
+              <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
+                <LuUploadCloud size={18} className="" />
+                <span>Create</span>
+              </button>
             </div>
           </div>
         </div>
@@ -126,30 +120,30 @@ const ContactUs = () => {
         <div className="overflow-x-scroll">
           <table className="  min-w-[1232px]  w-full ">
             <thead className="border-b ">
-              <tr className="border-b min-w-[1232px] bg-gray-200  border-gray-200 h-16 ">
-                <th className="py-3 px-4 text-left font-normal text-gray-500">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+            <th className="p-2 px-4 font-medium text-sm text-gray-200">
                   <input
                     type="checkbox"
                     onChange={handleSelectAll}
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Name
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Mobile Number
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Email address
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Message
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Date
                 </th>
-                <th className="py-3 px-4 text-center font-normal text-gray-500">
+                <th className="py-3 px-4 text-center font-medium text-sm text-gray-500">
                   Actions
                 </th>
               </tr>

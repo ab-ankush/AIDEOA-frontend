@@ -348,8 +348,8 @@ const OurTeams = () => {
         <div className="">
           <table className="min-w-full">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
-              <tr>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+            <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -357,22 +357,22 @@ const OurTeams = () => {
                   onChange={handleSelectAll}
                 />
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Name & photo
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Category
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Mobile Number
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Email address
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Self Address
                 </th>
-                <th className="py-3 px-4 text-left font-normal text-gray-400">
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Actions
                 </th>
               </tr>

@@ -190,8 +190,8 @@ const IdCard = () => {
       <div className="overflow-x-scroll rounded-b-2xl">
         <table className="min-w-full bg-white border border-gray-300 ">
           <thead>
-            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
-              <th className="p-2 px-4 font-medium text-sm text-gray-200">
+          <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+          <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                     type="checkbox"
                     checked={selectAll}
@@ -199,29 +199,29 @@ const IdCard = () => {
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400 w-52">
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-52">
                 Name & Photo
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400 ">
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Employee ID
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">
+            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Mobile Number
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">
+            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Email Address
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">Company</th>
+            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Company</th>
               <th className="p-2 font-medium text-sm text-gray-400 max-w-32">
                 Office Address
               </th>
-              <th className="p-2 flex items-center gap-1 font-medium text-sm text-gray-400">
-                Status <FaArrowDownLong size={12} className="" />
+              <th className="p-2  gap-1 font-medium text-sm text-gray-400">
+                Status
               </th>
               <th className="p-2 font-medium text-sm text-gray-400 max-w-32">
                 Self Address
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">Actions</th>
+            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>

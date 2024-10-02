@@ -75,7 +75,21 @@ const Signup = () => {
     }
   };
   const handleSignupButton=async()=>{
-    
+    if(formData.password.length<8)
+    {
+      setError("Password should be greater than 8")
+      return;
+    }
+    if(formData.password!==formData.confirmPassword)
+      {
+        setError("Mismatch passwords")
+        return;
+      }
+      if(!formData.fullName)
+        {
+          setError("Please enter your full name")
+          return;
+        }
     try {
       const res= await axios.post(`${url}/verify-otp`,{mail:formData.email,otp:formData.otp})
       console.log(res)

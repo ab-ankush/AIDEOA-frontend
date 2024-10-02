@@ -7,13 +7,34 @@ const url = `http://localhost:4000/api/auth`;
 const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
   const [userType, setUserType] = useState("");
   const navigate = useNavigate();
-  const [org, setOrg] = useState("");
+  const [org, setOrg] = useState();
   const [idNo, setIdNo] = useState();
   const [mobile, setMobile] = useState();
   const [resend, setResend] = useState(false);
   const [seconds, setSeconds] = useState();
+  const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!userType)
+    {
+      setError("Select type of user")
+      return;
+    }
+    if(!org)
+      { userType==='student'?  setError("Select university name"):  setError("Select company name")
+      
+        return;
+      }
+      if(!idNo)
+        { userType==='student'?  setError("Enter university RollNo"):  setError("Enter employee Id")
+        
+          return;
+        }
+      if(!mobile || mobile.length!==10)
+        {
+          setError("Enter correct mobile number")
+          return;
+        }
     if (userTypemodal) {
       const fullFormData = {
         ...formData,
@@ -23,6 +44,7 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
         userType
       };
       try {
+
         const data = await SignUpFunc(fullFormData);
         console.log(data)
         data.data?.error && toast(data.data.error)
@@ -68,10 +90,7 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
       clearInterval(interval);
     };
   }, [seconds]);
-  const handleOtp = async () => {
-    setSeconds(30);
-    setResend(true);
-  };
+ 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg   shadow-lg w-11/12 sm:w-2/3 xl:w-1/3">
@@ -149,19 +168,10 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
                 onChange={(e) => setMobile(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none "
               />
-              <button
-                className="absolute bg-AIDEOTYPO cursor-pointer h-full rounded-xl text-sm w-24 py-2 text-white  text-gray-300 right-0 hover:opacity-75 duration-500"
-                size={14}
-                onClick={handleOtp}
-                type="button"
-                disabled={resend}
-                style={resend ? { backgroundColor: "gray" } : {}}
-              >
-                {" "}
-                {resend ? `Resend in ${seconds}` : "Send OTP"}
-              </button>
+            
             </div>
           </div>
+          {error && <p className="text-red-600">{error}</p>}
           <div className="flex justify-end">
             <button
               type="submit"

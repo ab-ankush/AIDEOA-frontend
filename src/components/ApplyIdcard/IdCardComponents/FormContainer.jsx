@@ -53,11 +53,7 @@ const FormContainer = () => {
               formType ? <IdCardPurple /> : <EmployeeIdCard />
             }
           </div>
-          <div className=" flex ">
-            <button className="w-52 max-sm:w-full h-12 membershipBtn rounded-2xl text-white font-medium text-lg">
-              Submit
-            </button>
-          </div>
+      
 
         </div>)
       }

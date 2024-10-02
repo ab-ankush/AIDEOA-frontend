@@ -18,6 +18,7 @@ import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
+import MutualTransfer from "./components/mutualtransfer/MutualTransfer";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -43,6 +44,8 @@ const AdminPanel = () => {
         return <Query />;
       case "ID Card":
         return <IdCard />;
+        case "Mutual Transfer":
+        return <MutualTransfer />;
       case "Contact us":
         return <ContactUs />;
       case "Notification":

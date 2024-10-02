@@ -329,8 +329,6 @@ const OurTeams = ({ setActiveComponent }) => {
             </button>
           </div>
         </div>
-      </div>
-
         <div className="flex ">
           <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
             <button>All</button>
@@ -355,7 +353,6 @@ const OurTeams = ({ setActiveComponent }) => {
             </sup>
           </div>
         </div>
-        {/* Table Section */}
         <div className="">
           <table className="min-w-full">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
@@ -426,6 +423,11 @@ const OurTeams = ({ setActiveComponent }) => {
           onPageChange={handlePageChange}
         />
       </div>
+      </div>
+
+        
+        {/* Table Section */}
+       
     </div>
   );
 };

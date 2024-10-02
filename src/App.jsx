@@ -31,6 +31,7 @@ import axios from "axios";
 import { AuthContext } from "./context/authContext";
 import AdminPanel from "./adminpanel/AdminPanel";
 import Payment from "./data/Payment";
+import Profile from "./components/profile/Profile";
 
 
 
@@ -69,6 +70,7 @@ export default function App() {
           <Route path="forgotpassword" element={<Forgotpassword />} />
           <Route path="onlineclass" element={<OnlineClass />} />
           <Route path="additional" element={<UserRoleSelect />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
         <Route path="/admin" element={<AdminPanel  />} />
         <Route path="/pay" element={<Payment  />} />

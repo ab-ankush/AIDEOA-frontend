@@ -17,6 +17,7 @@ import AddEvent from "./components/Events/AddEvents";
 import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
+import AddTeams from "./components/Our_Team/AddTeams";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -26,7 +27,12 @@ const AdminPanel = () => {
       case "Dashboard":
         return <Main />;
       case "Events":
-        return <Events setActiveComponent={setActiveComponent} setEventsData={setEventsData}/>;
+        return (
+          <Events
+            setActiveComponent={setActiveComponent}
+            setEventsData={setEventsData}
+          />
+        );
       case "Transaction":
         return <Transaction_page />;
       case "Resource":
@@ -44,16 +50,28 @@ const AdminPanel = () => {
       case "Common Links":
         return <CommonLinks setActiveComponent={setActiveComponent} />;
       case "Our Teams":
-        return <OurTeams />;
+        return <OurTeams setActiveComponent={setActiveComponent} />;
       case "Add Events":
         return <AddEvent setActiveComponent={setActiveComponent} />;
       case "Add Common Links":
         return <AddCommonLinks setActiveComponent={setActiveComponent} />;
-        case "Events Details":
-          return <EventDetails setActiveComponent={setActiveComponent} eventsData={eventsData}/>;
-          case "Update Events":
-            return <UpdateEvents setActiveComponent={setActiveComponent} eventsData={eventsData}/>;
-    
+      case "Events Details":
+        return (
+          <EventDetails
+            setActiveComponent={setActiveComponent}
+            eventsData={eventsData}
+          />
+        );
+      case "Update Events":
+        return (
+          <UpdateEvents
+            setActiveComponent={setActiveComponent}
+            eventsData={eventsData}
+          />
+        );
+      case "Add Teams":
+        return <AddTeams setActiveComponent={setActiveComponent} />;
+
       default:
         return <></>;
     }

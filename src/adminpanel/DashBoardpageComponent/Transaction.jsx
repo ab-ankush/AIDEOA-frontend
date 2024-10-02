@@ -37,7 +37,7 @@ const TransactionTable = () => {
   return (
     <>
       {/* Header with See All Transactions */}
-      <div className="flex justify-between  items-center  p-4">
+      <div className="flex justify-between max-lg:w-full  items-center  p-4">
         <div className="w-full  flex justify-between items-center">
           <div className="flex flex-col justify-start items-start">
             <h1 className="text-lg font-semibold">Transactions</h1>

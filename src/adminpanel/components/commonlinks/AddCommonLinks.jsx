@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-const url=`http://localhost:4000/api`
-const AddCommonLinks = ({setActiveComponent}) => {
+const url = `http://localhost:4000/api`;
+const AddCommonLinks = ({ setActiveComponent }) => {
   const [formData, setFormData] = useState({
     title: "",
-   
-    url:""
+
+    url: "",
   });
 
   const handleChange = (e) => {
@@ -14,25 +14,25 @@ const AddCommonLinks = ({setActiveComponent}) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData)
-   try {
-      const res= await axios.post(`${url}/links/add`,formData)
-      if(res.status===200)
-      {
-        toast.success(res.data.message)
-        setActiveComponent("Add Common Links")
+    console.log(formData);
+    try {
+      const res = await axios.post(`${url}/links/add`, formData);
+      if (res.status === 200) {
+        toast.success(res.data.message);
+        setActiveComponent("Add Common Links");
       }
-      
-   } catch (error) {
-    toast.error(error.response.data.message)
-   }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
     <div className="rounded-xl p-4 bg-gray-50 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4 text-[#4B0082]">Add New Link</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-[#4B0082]">
+        Add New Link
+      </h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <div>
           <label className="block text-gray-600">Title</label>
@@ -47,14 +47,6 @@ const AddCommonLinks = ({setActiveComponent}) => {
           />
         </div>
 
-        
-
-   
-
-     
-
-   
-
         <div>
           <label className="block text-gray-600">Event url</label>
           <input
@@ -67,23 +59,20 @@ const AddCommonLinks = ({setActiveComponent}) => {
           />
         </div>
 
-      
-    <div className="flex gap-2">
-
-   
-        <button
-          type="submit"
-          className="bg-[#4B0082] text-white px-4 py-2 rounded-md hover:opacity-80 focus:outline-none "
-        >
-          Submit
-        </button>
-        <button
-          type="button"
-          onClick={()=>setActiveComponent("Common Links")}
-          className="text-[#4B0082] bg-white  px-4 py-2 border border-[#4B0082] rounded-md hover:opacity-75 focus:outline-none "
-        >
-          Cancel
-        </button>
+        <div className="flex gap-2">
+          <button
+            type="submit"
+            className="bg-[#4B0082] text-white px-4 py-2 rounded-md hover:opacity-80 focus:outline-none "
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveComponent("Common Links")}
+            className="text-[#4B0082] bg-white  px-4 py-2 border border-[#4B0082] rounded-md hover:opacity-75 focus:outline-none "
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </div>

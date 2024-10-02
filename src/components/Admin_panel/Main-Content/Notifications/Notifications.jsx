@@ -126,8 +126,8 @@ const Notifications = () => {
         <div className="overflow-x-scroll">
           <table className="  min-w-[1232px]  w-full ">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
-              <tr>
-                <th className="py-3 px-4  text-left font-normal text-gray-500">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+            <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -135,19 +135,19 @@ const Notifications = () => {
                   onChange={handleSelectAll}
                 />
                 </th>
-                <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Heading
                 </th>
-                <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Date & Time
                 </th>
-                <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Content
                 </th>
-                <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   User Type
                 </th>
-                <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Actions
                 </th>
               </tr>

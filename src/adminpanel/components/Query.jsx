@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
-import { MdDelete } from 'react-icons/md';
+import { MdDelete } from "react-icons/md";
 
 const Query = () => {
   const data = [
@@ -53,7 +53,9 @@ const Query = () => {
       <div className="flex px-4 space-x-4 mb-4 items-center">
         <div className="flex space-x-3 items-center">
           <h2 className="font-bold text-lg">Query</h2>
-          <span className="bg-purple-200 px-2 text-xs rounded-full">{data.length} Users</span>
+          <span className="bg-purple-200 px-2 text-xs rounded-full">
+            {data.length} Users
+          </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
           <div className="relative w-[55%]">
@@ -80,8 +82,8 @@ const Query = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
-            <tr className="text-left border-b bg-gray-200 h-16 border-gray-200">
-              <th className="p-2 px-4 font-medium text-sm text-gray-400">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+              <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -89,13 +91,23 @@ const Query = () => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400 w-52">Name</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Mobile Number</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Email Address</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Company</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Office Address</th>
-              <th className="p-2 font-medium text-sm text-gray-400 max-w-32">Description</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Actions</th>
+              <th className="py-3 px-4 text-left w-52 font-medium text-sm text-gray-500">
+                Name
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Mobile Number
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Email Address
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Company</th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Office Address
+              </th>
+              <th className="p-2 font-medium text-sm text-gray-400 max-w-32">
+                Description
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -112,12 +124,23 @@ const Query = () => {
                 <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">
                   {item.title}
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.eventDateTime}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.days}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.location}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.description.substring(0, 20)}...</td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  <Link to={item.url} className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {item.eventDateTime}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.days}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.location}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.description.substring(0, 20)}...
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  <Link
+                    to={item.url}
+                    className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis"
+                  >
                     {item.url}
                   </Link>
                 </td>
@@ -143,7 +166,9 @@ const Query = () => {
             <button
               key={page}
               className={`py-2 px-4 rounded-md shadow-md border ${
-                currentPage === page + 1 ? "bg-purple-700 text-white" : "bg-white text-black"
+                currentPage === page + 1
+                  ? "bg-purple-700 text-white"
+                  : "bg-white text-black"
               }`}
               onClick={() => setCurrentPage(page + 1)}
             >
@@ -154,7 +179,9 @@ const Query = () => {
         <button
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
         >
           Next
         </button>

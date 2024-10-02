@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
-import { CiSearch } from 'react-icons/ci';
-import { MdDelete } from 'react-icons/md';
-import { RiDeleteBin6Line } from 'react-icons/ri';
-import { FiEdit2 } from 'react-icons/fi';
+import { CiSearch } from "react-icons/ci";
+import { MdDelete } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FiEdit2 } from "react-icons/fi";
 
 const Resources = ({ setActiveComponent, setEventsData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -18,7 +18,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
       days: "2 days",
       location: "Hotel Baker",
       description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
+      url: "https://www.example.com",
     },
     {
       title: "Phoenix Baker Alumni",
@@ -26,23 +26,21 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
       days: "15 days",
       location: "Hotel Baker",
       description: "our area have developed...",
-      url: "https://www.example.com"
+      url: "https://www.example.com",
     },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
 
-
   const handleSelectAll = () => {
     if (selectAll) {
-      setSelectedItems([]); 
+      setSelectedItems([]);
     } else {
-      setSelectedItems(data.map((_, index) => index)); 
+      setSelectedItems(data.map((_, index) => index));
     }
     setSelectAll(!selectAll);
   };
-
 
   const handleSelectItem = (index) => {
     if (selectedItems.includes(index)) {
@@ -55,14 +53,14 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
   return (
     <div className="py-4 bg-white rounded-xl">
       <div className="flex space-x-4 mb-4 max-lg:flex-col-reverse max-lg:gap-2 px-4">
-        <div className='flex space-x-4'>
+        <div className="flex space-x-4">
           <div className="bg-[#4B0082] w-32 text-center text-white shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16">
-            <p className='text-nowrap'>AIDEOA Events</p>
-            <p className='font-bold'>100</p>
+            <p className="text-nowrap">AIDEOA Events</p>
+            <p className="font-bold">100</p>
           </div>
           <div className="bg-white w-32 text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
-            <p className='text-nowrap'>Online Test</p>
-            <p className='font-bold'>100</p>
+            <p className="text-nowrap">Online Test</p>
+            <p className="font-bold">100</p>
           </div>
         </div>
 
@@ -75,10 +73,18 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
               placeholder="Search"
             />
           </div>
-        {selectedItems.length>=2 &&  <MdDelete size={26} />}
-          <div className='flex max-lg:flex-col gap-2'>
-            <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
-            <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1 text-white py-2 px-4 rounded-md" onClick={() => setActiveComponent("Add Events")}><LuUploadCloud size={18} /><span>Create</span></button>
+          {selectedItems.length >= 2 && <MdDelete size={26} />}
+          <div className="flex max-lg:flex-col gap-2">
+            <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+              Download all
+            </button>
+            <button
+              className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1 text-white py-2 px-4 rounded-md"
+              onClick={() => setActiveComponent("Add Events")}
+            >
+              <LuUploadCloud size={18} />
+              <span>Create</span>
+            </button>
           </div>
         </div>
       </div>
@@ -86,8 +92,8 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
       <div className="overflow-x-scroll w-full">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
-            <tr className="text-left border-b bg-gray-200 border-gray-200 h-16">
-              <th className="p-2 px-4 font-medium text-sm text-gray-300">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+              <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -95,13 +101,23 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th className="p-2 font-medium text-sm text-gray-600 w-52">Title</th>
-              <th className="p-2 font-medium text-sm text-gray-600 text-nowrap">Event Date & Time</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Days</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Location</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Description</th>
-              <th className="p-2 font-medium text-sm text-gray-600 max-w-32">Url</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Actions</th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-52">
+                Title
+              </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 text-nowrap">
+                Event Date & Time
+              </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Days</th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Location
+              </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Description
+              </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 max-w-32">
+                Url
+              </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -109,7 +125,6 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
               <tr
                 key={index}
                 className="border-b border-gray-200 h-16 cursor-pointer"
-              
               >
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -119,22 +134,37 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
                     onChange={() => handleSelectItem(index)}
                   />
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</td>
-                <td className="py-3 px-4 text-gray-500 text-sm">{item.eventDateTime}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.days}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.location}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.description.substring(0, 20)}...</td>
+                <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {item.title}
+                </td>
+                <td className="py-3 px-4 text-gray-500 text-sm">
+                  {item.eventDateTime}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400 text-nowrap">
+                  {item.days}
+                </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  <Link to={item.url} className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {item.location}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.description.substring(0, 20)}...
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  <Link
+                    to={item.url}
+                    className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis"
+                  >
                     {item.url}
                   </Link>
                 </td>
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                <RiDeleteBin6Line />
-                <FiEdit2   onClick={() => {
-                  setEventsData(item);
-                  setActiveComponent("Events Details");
-                }}/>
+                  <RiDeleteBin6Line />
+                  <FiEdit2
+                    onClick={() => {
+                      setEventsData(item);
+                      setActiveComponent("Events Details");
+                    }}
+                  />
                 </td>
               </tr>
             ))}
@@ -154,7 +184,11 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
           {[...Array(totalPages).keys()].map((page) => (
             <button
               key={page}
-              className={`py-2 px-4 rounded-md shadow-md border ${currentPage === page + 1 ? 'bg-purple-700 text-white' : 'bg-white text-black'}`}
+              className={`py-2 px-4 rounded-md shadow-md border ${
+                currentPage === page + 1
+                  ? "bg-purple-700 text-white"
+                  : "bg-white text-black"
+              }`}
               onClick={() => setCurrentPage(page + 1)}
             >
               {page + 1}
@@ -164,7 +198,9 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
         <button
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
         >
           Next
         </button>

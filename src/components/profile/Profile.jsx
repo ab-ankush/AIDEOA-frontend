@@ -1,5 +1,7 @@
 
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext';
+import React, { useContext } from 'react';
 const userProfile = {
     firstName: "John",
     lastName: "Doe",
@@ -10,8 +12,14 @@ const userProfile = {
     profileImage: "https://via.placeholder.com/150",
   };
 const Profile = () => {
+  const nav=useNavigate()
+  const { user } = useContext(AuthContext);
+  if(!user)
+      nav("/login")
+
+  console.log(user)
   return (
-    <div className="max-w-screen-2xl mx-auto mt-8 md:px-6 ">
+    <div className="max-w-screen-2xl mx-auto  md:px-6 ">
 
       <div className="relative bg-gradient-to-r from-purple-500 to-blue-500 h-80 rounded-t-lg">
       </div>
@@ -25,7 +33,7 @@ const Profile = () => {
           />
         </div>
         <div className="ml-4">
-          <h2 className="text-xl font-semibold">{`${userProfile.firstName} ${userProfile.lastName}`}</h2>
+          <h2 className="text-xl font-semibold">{`${user.fullName}`}</h2>
           <p className="text-gray-600">Student</p>
           <p className="text-gray-500">{userProfile.location}</p>
         </div>

@@ -127,11 +127,16 @@ const Login = () => {
             >
               Sign in
             </button>
-            <Link to="http://localhost:4000/api/social/google">
+           
+          </div>
+
+          
+      
+        </form>
+        <div className="mt-4 text-center text-white">
+          <Link to="http://localhost:4000/api/social/google">
               <GoogleSignInButton title={"SignIn"} />
             </Link>
-          </div>
-          <div className="mt-4 text-center text-white">
             <span>
               Not have account yet?{" "}
               <Link
@@ -142,7 +147,6 @@ const Login = () => {
               </Link>
             </span>
           </div>
-        </form>
         <div className="flex gap-4 absolute text-white bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] ">
           <FaInstagram className="cursor-pointer" />
           <FaDribbble className="cursor-pointer" />

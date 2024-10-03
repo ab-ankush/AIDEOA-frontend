@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { FaRegUser } from "react-icons/fa";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import "../../../src/index.css";
 import { AuthContext } from "../../context/authContext";
 const Navbar = () => {
   const [ham, setham] = useState(true);
   const { pathname } = useLocation();
-  const {user,handleLogout}=useContext(AuthContext)
+  const { user, handleLogout } = useContext(AuthContext);
   const navigate = useNavigate();
   const sethamfunc = () => {
     setham(!ham);
@@ -80,7 +81,8 @@ const Navbar = () => {
               About us
             </NavLink>
             <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${pathname === "/query" &&
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/query" &&
                 "text-purple-600 border-purple-600 border-b"
               } `}
               to="/query"
@@ -97,22 +99,34 @@ const Navbar = () => {
               Contact us
             </NavLink>
           </div>
-        {user ?   <div className=" wo py-3 px-4">
-
-            <button
-            onClick={handleLogout}
-              className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+          {user ? (
+            <div className=" wo flex items-center pr-4">
+              <NavLink
+              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+                pathname === "/profile" &&
+                "text-purple-600 border-purple-600 border-b"
+              } `}
+              to="/profile"
             >
-              Sign out
-            </button>
-          </div> :   <div className=" wo py-3 px-4">
-            <button
-              onClick={signupfunc}
-              className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
-            >
-              Sign up
-            </button>
-          </div>}
+             <FaRegUser size={20} title={user?.fullName}/>
+            </NavLink>
+              <button
+                onClick={handleLogout}
+                className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <div className=" wo py-3 px-4">
+              <button
+                onClick={signupfunc}
+                className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+              >
+                Sign up
+              </button>
+            </div>
+          )}
         </div>
         <div id="hamicon  " onClick={sethamfunc} className="sm:block lg:hidden">
           <RxHamburgerMenu className="w-[44px] cursor-pointer mx-3 h-[44px]" />
@@ -142,7 +156,7 @@ const Navbar = () => {
             </div>
           </div>
           {!ham ? (
-            <div className="flex flex-col-reverse max-lg:flex-col gap-2 ">
+            <div className="flex flex-col-reverse max-lg:flex-col  ">
               <div className="flex flex-col">
                 <NavLink
                   className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
@@ -208,17 +222,38 @@ const Navbar = () => {
                   Contact us
                 </NavLink>
               </div>
-              <div className=" px-5">
-                <button
-                  onClick={() => {
-                    signupfunc();
-                    sethamfunc();
-                  }}
-                  className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3  px-6 text-purple-600 border border-purple-600"
+
+              {user ? (
+                <div >
+                   <NavLink
+                  className={` py-3 px-6 flex items-center gap-1 hover:text-purple-600 hover:bg-gray-100 ${
+                    pathname === "/profile" && "text-purple-600 "
+                  }`}
+                  to="/profile"
+                  onClick={sethamfunc}
                 >
-                  Sign up
-                </button>
-              </div>
+                Profile
+                </NavLink>
+                  <button
+                    onClick={handleLogout}
+                    className="btn mt-3 mx-6 hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              ) : (
+                <div className="  px-4">
+                  <button
+                    onClick={() => {
+                      signupfunc();
+                      sethamfunc();
+                    }}
+                    className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+                  >
+                    Sign up
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             ""

@@ -19,6 +19,8 @@ import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
 import MutualTransfer from "./components/mutualtransfer/MutualTransfer";
+import Missions from "./components/missions/Misisions";
+import AddMissions from "./components/missions/AddMission";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -74,7 +76,11 @@ const AdminPanel = () => {
         );
       case "Add Teams":
         return <AddTeams setActiveComponent={setActiveComponent} />;
-
+        case "Our Missions":
+          return <Missions setActiveComponent={setActiveComponent} />;
+          case "Add Missions":
+            return <AddMissions setActiveComponent={setActiveComponent} />;
+    
       default:
         return <></>;
     }

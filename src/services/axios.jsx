@@ -1,10 +1,13 @@
 import axios from "axios";
 const url=`http://localhost:4000/api/auth`
 export const SignUpFunc = async (user)=>{
+
     try{
-        
-        return await axios.post(`${url}/signup`,user)
+        const res= await axios.post(`${url}/signup`,user)
+        console.log(res)
+        return res
     }catch(error){
+
         return error.response
     }
 }

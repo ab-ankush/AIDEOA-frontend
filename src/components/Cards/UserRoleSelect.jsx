@@ -1,3 +1,4 @@
+import { validateEmail } from "../../functions/validate"
 import { SignUpFunc } from "../../services/axios";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
   const navigate = useNavigate();
   const [org, setOrg] = useState();
   const [idNo, setIdNo] = useState();
+  const [otp, setOtp] = useState();
   const [mobile, setMobile] = useState();
   const [resend, setResend] = useState(false);
   const [seconds, setSeconds] = useState();
@@ -30,7 +32,7 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
         
           return;
         }
-      if(!mobile || mobile.length!==10)
+      if(!userTypemodal &&(!mobile || mobile.length!==10))
         {
           setError("Enter correct mobile number")
           return;
@@ -40,20 +42,27 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
         ...formData,
         org,
         idNo,
-        mobile,
+        otp,
         userType
       };
+    
       try {
-
         const data = await SignUpFunc(fullFormData);
-        console.log(data)
-        data.data?.error && toast(data.data.error)
-        if(data?.data?.message) 
-          navigate("/login")
+        console.log(data);
         
+        if (data.status === 400) {
+          throw new Error(data?.data?.error || "Something went wrong"); 
+        }
+      
+        if (data.status === 200) {
+          toast.success(data?.data?.message);
+          navigate("/login");
+        }
       } catch (error) {
-        console.log(`error in handlesubmit function ${error}`);
+  
+        toast.error(error?.message || "An unexpected error occurred");
       }
+      
     } else {
       try {
         const res = await axios.post(
@@ -75,6 +84,27 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
       }
     }
   };
+  const handleOtp = async () => {
+    const validatedEmail = validateEmail(formData.email);
+    if (!validatedEmail) {
+      setError("Please check email format");
+      return;
+    } else {
+      setError(null);
+    }
+
+    try {
+      const res = await axios.post(`${url}/send-otp`, { mail: formData.email });
+      console.log(res);
+      if (res.status === 200) {
+        setSeconds(120);
+        setResend(true);
+        toast.success(res.data.message);
+      }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       if (seconds > 0) {
@@ -90,7 +120,7 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
       clearInterval(interval);
     };
   }, [seconds]);
- 
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg   shadow-lg w-11/12 sm:w-2/3 xl:w-1/3">
@@ -158,19 +188,46 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
               />
             </div>
           )}
-          <div className="mb-4">
-            <label className="block mb-2">Mobile No</label>
-            <div className="relative">
-              <input
-                type="text"
-                placeholder={"Enter phone number"}
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none "
-              />
+          
+          {userTypemodal ? (
+           <div className="mb-4">
+           <div className="relative over">
+               <input
+                className="w-full px-28  py-2 border  border-gray-300 rounded-xl focus:outline-none "
+                 name="otp"
+                 type="text"
+                 placeholder="Enter OTP"
+                 value={otp}
+                 onChange={(e) => setOtp(e.target.value)}
+               />
+               <button
+                 className="absolute bg-AIDEOTYPO cursor-pointer  text-xs font-semibold w-24 py-2 px-1 h-full rounded-xl text-white  left-0"
+                 size={14}
+                 onClick={handleOtp}
+                 type="button"
+                 disabled={resend}
+                 style={resend ? { backgroundColor: "gray" } : {}}
+               >
+                 {" "}
+                 {resend ? `Resend in ${seconds}s` : "Send OTP"}
+               </button>
+             </div>
             
-            </div>
-          </div>
+           </div>
+          ):( <div className="mb-4">
+            <label className="block mb-2">
+             Mobile No
+            </label>
+            <input
+              type="text"
+              placeholder={
+               "Enter Mobile No"
+              }
+              value={org}
+              onChange={(e) => setOrg(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none "
+            />
+          </div>)}
           {error && <p className="text-red-600">{error}</p>}
           <div className="flex justify-end">
             <button

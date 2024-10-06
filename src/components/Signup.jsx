@@ -24,11 +24,11 @@ const Signup = () => {
     confirmPassword: "",
     mobile: "",
   });
-  const [seconds, setSeconds] = useState();
+
   const [error, setError] = useState("");
   const [pass, setPass] = useState(false);
   const [ConPass, setConPass] = useState(false);
-  const [resend, setResend] = useState(false);
+
   const [userTypemodal, setUserTypeModal] = useState(false);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -62,10 +62,7 @@ const Signup = () => {
       setError("Mismatch passwords");
       return;
     }
- 
-
         setUserTypeModal(true);
-   
   };
 
   return (

@@ -6,7 +6,8 @@ import { TiDocumentText } from "react-icons/ti";
 import { FaRegQuestionCircle, FaPhoneSquareAlt, FaBell } from "react-icons/fa";
 import { PiIdentificationBadgeDuotone } from "react-icons/pi";
 import { SiChainlink } from "react-icons/si";
-
+import { BiTransferAlt } from "react-icons/bi";
+import { GoGoal } from "react-icons/go";
 const sidebar = [
   { icon: IoMdHome, heading: "Dashboard" },
   { icon: IoIosPersonAdd, heading: "Members" },
@@ -17,8 +18,10 @@ const sidebar = [
   { icon: PiIdentificationBadgeDuotone, heading: "ID Card" },
   { icon: FaPhoneSquareAlt, heading: "Contact us" },
   { icon: FaBell, heading: "Notification" },
+  { icon: BiTransferAlt , heading: "Mutual Transfer" },
   { icon: SiChainlink, heading: "Common Links" },
   { icon: IoIosPeople, heading: "Our Teams" },
+  { icon: GoGoal , heading: "Our Missions" },
 ];
 
 const AdminSidebar = ({ activeComponent, setActiveComponent }) => {

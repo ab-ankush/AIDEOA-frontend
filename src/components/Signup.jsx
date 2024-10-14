@@ -15,80 +15,56 @@ import UserRoleSelect from "./Cards/UserRoleSelect";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { validateEmail } from "../functions/validate";
-const url=`http://localhost:4000/api/auth`
+const url = `http://localhost:4000/api/auth`;
 const Signup = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     password: "",
     confirmPassword: "",
-    otp: "",
+    mobile: "",
   });
-  const [seconds, setSeconds] = useState();
+
   const [error, setError] = useState("");
   const [pass, setPass] = useState(false);
   const [ConPass, setConPass] = useState(false);
-  const [resend, setResend] = useState(false);
+
   const [userTypemodal, setUserTypeModal] = useState(false);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-      } else if (seconds === 0) {
-        setSeconds(null);
-        setResend(false);
-        clearInterval(interval);
-      }
-    }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [seconds]);
-  const handleOtp = async () => {
-    const validatedEmail= validateEmail(formData.email)
-    if(!validatedEmail)
-    { 
-      setError("Please check email format")
+  const handleSignupButton = async (E) => {
+    E.preventDefault()
+    if (!formData.fullName) {
+      setError("Please enter your full name");
       return;
     }
-    else{
-      setError(null)
+    if (!formData.email) {
+      setError("Please enter email address");
+      return;
     }
-    
-  
-    try {
-        const res= await axios.post(`${url}/send-otp`,{mail:formData.email})
-        console.log(res)
-        if(res.status===200)
-         {
-          setSeconds(120);
-          setResend(true);
-          toast.success(res.data.message)
-         } 
-    } catch (error) {
-    
-      toast.error(error.response.data.message)
+    if(!userTypemodal &&(!formData.mobile || formData.mobile.length!==10))
+      {
+        setError("Enter correct mobile number")
+        return;
+      }
+    if (!formData.mobile) {
+      setError("Please enter mobile number");
+      return;
     }
-  };
-  const handleSignupButton=async()=>{
-    
-    try {
-      const res= await axios.post(`${url}/verify-otp`,{mail:formData.email,otp:formData.otp})
-      console.log(res)
-      if(res.status===200)
-       {
+    if (formData.password.length < 8) {
+      setError("Password should be greater than 8");
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Mismatch passwords");
+      return;
+    }
         setUserTypeModal(true);
-       } 
-  } catch (error) {
-    toast.error(error.response.data.message)
-  }
-  
-  }
- 
+  };
+
   return (
     <>
       <div className="min-h-dvh mainBackgroundImg relative pt-14 flex justify-center items-center">
@@ -100,13 +76,14 @@ const Signup = () => {
             All India Diploma Engineers And Officials Association
           </h1>
           <p className="text-center mb-3 text-white font-semibold">Sign Up</p>
-          <form >
+          <form   onSubmit={handleSignupButton}>
             <div className="relative">
               <input
                 className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
                 name="fullName"
                 type="text"
                 placeholder="Name"
+                required
                 value={formData.fullName}
                 onChange={handleChange}
               />
@@ -121,6 +98,7 @@ const Signup = () => {
                 name="email"
                 type="email"
                 placeholder="Email"
+                required
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -129,6 +107,19 @@ const Signup = () => {
                 size={14}
               />
             </div>
+ 
+            <div className="relative">
+              <input
+                type="text"
+                required
+                name="mobile"
+                placeholder={"Mobile number"}
+                value={formData.mobile}
+                onChange={handleChange}
+                 className="glass-effect bg-white w-full mb-3 px-3 py-2 text-white rounded-3xl focus:outline-none"
+              />
+            
+            </div>
 
             <div className="relative">
               <input
@@ -136,6 +127,7 @@ const Signup = () => {
                 name="password"
                 type={pass ? "text" : "password"}
                 placeholder="Password"
+                required
                 value={formData.password}
                 onChange={handleChange}
               />
@@ -157,6 +149,7 @@ const Signup = () => {
               <input
                 className="w-full glass-effect px-3 mb-3 py-2 text-white rounded-3xl focus:outline-none"
                 name="confirmPassword"
+                required
                 type={ConPass ? "text" : "password"}
                 placeholder="Confirm Password"
                 value={formData.confirmPassword}
@@ -177,46 +170,31 @@ const Signup = () => {
               )}
             </div>
 
-            <div className="relative">
-              <input
-                className="glass-effect bg-white w-full mb-3 pl-[110px] py-2 text-white rounded-3xl focus:outline-none"
-                name="otp"
-                type="text"
-                placeholder="Enter OTP"
-                value={formData.otp}
-                onChange={handleChange}
-              />
-              <button
-                className="absolute bg-AIDEOTYPO cursor-pointer  text-sm w-24 py-2 px-1 text-white rounded-3xl text-gray-300 left-0"
-                size={14}
-                onClick={handleOtp}
-                type="button"
-                disabled={resend}
-                style={resend ? { backgroundColor: "gray" } : {}}
-              >
-                {" "}
-                {resend ? `Resend in ${seconds}s` : "Send OTP"}
-              </button>
-            </div>
+         
             <span className="text-center text-sm text-red-500">{error}</span>
 
             <div className="mt-4">
               <button
                 className="bg-purplebtn hover:bg-purple-700 text-white py-2 px-4 rounded-full w-full"
-                type="button"
-                onClick={handleSignupButton}
+                type="submit"
+              
               >
                 Sign Up
               </button>
             </div>
           </form>
-          {userTypemodal&& <div>
-  <UserRoleSelect formData={formData} userTypemodal={userTypemodal}/>
-</div>}
+          {userTypemodal && (
+            <div>
+              <UserRoleSelect
+                formData={formData}
+                userTypemodal={userTypemodal}
+              />
+            </div>
+          )}
           <Link to="http://localhost:4000/api/social/google">
-          <GoogleSignInButton />
-                </Link>
-        
+            <GoogleSignInButton />
+          </Link>
+
           <div className="mt-4 text-center text-white pb-10">
             <span>
               Already have account{" "}

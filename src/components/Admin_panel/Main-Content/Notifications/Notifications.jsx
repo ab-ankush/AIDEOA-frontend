@@ -121,6 +121,7 @@ const Notifications = ({ setActiveComponent }) => {
         </div>
 
         <div>
+<<<<<<< HEAD
           <div className="overflow-x-scroll">
             <table className="  min-w-[1232px]  w-full ">
               <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
@@ -148,6 +149,61 @@ const Notifications = ({ setActiveComponent }) => {
                   <th className="py-3 px-4  text-left font-normal text-gray-500">
                     Actions
                   </th>
+=======
+        <div className="overflow-x-scroll">
+          <table className="  min-w-[1232px]  w-full ">
+            <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+            <th className="p-2 px-4 font-medium text-sm text-gray-200">
+                <input
+                  type="checkbox"
+                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                />
+                </th>
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Heading
+                </th>
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Date & Time
+                </th>
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Content
+                </th>
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  User Type
+                </th>
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentItems.map((contact, index) => (
+                <tr key={index} className="border-b h-16 hover:bg-gray-50">
+                <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                  <input
+                    type="checkbox"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectedItems.includes(index)}
+                    onChange={() => handleSelectItem(index)}
+                  />
+                </td>
+                  <td className="py-3 px-4 font-medium">{contact.name}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.date}</td>
+                  <td className="py-3 px-4 text-gray-500">{contact.message}</td>
+                  <td className="py-3 px-4 text-gray-500">
+                    <span className={` font-medium  ${contact.user_type == "membership" ?"text-purple-800 bg-purple-100" :"text-green-800 bg-green-100"} px-3 py-1 rounded-full`}>
+                      {contact.user_type}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4 font-medium">
+                    <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
+                    <RiDeleteBinLine  />  <FiEdit2 />
+                    </button>
+                  </td>
+>>>>>>> 01b3f9cf2f4fa800ce56d152f8d22a1c4aa7cf12
                 </tr>
               </thead>
               <tbody>

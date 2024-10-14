@@ -5,7 +5,7 @@ import { LuUploadCloud } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
-const CommonLinks = ({ setActiveComponent }) => {
+const Missions = ({ setActiveComponent }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
 
@@ -63,7 +63,7 @@ const CommonLinks = ({ setActiveComponent }) => {
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
         <div className="flex space-x-3 items-center ">
-          <h2 className="font-bold text-lg">Common Links</h2>
+          <h2 className="font-bold text-lg">Our Missions</h2>
         </div>
         <div className="flex justify-end flex-1  items-center space-x-4 ">
           <div className="relative w-[55%]">
@@ -77,7 +77,7 @@ const CommonLinks = ({ setActiveComponent }) => {
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
             <button
-              onClick={() => setActiveComponent("Add Common Links")}
+              onClick={() => setActiveComponent("Add Missions")}
               className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md"
             >
               <LuUploadCloud size={18} className="" />
@@ -99,16 +99,15 @@ const CommonLinks = ({ setActiveComponent }) => {
                   className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                 />
               </th>
-           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+           <th className="py-3 px-4 w-full text-left font-medium text-sm text-gray-500">
                 Title
               </th>
-           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Last update
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Actions
               </th>
+        
            
-           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-             Url
-              </th>
+     
             </tr>
           </thead>
           <tbody>
@@ -125,15 +124,9 @@ const CommonLinks = ({ setActiveComponent }) => {
                 <td className="p-2 font-medium text-sm text-gray-600   whitespace-nowrap overflow-hidden text-ellipsis">
                   {item.title}
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400 ">
-                  {item.last_update}
-                </td>
+             
 
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  <td className="text-blue-500   whitespace-nowrap overflow-hidden text-ellipsis">
-                    <Link to={item.url}>{item.url}</Link>
-                  </td>
-                </td>
+                
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line />
                   <FiEdit2 />
@@ -147,4 +140,4 @@ const CommonLinks = ({ setActiveComponent }) => {
   );
 };
 
-export default CommonLinks;
+export default Missions;

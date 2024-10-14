@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
-import { CiSearch } from 'react-icons/ci';
-import { MdDelete } from 'react-icons/md'; // Import MdDelete for deletion
+import { CiSearch } from "react-icons/ci";
+import { MdDelete } from "react-icons/md"; // Import MdDelete for deletion
 
 const Resources = () => {
   const data = [
@@ -13,44 +13,48 @@ const Resources = () => {
       days: "2 days",
       location: "Hotel Baker",
       description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
-    },  {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
-    },  {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
-    },  {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
-    },  {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
-    },  {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com"
+      url: "https://www.example.com",
     },
-
+    {
+      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
+      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
+      days: "2 days",
+      location: "Hotel Baker",
+      description: "candiceThe roads in our area...",
+      url: "https://www.example.com",
+    },
+    {
+      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
+      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
+      days: "2 days",
+      location: "Hotel Baker",
+      description: "candiceThe roads in our area...",
+      url: "https://www.example.com",
+    },
+    {
+      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
+      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
+      days: "2 days",
+      location: "Hotel Baker",
+      description: "candiceThe roads in our area...",
+      url: "https://www.example.com",
+    },
+    {
+      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
+      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
+      days: "2 days",
+      location: "Hotel Baker",
+      description: "candiceThe roads in our area...",
+      url: "https://www.example.com",
+    },
+    {
+      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
+      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
+      days: "2 days",
+      location: "Hotel Baker",
+      description: "candiceThe roads in our area...",
+      url: "https://www.example.com",
+    },
   ];
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -106,7 +110,9 @@ const Resources = () => {
           </div>
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
-            <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">Download all</button>
+            <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
+              Download all
+            </button>
             <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1 text-white py-2 px-4 rounded-md">
               <LuUploadCloud size={18} />
               <span>Create</span>
@@ -118,8 +124,8 @@ const Resources = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
-            <tr className="text-left border-b bg-gray-200 border-gray-200 h-16">
-              <th className="p-2 px-4 font-medium text-sm text-gray-600">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+              <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -127,13 +133,23 @@ const Resources = () => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th className="p-2 font-medium text-sm text-gray-600 w-52">Title</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Event Date & Time</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Days</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Location</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Description</th>
-              <th className="p-2 font-medium text-sm text-gray-600 max-w-32">Url</th>
-              <th className="p-2 font-medium text-sm text-gray-600">Actions</th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500  w-52">
+                Title
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 text-nowrap">
+                Event Date & Time
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Days</th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Location
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Description
+              </th>
+              <th className="p-2 font-medium text-sm text-gray-600 max-w-32">
+                Url
+              </th>
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -147,13 +163,26 @@ const Resources = () => {
                     onChange={() => handleSelectItem(index)}
                   />
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.eventDateTime}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.days}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.location}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.description.substring(0, 20)}...</td>
+                <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {item.title}
+                </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  <Link to={item.url} className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {item.eventDateTime}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.days}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.location}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.description.substring(0, 20)}...
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  <Link
+                    to={item.url}
+                    className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis"
+                  >
                     {item.url}
                   </Link>
                 </td>
@@ -178,7 +207,11 @@ const Resources = () => {
           {[...Array(totalPages).keys()].map((page) => (
             <button
               key={page}
-              className={`py-2 px-4 rounded-md shadow-md border ${currentPage === page + 1 ? 'bg-purple-700 text-white' : 'bg-white text-black'}`}
+              className={`py-2 px-4 rounded-md shadow-md border ${
+                currentPage === page + 1
+                  ? "bg-purple-700 text-white"
+                  : "bg-white text-black"
+              }`}
               onClick={() => setCurrentPage(page + 1)}
             >
               {page + 1}
@@ -188,7 +221,9 @@ const Resources = () => {
         <button
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
         >
           Next
         </button>

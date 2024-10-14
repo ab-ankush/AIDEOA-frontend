@@ -120,7 +120,6 @@ const Transaction_page = () => {
     }
   };
 
-  
   return (
     <div className=" bg-white py-4 rounded-xl lightdropshadowbox">
       <div className="flex px-4 flex-col">
@@ -140,7 +139,7 @@ const Transaction_page = () => {
                 placeholder="Search"
               />
             </div>
-         {selected.length>1 &&   <MdDelete size={26} />}
+            {selected.length > 1 && <MdDelete size={26} />}
             <div className="flex max-lg:flex-col gap-2">
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
@@ -149,7 +148,6 @@ const Transaction_page = () => {
                 <LuUploadCloud size={18} className="" />
                 <span>Create</span>
               </button>
-             
             </div>
           </div>
         </div>
@@ -158,8 +156,8 @@ const Transaction_page = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
-            <tr className="text-left border-b bg-gray-200 border-gray-200 h-16">
-              <th className="p-2 px-4 font-medium text-sm text-gray-400">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+              <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className=" checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -167,16 +165,24 @@ const Transaction_page = () => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400 w-52">Name</th>
-              <th className="p-2 font-medium text-sm text-gray-400 ">Aideoa ID</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Mobile Number</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Email Address</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Date</th>
-              <th className="p-2 font-medium text-sm text-gray-400">Amount</th>
-              <th className="p-2 flex items-center gap-1 font-medium text-sm text-gray-400">
-                Status <FaArrowDownLong size={12} className="" />
+            <th className="py-3 px-4 text-left font-medium text-sm w-52 text-gray-500">
+                Name
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400">Actions</th>
+<th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Aideoa ID
+              </th>
+       <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Mobile Number
+              </th>
+       <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Email Address
+              </th>
+       <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Date</th>
+       <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Amount</th>
+              <th className="flex items-center justify-center  gap-1 h-16 text-left font-medium text-sm text-gray-500">
+                <span>Status</span> <FaArrowDownLong size={12} className="" />
+              </th>
+       <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -192,15 +198,29 @@ const Transaction_page = () => {
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600  max-w-52 ">
                   <div className="flex items-center gap-1 whitespace-nowrap overflow-hidden text-ellipsis">
-                    <img src="/public/user.png" className="w-5 rounded-full" alt={item.name} />
+                    <img
+                      src="/public/user.png"
+                      className="w-5 rounded-full"
+                      alt={item.name}
+                    />
                     {item.name}
                   </div>
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400 ">{item.employeeId}</td>
-                <td className="p-2 font-medium text-sm text-gray-400 ">{item.mobileNumber}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.email}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.company}</td>
-                <td className="p-2 font-medium text-sm text-gray-400">{item.amount}</td>
+                <td className="p-2 font-medium text-sm text-gray-400 ">
+                  {item.employeeId}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400 ">
+                  {item.mobileNumber}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.email}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.company}
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.amount}
+                </td>
                 <td className="p-2 font-medium text-xs text-gray-400">
                   <span
                     className={` rounded-full px-1 ${
@@ -222,20 +242,26 @@ const Transaction_page = () => {
       </div>
 
       <div className="flex justify-between items-center mt-4 px-4">
-        <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">Previous</button>
+        <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">
+          Previous
+        </button>
         <div className="space-x-2">
           {[...Array(totalPages).keys()].map((page) => (
             <button
               key={page}
               className={`py-2 px-4 rounded-md shadow-md border ${
-                currentPage === page + 1 ? "bg-purple-700 text-white" : " bg-white  text-black "
+                currentPage === page + 1
+                  ? "bg-purple-700 text-white"
+                  : " bg-white  text-black "
               }`}
             >
               {page + 1}
             </button>
           ))}
         </div>
-        <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">Next</button>
+        <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">
+          Next
+        </button>
       </div>
     </div>
   );

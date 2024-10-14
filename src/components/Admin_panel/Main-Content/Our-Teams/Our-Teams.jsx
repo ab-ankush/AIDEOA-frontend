@@ -329,67 +329,66 @@ const OurTeams = ({ setActiveComponent }) => {
             </button>
           </div>
         </div>
-      </div>
-
-      <div className="flex ">
-        <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
-          <button>All</button>
-          <sup className="bg-white text-black ml-2 px-2 rounded-full">302</sup>
+        <div className="flex ">
+          <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
+            <button>All</button>
+            <sup className="bg-white text-black ml-2 px-2 rounded-full">
+              302
+            </sup>
+          </div>
+          <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
+            <button>Executive/Founder Members</button>
+            <sup className="bg-white text-black ml-2 px-2 rounded-full">95</sup>
+          </div>
+          <div className="mx-6 px-5 pt-2 text-text  rounded-t-lg">
+            <button>Education Cell Members</button>
+            <sup className="bg-purple-200 text-purple ml-2 px-2 rounded-full">
+              20
+            </sup>
+          </div>
+          <div className="mx-6 px-5 pt-2 text-text  rounded-t-lg">
+            <button>IT Cell Members</button>
+            <sup className="bg-purple-200 text-purple ml-2 px-2 rounded-full">
+              13
+            </sup>
+          </div>
         </div>
-        <div className="mx-6 px-5 pt-2 text-white bg-purple-900 rounded-t-lg">
-          <button>Executive/Founder Members</button>
-          <sup className="bg-white text-black ml-2 px-2 rounded-full">95</sup>
-        </div>
-        <div className="mx-6 px-5 pt-2 text-text  rounded-t-lg">
-          <button>Education Cell Members</button>
-          <sup className="bg-purple-200 text-purple ml-2 px-2 rounded-full">
-            20
-          </sup>
-        </div>
-        <div className="mx-6 px-5 pt-2 text-text  rounded-t-lg">
-          <button>IT Cell Members</button>
-          <sup className="bg-purple-200 text-purple ml-2 px-2 rounded-full">
-            13
-          </sup>
-        </div>
-      </div>
-      {/* Table Section */}
-      <div className="">
-        <table className="min-w-full">
-          <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
-            <tr>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
+        <div className="">
+          <table className="min-w-full">
+            <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
+            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+            <th className="p-2 px-4 font-medium text-sm text-gray-200">
                 <input
                   type="checkbox"
                   className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
                   checked={selectAll}
                   onChange={handleSelectAll}
                 />
-              </th>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
-                Name & photo
-              </th>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
-                Category
-              </th>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
-                Mobile Number
-              </th>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
-                Email address
-              </th>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
-                Self Address
-              </th>
-              <th className="py-3 px-4 text-left font-normal text-gray-400">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.map((contact, index) => (
-              <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
-                <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                </th>
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Name & photo
+                </th>
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Category
+                </th>
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Mobile Number
+                </th>
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Email address
+                </th>
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Self Address
+                </th>
+                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentItems.map((contact, index) => (
+                <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
+                   <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
                     type="checkbox"
                     className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -424,6 +423,11 @@ const OurTeams = ({ setActiveComponent }) => {
           onPageChange={handlePageChange}
         />
       </div>
+      </div>
+
+        
+        {/* Table Section */}
+       
     </div>
   );
 };

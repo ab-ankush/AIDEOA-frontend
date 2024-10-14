@@ -18,9 +18,14 @@ import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
+<<<<<<< HEAD
+import CreateContact from "./components/Contact_us/CreateContact";
+import AddNotification from "../components/Admin_panel/Main-Content/Notifications/AddNotification";
+=======
 import MutualTransfer from "./components/mutualtransfer/MutualTransfer";
 import Missions from "./components/missions/Misisions";
 import AddMissions from "./components/missions/AddMission";
+>>>>>>> 01b3f9cf2f4fa800ce56d152f8d22a1c4aa7cf12
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -49,9 +54,15 @@ const AdminPanel = () => {
         case "Mutual Transfer":
         return <MutualTransfer />;
       case "Contact us":
-        return <ContactUs />;
+        return <ContactUs setActiveComponent={setActiveComponent} />;
+      case "Create Contact":
+        return <CreateContact setActiveComponent={setActiveComponent} />;
+
       case "Notification":
-        return <Notifications />;
+        return <Notifications setActiveComponent={setActiveComponent} />;
+      case "Add Notification":
+        return <AddNotification setActiveComponent={setActiveComponent} />;
+
       case "Common Links":
         return <CommonLinks setActiveComponent={setActiveComponent} />;
       case "Our Teams":

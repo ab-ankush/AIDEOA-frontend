@@ -18,6 +18,8 @@ import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
+import CreateContact from "./components/Contact_us/CreateContact";
+import AddNotification from "../components/Admin_panel/Main-Content/Notifications/AddNotification";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -44,9 +46,15 @@ const AdminPanel = () => {
       case "ID Card":
         return <IdCard />;
       case "Contact us":
-        return <ContactUs />;
+        return <ContactUs setActiveComponent={setActiveComponent} />;
+      case "Create Contact":
+        return <CreateContact setActiveComponent={setActiveComponent} />;
+
       case "Notification":
-        return <Notifications />;
+        return <Notifications setActiveComponent={setActiveComponent} />;
+      case "Add Notification":
+        return <AddNotification setActiveComponent={setActiveComponent} />;
+
       case "Common Links":
         return <CommonLinks setActiveComponent={setActiveComponent} />;
       case "Our Teams":

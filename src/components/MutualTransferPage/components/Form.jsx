@@ -16,8 +16,6 @@ const Form = () => {
     transfermine: "",
     designationType: "executive",
   });
-
-  const [formType, setFormType] = useState(false);
   const [open, setOpen] = useState(false);
   const bodyStyle = document.body.style;
   useEffect(() => {
@@ -50,6 +48,7 @@ const Form = () => {
             placeholder="Write your name"
             className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
             value={formData.name}
+            required
             onChange={handleChange}
           />
         </div>
@@ -58,7 +57,7 @@ const Form = () => {
             className="font-poppins font-medium text-xl"
             htmlFor="your-designation"
           >
-            Your Designation
+            Are you executive or non-executive?
           </label>
           <div className="flex items-center gap-x-4">
             <label className="flex items-center">
@@ -101,6 +100,7 @@ const Form = () => {
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4 w-full"
                 placeholder="Sample@gmail.com"
                 type="text"
+                required
                 value={formData.aideoaid}
                 onChange={handleChange}
               />
@@ -119,6 +119,7 @@ const Form = () => {
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
                 placeholder="Write here..."
                 type="text"
+                required
                 value={formData.currentsubsidiary}
                 onChange={handleChange}
               />
@@ -137,6 +138,7 @@ const Form = () => {
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
                 placeholder="Write here..."
                 type="text"
+                required
                 value={formData.currentmine}
                 onChange={handleChange}
               />
@@ -155,6 +157,7 @@ const Form = () => {
                 placeholder="Write here..."
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
                 type="text"
+                required
                 value={formData.grade}
                 onChange={handleChange}
               />
@@ -175,6 +178,7 @@ const Form = () => {
                 placeholder="Sample@gmail.com"
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4 w-full"
                 type="text"
+                required
                 value={formData.mobile}
                 onChange={handleChange}
               />
@@ -193,6 +197,7 @@ const Form = () => {
                 placeholder="Write here..."
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
                 type="text"
+                required
                 value={formData.currentarea}
                 onChange={handleChange}
               />
@@ -211,6 +216,7 @@ const Form = () => {
                 placeholder="Write here..."
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
                 type="text"
+                required
                 value={formData.designation}
                 onChange={handleChange}
               />
@@ -229,6 +235,7 @@ const Form = () => {
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
                 placeholder="Write here..."
                 type="text"
+                required
                 value={formData.transferarea}
                 onChange={handleChange}
               />
@@ -247,6 +254,7 @@ const Form = () => {
             placeholder="Write here..."
             className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
             type="text"
+            required
             name="transfersubsidiary"
             id="transfersubsidiary"
             value={formData.transfersubsidiary}
@@ -265,6 +273,7 @@ const Form = () => {
             placeholder="Enter mine name"
             className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
             type="text"
+            required
             name="transfermine"
             id="transfermine"
             value={formData.transfermine}
@@ -284,7 +293,11 @@ const Form = () => {
 
       {open && (
         <div className="fixed container w-[90%]  top-[50%] z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <ReviewForm formData={formData} setOpen={setOpen} />
+          <ReviewForm
+            formData={formData}
+            setFormData={setFormData}
+            setOpen={setOpen}
+          />
         </div>
       )}
     </div>

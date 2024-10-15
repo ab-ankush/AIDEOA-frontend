@@ -33,17 +33,10 @@ import AdminPanel from "./adminpanel/AdminPanel";
 import Payment from "./data/Payment";
 import Profile from "./components/profile/Profile";
 
-
-
-
 export default function App() {
-  useEffect(() => {
-
-  }, []);
-  const {user}=useContext(AuthContext);
-  console.log(user)
-
-    
+  useEffect(() => {}, []);
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   return (
     <ScrollToTop>
@@ -56,7 +49,7 @@ export default function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="/mutualtransferviewportal" element={<DataList />} />
           <Route path="membership" element={<JoinMembership />} />
-          {/* <Route path="donation" element={<DonationComponent />} /> */}
+          <Route path="donation" element={<DonationComponent />} />
           <Route path="mutualtransfer" element={<MutualTransferPage />} />
           <Route path="about" element={<About />} />
           <Route path="education" element={<EducationCell />} />
@@ -72,8 +65,8 @@ export default function App() {
           <Route path="additional" element={<UserRoleSelect />} />
           <Route path="profile" element={<Profile />} />
         </Route>
-        <Route path="/admin" element={<AdminPanel  />} />
-        <Route path="/pay" element={<Payment  />} />
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/pay" element={<Payment />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   display: none;
-}
-
+} */
 
 .myimg {
   background-image: url(../public/images/2.jpg);
@@ -14,9 +12,9 @@
   background-size: cover;
   background-position: center;
 }
-.active{
-  border-bottom:purple;
-  background:white;
+.active {
+  border-bottom: purple;
+  background: white;
 }
 select[multiple] {
   width: 100%;
@@ -42,11 +40,11 @@ body {
     );
   }
   .mainBackgroundImg {
-    background: linear-gradient(rgba(31, 31, 31, 0.85), rgba(31, 31, 31, 0.65)) ,url(/enhanceimage/Homepage.png);
+    background: linear-gradient(rgba(31, 31, 31, 0.85), rgba(31, 31, 31, 0.65)),
+      url(/enhanceimage/Homepage.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
   }
 
   .imagefilter {
@@ -83,9 +81,7 @@ body {
   border: 1px groove #a6a6a6;
 }
 
-  .no-scroll {
-
-    position: absolute; 
-    width: 100%; 
-  }
-  
+.no-scroll {
+  position: absolute;
+  width: 100%;
+}

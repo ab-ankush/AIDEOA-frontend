@@ -4,12 +4,24 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegUser } from "react-icons/fa";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import "../../../src/index.css";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+
 import { AuthContext } from "../../context/authContext";
 const Navbar = () => {
   const [ham, setham] = useState(true);
   const { pathname } = useLocation();
   const { user, handleLogout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const sethamfunc = () => {
     setham(!ham);
   };
@@ -98,24 +110,32 @@ const Navbar = () => {
             >
               Contact us
             </NavLink>
-          </div>
+          </div>{" "}
           {user ? (
             <div className=" wo flex items-center pr-4">
-              <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/profile" &&
-                "text-purple-600 border-purple-600 border-b"
-              } `}
-              to="/profile"
-            >
-             <FaRegUser size={20} title={user?.fullName}/>
-            </NavLink>
-              <button
-                onClick={handleLogout}
-                className="btn hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"
+              <Button
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
               >
-                Sign out
-              </button>
+                <FaRegUser size={20} title={user?.fullName} />
+              </Button>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                <Link to="/profile">
+                  <MenuItem onClick={handleClose}>Profile</MenuItem>
+                </Link>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              </Menu>
             </div>
           ) : (
             <div className=" wo py-3 px-4">
@@ -224,16 +244,16 @@ const Navbar = () => {
               </div>
 
               {user ? (
-                <div >
-                   <NavLink
-                  className={` py-3 px-6 flex items-center gap-1 hover:text-purple-600 hover:bg-gray-100 ${
-                    pathname === "/profile" && "text-purple-600 "
-                  }`}
-                  to="/profile"
-                  onClick={sethamfunc}
-                >
-                Profile
-                </NavLink>
+                <div>
+                  <NavLink
+                    className={` py-3 px-6 flex items-center gap-1 hover:text-purple-600 hover:bg-gray-100 ${
+                      pathname === "/profile" && "text-purple-600 "
+                    }`}
+                    to="/profile"
+                    onClick={sethamfunc}
+                  >
+                    Profile
+                  </NavLink>
                   <button
                     onClick={handleLogout}
                     className="btn mt-3 mx-6 hover:text-white hover:bg-purple-600 text-center rounded-2xl font-medium duration-200  p-3 rounded-[25px] px-6 text-purple-600 border border-purple-600"

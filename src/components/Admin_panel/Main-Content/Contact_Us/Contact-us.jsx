@@ -7,7 +7,7 @@ import { LuUploadCloud } from "react-icons/lu";
 import Pagination from "../../Pagination/Pagination";
 import { MdDelete } from "react-icons/md";
 
-const ContactUs = ({ setActiveComponent }) => {
+const ContactUs = () => {
   const [contactData, setContactData] = useState([
     {
       checkbox: <input type="checkbox" className=" size-4  bg-col" />,
@@ -98,25 +98,7 @@ const ContactUs = ({ setActiveComponent }) => {
                 placeholder="Search"
               />
             </div>
-<<<<<<< HEAD
             {selectedItems.length >= 2 && <MdDelete size={26} />}
-            <div className="flex  justify-evenly mt-5 lg:mt-0  lg:gap-2 items-center  w-full lg:w-[50%]">
-              <div>
-                <button className="bg-white text-xs font-semibold border shadow-md text-black py-2 px-4 rounded-md ">
-                  Download all
-                </button>
-              </div>
-              <div
-                onClick={() => {
-                  setActiveComponent("Create Contact");
-                }}
-                className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1  text-white py-2 px-4 rounded-md"
-              >
-                <IoCloudUploadOutline size={18} />
-                <button className="">Create</button>
-              </div>
-=======
-            {selectedItems.length>=2 &&  <MdDelete size={26} />}
             <div className="flex max-lg:flex-col gap-2">
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
@@ -125,98 +107,40 @@ const ContactUs = ({ setActiveComponent }) => {
                 <LuUploadCloud size={18} className="" />
                 <span>Create</span>
               </button>
->>>>>>> 01b3f9cf2f4fa800ce56d152f8d22a1c4aa7cf12
             </div>
           </div>
         </div>
 
         <div>
-<<<<<<< HEAD
           <div className="overflow-x-scroll">
             <table className="  min-w-[1232px]  w-full ">
               <thead className="border-b ">
-                <tr className="border-b min-w-[1232px] bg-gray-200  border-gray-200 h-16 ">
-                  <th className="py-3 px-4 text-left font-normal text-gray-500">
+                <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+                  <th className="p-2 px-4 font-medium text-sm text-gray-200">
                     <input
                       type="checkbox"
                       onChange={handleSelectAll}
                       className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                     />
                   </th>
-                  <th className="py-3 px-4 text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Name
                   </th>
-                  <th className="py-3 px-4 text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Mobile Number
                   </th>
-                  <th className="py-3 px-4 text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Email address
                   </th>
-                  <th className="py-3 px-4 text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Message
                   </th>
-                  <th className="py-3 px-4 text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Date
                   </th>
-                  <th className="py-3 px-4 text-center font-normal text-gray-500">
+                  <th className="py-3 px-4 text-center font-medium text-sm text-gray-500">
                     Actions
                   </th>
-=======
-        <div className="overflow-x-scroll">
-          <table className="  min-w-[1232px]  w-full ">
-            <thead className="border-b ">
-            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
-            <th className="p-2 px-4 font-medium text-sm text-gray-200">
-                  <input
-                    type="checkbox"
-                    onChange={handleSelectAll}
-                    className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
-                  />
-                </th>
-                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Name
-                </th>
-                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Mobile Number
-                </th>
-                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Email address
-                </th>
-                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Message
-                </th>
-                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Date
-                </th>
-                <th className="py-3 px-4 text-center font-medium text-sm text-gray-500">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentItems.map((contact, index) => (
-                <tr key={index} className="border-b h-16 hover:bg-gray-50">
-                  <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                  <input
-                    type="checkbox"
-                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                    checked={selectedItems.includes(index)}
-                    onChange={() => handleSelectItem(index)}
-                  />
-                </td>
-                  <td className="py-3 px-4 font-medium">{contact.name}</td>
-                  <td className="py-3 px-4 text-gray-500">{contact.mobile}</td>
-                  <td className="py-3 px-4 text-gray-500">{contact.email}</td>
-                  <td className="py-3 px-4  text-gray-500">
-                    {contact.message}
-                  </td>
-                  <td className="py-3 px-4 text-gray-500">{contact.date}</td>
-                  <td className="py-3 px-4 text-center text-gray-400">
-                    <button className="text-gray-500  hover:text-gray-700">
-                      {contact.action}
-                    </button>
-                  </td>
->>>>>>> 01b3f9cf2f4fa800ce56d152f8d22a1c4aa7cf12
                 </tr>
               </thead>
               <tbody>

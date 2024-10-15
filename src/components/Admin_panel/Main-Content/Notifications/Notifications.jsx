@@ -9,7 +9,7 @@ import { LuUploadCloud } from "react-icons/lu";
 import Pagination from "../../Pagination/Pagination";
 import { MdDelete } from "react-icons/md";
 
-const Notifications = ({ setActiveComponent }) => {
+const Notifications = () => {
   const [contactData, setContactData] = useState([
     {
       checkbox: <input type="checkbox" className="size-4 bg-col" />,
@@ -107,12 +107,7 @@ const Notifications = ({ setActiveComponent }) => {
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
               </button>
-              <button
-                onClick={() => {
-                  setActiveComponent("Add Notification");
-                }}
-                className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md"
-              >
+              <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
                 <LuUploadCloud size={18} className="" />
                 <span>Create</span>
               </button>
@@ -121,12 +116,11 @@ const Notifications = ({ setActiveComponent }) => {
         </div>
 
         <div>
-<<<<<<< HEAD
           <div className="overflow-x-scroll">
             <table className="  min-w-[1232px]  w-full ">
               <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
-                <tr>
-                  <th className="py-3 px-4  text-left font-normal text-gray-500">
+                <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+                  <th className="p-2 px-4 font-medium text-sm text-gray-200">
                     <input
                       type="checkbox"
                       className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
@@ -134,76 +128,21 @@ const Notifications = ({ setActiveComponent }) => {
                       onChange={handleSelectAll}
                     />
                   </th>
-                  <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Heading
                   </th>
-                  <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Date & Time
                   </th>
-                  <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Content
                   </th>
-                  <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     User Type
                   </th>
-                  <th className="py-3 px-4  text-left font-normal text-gray-500">
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Actions
                   </th>
-=======
-        <div className="overflow-x-scroll">
-          <table className="  min-w-[1232px]  w-full ">
-            <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
-            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
-            <th className="p-2 px-4 font-medium text-sm text-gray-200">
-                <input
-                  type="checkbox"
-                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                  checked={selectAll}
-                  onChange={handleSelectAll}
-                />
-                </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Heading
-                </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Date & Time
-                </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Content
-                </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  User Type
-                </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentItems.map((contact, index) => (
-                <tr key={index} className="border-b h-16 hover:bg-gray-50">
-                <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                  <input
-                    type="checkbox"
-                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                    checked={selectedItems.includes(index)}
-                    onChange={() => handleSelectItem(index)}
-                  />
-                </td>
-                  <td className="py-3 px-4 font-medium">{contact.name}</td>
-                  <td className="py-3 px-4 text-gray-500 ">{contact.date}</td>
-                  <td className="py-3 px-4 text-gray-500">{contact.message}</td>
-                  <td className="py-3 px-4 text-gray-500">
-                    <span className={` font-medium  ${contact.user_type == "membership" ?"text-purple-800 bg-purple-100" :"text-green-800 bg-green-100"} px-3 py-1 rounded-full`}>
-                      {contact.user_type}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4 font-medium">
-                    <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
-                    <RiDeleteBinLine  />  <FiEdit2 />
-                    </button>
-                  </td>
->>>>>>> 01b3f9cf2f4fa800ce56d152f8d22a1c4aa7cf12
                 </tr>
               </thead>
               <tbody>

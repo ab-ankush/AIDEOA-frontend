@@ -1,9 +1,11 @@
-import { validateEmail } from "../../functions/validate"
+import { validateEmail } from "../../functions/validate";
 import { SignUpFunc } from "../../services/axios";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+
 const url = `http://localhost:4000/api/auth`;
 const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
   const [userType, setUserType] = useState("");
@@ -17,68 +19,72 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!userType)
-    {
-      setError("Select type of user")
+    if (!userType) {
+      setError("Select type of user");
       return;
     }
-    if(!org)
-      { userType==='student'?  setError("Select university name"):  setError("Select company name")
-      
-        return;
-      }
-      if(!idNo)
-        { userType==='student'?  setError("Enter university RollNo"):  setError("Enter employee Id")
-        
-          return;
-        }
-      if(!userTypemodal &&(!mobile || mobile.length!==10))
-        {
-          setError("Enter correct mobile number")
-          return;
-        }
+    if (!org) {
+      userType === "student"
+        ? setError("Select university name")
+        : setError("Select company name");
+
+      return;
+    }
+    if (!idNo) {
+      userType === "student"
+        ? setError("Enter university RollNo")
+        : setError("Enter employee Id");
+
+      return;
+    }
+    if (!userTypemodal && (!mobile || mobile.length !== 10)) {
+      setError("Enter correct mobile number");
+      return;
+    }
     if (userTypemodal) {
       const fullFormData = {
         ...formData,
         org,
         idNo,
         otp,
-        userType
+        userType,
       };
-    
+
       try {
         const data = await SignUpFunc(fullFormData);
         console.log(data);
-        
+
         if (data.status === 400) {
-          throw new Error(data?.data?.error || "Something went wrong"); 
+          throw new Error(data?.data?.error || "Something went wrong");
         }
-      
+
         if (data.status === 200) {
           toast.success(data?.data?.message);
           navigate("/login");
         }
       } catch (error) {
-  
         toast.error(error?.message || "An unexpected error occurred");
       }
-      
     } else {
+      const token = Cookies.get("accessToken");
       try {
         const res = await axios.post(
           `${url}/additional`,
           {
             userType: userType,
-            org: org,
-            idNo: idNo,
+            organization: org,
+            organizationId: idNo,
             mobile: mobile,
           },
           {
-            withCredentials: true,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
         );
+        console.log(res);
         if (res.statusText !== "OK") throw new Error("Some thing went wrong");
-        navigate("/");
+        navigate("/?way=google");
       } catch (error) {
         throw new Error(error);
       }
@@ -188,46 +194,43 @@ const UserRoleSelect = ({ userTypemodal, setUserTypeModal, formData }) => {
               />
             </div>
           )}
-          
+
           {userTypemodal ? (
-           <div className="mb-4">
-           <div className="relative over">
-               <input
-                className="w-full px-28  py-2 border  border-gray-300 rounded-xl focus:outline-none "
-                 name="otp"
-                 type="text"
-                 placeholder="Enter OTP"
-                 value={otp}
-                 onChange={(e) => setOtp(e.target.value)}
-               />
-               <button
-                 className="absolute bg-AIDEOTYPO cursor-pointer  text-xs font-semibold w-24 py-2 px-1 h-full rounded-xl text-white  left-0"
-                 size={14}
-                 onClick={handleOtp}
-                 type="button"
-                 disabled={resend}
-                 style={resend ? { backgroundColor: "gray" } : {}}
-               >
-                 {" "}
-                 {resend ? `Resend in ${seconds}s` : "Send OTP"}
-               </button>
-             </div>
-            
-           </div>
-          ):( <div className="mb-4">
-            <label className="block mb-2">
-             Mobile No
-            </label>
-            <input
-              type="text"
-              placeholder={
-               "Enter Mobile No"
-              }
-              value={org}
-              onChange={(e) => setOrg(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none "
-            />
-          </div>)}
+            <div className="mb-4">
+              <div className="relative over">
+                <input
+                  className="w-full px-28  py-2 border  border-gray-300 rounded-xl focus:outline-none "
+                  name="otp"
+                  type="text"
+                  placeholder="Enter OTP"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                />
+                <button
+                  className="absolute bg-AIDEOTYPO cursor-pointer  text-xs font-semibold w-24 py-2 px-1 h-full rounded-xl text-white  left-0"
+                  size={14}
+                  onClick={handleOtp}
+                  type="button"
+                  disabled={resend}
+                  style={resend ? { backgroundColor: "gray" } : {}}
+                >
+                  {" "}
+                  {resend ? `Resend in ${seconds}s` : "Send OTP"}
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="mb-4">
+              <label className="block mb-2">Mobile No</label>
+              <input
+                type="text"
+                placeholder={"Enter Mobile No"}
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none "
+              />
+            </div>
+          )}
           {error && <p className="text-red-600">{error}</p>}
           <div className="flex justify-end">
             <button

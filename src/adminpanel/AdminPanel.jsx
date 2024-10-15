@@ -18,14 +18,9 @@ import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
-<<<<<<< HEAD
-import CreateContact from "./components/Contact_us/CreateContact";
-import AddNotification from "../components/Admin_panel/Main-Content/Notifications/AddNotification";
-=======
 import MutualTransfer from "./components/mutualtransfer/MutualTransfer";
 import Missions from "./components/missions/Misisions";
 import AddMissions from "./components/missions/AddMission";
->>>>>>> 01b3f9cf2f4fa800ce56d152f8d22a1c4aa7cf12
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -51,18 +46,12 @@ const AdminPanel = () => {
         return <Query />;
       case "ID Card":
         return <IdCard />;
-        case "Mutual Transfer":
+      case "Mutual Transfer":
         return <MutualTransfer />;
       case "Contact us":
-        return <ContactUs setActiveComponent={setActiveComponent} />;
-      case "Create Contact":
-        return <CreateContact setActiveComponent={setActiveComponent} />;
-
+        return <ContactUs />;
       case "Notification":
-        return <Notifications setActiveComponent={setActiveComponent} />;
-      case "Add Notification":
-        return <AddNotification setActiveComponent={setActiveComponent} />;
-
+        return <Notifications />;
       case "Common Links":
         return <CommonLinks setActiveComponent={setActiveComponent} />;
       case "Our Teams":
@@ -87,11 +76,11 @@ const AdminPanel = () => {
         );
       case "Add Teams":
         return <AddTeams setActiveComponent={setActiveComponent} />;
-        case "Our Missions":
-          return <Missions setActiveComponent={setActiveComponent} />;
-          case "Add Missions":
-            return <AddMissions setActiveComponent={setActiveComponent} />;
-    
+      case "Our Missions":
+        return <Missions setActiveComponent={setActiveComponent} />;
+      case "Add Missions":
+        return <AddMissions setActiveComponent={setActiveComponent} />;
+
       default:
         return <></>;
     }

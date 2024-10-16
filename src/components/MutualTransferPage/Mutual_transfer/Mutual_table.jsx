@@ -1,41 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../../../index.css";
 import SubData from "../components/subsidiary";
-import axios from "axios";
-const tableData = [
-  {
-    id: "1",
-    name: "Jone Doe",
-
-    current_subsidiary: "bccl",
-    current_posted_area: "jharkhand",
-    current_mine_name: "mine",
-    designation: "worker",
-    grade: "A",
-    Transfer_Area: "Chandigarh",
-    Transfer_Subsidiary: "Kerala",
-    Transfer_Mine: "kochi",
-    date: "06/06/23",
-    mobile_number: "+1234567890",
-    aideoaId: "#123456",
-  },
-];
+import useMutualTransfer from "../../../hooks/useMutualTransfer";
 
 const Mutual_table = () => {
   const [search, setSearch] = useState("");
-  const [dataList, setDataList] = useState();
-  const fetchData = async () => {
-    try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_BACKEND_URL}/api/transferrequest`
-      );
-      if (res.status === 200) setDataList(res.data);
-    } catch (error) {}
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  const { dataList } = useMutualTransfer();
   return (
     <div className="m-5 mx-12 ">
       <div className="lg:w-[90%] my-4 mx-auto flex flex-wrap justify-start gap-4 items-center ">
@@ -128,7 +98,7 @@ const Mutual_table = () => {
           </thead>
 
           <tbody>
-            {dataList.map((data, index) => (
+            {dataList?.map((data, index) => (
               <tr
                 key={index}
                 className="border p-1 text-center rounded-tr-2xl rounded-br-2xl rounded-tl-2xl min-w-1 rounded-bl-2xl  border-gray-300"

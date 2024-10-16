@@ -297,25 +297,13 @@ const OurTeams = ({ setActiveComponent }) => {
           </div>
 
           <div className="flex justify-end flex-1  items-center space-x-4 ">
-            <div className="relative w-[55%]">
+            <div className="relative w-[55%] mx-2">
               <CiSearch className="absolute  top-3 left-3" />
               <input
                 type="text"
                 className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
                 placeholder="Search"
               />
-            </div>
-            <div className="flex max-lg:flex-col gap-2">
-              <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-                Download all
-              </button>
-              <button
-                className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md"
-                onClick={() => setActiveComponent("Add Teams")}
-              >
-                <LuUploadCloud size={18} className="" />
-                <span>Create</span>
-              </button>
             </div>
           </div>
           {selectedItems.length >= 2 && <MdDelete size={26} />}
@@ -356,31 +344,31 @@ const OurTeams = ({ setActiveComponent }) => {
         <div className="">
           <table className="min-w-full">
             <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
-            <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
-            <th className="p-2 px-4 font-medium text-sm text-gray-200">
-                <input
-                  type="checkbox"
-                  className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                  checked={selectAll}
-                  onChange={handleSelectAll}
-                />
+              <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
+                <th className="p-2 px-4 font-medium text-sm text-gray-200">
+                  <input
+                    type="checkbox"
+                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                    checked={selectAll}
+                    onChange={handleSelectAll}
+                  />
                 </th>
-                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Name & photo
                 </th>
-                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Category
                 </th>
-                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Mobile Number
                 </th>
-                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Email address
                 </th>
-                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Self Address
                 </th>
-                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Actions
                 </th>
               </tr>
@@ -388,46 +376,46 @@ const OurTeams = ({ setActiveComponent }) => {
             <tbody>
               {currentItems.map((contact, index) => (
                 <tr key={index} className="border-b h-16 hover:bg-gray-50 ">
-                   <td className="p-2 px-4 font-medium text-sm text-gray-600">
-                  <input
-                    type="checkbox"
-                    className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
-                    checked={selectedItems.includes(index)}
-                    onChange={() => handleSelectItem(index)}
-                  />
-                </td>
-                <td className="py-3 px-4 font-medium items-center  flex gap-x-2">
-                  <img src="/public/user.png" className="w-5 rounded-full" />{" "}
-                  {contact.name}
-                </td>
-                <td className="py-3 px-4 text-gray-500 ">{contact.category}</td>
-                <td className="py-3 px-4 text-gray-500 ">{contact.mobile}</td>
-                <td className="py-3 px-4 text-gray-500 ">{contact.email}</td>
-                <td className="py-3 px-4 text-gray-500 ">
-                  {contact.selfAddress}
-                </td>
-                <td className="py-3 px-4 text-gray-500 ">
-                  <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
-                    {contact.action}
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <td className="p-2 px-4 font-medium text-sm text-gray-600">
+                    <input
+                      type="checkbox"
+                      className="checked:bg-purple-500 checked:border-purple-500 size-4 bg-col"
+                      checked={selectedItems.includes(index)}
+                      onChange={() => handleSelectItem(index)}
+                    />
+                  </td>
+                  <td className="py-3 px-4 font-medium items-center  flex gap-x-2">
+                    <img src="/public/user.png" className="w-5 rounded-full" />{" "}
+                    {contact.name}
+                  </td>
+                  <td className="py-3 px-4 text-gray-500 ">
+                    {contact.category}
+                  </td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.mobile}</td>
+                  <td className="py-3 px-4 text-gray-500 ">{contact.email}</td>
+                  <td className="py-3 px-4 text-gray-500 ">
+                    {contact.selfAddress}
+                  </td>
+                  <td className="py-3 px-4 text-gray-500 ">
+                    <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
+                      {contact.action}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
 
-        {/* Pagination */}
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
-      </div>
+          {/* Pagination */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
 
-        
-        {/* Table Section */}
-       
+      {/* Table Section */}
     </div>
   );
 };

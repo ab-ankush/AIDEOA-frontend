@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
@@ -6,11 +6,23 @@ import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
+import { eventgetdata } from "../../../Connection/Api";
 
 const Resources = ({ setActiveComponent, setEventsData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
-
+  const [d, setd] = useState([]);
+  useEffect(() => {
+    const getdata = async () => {
+      try {
+        const data = await eventgetdata();
+        setd(data.data);
+      } catch (error) {
+        console.log(`error in getdata in Events.jsx ${error}`);
+      }
+    };
+    getdata();
+  }, []);
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -107,7 +119,9 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 text-nowrap">
                 Event Date & Time
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Days</th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Days
+              </th>
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Location
               </th>
@@ -117,11 +131,13 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 max-w-32">
                 Url
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
+            {d.map((item, index) => (
               <tr
                 key={index}
                 className="border-b border-gray-200 h-16 cursor-pointer"

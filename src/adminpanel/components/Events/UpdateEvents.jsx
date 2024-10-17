@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-const url=`http://localhost:4000/api`
-const UpdateEvents = ({setActiveComponent,eventsData}) => {
+const url = `http://localhost:4000/api`;
+const UpdateEvents = ({ setActiveComponent, eventsData }) => {
   const [formData, setFormData] = useState(eventsData);
 
   const handleChange = (e) => {
@@ -10,25 +10,25 @@ const UpdateEvents = ({setActiveComponent,eventsData}) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData)
-   try {
-      const res= await axios.post(`${url}/events/update`,formData)
-      if(res.status===200)
-      {
-        toast.success(res.data.message)
-        setActiveComponent("Events")
+    console.log(formData);
+    try {
+      const res = await eventupdatedata(formData);
+      if (res.status === 200) {
+        toast.success(res.data.message);
+        setActiveComponent("Events");
       }
-      
-   } catch (error) {
-    toast.error(error.response.data.message)
-   }
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
     <div className="rounded-xl p-4 bg-gray-50 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4 text-[#4B0082]">Update Event</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-[#4B0082]">
+        Update Event
+      </h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <div>
           <label className="block text-gray-600">Title</label>
@@ -96,9 +96,6 @@ const UpdateEvents = ({setActiveComponent,eventsData}) => {
           </div>
         </div>
 
-
-   
-
         <div>
           <label className="block text-gray-600">Event days</label>
           <input
@@ -123,22 +120,20 @@ const UpdateEvents = ({setActiveComponent,eventsData}) => {
             required
           ></textarea>
         </div>
-    <div className="flex gap-2">
-
-   
-        <button
-          type="submit"
-          className="bg-[#4B0082] text-white px-4 py-2 rounded-md hover:opacity-80 focus:outline-none "
-        >
-          Submit
-        </button>
-        <button
-          type="button"
-          onClick={()=>setActiveComponent("Events")}
-          className="text-[#4B0082] bg-white  px-4 py-2 border border-[#4B0082] rounded-md hover:opacity-75 focus:outline-none "
-        >
-          Cancel
-        </button>
+        <div className="flex gap-2">
+          <button
+            type="submit"
+            className="bg-[#4B0082] text-white px-4 py-2 rounded-md hover:opacity-80 focus:outline-none "
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveComponent("Events")}
+            className="text-[#4B0082] bg-white  px-4 py-2 border border-[#4B0082] rounded-md hover:opacity-75 focus:outline-none "
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </div>

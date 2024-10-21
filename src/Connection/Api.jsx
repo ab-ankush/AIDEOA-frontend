@@ -11,7 +11,7 @@ export const eventpostdata = async (data) => {
 export const eventgetdata = async () => {
   try {
     const data = await axios.get(
-      `${import.meta.env.VITE_API_BACKEND_URL}/api/events/all`
+      `${import.meta.env.VITE_API_BACKEND_URL}/api/events`
     );
     console.log(data);
     return data;

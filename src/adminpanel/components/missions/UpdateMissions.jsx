@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-const url = `http://localhost:4000/api`;
-const AddCommonLinks = ({ setActiveComponent }) => {
+const url = import.meta.env.VITE_API_BACKEND_URL;
+const UpdateMissions = ({ setActiveComponent,missionData }) => {
   const [formData, setFormData] = useState({
-    title: "",
 
-    url: "",
+    title: missionData.mission,
   });
 
   const handleChange = (e) => {
@@ -16,13 +15,11 @@ const AddCommonLinks = ({ setActiveComponent }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
-      const res = await axios.post(`${url}/links/add`, formData);
+      const res = await axios.put(`${url}/api/mission/${missionData.id}`, formData);
       if (res.status === 200) {
-        setActiveComponent("Common Links");
         toast.success(res.data.message);
-       
+        setActiveComponent("Our Missions");
       }
     } catch (error) {
       toast.error(error.response.data.message);
@@ -36,7 +33,7 @@ const AddCommonLinks = ({ setActiveComponent }) => {
       </h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <div>
-          <label className="block text-gray-600">Title</label>
+          <label className="block text-gray-600">Mission title</label>
           <input
             type="text"
             name="title"
@@ -48,17 +45,7 @@ const AddCommonLinks = ({ setActiveComponent }) => {
           />
         </div>
 
-        <div>
-          <label className="block text-gray-600">Event url</label>
-          <input
-            type="text"
-            name="url"
-            value={formData.url}
-            onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Enter url"
-          />
-        </div>
+        
 
         <div className="flex gap-2">
           <button
@@ -69,7 +56,7 @@ const AddCommonLinks = ({ setActiveComponent }) => {
           </button>
           <button
             type="button"
-            onClick={() => setActiveComponent("Common Links")}
+            onClick={() => setActiveComponent("Our Missions")}
             className="text-[#4B0082] bg-white  px-4 py-2 border border-[#4B0082] rounded-md hover:opacity-75 focus:outline-none "
           >
             Cancel
@@ -80,4 +67,4 @@ const AddCommonLinks = ({ setActiveComponent }) => {
   );
 };
 
-export default AddCommonLinks;
+export default UpdateMissions;

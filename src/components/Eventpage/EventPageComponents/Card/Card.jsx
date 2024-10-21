@@ -54,36 +54,36 @@ const targetDivRef=useRef([])
     <div
     ref={(el)=>(targetDivRef.current[idx]=el)}
 id={idx}
-      className="  m-auto max-w-lg mb-24 shadow-md min-h-[550px] flex flex-col   shadow-gray-600 rounded-2xl"
+      className="  m-auto max-w-lg w-[550px] mb-24 shadow-md min-h-[550px] flex flex-col   shadow-gray-600 rounded-2xl"
     >
       <div className="flex justify-between  px-4 lg:px-8 w-full  pt-5 pb-5 bg-customgradient-background rounded-t-2xl">
         <p className="font-semibold w-full text-white w-14 text-3xl ">
-          {item?.head}
+          {item?.days}
         </p>
 
         <div className="size-3 w-36">
           <p className="text-xs text-white">
-            {item.date} <br />
-            <span>{item.time}</span>
+            {item?.date} <br />
+            <span>{item?.time}</span>
           </p>
         </div>
       </div>
-      <div className="flex flex-col m-auto justify-between gap-6 p-4 lg:p-8">
+      <div className="flex flex-col m-auto  w-full gap-6 p-4 lg:p-8">
         <div className="text-xl font-semibold">
-          <p>{item.title}</p>
+          <p>{item?.title}</p>
         </div>
         <div className="flex flex-col justify-between h-10">
           <div className="flex text-sm">
             <IoLocationOutline size={15} />
-            <p className="ml-1 font-light">{item.location}</p>
+            <p className="ml-1 font-light">{item?.location}</p>
           </div>
           <div className="flex text-sm">
             <MdCalendarMonth size={15} />
-            <p className="ml-1 font-light">{item.time}</p>
+            <p className="ml-1 font-light">{item?.time}</p>
           </div>
         </div>
         <div className="text-sm font-light pb-5">
-          <p>{item.description}</p>
+          <p>{item?.description}</p>
         </div>
        
       </div>

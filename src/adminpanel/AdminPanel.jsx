@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
 
 import Resources from "./components/Resources";
-import CommonLinks from "./components/commonlinks/Commonlinks";
+
 import Events from "./components/Events/Events";
 import Query from "./components/Query";
 import IdCard from "./components/IdCard";
@@ -14,16 +14,19 @@ import Main from "./DashBoardpageComponent/Main";
 import Transaction_page from "./components/Transaction/Transaction_page";
 import Member from "./components/Members/Member";
 import AddEvent from "./components/Events/AddEvents";
-import AddCommonLinks from "./components/commonlinks/AddCommonLinks";
+
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
 import MutualTransfer from "./components/mutualtransfer/MutualTransfer";
 import Missions from "./components/missions/Misisions";
 import AddMissions from "./components/missions/AddMission";
+import UpdateMissions from "./components/missions/UpdateMissions";
+import MutualRequest from "./components/mutualrequest/MutualRequest";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
+  const [missionData, setMissionData] = useState();
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -48,18 +51,17 @@ const AdminPanel = () => {
         return <IdCard />;
       case "Mutual Transfer":
         return <MutualTransfer />;
+        case "Mutual Request":
+        return <MutualRequest />;
       case "Contact us":
         return <ContactUs />;
-      case "Notification":
+      case "Newsletter":
         return <Notifications />;
-      case "Common Links":
-        return <CommonLinks setActiveComponent={setActiveComponent} />;
-      case "Our Teams":
-        return <OurTeams setActiveComponent={setActiveComponent} />;
-      case "Add Events":
+        case "Add Teams":
+          return <AddTeams setActiveComponent={setActiveComponent} />;
+        case "Add Events":
         return <AddEvent setActiveComponent={setActiveComponent} />;
-      case "Add Common Links":
-        return <AddCommonLinks setActiveComponent={setActiveComponent} />;
+     
       case "Events Details":
         return (
           <EventDetails
@@ -74,13 +76,13 @@ const AdminPanel = () => {
             eventsData={eventsData}
           />
         );
-      case "Add Teams":
-        return <AddTeams setActiveComponent={setActiveComponent} />;
-      case "Our Missions":
-        return <Missions setActiveComponent={setActiveComponent} />;
-      case "Add Missions":
+        case "Our Missions" :
+        return <Missions setMissionData={setMissionData} setActiveComponent={setActiveComponent} />;
+        case "Add Missions" :
         return <AddMissions setActiveComponent={setActiveComponent} />;
-
+        case "Update Missions" :
+        return <UpdateMissions missionData={missionData} setActiveComponent={setActiveComponent} />;
+        
       default:
         return <></>;
     }
@@ -96,7 +98,6 @@ const AdminPanel = () => {
       </div>
       <div className="lg:w-[80%] max-lg:w-[90%] h-screen bg-gray-200">
         <AdminNavbar />
-
         <div className="p-8 max-lg:px-4 bg-gray-200 h-screen">
           {renderComponent()}
         </div>

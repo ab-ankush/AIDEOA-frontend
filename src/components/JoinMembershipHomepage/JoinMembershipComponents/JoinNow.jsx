@@ -26,7 +26,7 @@ const JoinNow = () => {
 
           <p className="text-4xl font-semibold">{fee}₹</p>
         </div>
-{/* 
+
         <p className="text-AIDEOTYPO  text-lg">
           Enter a custom donation amount
         </p>
@@ -49,12 +49,12 @@ const JoinNow = () => {
             setAmount(e.target.value);
           }}
           className="h-14 px-4 rounded-2xl focus:outline-none border-2 border-AIDEOTYPO"
-        /> */}
-        {
-          // <p className="text-AIDEOTYPO text-sm ">
-          //   Your total Membership and Donation amount is <span className="font-bold">{!amount ? fee :fee + +amount}₹</span>.
-          // </p>
-        }
+        /> 
+    
+          <p className="text-AIDEOTYPO text-sm ">
+           Your total Membership and Donation amount is <span className="font-bold">{!amount ? fee :fee + +amount}₹</span>.
+         </p>
+     
         <button className="h-16 membershipBtn rounded-2xl text-white font-semibold">
           Join now
         </button>

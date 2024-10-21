@@ -1,8 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import Navbar from "../About_us/Navbar";
-import Image from "./Image";
-import Scroll from "./Scroll";
 
 import TopImageCard from "../Cards/TopImageCard";
 import EmailNotiCard from "../Cards/EmailNotiCard";

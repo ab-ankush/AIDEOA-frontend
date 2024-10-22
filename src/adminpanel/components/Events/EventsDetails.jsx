@@ -72,7 +72,7 @@ const EventDetails = ({ setActiveComponent, eventsData }) => {
           <span className="font-medium">{eventsData.description}</span>{" "}
         </p>
 
-        <div className="flex flex-col gap-3">
+        {/* <div className="flex flex-col gap-3">
           <div className="flex items-center w-96 justify-between p-4 rounded-lg bg-white shadow-md">
             <div className="text-gray-600 flex items-center gap-2">
               <div className="bg-purple-100 p-1 rounded-full">
@@ -101,7 +101,7 @@ const EventDetails = ({ setActiveComponent, eventsData }) => {
             </div>
             <FaDownload />
           </div>
-        </div>
+        </div> */}
 
         <div className="flex justify-end mt-6">
           <button className="text-[#4B0082] flex justify-center duration-300 gap-1 border font-medium border-[#4B0082] hover:bg-red-50  w-24 py-1 rounded-lg mr-4">

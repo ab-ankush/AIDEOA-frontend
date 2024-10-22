@@ -66,12 +66,12 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
     <div className="py-4 bg-white rounded-xl">
       <div className="flex space-x-4 mb-4 max-lg:flex-col-reverse max-lg:gap-2 px-4">
         <div className="flex space-x-4">
-          <div className="bg-[#4B0082] w-32 text-center text-white shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16">
-            <p className="text-nowrap">AIDEOA Events</p>
+          <div className="bg-[#4B0082] w-48 text-center text-white shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16">
+            <p className="text-nowrap">AIDEOA Latest News</p>
             <p className="font-bold">100</p>
           </div>
           <div className="bg-white w-32 text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
-            <p className="text-nowrap">Online Test</p>
+            <p className="text-nowrap">Online News</p>
             <p className="font-bold">100</p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
             </button>
             <button
               className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1 text-white py-2 px-4 rounded-md"
-              onClick={() => setActiveComponent("Add Events")}
+              onClick={() => setActiveComponent("Add Latest News")}
             >
               <LuUploadCloud size={18} />
               <span>Create</span>

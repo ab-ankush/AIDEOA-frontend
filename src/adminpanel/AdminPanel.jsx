@@ -24,6 +24,7 @@ import AddMissions from "./components/missions/AddMission";
 import UpdateMissions from "./components/missions/UpdateMissions";
 import MutualRequest from "./components/mutualrequest/MutualRequest";
 import LatestNews from "../components/Admin_panel/LatestNews/LatestNews.jsx";
+import AddLatestNews from "../components/Admin_panel/LatestNews/AddLatestNews.jsx";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -47,10 +48,19 @@ const AdminPanel = () => {
             setEventsData={setEventsData}
           />
         );
+      case "Add Latest News":
+        return (
+          <AddLatestNews
+            setActiveComponent={setActiveComponent}
+            setEventsData={setEventsData}
+          />
+        );
       case "Transaction":
         return <Transaction_page />;
       case "Resource":
         return <Resources />;
+      case "Add Latest News":
+        return <AddLatestNews />;
       case "Members":
         return <Member />;
       case "Query":

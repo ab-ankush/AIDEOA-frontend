@@ -6,6 +6,7 @@ import { LuUploadCloud } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import useMembers from "../../../hooks/useMembers";
 
 const data = [
   {
@@ -104,8 +105,7 @@ const Member = () => {
   const [selectAll, setSelectAll] = useState(false);
 
   const totalPages = 3;
-  const Students = new Array(20).fill("");
-  const employees = new Array(30).fill("");
+
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -122,6 +122,7 @@ const Member = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
+  const {dataList}=useMembers(userType)
 
   return (
     <>
@@ -130,10 +131,11 @@ const Member = () => {
           <div className="flex  space-x-4 mb-4 items-center">
             <div className="flex w-[34%] h-[40%] items-center gap-2">
               <h3 className="h-full  text-[18px] font-[500]">Member</h3>
-              <p className="text-[14px] px-3 text-purple-800 rounded-lg bg-purple-200 my-auto">
+              {/* <p className="text-[14px] px-3 text-purple-800 rounded-lg bg-purple-200 my-auto">
                 100 users
-              </p>
+              </p> */}
             </div>
+         
             <div className="flex justify-end flex-1  items-center space-x-4 ">
               <div className="relative w-[55%]">
                 <CiSearch className="absolute  top-3 left-3" />
@@ -158,6 +160,49 @@ const Member = () => {
               </div>
             </div>
           </div>
+          <div className="flex justify-between px-4">
+              <div className="flex space-x-3 items-center ">
+                <button
+                  onClick={() => setUserType("Employees")}
+                  className={` ${
+                    userType === "Employees"
+                      ? "bg-[#4B0082]  text-white"
+                      : "bg-white text-[#4B0082]"
+                  } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
+                >
+                  <span>Employees</span>
+             {      userType!=='Students' &&  <span
+                    className={`text-xs  font-bold px-2 rounded-md   ${
+                      userType == "Employees"
+                        ? "bg-white text-[#4B0082]"
+                        : "bg-[#4B0082]  text-white"
+                    }`}
+                  >
+                      {dataList.length}
+                    </span>}
+                </button>
+                <button
+                  onClick={() => setUserType("Students")}
+                  className={` ${
+                    userType !== "Employees"
+                      ? "bg-[#4B0082]  text-white"
+                      : "bg-white text-[#4B0082]"
+                  } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
+                >
+                  <span>Students</span>
+                 {userType==='Students' &&<span
+                    className={`text-xs  font-bold px-2 rounded-md   ${
+                      userType != "Employees"
+                        ? "bg-white text-[#4B0082]"
+                        : "bg-[#4B0082]  text-white"
+                    }`}
+                  >
+                  {dataList.length}
+                  </span>}
+                </button>
+              </div>
+              <button className="text-sm font-semibold">Filter by</button>
+            </div>
         </div>
 
         <div className="overflow-x-auto">
@@ -175,28 +220,28 @@ const Member = () => {
                 <th className="py-3 px-4 text-left font-medium text-sm w-52 text-gray-500">
                   Name & Photo
                 </th>
+            
                 <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                  Aideoa ID
-                </th>
-               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Mobile Number
                 </th>
-               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Email Address
                 </th>
-               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Date</th>
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                  Date
+                </th>
 
                 <th className="p-2 flex items-center gap-1 font-medium text-sm text-gray-400">
                   Status <FaArrowDownLong size={12} className="" />
                 </th>
 
-               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                   Actions
                 </th>
               </tr>
             </thead>
             <tbody>
-              {data.slice(0, 7).map((item, index) => (
+              {dataList.slice(0, 7).map((item, index) => (
                 <tr key={index} className="border-b border-gray-200 h-16">
                   <td className="p-2 px-4 font-medium text-sm text-gray-600">
                     <input
@@ -212,22 +257,19 @@ const Member = () => {
                         src="/public/user.png"
                         className="w-5 rounded-full"
                       />{" "}
-                      {item.name}
+                      {item.fullName}
                     </td>
                   </td>
+               
                   <td className="p-2 font-medium text-sm text-gray-400 ">
-                    {item.employeeId}
-                  </td>
-                  <td className="p-2 font-medium text-sm text-gray-400 ">
-                    {item.mobileNumber}
+                    {item.mobile}
                   </td>
                   <td className="p-2 font-medium text-sm text-gray-400">
                     {item.email}
                   </td>
                   <td className="p-2 font-medium text-sm text-gray-400">
-                    {item.company}
+                    {item.createdAt.slice(0,10)}
                   </td>
-
                   <td className="p-2 font-medium text-xs ">
                     <td
                       className={` rounded-full px-1 mb-1 ${

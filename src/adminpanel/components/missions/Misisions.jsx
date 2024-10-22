@@ -5,44 +5,17 @@ import { LuUploadCloud } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
-const Missions = ({ setActiveComponent }) => {
+import useMissions from "../../../hooks/useMissions";
+const Missions = ({ setActiveComponent,setMissionData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
 
-  const data = [
-    {
-      title: "YouTube",
-      last_update: "12 Nov 2025",
-      time: "5:30 am - 6:30 pm",
-      url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
-    },
-    {
-      title: "Instagram",
-      last_update: "12 Nov 2025",
-      time: "5:30 am - 6:30 pm",
-      url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
-    },
-    {
-      title: "Facebook",
-      last_update: "12 Nov 2025",
-      time: "5:30 am - 6:30 pm",
-      url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
-    },
-    {
-      title: "LinkedIn",
-      last_update: "12 Nov 2025",
-      time: "5:30 am - 6:30 pm",
-      url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
-    },
-    {
-      title: "Twitter",
-      last_update: "12 Nov 2025",
-      time: "5:30 am - 6:30 pm",
-      url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
-    },
-  ];
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 3;
+
+  const {dataList:data,deleteMission}=useMissions()
+  const handleDelete=async(id)=>{
+    await deleteMission(id)
+  }
+  
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -100,7 +73,7 @@ const Missions = ({ setActiveComponent }) => {
                 />
               </th>
            <th className="py-3 px-4 w-full text-left font-medium text-sm text-gray-500">
-                Title
+                Mission
               </th>
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Actions
@@ -122,14 +95,15 @@ const Missions = ({ setActiveComponent }) => {
                   />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600   whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.title}
+                  {item.mission}
                 </td>
-             
-
-                
+              
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                  <RiDeleteBin6Line />
-                  <FiEdit2 />
+                  <RiDeleteBin6Line  onClick={()=>handleDelete(item.id)}/>
+                  <FiEdit2 onClick={()=>{
+                    setActiveComponent("Update Missions")
+                    setMissionData(item)
+                  }}/>
                 </td>
               </tr>
             ))}

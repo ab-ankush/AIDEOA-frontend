@@ -5,6 +5,7 @@ import { LuUploadCloud } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import useCommonLinks from "../../../hooks/useCommonLinks";
 const CommonLinks = ({ setActiveComponent }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
@@ -41,7 +42,7 @@ const CommonLinks = ({ setActiveComponent }) => {
       url: "https://www.figma.com/design/6VftZ3BIN3c3oymnf2etto",
     },
   ];
-  const [currentPage, setCurrentPage] = useState(1);
+ 
   const totalPages = 3;
   const handleSelectAll = () => {
     if (selectAll) {
@@ -59,6 +60,8 @@ const CommonLinks = ({ setActiveComponent }) => {
       setSelectedItems([...selectedItems, index]);
     }
   };
+  const {dataList,deleteLinks}=useCommonLinks()
+  console.log(dataList)
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
@@ -102,17 +105,20 @@ const CommonLinks = ({ setActiveComponent }) => {
            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Title
               </th>
-           <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Last update
+           <th className="py-3 px-4 text-left text-nowrap font-medium text-sm text-gray-500">
+                Added at
               </th>
            
            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
              Url
               </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+             Actions
+              </th>
             </tr>
           </thead>
           <tbody>
-            {data.slice(0, 7).map((item, index) => (
+            {dataList?.slice(0, 7).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16 ">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -126,17 +132,17 @@ const CommonLinks = ({ setActiveComponent }) => {
                   {item.title}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400 ">
-                  {item.last_update}
+                {item?.createdAt.slice(0,10)}
                 </td>
 
-                <td className="p-2 font-medium text-sm text-gray-400">
+                <td className="p-2 font-medium text-sm text-gray-400 w-full">
                   <td className="text-blue-500   whitespace-nowrap overflow-hidden text-ellipsis">
                     <Link to={item.url}>{item.url}</Link>
                   </td>
                 </td>
-                <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                  <RiDeleteBin6Line />
-                  <FiEdit2 />
+                <td className="p-2  font-medium flex w-full text-sm justify-center h-16 items-center  text-gray-600 cursor-pointer">
+                  <RiDeleteBin6Line  onClick={()=>deleteLinks(item?.id)}/>
+                
                 </td>
               </tr>
             ))}

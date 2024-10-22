@@ -1,3 +1,4 @@
+import { eventupdatedata } from "../../../Connection/Api";
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -12,7 +13,7 @@ const UpdateEvents = ({ setActiveComponent, eventsData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    
     try {
       const res = await eventupdatedata(formData);
       if (res.status === 200) {

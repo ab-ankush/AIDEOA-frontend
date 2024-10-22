@@ -1,8 +1,9 @@
-import { useState } from "react";
-
-import { BsThreeDotsVertical } from "react-icons/bs";
+import useStudentIdCard from "../../hooks/useStudentIdCard";
+import { useEffect, useState } from "react";
+import { FaCheck } from "react-icons/fa6";
+import { RxCross2 } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
-import { FaArrowDownLong } from "react-icons/fa6";
+
 import { LuUploadCloud } from "react-icons/lu";
 import { MdDelete } from "react-icons/md";
 const IdCard = () => {
@@ -22,8 +23,6 @@ const IdCard = () => {
     }
     setSelectAll(!selectAll);
   };
-
-
   const handleSelectItem = (index) => {
     if (selectedItems.includes(index)) {
       setSelectedItems(selectedItems.filter((item) => item !== index));
@@ -31,102 +30,22 @@ const IdCard = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-  const data = [
-    {
-      name: "Olivia Rhye",
-      employeeId: "#5412340",
-      mobileNumber: "9876541230",
-      email: "olivia@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak.dsadasdasdas dasdasdasdasdasdasds",
-      status: "Approve",
-      selfAddress: "candiceTfghfghsaSasasafgsdasdasd d asd asdasd ",
-      profileImage: "url-to-olivia-image",
-    },
-    {
-      name: "Phoenix Baker",
-      employeeId: "#5412310",
-      mobileNumber: "9876541230",
-      email: "phoenix@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Approve",
-      selfAddress: "our area...",
-      profileImage: "url-to-phoenix-image",
-    },
-    {
-      name: "Lana Steiner",
-      employeeId: "#9876120",
-      mobileNumber: "9876541230",
-      email: "lana@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Approve",
-      selfAddress: "candiceT...",
-      profileImage: "url-to-lana-image",
-    },
-    {
-      name: "Demi Wilkinson",
-      employeeId: "#2309876",
-      mobileNumber: "9876541230",
-      email: "demi@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Approve",
-      selfAddress: "area hav...",
-      profileImage: "url-to-demi-image",
-    },
-    {
-      name: "Candice Wu",
-      employeeId: "#9876120",
-      mobileNumber: "9876541230",
-      email: "candice@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Rejected",
-      selfAddress: "candiceT...",
-      profileImage: "url-to-candice-image",
-    },
-    {
-      name: "Natali Craig",
-      employeeId: "#9876120",
-      mobileNumber: "9876541230",
-      email: "natali@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Approve",
-      selfAddress: "natali Th...",
-      profileImage: "url-to-natali-image",
-    },
-    {
-      name: "Drew Cano",
-      employeeId: "#9876120",
-      mobileNumber: "9876541230",
-      email: "drew@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Approve",
-      selfAddress: "drew can...",
-      profileImage: "url-to-drew-image",
-    },
-    {
-      name: "Kate Morrison",
-      employeeId: "#9876120",
-      mobileNumber: "9876541230",
-      email: "kate@untitled.com",
-      company: "Aideoa Ldt",
-      officeAddress: "Hotel Bak...",
-      status: "Approve",
-      selfAddress: "katecand...",
-      profileImage: "url-to-kate-image",
-    },
-  ];
-
+ 
+const {data,loading,getIdCard,approveIdCard}=useStudentIdCard(userType)
+console.log(data)
+useEffect(()=>{
+  getIdCard(userType)
+},[userType])
   return (
     <div className=" bg-white rounded-xl py-4 lightdropshadowbox">
       <div className="flex flex-col">
         <div className="flex  space-x-4 mb-4 items-center">
-          <div className="flex space-x-3 items-center "></div>
+        <div className="flex space-x-3 items-center">
+          <h2 className="font-bold text-lg">Id Card</h2>
+          <span className="bg-purple-200 px-2 text-xs rounded-full">
+          
+          </span>
+        </div>
           <div className="flex justify-end flex-1 px-4  items-center space-x-4 ">
             <div className="relative w-[55%]" >
             <CiSearch  className="absolute  top-3 left-3"/>
@@ -199,33 +118,33 @@ const IdCard = () => {
                     className=" checked:bg-purple-500 checked:border-purple-500 size-4  bg-col"
                   />
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-52">
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 ">
                 Name & Photo
               </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 ">
+              {userType==='Employees'?' Company Name':'College Name'}
+              </th>
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Employee ID
+               {userType==='Employees'?' Employee ID':'University ID'}
               </th>
             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Mobile Number
               </th>
             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Email Address
+               Address
               </th>
-            <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Company</th>
-              <th className="p-2 font-medium text-sm text-gray-400 max-w-32">
-                Office Address
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+               {userType==='Employees' && 'Working AREA'}
               </th>
-              <th className="p-2  gap-1 font-medium text-sm text-gray-400">
+            {userType!=='Employees' &&   <th className="p-2  gap-1 font-medium text-sm text-gray-400">
                 Status
-              </th>
-              <th className="p-2 font-medium text-sm text-gray-400 max-w-32">
-                Self Address
-              </th>
+              </th>}
+           
             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {data.slice(0, 7).map((item, index) => (
+            {data?.map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                  <input
@@ -237,34 +156,36 @@ const IdCard = () => {
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600  max-w-52 ">
                   <td className="flex items-center gap-1 whitespace-nowrap overflow-hidden text-ellipsis">
-                    <img src="/public/user.png" className="w-5 rounded-full" />{" "}
+                    <img src={(item.studentPhoto||item.employeePhoto) && userType==='Employees'?item?.employeePhoto:item?.studentPhoto  } className="w-5 rounded-full" />{" "}
                     {item.name}
                   </td>
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400 ">
-                  {item.employeeId}
+                {userType==='Employees'?item.companyName:item.collegeName}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400 ">
-                  {item.mobileNumber}
+                {userType==='Employees'?item.workingArea:item.universityId
+                }
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400 ">
+                  {item.contactNo}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.email}
-                </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.company}
+                  {item.address}
                 </td>
 
-                <td className=" text-gray-400 max-w-32  p-2 font-medium text-sm whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.officeAddress}
+                <td className="p-2 font-medium text-sm text-gray-400 ">
+                {userType==='Employees'&&item.workingArea
+                }
                 </td>
-                <td className="p-2 font-medium text-xs text-gray-400">
-                <td className={` rounded-full px-1 ${item.status==="Approve"?"bg-green-100 text-green-700 ":"bg-red-100 text-red-700"}`}>{item.status==="Approve"?"Approve":"Rejected"}</td>
-                </td>
-                <td className=" text-gray-400 max-w-32  p-2 font-medium text-sm whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.selfAddress}
-                </td>
-                <td className="p-2 font-medium text-sm text-gray-600 cursor-pointer">
-                  <BsThreeDotsVertical />
+                {
+                  userType!=='Employees' && <td className="p-2 font-medium text-xs text-gray-400">
+                  <td className={` rounded-full px-1 ${item.status==="approved"?"bg-green-100 text-green-700 ":"bg-red-100 text-red-700"}`}>{item.status}</td>
+                  </td>
+                }
+                    <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
+                    <FaCheck onClick={()=>approveIdCard(item.id,"approved")}/>
+                    <RxCross2 onClick={()=>approveIdCard(item.id,"rejected")}/>
                 </td>
               </tr>
             ))}

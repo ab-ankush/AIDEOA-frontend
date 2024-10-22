@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
-const url = `http://localhost:4000/api/auth`;
+import toast from "react-hot-toast";
+const url = import.meta.env.VITE_API_BACKEND_URL;
 const AddTeams = ({ setActiveComponent }) => {
   const [formData, setFormData] = useState({
     name: "",
-    image: "",
+    photo: "",
     category: "",
-    phone: "",
+    mobileNumber: "",
     email: "",
-    address: "",
+    selfAddress: "",
   });
 
   const handleChange = (e) => {
@@ -19,7 +20,13 @@ const AddTeams = ({ setActiveComponent }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${url}/signup`, formData);
+      const res = await axios.post(`${url}/api/ourteam`, formData);
+      if(res.status===200)
+      {
+        toast.success("Member added")
+        setActiveComponent("Our Teams")
+      }
+
     } catch (error) {
       console.log(error);
     }
@@ -48,27 +55,17 @@ const AddTeams = ({ setActiveComponent }) => {
           <div>
             <label className="block text-gray-600">Upload Image</label>
             <input
-              type="file"
+              type="text"
               name="image"
               accept="image/"
               onChange={handleChange}
               className="w-full px-4 py-1  bg-white rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="Event Title"
-              required
+              placeholder="Enter url"
+             
             />
           </div>
         </div>
-        <div>
-          {/* <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            placeholder="Event Title"
-            required
-          /> */}
-        </div>
+     
 
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -94,9 +91,9 @@ const AddTeams = ({ setActiveComponent }) => {
           <div>
             <label className="block text-gray-600">Mobile Number</label>
             <input
-              type="number"
-              name="phone"
-              value={formData.phone}
+              type="text"
+              name="mobileNumber"
+              value={formData.mobileNumber}
               onChange={handleChange}
               placeholder="Enter Mobile Number"
               className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -120,8 +117,8 @@ const AddTeams = ({ setActiveComponent }) => {
         <div>
           <label className="block text-gray-600">Self Address</label>
           <textarea
-            name="address"
-            value={formData.address}
+            name="selfAddress"
+            value={formData.selfAddress}
             onChange={handleChange}
             className="w-full px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-indigo-500"
             placeholder="Event Address"

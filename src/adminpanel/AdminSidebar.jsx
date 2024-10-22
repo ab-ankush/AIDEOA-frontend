@@ -16,11 +16,11 @@ const sidebar = [
   { icon: TiDocumentText, heading: "Resource" },
   { icon: FaRegQuestionCircle, heading: "Query" },
   { icon: PiIdentificationBadgeDuotone, heading: "ID Card" },
-  { icon: FaPhoneSquareAlt, heading: "Contact us" },
-  { icon: FaBell, heading: "Notification" },
+
+  { icon: FaBell, heading: "Newsletter" },
   { icon: BiTransferAlt , heading: "Mutual Transfer" },
-  { icon: SiChainlink, heading: "Common Links" },
-  { icon: IoIosPeople, heading: "Our Teams" },
+  { icon: BiTransferAlt , heading: "Mutual Request" },
+
   { icon: GoGoal , heading: "Our Missions" },
 ];
 

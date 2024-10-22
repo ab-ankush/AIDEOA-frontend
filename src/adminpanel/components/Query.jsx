@@ -4,6 +4,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import useQuery from "../../hooks/useQuery";
 
 const Query = () => {
   const data = [
@@ -47,14 +48,14 @@ const Query = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-
+  const {dataList}=useQuery()
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
         <div className="flex space-x-3 items-center">
           <h2 className="font-bold text-lg">Query</h2>
           <span className="bg-purple-200 px-2 text-xs rounded-full">
-            {data.length} Users
+            {dataList.length} query
           </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
@@ -71,10 +72,7 @@ const Query = () => {
             <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
               Download all
             </button>
-            <button className="bg-[#4B0082] shadow-md font-semibold flex justify-center items-center gap-1 text-white py-2 px-4 rounded-md">
-              <LuUploadCloud size={18} className="" />
-              <span>Create</span>
-            </button>
+
           </div>
         </div>
       </div>
@@ -91,7 +89,7 @@ const Query = () => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th className="py-3 px-4 text-left w-52 font-medium text-sm text-gray-500">
+              <th className="py-3 px-4 text-left  font-medium text-sm text-gray-500">
                 Name
               </th>
              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
@@ -102,16 +100,16 @@ const Query = () => {
               </th>
              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Company</th>
              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Office Address
+                Working Area
               </th>
-              <th className="p-2 font-medium text-sm text-gray-400 max-w-32">
-                Description
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-32">
+                Query
               </th>
              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item, index) => (
+            {dataList.map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -122,28 +120,24 @@ const Query = () => {
                   />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.title}
+                  {item.name}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.eventDateTime}
+                  {item.mobile}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.days}
+                  {item.email}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.location}
+                  {item.companyName}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.description.substring(0, 20)}...
+                  {item.workingArea}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  <Link
-                    to={item.url}
-                    className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis"
-                  >
-                    {item.url}
-                  </Link>
+                  {item.query}
                 </td>
+               
                 <td className="p-2 font-medium text-sm text-gray-600 cursor-pointer">
                   <BsThreeDotsVertical />
                 </td>

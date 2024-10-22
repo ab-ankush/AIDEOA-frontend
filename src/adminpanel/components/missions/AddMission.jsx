@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-const url = `http://localhost:4000/api`;
+const url = import.meta.env.VITE_API_BACKEND_URL;
 const AddMissions = ({ setActiveComponent }) => {
   const [formData, setFormData] = useState({
     title: "",
@@ -16,7 +16,7 @@ const AddMissions = ({ setActiveComponent }) => {
     e.preventDefault();
     console.log(formData);
     try {
-      const res = await axios.post(`${url}/mission`, formData);
+      const res = await axios.post(`${url}/api/mission`, formData);
       if (res.status === 200) {
         toast.success(res.data.message);
         setActiveComponent("Our Missions");

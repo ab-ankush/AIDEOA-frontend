@@ -7,22 +7,44 @@ import { MdDelete } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import { eventgetdata } from "../../../Connection/Api";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const Resources = ({ setActiveComponent, setEventsData }) => {
+const  Resources = ({ setActiveComponent, setEventsData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [d, setd] = useState([]);
+  const getdata = async () => {
+    try {
+      const data = await eventgetdata();
+      setd(data.data);
+    } catch (error) {
+      console.log(`error in getdata in Events.jsx ${error}`);
+    }
+  };
   useEffect(() => {
-    const getdata = async () => {
-      try {
-        const data = await eventgetdata();
-        setd(data.data);
-      } catch (error) {
-        console.log(`error in getdata in Events.jsx ${error}`);
-      }
-    };
+  
     getdata();
   }, []);
+
+  const handleDeleteEvent=async(id)=>{
+  
+    try {
+      const res = await axios.delete(
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/events/delete/${id}`
+      );
+      if (res.status === 200) {
+        getdata()
+      toast.success("Link Deleted")
+      }
+    } catch (error) {
+      
+        toast.error(error?.response?.data?.error)
+      throw new Error("Error deleting mission: " + error);
+    }
+  };
+  
+
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -44,7 +66,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
-
+  
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -70,10 +92,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
             <p className="text-nowrap">AIDEOA Events</p>
             <p className="font-bold">100</p>
           </div>
-          <div className="bg-white w-32 text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
-            <p className="text-nowrap">Online Test</p>
-            <p className="font-bold">100</p>
-          </div>
+        
         </div>
 
         <div className="flex justify-end flex-1 items-center space-x-4 ">
@@ -128,9 +147,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Description
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 max-w-32">
-                Url
-              </th>
+              
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Actions
               </th>
@@ -154,7 +171,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
                   {item.title}
                 </td>
                 <td className="py-3 px-4 text-gray-500 text-sm">
-                  {item.eventDateTime}
+                  {item.date}-{item.time}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400 text-nowrap">
                   {item.days}
@@ -165,16 +182,9 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
                 <td className="p-2 font-medium text-sm text-gray-400">
                   {item.description.substring(0, 20)}...
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  <Link
-                    to={item.url}
-                    className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis"
-                  >
-                    {item.url}
-                  </Link>
-                </td>
+            
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                  <RiDeleteBin6Line />
+                  <RiDeleteBin6Line  onClick={()=>handleDeleteEvent(item.id)}/>
                   <FiEdit2
                     onClick={() => {
                       setEventsData(item);

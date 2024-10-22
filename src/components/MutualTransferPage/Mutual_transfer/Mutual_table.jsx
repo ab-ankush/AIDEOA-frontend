@@ -5,7 +5,19 @@ import useMutualTransfer from "../../../hooks/useMutualTransfer";
 
 const Mutual_table = () => {
   const [search, setSearch] = useState("");
-  const { dataList } = useMutualTransfer();
+  const { dataList,acceptPair } = useMutualTransfer();
+
+  function handleAccept(data){
+    const obj={
+      user1Id:data.userId,
+      user2Id:1,
+      transferRequestId:data.id,
+
+      status:"pending"
+    
+    }
+    acceptPair(obj)
+  }
   return (
     <div className="m-5 mx-12 ">
       <div className="lg:w-[90%] my-4 mx-auto flex flex-wrap justify-start gap-4 items-center ">
@@ -51,9 +63,9 @@ const Mutual_table = () => {
 
       <div className="lg:w-[90%] mx-auto overflow-x-auto">
         <table className=" w-full  ">
-          <thead className="rounded-x-2xl">
+          <thead className="rounded-t-2xl">
             <tr className="  ">
-              <th className="  items-center min-w-1 rounded-tl-2xl rounded-bl-2xl text-white bg-purple-400 p-5 ">
+              <th className="  items-center min-w-1  text-white bg-purple-400 p-5 ">
                 <p>No.</p>
               </th>
               <th className=" p-1 text-white bg-purple-400  ">
@@ -94,6 +106,9 @@ const Mutual_table = () => {
               <th className=" p-1 text-white bg-purple-400  ">
                 <p>Date</p>
               </th>
+              <th className=" p-1 text-white bg-purple-400  ">
+                <p>Select</p>
+              </th>
             </tr>
           </thead>
 
@@ -101,7 +116,7 @@ const Mutual_table = () => {
             {dataList?.map((data, index) => (
               <tr
                 key={index}
-                className="border p-1 text-center rounded-tr-2xl rounded-br-2xl rounded-tl-2xl min-w-1 rounded-bl-2xl  border-gray-300"
+                className="border p-2 h-5 text-center rounded-tr-2xl rounded-br-2xl rounded-tl-2xl min-w-1 rounded-bl-2xl  border-gray-300"
               >
                 <td className="border p-1 text-center rounded-tl-2xl rounded-bl-2xl min-w-1 border-gray-300">
                   <p>{index + 1} </p>
@@ -141,9 +156,17 @@ const Mutual_table = () => {
                 <td className="border p-1 text-center   border-gray-300">
                   <p>{data.preferredTransferMine} </p>
                 </td>
-
                 <td className="border p-1 text-center text-xs text-nowrap  border-gray-300">
                   <p>{data.createdAt.toString().slice(0, 10)} </p>
+                </td>
+                <td className="border px-2 py-1 text-center text-xs text-nowrap  border-gray-300">
+                <button
+            type="button"
+              onClick={()=>handleAccept(data)}
+            className="bg-[#4B0082] text-white px-2 py-1 text-xs rounded-md hover:opacity-80 focus:outline-none "
+          >
+            Accept
+          </button>
                 </td>
               </tr>
             ))}

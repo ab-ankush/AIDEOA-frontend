@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 import { IoCloudUploadOutline } from "react-icons/io5";
@@ -8,65 +8,25 @@ import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
 import Pagination from "../../Pagination/Pagination";
 import { MdDelete } from "react-icons/md";
+import axios from "axios";
 
 const Notifications = () => {
-  const [contactData, setContactData] = useState([
-    {
-      checkbox: <input type="checkbox" className="size-4 bg-col" />,
-      name: "Olivia Rhye",
-      mobile: "9876541230",
-      email: "olivia@untitledui.com",
-      message: "The roads in our area have developed numerous potholes...",
-      date: "12 Nov 6:00 pm",
-      user_type: "membership",
-      action: <RiDeleteBinLine />,
-    },
-    {
-      checkbox: <input type="checkbox" className="size-4 bg-col" />,
-      name: "Phoenix Baker",
-      mobile: "9876541230",
-      email: "phoenix@untitledui.com",
-      message: "Our area has developed numerous potholes...",
-      date: "12 Nov 6:00 pm",
-      user_type: "All User",
-      action: <HiOutlineDotsVertical />,
-    },
-    {
-      checkbox: <input type="checkbox" className="size-4 bg-col" />,
-      name: "Lana Steiner",
-      mobile: "9876541230",
-      email: "lana@untitledui.com",
-      message: "The roads in our area have developed numerous potholes...",
-      date: "12 Nov 6:00 pm",
-      user_type: "membership",
-      action: <HiOutlineDotsVertical />,
-    },
-    {
-      checkbox: <input type="checkbox" className="size-4 bg-col" />,
-      name: "Demi Wilkinson",
-      mobile: "9876541230",
-      email: "demi@untitledui.com",
-      message: "Area has developed numerous potholes...",
-      date: "12 Nov 6:00 pm",
-      user_type: "All User",
-      action: <HiOutlineDotsVertical />,
-    },
-  ]);
+  const [mailsData,setMailsData]=useState([])
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(contactData.length / itemsPerPage);
+  const itemsPerPage = 8;
+  const totalPages = Math.ceil(mailsData.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = contactData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = mailsData.slice(indexOfFirstItem, indexOfLastItem);
 
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
     } else {
-      setSelectedItems(contactData.map((_, index) => index));
+      setSelectedItems(mailsData.map((_, index) => index));
     }
     setSelectAll(!selectAll);
   };
@@ -82,14 +42,32 @@ const Notifications = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
+  const fetchMails = async () => {
+    try {
+        const res = await axios.get(`${import.meta.env.VITE_API_BACKEND_URL}/api/notification`);
+        console.log(res)
+        if (res.status === 200) {
+            setMailsData(res.data);
+        } else {
+            console.error(`Unexpected response status: ${res.status}`);
+        }
+    } catch (error) {
+      console.log(error)
+       throw new Error("Something went wrong")
+    }
+};
+useEffect(()=>{
+fetchMails()
+},[])
+
   return (
     <div>
       <div className="py-4 bg-white rounded-xl lightdropshadowbox">
         <div className="flex px-4 space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center ">
-            <h2 className="font-bold text-lg">Notifications</h2>
+            <h2 className="font-bold text-lg">Newsletter</h2>
             <span className="bg-purple-200 px-2  text-xs rounded-full">
-              {contactData.length} Users
+              {mailsData.length} Users
             </span>
           </div>
 
@@ -102,7 +80,7 @@ const Notifications = () => {
                 placeholder="Search"
               />
             </div>
-            {selectedItems.length >= 2 && <MdDelete size={26} />}
+            {mailsData.length >= 2 && <MdDelete size={26} />}
             <div className="flex max-lg:flex-col gap-2">
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
@@ -116,8 +94,8 @@ const Notifications = () => {
         </div>
 
         <div>
-          <div className="overflow-x-scroll">
-            <table className="  min-w-[1232px]  w-full ">
+          <div className="">
+            <table className="    w-full ">
               <thead className="border-b bg-gray-200 border-gray-200 h-16  ">
                 <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
                   <th className="p-2 px-4 font-medium text-sm text-gray-200">
@@ -128,25 +106,17 @@ const Notifications = () => {
                       onChange={handleSelectAll}
                     />
                   </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                    Heading
+                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-full">
+                    Emails
                   </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                    Date & Time
-                  </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                    Content
-                  </th>
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                    User Type
-                  </th>
+                 
                   <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {currentItems.map((contact, index) => (
+                {currentItems?.map((contact, index) => (
                   <tr key={index} className="border-b h-16 hover:bg-gray-50">
                     <td className="p-2 px-4 font-medium text-sm text-gray-600">
                       <input
@@ -156,22 +126,8 @@ const Notifications = () => {
                         onChange={() => handleSelectItem(index)}
                       />
                     </td>
-                    <td className="py-3 px-4 font-medium">{contact.name}</td>
-                    <td className="py-3 px-4 text-gray-500 ">{contact.date}</td>
-                    <td className="py-3 px-4 text-gray-500">
-                      {contact.message}
-                    </td>
-                    <td className="py-3 px-4 text-gray-500">
-                      <span
-                        className={` font-medium  ${
-                          contact.user_type == "membership"
-                            ? "text-purple-800 bg-purple-100"
-                            : "text-green-800 bg-green-100"
-                        } px-3 py-1 rounded-full`}
-                      >
-                        {contact.user_type}
-                      </span>
-                    </td>
+                    <td className="py-3 px-4 font-medium text-gray-500">{contact?.address}</td>
+                   
                     <td className="py-3 px-4 font-medium">
                       <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
                         <RiDeleteBinLine /> <FiEdit2 />

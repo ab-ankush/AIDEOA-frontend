@@ -14,6 +14,7 @@ import GoogleSignInButton from "./Cards/SignInwithGoogle";
 import { loginfunc } from "../services/axios";
 import { AuthContext } from "../context/authContext";
 import toast from "react-hot-toast";
+import useCommonLinks from "../hooks/useCommonLinks";
 
 
 const Login = () => {
@@ -25,6 +26,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const [pass, setPass] = useState(false);
   const {handleLogin}=useContext(AuthContext);
+  const {dataList}=useCommonLinks()
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -148,10 +150,21 @@ const Login = () => {
             </span>
           </div>
         <div className="flex gap-4 absolute text-white bottom-3 left-[50%] -translate-x-[50%] -translate-y-[50%] ">
+          <Link >
           <FaInstagram className="cursor-pointer" />
+          </Link>
+          <Link >
           <FaDribbble className="cursor-pointer" />
-          <FaTwitter className="cursor-pointer" />
+          </Link>
+          <Link >
           <FaYoutube className="cursor-pointer" />
+          </Link>
+          <Link >
+          <FaTwitter className="cursor-pointer" />
+          </Link>
+         
+        
+
         </div>
       </div>
     </div>

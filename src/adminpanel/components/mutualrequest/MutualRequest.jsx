@@ -1,22 +1,22 @@
+import axios from "axios";
 import useMutualTransfer from "../../../hooks/useMutualTransfer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { BsThreeDotsVertical } from "react-icons/bs";
+
 import { CiSearch } from "react-icons/ci";
 import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
 import { MdDelete } from "react-icons/md";
 import { RiDeleteBinLine } from "react-icons/ri";
+import toast from "react-hot-toast";
+import useMutualPairs from "../../../hooks/useMutualPairs";
 
-const MutualTransfer = () => {
+const MutualRequest = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [userType, setUserType] = useState("Executive");
+  const [userType, setUserType] = useState("Pending");
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const totalPages = 3;
-  const NonExecutive = new Array(20).fill("");
-  const executive = new Array(30).fill("");
 
   const handleSelectAll = () => {
     if (selectAll) {
@@ -34,9 +34,12 @@ const MutualTransfer = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
+ 
+const {data,loading,approvePair,getPairs}=useMutualPairs()
 
-  const { dataList: data, loading } = useMutualTransfer(userType, searchTerm);
-
+useEffect(()=>{
+getPairs(userType)
+},[userType])
   return (
     <div className="bg-white rounded-xl py-4 lightdropshadowbox">
       <div className="flex flex-col">
@@ -68,18 +71,18 @@ const MutualTransfer = () => {
         <div className="flex justify-between px-4">
           <div className="flex space-x-3 items-center">
             <button
-              onClick={() => setUserType("Executive")}
+              onClick={() => setUserType("Pending")}
               className={` ${
-                userType === "Executive"
+                userType === "Pending"
                   ? "bg-[#4B0082] text-white"
                   : "bg-white text-[#4B0082]"
               } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
             >
-              <span>Executive</span>
-              {userType !== "Non-Executive" && (
+              <span>Pending</span>
+              {userType !== "Completed" && (
                 <span
                   className={`text-xs font-bold px-2 rounded-md ${
-                    userType === "Executive"
+                    userType === "Pending"
                       ? "bg-white text-[#4B0082]"
                       : "bg-[#4B0082] text-white"
                   }`}
@@ -89,18 +92,18 @@ const MutualTransfer = () => {
               )}
             </button>
             <button
-              onClick={() => setUserType("Non-Executive")}
+              onClick={() => setUserType("Completed")}
               className={` ${
-                userType !== "Executive"
+                userType !== "Pending"
                   ? "bg-[#4B0082] text-white"
                   : "bg-white text-[#4B0082]"
               } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
             >
-              <span>Non Executive</span>
-              {userType === "Non-Executive" && (
+              <span>Completed</span>
+              {userType === "Completed" && (
                 <span
                   className={`text-xs font-bold px-2 rounded-md ${
-                    userType !== "Executive"
+                    userType !== "Pending"
                       ? "bg-white text-[#4B0082]"
                       : "bg-[#4B0082] text-white"
                   }`}
@@ -159,6 +162,15 @@ const MutualTransfer = () => {
               <th className="p-2 font-medium text-sm text-gray-500 max-w-32">
                 Preferred Transfer Mine
               </th>
+              <th className="p-2 font-medium text-sm text-gray-500 max-w-32">
+                Member2
+              </th>
+              <th className="p-2 font-medium text-sm text-gray-500 max-w-32">
+                Email
+              </th>
+              <th className="p-2 font-medium text-sm text-gray-500 max-w-32">
+                Status
+              </th>
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Actions
               </th>
@@ -177,41 +189,50 @@ const MutualTransfer = () => {
                   />
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-600 max-w-52">
-                  {item.name}
+                  {item.transferRequest.name}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.aideoaIdNo}
+                  {item.transferRequest.aideoaIdNo}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.mobileNumber}
+                  {item.transferRequest.mobileNumber}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.currentSubsidiary}
+                  {item.transferRequest.currentSubsidiary}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.currentPostedArea}
+                  {item.transferRequest.currentPostedArea}
                 </td>
                 <td className="text-gray-400 max-w-32 p-2 font-medium text-sm whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.currentMinesName}
+                  {item.transferRequest.currentMinesName}
                 </td>
                 <td className="p-2 font-medium text-xs text-gray-400">
-                  {item.grade}
+                  {item.transferRequest.grade}
                 </td>
                 <td className="text-gray-400 max-w-32 p-2 font-medium text-sm whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.designation}
+                  {item.transferRequest.designation}
                 </td>
                 <td className="p-2 font-medium text-xs text-gray-400">
-                  {item.preferredTransferSubsidiary}
+                  {item.transferRequest.preferredTransferSubsidiary}
                 </td>
                 <td className="p-2 font-medium text-xs text-gray-400">
-                  {item.preferredTransferArea}
+                  {item.transferRequest.preferredTransferArea}
                 </td>
                 <td className="p-2 font-medium text-xs text-gray-400">
-                  {item.preferredTransferMine}
+                  {item.transferRequest.preferredTransferMine}
+                </td>
+                <td className="p-2 font-medium text-xs text-gray-400">
+                  {item.user2.fullName}
+                </td>
+                <td className="p-2 font-medium text-xs text-gray-400">
+                  {item.user2.email}
+                </td>
+                <td className="p-2 font-medium text-xs text-gray-400">
+                  {item.status}
                 </td>
                 <td className="py-3 px-4 font-medium">
-                      <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
-                        <RiDeleteBinLine /> <FiEdit2 />
+                      <button disabled={item.status==='completed'} onClick={()=>approvePair(item.id)} className="text-gray-500 flex gap-x-5 hover:text-gray-700">
+                       <span className="text-xs text-white px-2 py-1 rounded-full bg-green-700">{item.status==='completed'?'Completed':'Approve'}</span>
                       </button>
                     </td>
               </tr>
@@ -262,4 +283,4 @@ const MutualTransfer = () => {
   );
 };
 
-export default MutualTransfer;
+export default MutualRequest

@@ -55,18 +55,20 @@ const arr = [
 ];
 const EventPage = () => {
   const [limit, setLimit] = useState(3);
+  const [eventsData, setEventsData] = useState([]);
   const getdata = async () => {
     try {
       const data = await eventgetdata();
-      console.log(data);
+      setEventsData(data.data)
     } catch (error) {
       console.log(`error in Eventpage.jsx ${error}`);
     }
   };
   useEffect(() => {
-    //
-    console.log(import.meta);
+    getdata()
+
   }, []);
+  console.log("ds",eventsData)
   return (
     <div className="pt-14">
       <TopImageCard
@@ -74,7 +76,7 @@ const EventPage = () => {
         title={"AIDEOA  Events"}
       />
       <div className=" flex px-5 flex-wrap gap-2 mt-12  content-center max-w-7xl  m-auto">
-        {arr.map((item, idx) => {
+        {eventsData&&eventsData?.map((item, idx) => {
           return <Card key={idx} idx={idx} item={item} />;
         })}
       </div>
@@ -84,7 +86,7 @@ const EventPage = () => {
       <InfoHeader />
 
       <div className="flex gap-10 flex-col">
-        {data.slice(0, limit).map((newsItem, index) => (
+        {data?.slice(0, limit).map((newsItem, index) => (
           <NewsCard
             key={index}
             imageSrc={newsItem.images}

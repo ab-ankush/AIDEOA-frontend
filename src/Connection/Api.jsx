@@ -11,7 +11,7 @@ export const eventpostdata = async (data) => {
 export const eventgetdata = async () => {
   try {
     const data = await axios.get(
-      `${import.meta.env.VITE_API_BACKEND_URL}/api/events/all`
+      `${import.meta.env.VITE_API_BACKEND_URL}/api/events`
     );
     console.log(data);
     return data;
@@ -19,14 +19,14 @@ export const eventgetdata = async () => {
     console.log(`error in getdata in Api.jsx ${error}`);
   }
 };
-export const eventupdatedata = async (id) => {
+export const eventupdatedata = async (data) => {
   try {
     return await axios.put(
-      `${import.meta.env.VITE_API_BACKEND_URL}/api/events/update/${id}`,
+      `${import.meta.env.VITE_API_BACKEND_URL}/api/events/update/${data.id}`,
       { data }
     );
   } catch (error) {
-    console.log(`error in Api.jsx in eventupdatedata ${error}`);
+     console.log(`error in Api.jsx in eventupdatedata ${error}`);
   }
 };
 export const eventdeletedata = async (id) => {

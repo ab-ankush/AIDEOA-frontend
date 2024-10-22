@@ -14,14 +14,14 @@ const sidebar = [
   { icon: RiMoneyRupeeCircleLine, heading: "Transaction" },
   { icon: SlCalender, heading: "Events" },
   { icon: TiDocumentText, heading: "Resource" },
+  { icon: TiDocumentText, heading: "Latest News" },
   { icon: FaRegQuestionCircle, heading: "Query" },
   { icon: PiIdentificationBadgeDuotone, heading: "ID Card" },
-
   { icon: FaBell, heading: "Newsletter" },
-  { icon: BiTransferAlt , heading: "Mutual Transfer" },
-  { icon: BiTransferAlt , heading: "Mutual Request" },
+  { icon: BiTransferAlt, heading: "Mutual Transfer" },
+  { icon: BiTransferAlt, heading: "Mutual Request" },
 
-  { icon: GoGoal , heading: "Our Missions" },
+  { icon: GoGoal, heading: "Our Missions" },
 ];
 
 const AdminSidebar = ({ activeComponent, setActiveComponent }) => {

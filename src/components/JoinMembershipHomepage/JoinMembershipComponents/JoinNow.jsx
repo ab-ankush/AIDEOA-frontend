@@ -26,7 +26,7 @@ const JoinNow = () => {
 
           <p className="text-4xl font-semibold">{fee}₹</p>
         </div>
-{/* 
+        {/* 
         <p className="text-AIDEOTYPO  text-lg">
           Enter a custom donation amount
         </p>

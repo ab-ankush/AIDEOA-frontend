@@ -21,10 +21,10 @@ import AddTeams from "./components/Our_Team/AddTeams";
 import MutualTransfer from "./components/mutualtransfer/MutualTransfer";
 import Missions from "./components/missions/Misisions";
 import AddMissions from "./components/missions/AddMission";
+import LatestNews from "../components/Admin_panel/LatestNews/LatestNews.jsx";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
-
   const renderComponent = () => {
     switch (activeComponent) {
       case "Dashboard":
@@ -32,6 +32,13 @@ const AdminPanel = () => {
       case "Events":
         return (
           <Events
+            setActiveComponent={setActiveComponent}
+            setEventsData={setEventsData}
+          />
+        );
+      case "Latest News":
+        return (
+          <LatestNews
             setActiveComponent={setActiveComponent}
             setEventsData={setEventsData}
           />

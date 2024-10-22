@@ -40,6 +40,12 @@ const sidebar = [
   },
   {
     icon: (
+      <TiDocumentText className="w-[24px] text-white my-auto h-[24px] ml-1 " />
+    ),
+    heading: "Lastest News",
+  },
+  {
+    icon: (
       <FaRegQuestionCircle className="w-[24px] text-white my-auto h-[24px] ml-1 " />
     ),
     heading: "Query",

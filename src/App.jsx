@@ -67,7 +67,6 @@ export default function App() {
         </Route>
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/pay" element={<Payment />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

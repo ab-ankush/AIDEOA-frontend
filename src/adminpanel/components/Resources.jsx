@@ -4,6 +4,12 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md"; // Import MdDelete for deletion
+import OnlineTest from "./onlinetest/OnlineTest";
+import StudentCorner from "../components/studentnews/StudentNews";
+import AddTest from "./onlinetest/AddTest";
+import AddStudentNews from "./studentnews/AddStudentNews";
+import Employeecorner from "./employeenews/EmployeeNews";
+import AddEmployeeNews from "./employeenews/AddEmployeeNews";
 
 const Resources = () => {
   const data = [
@@ -56,9 +62,10 @@ const Resources = () => {
       url: "https://www.example.com",
     },
   ];
-
+  const [activeComponent, setActiveComponent] = useState("Student Corner");
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
+
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
 
@@ -81,51 +88,77 @@ const Resources = () => {
     }
   };
 
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case "Online Test":
+        return <OnlineTest setActiveComponent={setActiveComponent} />;
+      case "Add Test":
+        return <AddTest setActiveComponent={setActiveComponent} />;
+      case "Employee Corner":
+        return <Employeecorner setActiveComponent={setActiveComponent} />;
+      case "Add Employeenews":
+        return <AddEmployeeNews setActiveComponent={setActiveComponent} />;
+      case "Student Corner":
+        return <StudentCorner setActiveComponent={setActiveComponent} />;
+      case "Add Studentnews":
+        return <AddStudentNews setActiveComponent={setActiveComponent} />;
+      default:
+        return <></>;
+    }
+  };
   return (
     <div className="rounded-xl py-4 bg-gray-50">
       <div className="flex space-x-4 mb-4 px-4 max-lg:flex-col-reverse max-lg:gap-2">
-        <div className="flex space-x-4">
-          <div className="bg-[#4B0082] text-center text-white shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16">
-            <p className="text-nowrap">Student Corner</p>
-            <p className="font-bold">100</p>
-          </div>
-          <div className="bg-white text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
-            <p className="text-nowrap">Employee Corner</p>
-            <p className="font-bold">100</p>
-          </div>
-          <div className="bg-white text-gray-700 text-center shadow-md border rounded-xl flex flex-col justify-center p-2 h-16 items-center">
-            <p className="text-nowrap">Education</p>
-            <p className="font-bold">100</p>
-          </div>
-          <div className="bg-white w-32 text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
-            <p className="text-nowrap">Online Test</p>
-            <p className="font-bold">100</p>
-          </div>
-        </div>
+      <div className="flex space-x-4">
+  <div
+    onClick={() => setActiveComponent("Student Corner")}
+    className={`${
+      activeComponent === "Student Corner"
+        ? "bg-[#4B0082] text-white" // Active state
+        : "bg-white text-gray-700" // Inactive state
+    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+  >
+    <p className="text-nowrap">Student Corner</p>
+    <p className="font-bold">100</p>
+  </div>
+  <div
+    onClick={() => setActiveComponent("Employee Corner")}
+    className={`${
+      activeComponent === "Employee Corner"
+        ? "bg-[#4B0082] text-white" // Active state
+        : "bg-white text-gray-700" // Inactive state
+    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+  >
+    <p className="text-nowrap">Employee Corner</p>
+    <p className="font-bold">100</p>
+  </div>
+  <div
+    onClick={() => setActiveComponent("Education")}
+    className={`${
+      activeComponent === "Education"
+        ? "bg-[#4B0082] text-white" // Active state
+        : "bg-white text-gray-700" // Inactive state
+    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+  >
+    <p className="text-nowrap">Education</p>
+    <p className="font-bold">100</p>
+  </div>
+  <div
+    onClick={() => setActiveComponent("Online Test")}
+    className={`${
+      activeComponent === "Online Test"
+        ? "bg-[#4B0082] text-white" // Active state
+        : "bg-white text-gray-700" // Inactive state
+    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+  >
+    <p className="text-nowrap">Online Test</p>
+    <p className="font-bold">100</p>
+  </div>
+</div>
 
-        <div className="flex justify-end flex-1 items-center space-x-4">
-          <div className="relative w-[55%]">
-            <CiSearch className="absolute top-3 left-3" />
-            <input
-              type="text"
-              className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
-              placeholder="Search"
-            />
-          </div>
-          {selectedItems.length >= 2 && <MdDelete size={26} />}
-          <div className="flex max-lg:flex-col gap-2">
-            <button className="bg-white font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-              Download all
-            </button>
-            <button className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1 text-white py-2 px-4 rounded-md">
-              <LuUploadCloud size={18} />
-              <span>Create</span>
-            </button>
-          </div>
-        </div>
       </div>
 
-      <div className="overflow-x-auto">
+      {/* <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
@@ -197,9 +230,9 @@ const Resources = () => {
             ))}
           </tbody>
         </table>
-      </div>
-
-      <div className="flex justify-between items-center mt-4 px-4">
+      </div> */}
+      {renderComponent()}
+      {/* <div className="flex justify-between items-center mt-4 px-4">
         <button
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           disabled={currentPage === 1}
@@ -231,7 +264,7 @@ const Resources = () => {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

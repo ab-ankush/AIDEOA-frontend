@@ -109,10 +109,7 @@ fetchMails()
                   <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-full">
                     Emails
                   </th>
-                 
-                  <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                    Actions
-                  </th>
+              
                 </tr>
               </thead>
               <tbody>
@@ -128,11 +125,7 @@ fetchMails()
                     </td>
                     <td className="py-3 px-4 font-medium text-gray-500">{contact?.address}</td>
                    
-                    <td className="py-3 px-4 font-medium">
-                      <button className="text-gray-500 flex gap-x-5 hover:text-gray-700">
-                        <RiDeleteBinLine /> <FiEdit2 />
-                      </button>
-                    </td>
+                 
                   </tr>
                 ))}
               </tbody>

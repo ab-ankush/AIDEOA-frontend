@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Qrcode from "react-qr-code";
+import useStudentIdCard from "../../../hooks/useIdCard";
 const EmployeeIdCard = () => {
   const [show, setShow] = useState(true);
 
@@ -62,8 +63,11 @@ const EmployeeIdCard = () => {
   const currentDate = new Date()
 
   const updatedExpiryDate = getExpiryDate(currentDate)
-
-  
+  const {getIdCardById,data}=useStudentIdCard()
+  useEffect(()=>{
+    getIdCardById(1,"Employees")
+  },[])
+  console.log(data)
   return (
     <div className="flex  flex-col w-full justify-start z-0">
       <div className="flex  flex-col justify-start items-center">
@@ -102,14 +106,13 @@ const EmployeeIdCard = () => {
 
               <div className="h-[266px] w-[391px] ">
                 <img
-                  src="/user1.png"
+                  src={data?.employeePhoto || "/user1.png"}
                   className="absolute border-[2px] border-red-200 h-[144px] w-[144px] top-[130px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-white"
                   alt="i"
                 />
                 <p className="my-10px absolute text-[20px] top-[220px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center font-bold">
-                  VICTOR ANIH
+                 {data.name}
                 </p>
-
                 <div className="my-[10px] w-[292px] h-[91px] mx-auto bg-white rounded-lg left-1/2 top-[300px] absolute transform -translate-x-1/2 -translate-y-1/2 text-center flex justify-center items-center">
                   <div className="flex flex-col text-[11px] justify-start items-start">
                     <div className="flex justify-start items-start">
@@ -118,7 +121,7 @@ const EmployeeIdCard = () => {
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">Contact :</h4>
-                      <p>1201248510</p>
+                      <p>{data?.contactNo}</p>
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">E-mail :</h4>
@@ -126,7 +129,7 @@ const EmployeeIdCard = () => {
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">Address :</h4>
-                      <p>eque porro quisquam est adipisci velit.</p>
+                      <p>{data?.address}</p>
                     </div>
                   </div>
                 </div>

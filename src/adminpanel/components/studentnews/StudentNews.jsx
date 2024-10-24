@@ -1,50 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { LuUploadCloud } from "react-icons/lu";
+
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+
+import useOnlineTest from "../../../hooks/useOnlineTest";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
-import { eventgetdata } from "../../../Connection/Api";
-import axios from "axios";
-import toast from "react-hot-toast";
+import useStudentNews from "../../../hooks/useStudentNews";
 
-const  Resources = ({ setActiveComponent, setEventsData }) => {
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [selectAll, setSelectAll] = useState(false);
-  const [d, setd] = useState([]);
-  const getdata = async () => {
-    try {
-      const data = await eventgetdata();
-      setd(data.data);
-    } catch (error) {
-      console.log(`error in getdata in Events.jsx ${error}`);
-    }
-  };
-  useEffect(() => {
-  
-    getdata();
-  }, []);
-
-  const handleDeleteEvent=async(id)=>{
-  
-    try {
-      const res = await axios.delete(
-        `${import.meta.env.VITE_API_BACKEND_URL}/api/events/delete/${id}`
-      );
-      if (res.status === 200) {
-        getdata()
-      toast.success("Link Deleted")
-      }
-    } catch (error) {
-      
-        toast.error(error?.response?.data?.error)
-      throw new Error("Error deleting mission: " + error);
-    }
-  };
-  
-
+const StudentNews = ({setActiveComponent}) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -62,11 +28,14 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
       description: "our area have developed...",
       url: "https://www.example.com",
     },
+  
   ];
 
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 3;
-  
+
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -83,19 +52,17 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-
+  const {dataList,deletenews}=useStudentNews()
   return (
-    <div className="py-4 bg-white rounded-xl">
-      <div className="flex space-x-4 mb-4 max-lg:flex-col-reverse max-lg:gap-2 px-4">
-        <div className="flex space-x-4">
-          <div className="bg-[#4B0082] w-32 text-center text-white shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16">
-            <p className="text-nowrap">AIDEOA Events</p>
-            <p className="font-bold">{d.length}</p>
-          </div>
-        
+    <div className="py-4 bg-white rounded-xl lightdropshadowbox">
+      <div className="flex px-4 space-x-4 mb-4 items-center">
+        <div className="flex space-x-3 items-center">
+          <h2 className="font-bold text-lg">Student</h2>
+          <span className="bg-purple-200 px-2 text-xs rounded-full">
+            {dataList.length} tests
+          </span>
         </div>
-
-        <div className="flex justify-end flex-1 items-center space-x-4 ">
+        <div className="flex justify-end flex-1 items-center space-x-4">
           <div className="relative w-[55%]">
             <CiSearch className="absolute top-3 left-3" />
             <input
@@ -106,21 +73,15 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
           </div>
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
-            <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-              Download all
+            <button onClick={()=>setActiveComponent("Add Studentnews")} className="bg-[#4B0082] text-nowrap font-semibold border shadow-md text-white py-2 px-4 rounded-md mr-2">
+              Create
             </button>
-            <button
-              className="bg-[#4B0082] shadow-md font-semibold flex items-center gap-1 text-white py-2 px-4 rounded-md"
-              onClick={() => setActiveComponent("Add Events")}
-            >
-              <LuUploadCloud size={18} />
-              <span>Create</span>
-            </button>
+
           </div>
         </div>
       </div>
 
-      <div className="overflow-x-scroll w-full">
+      <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="text-left border-b bg-gray-100 border-gray-200 h-16">
@@ -132,33 +93,23 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
                   onChange={handleSelectAll}
                 />
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-52">
+              <th className="py-3 px-4 text-left  font-medium text-sm text-gray-500">
                 Title
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 text-nowrap">
-                Event Date & Time
-              </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Days
-              </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Location
-              </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Description
               </th>
-              
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Actions
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Category
               </th>
+         
+              
+             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {d.map((item, index) => (
-              <tr
-                key={index}
-                className="border-b border-gray-200 h-16 cursor-pointer"
-              >
+            {dataList.map((item, index) => (
+              <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
                     type="checkbox"
@@ -170,27 +121,18 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
                 <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">
                   {item.title}
                 </td>
-                <td className="py-3 px-4 text-gray-500 text-sm">
-                  {item.date}-{item.time}
-                </td>
-                <td className="p-2 font-medium text-sm text-gray-400 text-nowrap">
-                  {item.days}
+                <td className="p-2 font-medium text-sm text-gray-400">
+                  {item.description}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.location}
+                  {item.category}
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.description.substring(0, 20)}...
-                </td>
-            
+                
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                  <RiDeleteBin6Line  onClick={()=>handleDeleteEvent(item.id)}/>
-                  <FiEdit2
-                    onClick={() => {
-                      setEventsData(item);
-                      setActiveComponent("Events Details");
-                    }}
-                  />
+                  <RiDeleteBin6Line  onClick={()=>deletenews(item.id)}/>
+                  <FiEdit2 onClick={()=>{
+                 
+                  }}/>
                 </td>
               </tr>
             ))}
@@ -235,4 +177,4 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
   );
 };
 
-export default Resources;
+export default StudentNews;

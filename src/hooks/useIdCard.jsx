@@ -28,6 +28,28 @@ const useStudentIdCard = (userType) => {
              toast.error(error.response.data.error)
            }
          }
+         const getIdCardById=async(id,category)=>{
+          setLoading(true);
+          let res;
+             try {
+              if(category==='Employees')
+                {  res = await axios.get(
+                    `${import.meta.env.VITE_API_BACKEND_URL}/api/employeeidcard/${id}`,{ 
+                    }
+                  );}
+                  else{
+                    res = await axios.get(
+                     `${import.meta.env.VITE_API_BACKEND_URL}/api/studentidcard/${id}`,{ 
+                     })
+                  }
+               if (res.status === 200) setDataList(res.data)
+               setLoading(false);
+             } catch (error) {
+               setLoading(false);
+               console.log(error)
+               toast.error(error.response.data.error)
+             }
+           }
     const approveIdCard=async(id,status)=>{
         setLoading(true);
         try {
@@ -49,9 +71,7 @@ const useStudentIdCard = (userType) => {
         }
     }
    
-       useEffect(()=>{
-        getIdCard(userType)
-       },[userType])
-  return {data,loading,approveIdCard,getIdCard}
+   
+  return {data,loading,approveIdCard,getIdCard,getIdCardById}
 }
 export default useStudentIdCard

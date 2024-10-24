@@ -100,7 +100,7 @@ const data = [
 ];
 const Member = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [userType, setUserType] = useState("Employees");
+  const [userType, setUserType] = useState("All");
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
 
@@ -147,21 +147,35 @@ const Member = () => {
               </div>
               {selectedItems.length >= 2 && <MdDelete size={26} />}
               <div className="flex max-lg:flex-col gap-2">
-                <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
-                  Filter by
-                </button>
+             
                 <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                   Download all
                 </button>
-                <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
-                  <LuUploadCloud size={18} className="" />
-                  <span>Create</span>
-                </button>
+               
               </div>
             </div>
           </div>
           <div className="flex justify-between px-4">
               <div className="flex space-x-3 items-center ">
+              <button
+                  onClick={() => setUserType("All")}
+                  className={` ${
+                    userType === "All"
+                      ? "bg-[#4B0082]  text-white"
+                      : "bg-white text-[#4B0082]"
+                  } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
+                >
+                  <span>All</span>
+             {      userType==='All' &&  <span
+                    className={`text-xs  font-bold px-2 rounded-md ${
+                      userType === "All"
+                        ? "bg-white text-[#4B0082]"
+                        : "bg-[#4B0082]  text-white"
+                    }`}
+                  >
+                      {dataList.length}
+                    </span>}
+                </button>
                 <button
                   onClick={() => setUserType("Employees")}
                   className={` ${
@@ -171,7 +185,7 @@ const Member = () => {
                   } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
                 >
                   <span>Employees</span>
-             {      userType!=='Students' &&  <span
+             {      userType==='Employees' &&  <span
                     className={`text-xs  font-bold px-2 rounded-md   ${
                       userType == "Employees"
                         ? "bg-white text-[#4B0082]"
@@ -184,7 +198,7 @@ const Member = () => {
                 <button
                   onClick={() => setUserType("Students")}
                   className={` ${
-                    userType !== "Employees"
+                    userType === "Students"
                       ? "bg-[#4B0082]  text-white"
                       : "bg-white text-[#4B0082]"
                   } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}

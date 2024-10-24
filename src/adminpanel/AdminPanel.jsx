@@ -15,6 +15,7 @@ import Transaction_page from "./components/Transaction/Transaction_page";
 import Member from "./components/Members/Member";
 import AddEvent from "./components/Events/AddEvents";
 
+
 import EventDetails from "./components/Events/EventsDetails";
 import UpdateEvents from "./components/Events/UpdateEvents";
 import AddTeams from "./components/Our_Team/AddTeams";
@@ -23,11 +24,13 @@ import Missions from "./components/missions/Misisions";
 import AddMissions from "./components/missions/AddMission";
 import UpdateMissions from "./components/missions/UpdateMissions";
 import MutualRequest from "./components/mutualrequest/MutualRequest";
+import OnlineTest from "./components/onlinetest/OnlineTest";
+import AddTest from "./components/onlinetest/AddTest";
+import StudentNews from "./components/studentnews/StudentNews";
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
   const [missionData, setMissionData] = useState();
-
   const renderComponent = () => {
     switch (activeComponent) {
       case "Dashboard":
@@ -42,7 +45,7 @@ const AdminPanel = () => {
       case "Transaction":
         return <Transaction_page />;
       case "Resource":
-        return <Resources />;
+        return <Resources  setActiveComponent={setActiveComponent}/>;
       case "Members":
         return <Member />;
       case "Query":
@@ -52,16 +55,16 @@ const AdminPanel = () => {
       case "Mutual Transfer":
         return <MutualTransfer />;
         case "Mutual Request":
-        return <MutualRequest />;
+        return <MutualRequest />
       case "Contact us":
         return <ContactUs />;
       case "Newsletter":
         return <Notifications />;
-        case "Add Teams":
+  
+          case "Add Teams":
           return <AddTeams setActiveComponent={setActiveComponent} />;
         case "Add Events":
         return <AddEvent setActiveComponent={setActiveComponent} />;
-     
       case "Events Details":
         return (
           <EventDetails

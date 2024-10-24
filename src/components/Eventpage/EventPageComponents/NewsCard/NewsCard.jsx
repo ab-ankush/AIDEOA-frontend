@@ -1,9 +1,14 @@
 import ImageCarousel from "../../../carousel/ImageCarousel";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+
 const NewsCard = ({ imageSrc, headline, content }) => {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
+
+
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -30,11 +35,11 @@ const NewsCard = ({ imageSrc, headline, content }) => {
             className="flex  transition-transform duration-700"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {imageSrc.map((image, index) => {
+            {imageSrc.map((item, index) => {
               return (
                 <div key={index} className="w-full flex-shrink-0 ">
                   <img
-                    src={image}
+                    src={item.url}
                     alt={`Slide ${index}`}
                     className={`w-full aspect-[3/2] object-contain`}
                   />
@@ -88,6 +93,13 @@ const NewsCard = ({ imageSrc, headline, content }) => {
           } text-gray-700`}
         >
           <h3>{headline}</h3>
+        </div>
+        <div
+          className={`font-medium max-sm:overflow-hidden ${
+            open ? "max-h-full" : "max-sm:max-h-[3em]"
+          } text-gray-700`}
+        >
+          <h3>{content}</h3>
         </div>
         <div className="relative">
           <button

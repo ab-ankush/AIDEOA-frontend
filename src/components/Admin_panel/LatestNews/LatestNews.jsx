@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
-import { eventgetdata } from "../../../Connection/Api";
+import { latestNewgetdata } from "../../../Connection/LatestNewsapi";
 
 const Resources = ({ setActiveComponent, setEventsData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -15,7 +15,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
   useEffect(() => {
     const getdata = async () => {
       try {
-        const data = await eventgetdata();
+        const data = await latestNewgetdata();
         setd(data.data);
       } catch (error) {
         console.log(`error in getdata in Events.jsx ${error}`);
@@ -116,15 +116,7 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 w-52">
                 Title
               </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 text-nowrap">
-                Event Date & Time
-              </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Days
-              </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Location
-              </th>
+             
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Description
               </th>
@@ -154,24 +146,16 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
                   {item.title}
                 </td>
                 <td className="py-3 px-4 text-gray-500 text-sm">
-                  {item.eventDateTime}
+                  {item.description}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400 text-nowrap">
-                  {item.days}
-                </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.location}
-                </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  {item.description.substring(0, 20)}...
-                </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
-                  <Link
-                    to={item.url}
-                    className="text-blue-500 max-w-32 whitespace-nowrap overflow-hidden text-ellipsis"
-                  >
-                    {item.url}
-                  </Link>
+                  <img src={item.images[0].url} className="h-10" alt="image here" />
+                  {/* {item.images.map((image)=>{
+
+                  <img src={image.url} className="h-10" alt="image here" />
+                  {console.log(image.url)}
+                  })} */}
+                  
                 </td>
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line />

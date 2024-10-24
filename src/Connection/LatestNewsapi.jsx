@@ -1,10 +1,13 @@
 import axios from "axios";
-export const postLatestNewsData = async (data) => {
+
+export const latestNewgetdata = async () => {
   try {
-    return axios.post("");
-  } catch (error) {
-    console.log(
-      `error in LatestNewsapi.jsx in postLatestNewsData func ${error}`
+    const response = await axios.get(
+      "http://localhost:4000/api/latestnews/posts"
     );
+    return response;
+  } catch (error) {
+    console.error("Error fetching data: ", error);
+    throw error;
   }
 };

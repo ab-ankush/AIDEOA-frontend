@@ -17,16 +17,30 @@ const AddLatestNews = ({ setActiveComponent }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //   const res = await axios.post(`${url}/api/posts`, formData);
-      //   if (res.status === 200) {
-      //     toast.success("Member added");
-      //     setActiveComponent("Our Teams");
-      //   }
-      console.log(formData);
+      // Convert the comma-separated image URLs into an array
+      const imageArray = formData.images
+        .split(",")
+        .map((imageUrl) => imageUrl.trim());
+  
+      const postData = {
+        title: formData.title,
+        description: formData.description,
+        images: imageArray, // Send as array
+      };
+  
+      // Send the data to the backend
+      const res = await axios.post(`${url}/api/latestnews/posts`, postData);
+      
+      if (res.status === 201) {
+        toast.success("News added successfully");
+        setActiveComponent("Latest News");
+      }
     } catch (error) {
       console.log(error);
+      toast.error("Failed to add news");
     }
   };
+  
 
   return (
     <div className="rounded-xl p-4 bg-gray-50 min-h-screen">
@@ -53,7 +67,7 @@ const AddLatestNews = ({ setActiveComponent }) => {
           <div>
             <label className="block text-gray-600">Images</label>
             <input
-              type="text"
+              type="url"
               name="images"
               value={formData.images}
               onChange={handleChange}

@@ -21,7 +21,7 @@ const sidebar = [
   { icon: BiTransferAlt , heading: "Mutual Transfer" },
   { icon: BiTransferAlt , heading: "Mutual Request" },
   { icon: GoGoal , heading: "Our Missions" },
-  { icon: GoGoal , heading: "Online Test" },
+
 ];
 
 const AdminSidebar = ({ activeComponent, setActiveComponent }) => {

@@ -10,83 +10,13 @@ import AddTest from "./onlinetest/AddTest";
 import AddStudentNews from "./studentnews/AddStudentNews";
 import Employeecorner from "./employeenews/EmployeeNews";
 import AddEmployeeNews from "./employeenews/AddEmployeeNews";
+import AddEducation from "./education/AddEducation";
+import Education from "./education/Education";
 
 const Resources = () => {
-  const data = [
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-  ];
+
   const [activeComponent, setActiveComponent] = useState("Student Corner");
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [selectAll, setSelectAll] = useState(false);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 3;
-
-  // Handle selecting all checkboxes
-  const handleSelectAll = () => {
-    if (selectAll) {
-      setSelectedItems([]);
-    } else {
-      setSelectedItems(data.map((_, index) => index));
-    }
-    setSelectAll(!selectAll);
-  };
-
-  // Handle individual item selection
-  const handleSelectItem = (index) => {
-    if (selectedItems.includes(index)) {
-      setSelectedItems(selectedItems.filter((item) => item !== index));
-    } else {
-      setSelectedItems([...selectedItems, index]);
-    }
-  };
+  
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -94,6 +24,10 @@ const Resources = () => {
         return <OnlineTest setActiveComponent={setActiveComponent} />;
       case "Add Test":
         return <AddTest setActiveComponent={setActiveComponent} />;
+      case "Education":
+        return <Education setActiveComponent={setActiveComponent} />;
+      case "Add Education":
+        return <AddEducation setActiveComponent={setActiveComponent} />;
       case "Employee Corner":
         return <Employeecorner setActiveComponent={setActiveComponent} />;
       case "Add Employeenews":

@@ -18,13 +18,13 @@ const ImageCarousel = ({images}) => {
        
       } }
       aria-label="My Favorite Images"
-     
+     className='max-h-[500px]'
     >
         {
             images.map((item,idx)=>{
-                return  <SplideSlide key={idx}>
+                return  <SplideSlide  key={idx}>
               
-            <img src={item} className='  rounded-3xl' alt='Images' />
+            <img src={item} className='  rounded-3xl h-full w-full' alt='Images' />
            
    
                 </SplideSlide>

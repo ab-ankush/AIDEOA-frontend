@@ -127,8 +127,8 @@ const AdminPanel = () => {
   };
 
   return (
-    <div className=" flex">
-      <div className="lg:w-[20%] max-lg:w-[10%]">
+    <div className=" flex ">
+      <div className="lg:w-[20%] sm:w-[50%]   max-lg:w-[10%]">
         <AdminSidebar
           activeComponent={activeComponent}
           setActiveComponent={setActiveComponent}
@@ -136,7 +136,7 @@ const AdminPanel = () => {
       </div>
       <div className="lg:w-[80%] max-lg:w-[90%] h-screen bg-gray-200">
         <AdminNavbar />
-        <div className="p-8 max-lg:px-4 bg-gray-200 h-screen">
+        <div className="p-8 max-lg:px-4 bg-gray-200 ">
           {renderComponent()}
         </div>
       </div>

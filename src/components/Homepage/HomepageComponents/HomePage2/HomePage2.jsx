@@ -5,7 +5,7 @@ import Slider from "../../../Cards/Slider/Slider";
 import ImageCarousel from "../../../carousel/ImageCarousel";
 import EmailNotiCard from "../../../Cards/EmailNotiCard"
 const HomePage2 = () => {
-  const images=['/images/1.jpg','/images/2.jpg','/images/3.jpg','/images/4.jpg','/images/5.jpg']
+  const images=['/aideoagallery/aideoa1.jpg','/aideoagallery/aideoa2.jpg','/aideoagallery/aideoa3.jpg','/aideoagallery/aideoa4.jpg']
 
   return (
     <>

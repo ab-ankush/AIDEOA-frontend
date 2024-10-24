@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
 
@@ -24,9 +24,14 @@ import Missions from "./components/missions/Misisions";
 import AddMissions from "./components/missions/AddMission";
 import UpdateMissions from "./components/missions/UpdateMissions";
 import MutualRequest from "./components/mutualrequest/MutualRequest";
+
 import OnlineTest from "./components/onlinetest/OnlineTest";
 import AddTest from "./components/onlinetest/AddTest";
 import StudentNews from "./components/studentnews/StudentNews";
+
+import LatestNews from "../components/Admin_panel/LatestNews/LatestNews.jsx";
+import AddLatestNews from "../components/Admin_panel/LatestNews/AddLatestNews.jsx";
+
 const AdminPanel = () => {
   const [activeComponent, setActiveComponent] = useState("Dashboard");
   const [eventsData, setEventsData] = useState();
@@ -42,10 +47,28 @@ const AdminPanel = () => {
             setEventsData={setEventsData}
           />
         );
+      case "Latest News":
+        return (
+          <LatestNews
+            setActiveComponent={setActiveComponent}
+            setEventsData={setEventsData}
+          />
+        );
+      case "Add Latest News":
+        return (
+          <AddLatestNews
+            setActiveComponent={setActiveComponent}
+            setEventsData={setEventsData}
+          />
+        );
       case "Transaction":
         return <Transaction_page />;
       case "Resource":
+
         return <Resources  setActiveComponent={setActiveComponent}/>;
+
+      case "Add Latest News":
+        return <AddLatestNews />;
       case "Members":
         return <Member />;
       case "Query":
@@ -54,6 +77,7 @@ const AdminPanel = () => {
         return <IdCard />;
       case "Mutual Transfer":
         return <MutualTransfer />;
+
         case "Mutual Request":
         return <MutualRequest />
       case "Contact us":
@@ -65,6 +89,7 @@ const AdminPanel = () => {
           return <AddTeams setActiveComponent={setActiveComponent} />;
         case "Add Events":
         return <AddEvent setActiveComponent={setActiveComponent} />;
+
       case "Events Details":
         return (
           <EventDetails
@@ -79,13 +104,23 @@ const AdminPanel = () => {
             eventsData={eventsData}
           />
         );
-        case "Our Missions" :
-        return <Missions setMissionData={setMissionData} setActiveComponent={setActiveComponent} />;
-        case "Add Missions" :
+      case "Our Missions":
+        return (
+          <Missions
+            setMissionData={setMissionData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
+      case "Add Missions":
         return <AddMissions setActiveComponent={setActiveComponent} />;
-        case "Update Missions" :
-        return <UpdateMissions missionData={missionData} setActiveComponent={setActiveComponent} />;
-        
+      case "Update Missions":
+        return (
+          <UpdateMissions
+            missionData={missionData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
+
       default:
         return <></>;
     }

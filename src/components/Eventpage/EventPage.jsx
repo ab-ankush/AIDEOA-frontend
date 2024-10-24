@@ -12,6 +12,7 @@ import Slider from "../Cards/Slider/Slider";
 import { data } from "../../data/data";
 import { useEffect, useState } from "react";
 import { eventgetdata } from "../../Connection/Api";
+import { latestNewgetdata } from "../../Connection/LatestNewsapi";
 
 const arr = [
   {
@@ -56,10 +57,13 @@ const arr = [
 const EventPage = () => {
   const [limit, setLimit] = useState(3);
   const [eventsData, setEventsData] = useState([]);
+  const [newsCardsData, setNewsCardsData] = useState([]);
   const getdata = async () => {
     try {
       const data = await eventgetdata();
+      const newsCards = await latestNewgetdata();
       setEventsData(data.data)
+      setNewsCardsData(newsCards.data);
     } catch (error) {
       console.log(`error in Eventpage.jsx ${error}`);
     }
@@ -69,6 +73,7 @@ const EventPage = () => {
 
   }, []);
   console.log("ds",eventsData)
+  console.log("newsCard",newsCardsData)
   return (
     <div className="pt-14">
       <TopImageCard
@@ -86,11 +91,12 @@ const EventPage = () => {
       <InfoHeader />
 
       <div className="flex gap-10 flex-col">
-        {data?.slice(0, limit).map((newsItem, index) => (
+        {newsCardsData?.slice(0, limit).map((newsItem, index) => (
           <NewsCard
             key={index}
             imageSrc={newsItem.images}
-            headline={newsItem.text}
+            headline={newsItem.title}
+            content={newsItem.description}
           />
         ))}
         <button

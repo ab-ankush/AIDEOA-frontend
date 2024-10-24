@@ -35,7 +35,7 @@ const transactions = [
 
 const TransactionTable = () => {
   return (
-    <>
+    <div className=" lg:min-w-full  min-w-[700px]">
       {/* Header with See All Transactions */}
       <div className="flex justify-between max-lg:w-full  items-center  p-4">
         <div className="w-full  flex justify-between items-center">
@@ -108,7 +108,7 @@ const TransactionTable = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

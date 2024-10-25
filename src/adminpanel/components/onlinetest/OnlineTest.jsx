@@ -9,7 +9,7 @@ import useOnlineTest from "../../../hooks/useOnlineTest";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 
-const OnlineTest = ({setActiveComponent}) => {
+const OnlineTest = ({setActiveComponent,setData}) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -136,7 +136,8 @@ const OnlineTest = ({setActiveComponent}) => {
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line  onClick={()=>deleteTest(item.id)}/>
                   <FiEdit2 onClick={()=>{
-                 
+                    setActiveComponent("Update Test")
+                    setData(item)
                   }}/>
                 </td>
               </tr>

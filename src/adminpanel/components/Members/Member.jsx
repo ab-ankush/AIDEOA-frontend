@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaArrowDownLong } from "react-icons/fa6";
@@ -103,7 +103,7 @@ const Member = () => {
   const [userType, setUserType] = useState("All");
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
-
+  const [searchTerm,setSearchTerm]=useState("")
   const totalPages = 3;
 
   const handleSelectAll = () => {
@@ -122,8 +122,10 @@ const Member = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-  const {dataList}=useMembers(userType)
-
+  const {dataList,fetchData}=useMembers()
+  useEffect(() => {
+    fetchData(userType,searchTerm);
+  }, [userType,searchTerm]);
   return (
     <>
       <div className=" bg-white  py-4 rounded-xl lightdropshadowbox">
@@ -141,6 +143,7 @@ const Member = () => {
                 <CiSearch className="absolute  top-3 left-3" />
                 <input
                   type="text"
+                  onChange={(e)=>setSearchTerm(e.target.value)}
                   className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
                   placeholder="Search"
                 />

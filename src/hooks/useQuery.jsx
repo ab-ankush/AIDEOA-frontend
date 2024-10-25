@@ -6,12 +6,16 @@ const useQuery = () => {
     const [dataList, setDataList] = useState([]);
     const [loading, setLoading] = useState(false);
   
-    const fetchData = async ( ) => {
+    const fetchData = async (searchTerm) => {
       setLoading(true);
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_API_BACKEND_URL}/api/query`,
-       
+          {
+            params:{
+              searchTerm:searchTerm
+            }
+          }
         );
         if (res.status === 200) setDataList(res.data);
         setLoading(false);
@@ -35,10 +39,8 @@ const useQuery = () => {
         throw new Error("Error deleting mission: " + error.message);
       }
     };
-    useEffect(() => {
-      fetchData( );
-    }, [ ]);
-    return {dataList,loading,deleteQuery}
+  
+    return {dataList,loading,deleteQuery,fetchData}
   }
 
 export default useQuery

@@ -15,7 +15,7 @@ import { MdDelete } from "react-icons/md";
 import Files from "./Files";
 import Videos from "./Videos";
 
-const Education = ({setActiveComponent}) => {
+const Education = ({setActiveComponent,setVideoData,setFileData}) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -44,8 +44,6 @@ const Education = ({setActiveComponent}) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-
 
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
@@ -77,8 +75,8 @@ const Education = ({setActiveComponent}) => {
          
           </TabList>
         </Box>
-        <TabPanel value="1"><Files value={value}/></TabPanel>
-        <TabPanel value="2"><Videos value={value}/></TabPanel>
+        <TabPanel value="1"><Files setActiveComponent={setActiveComponent} setFileData={setFileData} value={value}/></TabPanel>
+        <TabPanel value="2"><Videos setVideoData={setVideoData} setActiveComponent={setActiveComponent} value={value}/></TabPanel>
       </TabContext>
 
   

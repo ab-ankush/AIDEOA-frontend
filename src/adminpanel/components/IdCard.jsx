@@ -4,17 +4,15 @@ import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 
-import { LuUploadCloud } from "react-icons/lu";
 import { MdDelete } from "react-icons/md";
 const IdCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [userType, setUserType] = useState("Employees");
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
-
+  const [searchTerm,setSearchTerm]=useState("")
   const totalPages = 3;
-  const Students = new Array(20).fill("");
-  const employees = new Array(30).fill("");
+
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -35,8 +33,8 @@ const IdCard = () => {
     useStudentIdCard(userType);
 
   useEffect(() => {
-    getIdCard(userType);
-  }, [userType]);
+    getIdCard(userType,searchTerm);
+  }, [userType,searchTerm]);
   return (
     <div className=" bg-white rounded-xl py-4 lightdropshadowbox">
       <div className="flex flex-col">
@@ -50,6 +48,7 @@ const IdCard = () => {
               <CiSearch className="absolute  top-3 left-3" />
               <input
                 type="text"
+                onChange={(e)=>setSearchTerm(e.target.value)}
                 className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
                 placeholder="Search"
               />
@@ -59,10 +58,7 @@ const IdCard = () => {
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
               </button>
-              <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
-                <LuUploadCloud size={18} className="" />
-                <span>Create</span>
-              </button>
+            
             </div>
           </div>
         </div>
@@ -77,15 +73,15 @@ const IdCard = () => {
               } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
             >
               <span>Employees</span>
-              <span
+            {  userType === "Employees"&&  <span
                 className={`text-xs  font-bold px-2 rounded-md   ${
-                  userType == "Employees"
+                  userType === "Employees"
                     ? "bg-white text-[#4B0082]"
                     : "bg-[#4B0082]  text-white"
                 }`}
               >
                 {data.length}
-              </span>
+              </span>}
             </button>
             <button
               onClick={() => setUserType("Students")}
@@ -96,7 +92,7 @@ const IdCard = () => {
               } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
             >
               <span>Students</span>
-              <span
+             {  userType != "Employees" && <span
                 className={`text-xs  font-bold px-2 rounded-md   ${
                   userType != "Employees"
                     ? "bg-white text-[#4B0082]"
@@ -104,7 +100,7 @@ const IdCard = () => {
                 }`}
               >
                 {data.length}
-              </span>
+              </span>}
             </button>
           </div>
           <button className="text-sm font-semibold">Filter by</button>

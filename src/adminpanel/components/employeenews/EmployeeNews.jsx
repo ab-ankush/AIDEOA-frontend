@@ -9,7 +9,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import useEmployeeNews from "../../../hooks/useEmployeeNews";
 
-const EmployeeNews = ({setActiveComponent}) => {
+const EmployeeNews = ({setActiveComponent,setEmployeeData}) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -130,7 +130,8 @@ const EmployeeNews = ({setActiveComponent}) => {
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line  onClick={()=>deletenews(item.id)}/>
                   <FiEdit2 onClick={()=>{
-                 
+                 setActiveComponent("Update Employeenews")
+                 setEmployeeData(item)
                   }}/>
                 </td>
               </tr>

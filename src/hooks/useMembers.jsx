@@ -1,19 +1,20 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 
-const useMembers = (userType) => {
+const useMembers = () => {
     const [dataList, setDataList] = useState([]);
     const [loading, setLoading] = useState(false);
   
-    const fetchData = async (userType) => {
-      
+    const fetchData = async (userType,searchTerm) => {
+        
       setLoading(true);
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_API_BACKEND_URL}/api/members`,
           {
             params: {
-                userType: userType
+                userType: userType,
+                searchTerm:searchTerm
             },
           }
         );
@@ -25,9 +26,7 @@ const useMembers = (userType) => {
       }
     };
 
-    useEffect(() => {
-      fetchData(userType);
-    }, [userType]);
+
     return {dataList,loading,fetchData}
   }
   

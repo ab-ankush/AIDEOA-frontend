@@ -10,7 +10,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import useStudentNews from "../../../hooks/useStudentNews";
 
-const StudentNews = ({setActiveComponent}) => {
+const StudentNews = ({setActiveComponent,setStudentData}) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -131,7 +131,8 @@ const StudentNews = ({setActiveComponent}) => {
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line  onClick={()=>deletenews(item.id)}/>
                   <FiEdit2 onClick={()=>{
-                 
+                 setActiveComponent("Update Studentnews")
+                 setStudentData(item)
                   }}/>
                 </td>
               </tr>

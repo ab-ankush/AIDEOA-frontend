@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { LuUploadCloud } from "react-icons/lu";
@@ -26,7 +26,7 @@ const Query = () => {
     },
     // Add other items here...
   ];
-
+  const [searchTerm,setSearchTerm]=useState("")
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -48,7 +48,10 @@ const Query = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-  const {dataList}=useQuery()
+  const {dataList,fetchData}=useQuery()
+  useEffect(() => {
+    fetchData(searchTerm );
+  }, [ searchTerm]);
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
@@ -63,6 +66,7 @@ const Query = () => {
             <CiSearch className="absolute top-3 left-3" />
             <input
               type="text"
+              onChange={(e)=>setSearchTerm(e.target.value)}
               className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
               placeholder="Search"
             />

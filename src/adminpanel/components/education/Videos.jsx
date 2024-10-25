@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FiEdit2 } from 'react-icons/fi';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import useEducation from "../../../hooks/useEducation";
-const Videos = ({value}) => {
+const Videos = ({value,setVideoData,setActiveComponent}) => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -95,7 +95,8 @@ fetchData(value)
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line  onClick={()=>deleteFile(item.id,value)}/>
                   <FiEdit2 onClick={()=>{
-                 
+                 setVideoData(item)
+                 setActiveComponent("Update Education")
                   }}/>
                 </td>
               </tr>

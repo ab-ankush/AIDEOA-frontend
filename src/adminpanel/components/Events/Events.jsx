@@ -14,9 +14,10 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [d, setd] = useState([]);
-  const getdata = async () => {
+  const [searchTerm,setSearchTerm]=useState("")
+  const getdata = async (searchTerm) => {
     try {
-      const data = await eventgetdata();
+      const data = await eventgetdata(searchTerm);
       setd(data.data);
     } catch (error) {
       console.log(`error in getdata in Events.jsx ${error}`);
@@ -24,8 +25,8 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
   };
   useEffect(() => {
   
-    getdata();
-  }, []);
+    getdata(searchTerm);
+  }, [searchTerm]);
 
   const handleDeleteEvent=async(id)=>{
   
@@ -100,6 +101,7 @@ const  Resources = ({ setActiveComponent, setEventsData }) => {
             <CiSearch className="absolute top-3 left-3" />
             <input
               type="text"
+              onChange={(e)=>setSearchTerm(e.target.value)}
               className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
               placeholder="Search"
             />

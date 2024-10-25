@@ -67,8 +67,7 @@ const AdminPanel = () => {
 
         return <Resources  setActiveComponent={setActiveComponent}/>;
 
-      case "Add Latest News":
-        return <AddLatestNews />;
+     
       case "Members":
         return <Member />;
       case "Query":

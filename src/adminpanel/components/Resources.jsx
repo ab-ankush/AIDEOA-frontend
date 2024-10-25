@@ -12,30 +12,72 @@ import Employeecorner from "./employeenews/EmployeeNews";
 import AddEmployeeNews from "./employeenews/AddEmployeeNews";
 import AddEducation from "./education/AddEducation";
 import Education from "./education/Education";
+import UpdateTest from "./onlinetest/Updatetest";
+import UpdateStudentNews from "./studentnews/UpdateStudent";
+import UpdateEmployeeNews from "./employeenews/UpdateNews";
+import UpdateEducation from "./education/UpdateEducation";
 
 const Resources = () => {
-
   const [activeComponent, setActiveComponent] = useState("Student Corner");
-  
+  const [data, setData] = useState();
+  const [studentData, setStudentData] = useState();
+  const [employeeData, setEmployeeData] = useState();
+  const [fileData, setFileData] = useState();
+  const [videoData, setVideoData] = useState();
 
   const renderComponent = () => {
     switch (activeComponent) {
       case "Online Test":
-        return <OnlineTest setActiveComponent={setActiveComponent} />;
+        return (
+          <OnlineTest
+            setData={setData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
       case "Add Test":
         return <AddTest setActiveComponent={setActiveComponent} />;
+      case "Update Test":
+        return (
+          <UpdateTest data={data} setActiveComponent={setActiveComponent} />
+        );
       case "Education":
-        return <Education setActiveComponent={setActiveComponent} />;
+        return <Education setFileData={setFileData} setVideoData={setVideoData} setActiveComponent={setActiveComponent} />;
       case "Add Education":
         return <AddEducation setActiveComponent={setActiveComponent} />;
+      case "Update Education":
+        return <UpdateEducation fileData={fileData} videoData={videoData} setActiveComponent={setActiveComponent} />;
       case "Employee Corner":
-        return <Employeecorner setActiveComponent={setActiveComponent} />;
+        return (
+          <Employeecorner
+            setEmployeeData={setEmployeeData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
       case "Add Employeenews":
         return <AddEmployeeNews setActiveComponent={setActiveComponent} />;
+      case "Update Employeenews":
+        return (
+          <UpdateEmployeeNews
+            employeeData={employeeData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
       case "Student Corner":
-        return <StudentCorner setActiveComponent={setActiveComponent} />;
+        return (
+          <StudentCorner
+            setStudentData={setStudentData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
       case "Add Studentnews":
         return <AddStudentNews setActiveComponent={setActiveComponent} />;
+      case "Update Studentnews":
+        return (
+          <UpdateStudentNews
+            studentData={studentData}
+            setActiveComponent={setActiveComponent}
+          />
+        );
       default:
         return <></>;
     }
@@ -43,53 +85,52 @@ const Resources = () => {
   return (
     <div className="rounded-xl py-4 bg-gray-50">
       <div className="flex space-x-4 mb-4 px-4 max-lg:flex-col-reverse max-lg:gap-2">
-      <div className="flex space-x-4">
-  <div
-    onClick={() => setActiveComponent("Student Corner")}
-    className={`${
-      activeComponent === "Student Corner"
-        ? "bg-[#4B0082] text-white" // Active state
-        : "bg-white text-gray-700" // Inactive state
-    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
-  >
-    <p className="text-nowrap">Student Corner</p>
-    <p className="font-bold">100</p>
-  </div>
-  <div
-    onClick={() => setActiveComponent("Employee Corner")}
-    className={`${
-      activeComponent === "Employee Corner"
-        ? "bg-[#4B0082] text-white" // Active state
-        : "bg-white text-gray-700" // Inactive state
-    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
-  >
-    <p className="text-nowrap">Employee Corner</p>
-    <p className="font-bold">100</p>
-  </div>
-  <div
-    onClick={() => setActiveComponent("Education")}
-    className={`${
-      activeComponent === "Education"
-        ? "bg-[#4B0082] text-white" // Active state
-        : "bg-white text-gray-700" // Inactive state
-    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
-  >
-    <p className="text-nowrap">Education</p>
-    <p className="font-bold">100</p>
-  </div>
-  <div
-    onClick={() => setActiveComponent("Online Test")}
-    className={`${
-      activeComponent === "Online Test"
-        ? "bg-[#4B0082] text-white" // Active state
-        : "bg-white text-gray-700" // Inactive state
-    } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
-  >
-    <p className="text-nowrap">Online Test</p>
-    <p className="font-bold">100</p>
-  </div>
-</div>
-
+        <div className="flex space-x-4">
+          <div
+            onClick={() => setActiveComponent("Student Corner")}
+            className={`${
+              activeComponent === "Student Corner"
+                ? "bg-[#4B0082] text-white" // Active state
+                : "bg-white text-gray-700" // Inactive state
+            } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+          >
+            <p className="text-nowrap">Student Corner</p>
+            <p className="font-bold">100</p>
+          </div>
+          <div
+            onClick={() => setActiveComponent("Employee Corner")}
+            className={`${
+              activeComponent === "Employee Corner"
+                ? "bg-[#4B0082] text-white" // Active state
+                : "bg-white text-gray-700" // Inactive state
+            } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+          >
+            <p className="text-nowrap">Employee Corner</p>
+            <p className="font-bold">100</p>
+          </div>
+          <div
+            onClick={() => setActiveComponent("Education")}
+            className={`${
+              activeComponent === "Education"
+                ? "bg-[#4B0082] text-white" // Active state
+                : "bg-white text-gray-700" // Inactive state
+            } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+          >
+            <p className="text-nowrap">Education</p>
+            <p className="font-bold">100</p>
+          </div>
+          <div
+            onClick={() => setActiveComponent("Online Test")}
+            className={`${
+              activeComponent === "Online Test"
+                ? "bg-[#4B0082] text-white" // Active state
+                : "bg-white text-gray-700" // Inactive state
+            } text-center shadow-md rounded-xl flex flex-col justify-center items-center p-2 h-16 cursor-pointer`}
+          >
+            <p className="text-nowrap">Online Test</p>
+            <p className="font-bold">100</p>
+          </div>
+        </div>
       </div>
 
       {/* <div className="overflow-x-auto">

@@ -125,7 +125,6 @@ const AdminPanel = () => {
         return <></>;
     }
   };
-
   return (
     <div className=" flex ">
       <div className="lg:max-w-[20%] max-sm:min-w-[14%]   max-lg:w-[10%]">

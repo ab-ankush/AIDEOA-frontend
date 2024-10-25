@@ -126,7 +126,7 @@ const AdminPanel = () => {
   };
   return (
     <div className=" flex ">
-      <div className="lg:w-[20%] sm:w-[50%]   max-lg:w-[10%]">
+      <div className="lg:max-w-[20%] max-sm:min-w-[14%]   max-lg:w-[10%]">
         <AdminSidebar
           activeComponent={activeComponent}
           setActiveComponent={setActiveComponent}

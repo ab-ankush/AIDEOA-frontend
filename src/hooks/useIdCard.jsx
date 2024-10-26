@@ -35,7 +35,7 @@ const useStudentIdCard = (userType) => {
           setLoading(true);
           let res;
              try {
-              if(category==='Employees')
+              if(category==='employee')
                 {  res = await axios.get(
                     `${import.meta.env.VITE_API_BACKEND_URL}/api/employeeidcard/${id}`,{ 
                     }

@@ -86,6 +86,7 @@ const AuthContextProvider = ({ children }) => {
     }
   }, []);
 
+  
   useEffect(() => {
     const time = 1000 * 60 * 1;
     if (authToken) {
@@ -95,6 +96,7 @@ const AuthContextProvider = ({ children }) => {
       return () => clearInterval(interval);
     }
   }, [authToken, loading]);
+
 
   return (
     <AuthContext.Provider
@@ -110,5 +112,6 @@ const AuthContextProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
 
 export default AuthContextProvider;

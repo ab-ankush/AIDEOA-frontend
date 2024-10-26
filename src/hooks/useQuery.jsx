@@ -27,16 +27,16 @@ const useQuery = () => {
     const deleteQuery = async (id) => {
       try {
         const res = await axios.delete(
-          `${import.meta.env.VITE_API_BACKEND_URL}/api/mission/${id}`
+          `${import.meta.env.VITE_API_BACKEND_URL}/api/query/${id}`
         );
         if (res.status === 200) {
-      fetchData()
-        toast.success("Mission Deleted")
+      fetchData("")
+        toast.success(res.data.message)
         }
       } catch (error) {
         
           toast.error(error?.response?.data?.message)
-        throw new Error("Error deleting mission: " + error.message);
+        throw new Error("Error deleting Query: " + error.message);
       }
     };
   

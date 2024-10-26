@@ -85,10 +85,7 @@ fetchMails()
               <button className="bg-white text-nowrap font-semibold border shadow-md text-black py-2 px-4 rounded-md mr-2">
                 Download all
               </button>
-              <button className="bg-[#4B0082]  shadow-md font-semibold flex justify-center items-center gap-1  text-white py-2 px-4 rounded-md">
-                <LuUploadCloud size={18} className="" />
-                <span>Create</span>
-              </button>
+             
             </div>
           </div>
         </div>

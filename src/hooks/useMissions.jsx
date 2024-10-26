@@ -17,7 +17,7 @@ const useMissions = (searchTerm) => {
           },
         }
       );
-      if (res.status === 200) setDataList(res.data);
+      if (res.status === 200) setDataList(res.data.missions);
       setLoading(false);
     } catch (error) {
       setLoading(false);

@@ -9,7 +9,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import useEmployeeNews from "../../../hooks/useEmployeeNews";
 
-const EmployeeNews = ({setActiveComponent,setEmployeeData}) => {
+const EmployeeNews = ({setActiveComponent}) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -62,14 +62,14 @@ const EmployeeNews = ({setActiveComponent,setEmployeeData}) => {
           </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
-          <div className="relative w-[55%]">
+          {/* <div className="relative w-[55%]">
             <CiSearch className="absolute top-3 left-3" />
             <input
               type="text"
               className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
               placeholder="Search"
             />
-          </div>
+          </div> */}
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
             <button onClick={()=>setActiveComponent("Add Employeenews")} className="bg-[#4B0082] text-nowrap font-semibold border shadow-md text-white py-2 px-4 rounded-md mr-2">
@@ -130,8 +130,7 @@ const EmployeeNews = ({setActiveComponent,setEmployeeData}) => {
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
                   <RiDeleteBin6Line  onClick={()=>deletenews(item.id)}/>
                   <FiEdit2 onClick={()=>{
-                 setActiveComponent("Update Employeenews")
-                 setEmployeeData(item)
+                 
                   }}/>
                 </td>
               </tr>

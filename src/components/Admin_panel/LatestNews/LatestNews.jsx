@@ -70,10 +70,10 @@ const Resources = ({ setActiveComponent, setEventsData }) => {
             <p className="text-nowrap">AIDEOA Latest News</p>
             <p className="font-bold">100</p>
           </div>
-          <div className="bg-white w-32 text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
+          {/* <div className="bg-white w-32 text-gray-700 text-center border shadow-md rounded-xl flex flex-col justify-center p-2 h-16 items-center">
             <p className="text-nowrap">Online News</p>
             <p className="font-bold">100</p>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex justify-end flex-1 items-center space-x-4 ">

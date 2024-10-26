@@ -96,7 +96,7 @@ fetchData(value)
                   <RiDeleteBin6Line  onClick={()=>deleteFile(item.id,value)}/>
                   <FiEdit2 onClick={()=>{
                  setVideoData(item)
-                 setActiveComponent("Update Education")
+                 setActiveComponent("Update Video")
                   }}/>
                 </td>
               </tr>

@@ -9,6 +9,8 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { AuthContext } from "../../../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 const steps = ["Enter details", "Upload Image"];
 
@@ -28,7 +30,8 @@ const IDform = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-
+  const {authToken}=React.useContext(AuthContext)
+  const nav=useNavigate()
 
   const isStepSkipped = (step) => {
     return skipped.has(step);
@@ -98,12 +101,21 @@ const IDform = () => {
     }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (formData) => {
  
     console.log('handleSubmi')
-  
+    console.log(formData)
     try {
-      const res = await axios.post(`${url}/api/studentidcard`, formData);
+      const res = await axios.post(
+        `${url}/api/studentidcard`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${authToken.accessToken}`,
+          },
+        }
+      );
+      
       if (res.status === 200) {
         toast.success("Id card submitted");
         setFormData({
@@ -114,6 +126,7 @@ const IDform = () => {
           studentPhoto: null,
           universityIDCard: "",
         });
+        nav("/home")
       }
     } catch (error) {
       console.log(error);
@@ -132,10 +145,10 @@ const IDform = () => {
     }));
     setProgressStudent(false);
     toast.success("Image uploaded successfully");
-    handleSubmit()
+    handleSubmit({...formData,studentPhoto:res.url})
     setActiveStep(0)
   };
-  console.log(formData)
+
   const onUploadStart = () => {
     setProgressStudent(true);
   };

@@ -96,7 +96,7 @@ const Files = ({value,setFileData,setActiveComponent}) => {
                   <RiDeleteBin6Line  onClick={()=>deleteFile(item.id,value)}/>
                   <FiEdit2 onClick={()=>{
                  setFileData(item)
-                 setActiveComponent("Update Education")
+                 setActiveComponent("Update File")
                   }}/>
                 </td>
               </tr>

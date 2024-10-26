@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { LuUploadCloud } from "react-icons/lu";
-import { CiSearch } from "react-icons/ci";
-import { MdDelete } from "react-icons/md"; // Import MdDelete for deletion
+// Import MdDelete for deletion
 import OnlineTest from "./onlinetest/OnlineTest";
 import StudentCorner from "../components/studentnews/StudentNews";
 import AddTest from "./onlinetest/AddTest";
@@ -15,7 +11,9 @@ import Education from "./education/Education";
 import UpdateTest from "./onlinetest/Updatetest";
 import UpdateStudentNews from "./studentnews/UpdateStudent";
 import UpdateEmployeeNews from "./employeenews/UpdateNews";
-import UpdateEducation from "./education/UpdateEducation";
+
+import UpdateVideo from "./education/UpdateVideo";
+import UpdateFile from "./education/UpdateFile";
 
 const Resources = () => {
   const [activeComponent, setActiveComponent] = useState("Student Corner");
@@ -44,8 +42,10 @@ const Resources = () => {
         return <Education setFileData={setFileData} setVideoData={setVideoData} setActiveComponent={setActiveComponent} />;
       case "Add Education":
         return <AddEducation setActiveComponent={setActiveComponent} />;
-      case "Update Education":
-        return <UpdateEducation fileData={fileData} videoData={videoData} setActiveComponent={setActiveComponent} />;
+      case "Update Video":
+        return <UpdateVideo  videoData={videoData} setActiveComponent={setActiveComponent} />;
+      case "Update File":
+        return <UpdateFile  fileData={fileData} setActiveComponent={setActiveComponent} />;
       case "Employee Corner":
         return (
           <Employeecorner
@@ -83,7 +83,7 @@ const Resources = () => {
     }
   };
   return (
-    <div className="rounded-xl py-4 bg-gray-50">
+    <div className="rounded-xl pt-4 bg-gray-50">
       <div className="flex space-x-4 mb-4 px-4 max-lg:flex-col-reverse max-lg:gap-2">
         <div className="flex space-x-4">
           <div

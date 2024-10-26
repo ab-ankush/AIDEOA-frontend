@@ -3,7 +3,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Qrcode from "react-qr-code";
 import useStudentIdCard from "../../../hooks/useIdCard";
-const EmployeeIdCard = () => {
+const EmployeeIdCard = ({data}) => {
   const [show, setShow] = useState(true);
 
   // Function to generate and download PDF
@@ -63,10 +63,6 @@ const EmployeeIdCard = () => {
   const currentDate = new Date()
 
   const updatedExpiryDate = getExpiryDate(currentDate)
-  const {getIdCardById,data}=useStudentIdCard()
-  useEffect(()=>{
-    getIdCardById(1,"Employees")
-  },[])
   console.log(data)
   return (
     <div className="flex  flex-col w-full justify-start z-0">
@@ -89,7 +85,7 @@ const EmployeeIdCard = () => {
           >
             <div className="relative min-height-[549px]">
               <img
-                src="/card/lower.svg"
+                src={data?.employeePhoto || "/card/lower.svg"}
                 className="max-xsm:w-full"
                 alt="lower"
               />

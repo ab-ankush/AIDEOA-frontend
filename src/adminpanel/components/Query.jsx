@@ -5,6 +5,7 @@ import { LuUploadCloud } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
 import useQuery from "../../hooks/useQuery";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Query = () => {
   const data = [
@@ -48,7 +49,7 @@ const Query = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-  const {dataList,fetchData}=useQuery()
+  const {dataList,fetchData,deleteQuery}=useQuery()
   useEffect(() => {
     fetchData(searchTerm );
   }, [ searchTerm]);
@@ -143,7 +144,7 @@ const Query = () => {
                 </td>
                
                 <td className="p-2 font-medium text-sm text-gray-600 cursor-pointer">
-                  <BsThreeDotsVertical />
+                <RiDeleteBin6Line  onClick={()=>deleteQuery(item.id)}/>
                 </td>
               </tr>
             ))}

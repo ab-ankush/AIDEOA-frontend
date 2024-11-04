@@ -4,7 +4,7 @@ import jsPDF from "jspdf";
 import Qrcode from "react-qr-code"
 import { useNavigate } from "react-router-dom";
 import useStudentIdCard from "../../../hooks/useIdCard";
-const IdCardPurple = () => {
+const IdCardPurple = ({data}) => {
     const [show, setShow] = useState(true);
     const navigate =useNavigate();
     const name="james";
@@ -63,10 +63,7 @@ const IdCardPurple = () => {
       alert(`Error generating PDF: ${error.message}`);
     }
   };
-const {getIdCardById,data}=useStudentIdCard()
-useEffect(()=>{
-  getIdCardById(1,"Student")
-},[])
+
   return (
     <div className="flex  flex-col w-full justify-start z-0">
       <div className="flex  flex-col justify-start items-center">

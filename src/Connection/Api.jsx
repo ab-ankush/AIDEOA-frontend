@@ -8,12 +8,16 @@ export const eventpostdata = async (data) => {
     console.log(`error in Postdata in Api.jsx ${error}`);
   }
 };
-export const eventgetdata = async () => {
+export const eventgetdata = async (searchTerm) => {
   try {
     const data = await axios.get(
-      `${import.meta.env.VITE_API_BACKEND_URL}/api/events`
+      `${import.meta.env.VITE_API_BACKEND_URL}/api/events`,{
+        params:{
+          searchTerm:searchTerm
+        }
+      }
     );
-    console.log(data);
+    
     return data;
   } catch (error) {
     console.log(`error in getdata in Api.jsx ${error}`);

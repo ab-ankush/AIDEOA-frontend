@@ -8,6 +8,8 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../context/authContext";
 
 const steps = ["Enter details", "Upload Image"];
 
@@ -24,6 +26,8 @@ const EmployeeForm = () => {
     employeeIdNo: "",
     employeePhoto: "", 
   });
+  const {authToken}=React.useContext(AuthContext)
+  const nav=useNavigate()
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
   const [progressStudent, setProgressStudent] = useState(false);
@@ -88,10 +92,13 @@ const EmployeeForm = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = async() => {
-
+  const handleSubmit = async(formData) => {
     try {
-      const res= await axios.post(`${url}/api/employeeidcard`,formData)
+      const res= await axios.post(`${url}/api/employeeidcard`,formData,{
+        headers:{
+          Authorization:`Bearer ${authToken.accessToken}`
+        }
+      })
       if(res.status===200)
       {
         toast.success(res.data.message)
@@ -104,6 +111,7 @@ const EmployeeForm = () => {
           employeeIdNo: "",
           employeePhoto: "", 
         })
+        nav("/idcard")
       }
     } catch (error) {
       console.log(error)
@@ -121,7 +129,7 @@ const EmployeeForm = () => {
     }));
     setProgressStudent(false);
     toast.success("Image uploaded successfully");
-    handleSubmit()
+    handleSubmit({...formData,studentPhoto:res.url})
     setActiveStep(0)
   };
   console.log(formData)

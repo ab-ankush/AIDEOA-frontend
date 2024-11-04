@@ -15,7 +15,7 @@ const Section1 = () => {
       <div className="uldiv p-2">
         <ul className="w-[90%] mx-auto list-disc px-2 flex flex-col justify-evenly items-start text-xl flex-wrap text-justify gap-y-[10px] ">
           {
-            dataList?.map((item)=>{
+           dataList&& dataList?.map((item)=>{
               return <li className=" px-2" key={item?.id}>
                 {item?.mission}
               </li>

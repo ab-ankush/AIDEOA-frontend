@@ -62,14 +62,14 @@ const EmployeeNews = ({setActiveComponent}) => {
           </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
-          <div className="relative w-[55%]">
+          {/* <div className="relative w-[55%]">
             <CiSearch className="absolute top-3 left-3" />
             <input
               type="text"
               className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
               placeholder="Search"
             />
-          </div>
+          </div> */}
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
             <button onClick={()=>setActiveComponent("Add Employeenews")} className="bg-[#4B0082] text-nowrap font-semibold border shadow-md text-white py-2 px-4 rounded-md mr-2">

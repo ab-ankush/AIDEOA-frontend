@@ -13,12 +13,9 @@ const Member = () => {
   const [userType, setUserType] = useState("All");
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
-<<<<<<< HEAD
   const { dataList, fetchData } = useMembers(userType, currentPage);
 
-=======
   const [searchTerm,setSearchTerm]=useState("")
->>>>>>> 444930d2be9473fd621b521fff20ef009e9ae7f5
   const totalPages = 3;
 
   const handleSelectAll = () => {
@@ -37,7 +34,6 @@ const Member = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-<<<<<<< HEAD
   useEffect(() => {
     fetchData(userType, currentPage);
   }, [userType, currentPage]);
@@ -67,12 +63,6 @@ const Member = () => {
       return prev;
     });
   };
-=======
-  const {dataList,fetchData}=useMembers()
-  useEffect(() => {
-    fetchData(userType,searchTerm);
-  }, [userType,searchTerm]);
->>>>>>> 444930d2be9473fd621b521fff20ef009e9ae7f5
   return (
     <>
       <div className=" bg-white  py-4 rounded-xl lightdropshadowbox">

@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../../../index.css";
 import SubData from "../components/subsidiary";
 import useMutualTransfer from "../../../hooks/useMutualTransfer";
+import { AuthContext } from "../../../context/authContext";
 
 const Mutual_table = () => {
   const [search, setSearch] = useState("");
-  const { dataList,acceptPair } = useMutualTransfer();
-
-  function handleAccept(data){
-    const obj={
-      user1Id:data.userId,
-      user2Id:1,
-      transferRequestId:data.id,
-
-      status:"pending"
-    
-    }
-    acceptPair(obj)
+  const { dataList, acceptPair } = useMutualTransfer();
+  const { user } = useContext(AuthContext);
+  function handleAccept(data) {
+    const obj = {
+      user1Id: data?.userId,
+      transferRequestId: data?.id,
+    };
+    acceptPair(obj);
   }
   return (
     <div className="m-5 mx-12 ">
@@ -107,6 +104,9 @@ const Mutual_table = () => {
                 <p>Date</p>
               </th>
               <th className=" p-1 text-white bg-purple-400  ">
+                <p>Status</p>
+              </th>
+              <th className=" p-1 text-white bg-purple-400  ">
                 <p>Select</p>
               </th>
             </tr>
@@ -114,10 +114,10 @@ const Mutual_table = () => {
 
           <tbody>
             {dataList?.map((data, index) => (
-              <tr
-                key={index}
-                className="border p-2 h-5 text-center rounded-tr-2xl rounded-br-2xl rounded-tl-2xl min-w-1 rounded-bl-2xl  border-gray-300"
-              >
+             <tr
+             key={index}
+             className="border-b border-gray-200 h-16 cursor-pointer"
+           >
                 <td className="border p-1 text-center rounded-tl-2xl rounded-bl-2xl min-w-1 border-gray-300">
                   <p>{index + 1} </p>
                 </td>
@@ -159,14 +159,24 @@ const Mutual_table = () => {
                 <td className="border p-1 text-center text-xs text-nowrap  border-gray-300">
                   <p>{data.createdAt.toString().slice(0, 10)} </p>
                 </td>
+                <td className="border p-1 text-center text-xs text-nowrap  border-gray-300">
+                  <p>{data?.status} </p>
+                </td>
                 <td className="border px-2 py-1 text-center text-xs text-nowrap  border-gray-300">
-                <button
-            type="button"
-              onClick={()=>handleAccept(data)}
-            className="bg-[#4B0082] text-white px-2 py-1 text-xs rounded-md hover:opacity-80 focus:outline-none "
-          >
-            Accept
-          </button>
+                  <button
+                    type="button"
+                    disabled={
+                      data?.userId == user?.sub || data?.status === "approved"
+                    }
+                    onClick={() => handleAccept(data)}
+                    className={`bg-purple-400 text-white px-2 py-1 text-xs rounded-md  focus:outline-none ${
+                      (data?.userId == user?.sub ||
+                        data?.status === "approved") &&
+                      `bg-gray-300 cursor-not-allowed`
+                    }`}
+                  >
+                    Accept
+                  </button>
                 </td>
               </tr>
             ))}

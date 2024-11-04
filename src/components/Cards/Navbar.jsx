@@ -64,15 +64,17 @@ const Navbar = () => {
             >
               AIDEOA Events
             </NavLink>
-            <NavLink
-              className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
-                pathname === "/mutualtransfer" &&
-                "text-purple-600 border-purple-600 border-b"
-              } `}
-              to="/mutualtransfer"
-            >
-              Mutual Transfer
-            </NavLink>
+          {
+            user?.userType==='employee' &&   <NavLink
+            className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
+              pathname === "/mutualtransfer" &&
+              "text-purple-600 border-purple-600 border-b"
+            } `}
+            to="/mutualtransfer"
+          >
+            Mutual Transfer
+          </NavLink>
+          }
             <NavLink
               className={` wo py-3 px-4 hover:text-purple-600 hover:border-b  hover:border-purple-600 ${
                 pathname === "/education" &&
@@ -196,15 +198,17 @@ const Navbar = () => {
                 >
                   AIDEOA Events
                 </NavLink>
-                <NavLink
-                  className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
-                    pathname === "/mutualtransfer" && "text-purple-600 "
-                  }`}
-                  to="/mutualtransfer"
-                  onClick={sethamfunc}
-                >
-                  Mutual Transfer
-                </NavLink>
+              {
+                user?.userType==='employee' &&   <NavLink
+                className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
+                  pathname === "/mutualtransfer" && "text-purple-600 "
+                }`}
+                to="/mutualtransfer"
+                onClick={sethamfunc}
+              >
+                Mutual Transfer
+              </NavLink>
+              }
                 <NavLink
                   className={`block py-3 px-6 hover:text-purple-600 hover:bg-gray-100 ${
                     pathname === "/education" && "text-purple-600 "

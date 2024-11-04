@@ -1,7 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import QRCode from "react-qr-code";
 
-const Payment = ({ setStep, amount }) => {
+const Payment = ({ setStep, amount,setAmount }) => {
   const [formData, setFormData] = useState({
     name: "",
     mobileNumber: "",
@@ -16,11 +18,26 @@ const Payment = ({ setStep, amount }) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
-  const handleSubmit = () => {
-
+  const handleSubmit = async() => {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BACKEND_URL}/api/donations`,{donationAmount:amount,...formData});
+      if (res.status === 200) {
+        toast.success(res.data.message);
+        setStep(1);
+        setFormData({
+          name: "",
+          mobileNumber: "",
+          transactionId: ""
+        })
+        setAmount()
+      }
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

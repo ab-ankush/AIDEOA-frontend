@@ -33,7 +33,7 @@ const AuthContextProvider = ({ children }) => {
         { refreshToken }
       );
       const { accessToken } = resp.data;
-      console.log("new", accessToken);
+    
       if (resp.status === 200) {
         handleLogin({ accessToken, refreshToken });
       } else {

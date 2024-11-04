@@ -1,11 +1,12 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../context/authContext";
 
 const useMutualTransfer = (designationType, searchTerm) => {
   const [dataList, setDataList] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const {authToken} =useContext(AuthContext)
   const fetchData = async (designationType, searchTerm) => {
     setLoading(true);
     try {
@@ -26,14 +27,20 @@ const useMutualTransfer = (designationType, searchTerm) => {
     }
   };
   const acceptPair=async(formData)=>{
-    console.log(formData)
+
     setLoading(true);
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_BACKEND_URL}/api/transferpair`,
-       formData
+       formData,
+       {
+        headers:{
+          Authorization:`Bearer ${authToken.accessToken}`
+        }
+       }
       );
       if (res.status === 200) toast.success(res.data.message)
+        fetchData(designationType, searchTerm);
       setLoading(false);
     } catch (error) {
       setLoading(false);

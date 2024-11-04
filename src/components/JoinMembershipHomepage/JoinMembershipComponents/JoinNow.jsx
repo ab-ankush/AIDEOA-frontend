@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 const JoinNow = () => {
-  const [fee, setFee] = useState(500);
+  const [fee, setFee] = useState(100);
   const [amount, setAmount] = useState();
 
   return (

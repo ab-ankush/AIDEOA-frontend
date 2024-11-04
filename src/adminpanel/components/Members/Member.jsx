@@ -112,7 +112,7 @@ const Member = () => {
                         : "bg-[#4B0082]  text-white"
                     }`}
                   >
-                    {dataList.users && dataList?.users?.length}
+                    {dataList&& dataList.users && dataList?.users?.length}
                   </span>
                 )}
               </button>
@@ -133,7 +133,7 @@ const Member = () => {
                         : "bg-[#4B0082]  text-white"
                     }`}
                   >
-                    {dataList.users && dataList?.users?.length}
+                  {dataList&& dataList.users && dataList?.users?.length}
                   </span>
                 )}
               </button>
@@ -154,7 +154,7 @@ const Member = () => {
                         : "bg-[#4B0082]  text-white"
                     }`}
                   >
-                    {dataList.users && dataList?.users?.length}
+                 {dataList&& dataList.users && dataList?.users?.length}
                   </span>
                 )}
               </button>
@@ -199,7 +199,7 @@ const Member = () => {
               </tr>
             </thead>
             <tbody>
-              {dataList.users &&
+              {dataList && dataList?.users &&
                 dataList?.users?.slice(0, 7).map((item, index) => (
                   <tr key={index} className="border-b border-gray-200 h-16">
                     <td className="p-2 px-4 font-medium text-sm text-gray-600">

@@ -33,7 +33,7 @@ const AdminSidebar = ({ activeComponent, setActiveComponent }) => {
           <span className="hidden lg:inline">AIDEOA</span>{" "}
           {/* Text hidden on smaller screens */}
         </div>
-        <ul className="flex flex-col gap-2">
+        <ul className="flex lg:p-5 flex-col gap-2">
           {sidebar.map((item, index) => {
             const Icon = item.icon;
             return (

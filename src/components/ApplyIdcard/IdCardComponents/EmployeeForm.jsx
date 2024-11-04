@@ -11,7 +11,6 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/authContext";
 
-const steps = ["Enter details", "Upload Image"];
 
 const url = import.meta.env.VITE_API_BACKEND_URL;
 
@@ -31,6 +30,7 @@ const EmployeeForm = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
   const [progressStudent, setProgressStudent] = useState(false);
+  const steps = ["Enter details", "Upload Image"];
 
   const isStepSkipped = (step) => {
     return skipped.has(step);

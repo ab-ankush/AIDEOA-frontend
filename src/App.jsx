@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import Event from "./components/Eventpage/EventPage";
 import ContactUs from "./components/Contactus/ContactUs";
@@ -36,7 +36,6 @@ import Profile from "./components/profile/Profile";
 export default function App() {
   useEffect(() => {}, []);
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   return (
     <ScrollToTop>
@@ -47,10 +46,24 @@ export default function App() {
           <Route path="contact" element={<ContactUs />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="/mutualtransferviewportal" element={<DataList />} />
+          <Route
+            path="/mutualtransferviewportal"
+            element={
+              user?.userType === "employee" ? <DataList /> : <Navigate to="/" />
+            }
+          />
           <Route path="membership" element={<JoinMembership />} />
           <Route path="donation" element={<DonationComponent />} />
-          <Route path="mutualtransfer" element={<MutualTransferPage />} />
+          <Route
+            path="mutualtransfer"
+            element={
+              user?.userType === "employee" ? (
+                <MutualTransferPage />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
           <Route path="about" element={<About />} />
           <Route path="education" element={<EducationCell />} />
           <Route path="idcard" element={<ApplyIdCard />} />

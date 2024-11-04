@@ -12,7 +12,7 @@ const DonationComponent = () => {
         <TopImageCard image={'/enhanceimage/donation.png'} title={"Donation"} description={"Join Aidoea Membership "}/>
         {
           step===1?<DonationForm setAmount={setAmount} amount={amount}  setStep={setStep}/>:
-          <Payment setStep={setStep} amount={amount} />
+          <Payment setStep={setStep} amount={amount} setAmount={setAmount}/>
         }
             <Footer />
         

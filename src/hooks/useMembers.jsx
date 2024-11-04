@@ -18,7 +18,7 @@ const useMembers = () => {
             },
           }
         );
-        if (res.status === 200) setDataList(res.data.users);
+        if (res.status === 200) setDataList(res.data);
         setLoading(false);
       } catch (error) {
         setLoading(false);

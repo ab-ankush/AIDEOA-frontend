@@ -133,7 +133,7 @@ const AdminPanel = () => {
           setActiveComponent={setActiveComponent}
         />
       </div>
-      <div className="lg:w-[80%] max-lg:w-[90%] h-screen bg-gray-200">
+      <div className="lg:w-[100%] max-lg:w-[90%]  min-h-screen bg-gray-200">
         <AdminNavbar />
         <div className="p-8 max-lg:px-4 bg-gray-200 ">
           {renderComponent()}

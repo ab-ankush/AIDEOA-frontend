@@ -36,18 +36,18 @@ const EducationCell = () => {
 
   ];
   const data1 = [
-    ["Shri Sanjay Sahu", "Aideoa Ed. Cell"],
-    ["Shri Nilkanth Akela", "Aideoa Ed. Cell"],
+    ["Shri Sanjay Sahu", "Aideoa Ed. Cell","./aideoapics/sanjaysahu.jpg"],
+    ["Shri Nilkanth Akela", "Aideoa Ed. Cell","./aideoapics/neelkanth.jpeg"],
     // ["Shri Sunil Kumar", "Aideoa Ed. Cell"],
-    ["Shri S.R. Chourasia", "Aideoa Ed. Cell"],
-    ["Shri Manish Kumar Yadav", "Aideoa Ed. Cell"],
+    ["Shri S.R. Chourasia", "Aideoa Ed. Cell","./aideoapics/rktidwary.jpg"],
+    ["Shri Manish Kumar Yadav", "Aideoa Ed. Cell","./aideoapics/rkdtiwary.jpg"],
     // ["Shri Sovan Chatterjee", "Aideoa Ed. Cell","./aideoapics/sovan chatterjee.jpeg"],
 
   ];
   const data2 = [
     ["Shri Manish Kumar", "Aideoa IT Cell"],
-    ["Vinay Nath Tiwary", "Aideoa IT Cell "],
-    ["Adrash Kulshrestha", "Aideoa IT Cell "],
+    ["Vinay Nath Tiwary", "Aideoa IT Cell ","./aideoapics/vinay.jpeg"],
+    ["Adrash Kulshrestha", "Aideoa IT Cell ","./aideoapics/adarsh.jpeg"],
   ];
 
   return (

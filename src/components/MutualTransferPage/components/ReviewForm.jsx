@@ -1,15 +1,21 @@
+import { AuthContext } from "../../../context/authContext"
 import axios from "axios";
 import React from "react";
 import toast from "react-hot-toast";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const ReviewForm = ({ formData, setOpen, setFormData }) => {
+  const {authToken}=React.useContext(AuthContext)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_BACKEND_URL}/api/transferrequest`,
-        formData
+        formData,{
+          headers:{
+            Authorization:`Bearer ${authToken.accessToken}`
+          }
+        }
       );
       if (res.status === 200) {
         toast.success(res.data.message);
@@ -29,7 +35,9 @@ const ReviewForm = ({ formData, setOpen, setFormData }) => {
         });
         setOpen(false);
       }
-    } catch (error) {}
+    } catch (error) {
+
+    }
   };
   return (
     <div className=" bg-white border  border-1 dropshadowbox rounded-2xl w-full my-20 customScrollbar  overflow-y-scroll  scroll-smooth  h-[80vh] ">

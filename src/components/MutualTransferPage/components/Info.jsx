@@ -48,7 +48,7 @@ const Info = () => {
               onClick={showtable}
               className="font-medium text-gray-600 text-lg p-4 w-[95%] sm:w-80 border border-purple-500 rounded-full"
             >
-              My Submission
+              My Requests
             </button>
           </div>
         </div>

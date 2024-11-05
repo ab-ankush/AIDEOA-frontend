@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ReviewForm from "./ReviewForm";
+import { coalIndiaSubsidiaries } from '../../../data/subsidiary';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ const Form = () => {
   });
   const [open, setOpen] = useState(false);
   const bodyStyle = document.body.style;
+
   useEffect(() => {
     bodyStyle.overflowY = open ? "hidden" : "auto";
   }, [open]);
@@ -26,16 +28,17 @@ const Form = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value.trim(),
     });
   };
+
   const handleReview = (e) => {
     e.preventDefault();
     setOpen(true);
   };
 
   return (
-    <div id="form-section" className=" text-center m-auto w-[95%] lg:w-2/3">
+    <div id="form-section" className="text-center m-auto w-[95%] lg:w-2/3">
       <form onSubmit={handleReview}>
         <div className="flex flex-col text-left mb-5 gap-y-5">
           <label className="font-poppins font-medium text-xl" htmlFor="name">
@@ -52,11 +55,9 @@ const Form = () => {
             onChange={handleChange}
           />
         </div>
+
         <div className="flex flex-col text-left mb-5 gap-y-5">
-          <label
-            className="font-poppins font-medium text-xl"
-            htmlFor="your-designation"
-          >
+          <label className="font-poppins font-medium text-xl" htmlFor="your-designation">
             Are you executive or non-executive?
           </label>
           <div className="flex items-center gap-x-4">
@@ -88,17 +89,14 @@ const Form = () => {
         <div className="flex flex-col xl:flex-row justify-between w-full gap-x-20 m-auto">
           <div className="w-full">
             <div className="flex flex-col mb-5 gap-y-5 text-left">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="aideoaid"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="aideoaid">
                 AIDEOA ID No.*
               </label>
               <input
                 id="aideoaid"
                 name="aideoaid"
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4 w-full"
-                placeholder="Sample@gmail.com"
+                placeholder="Enter AIDEOA ID"
                 type="text"
                 required
                 value={formData.aideoaid}
@@ -107,29 +105,27 @@ const Form = () => {
             </div>
 
             <div className="flex flex-col mb-5 text-left gap-y-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="currentsubsidiary"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="currentsubsidiary">
                 Current posted Subsidiary in C.I.L
               </label>
-              <input
+              <select
                 id="currentsubsidiary"
                 name="currentsubsidiary"
-                className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
-                placeholder="Write here..."
-                type="text"
-                required
+                className="p-4 overflow-y-scroll max-sm:w-[300px] rounded-3xl bg-gray-100 border border-gray-300 w-full"
                 value={formData.currentsubsidiary}
                 onChange={handleChange}
-              />
+              >
+                <option value="">Select Current Subsidiary</option>
+                {coalIndiaSubsidiaries.map((data, idx) => (
+                  <option key={idx} value={data.name}>
+                    {data.name}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="flex flex-col gap-y-6 text-left mb-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="currentmine"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="currentmine">
                 Current Mines Name
               </label>
               <input
@@ -145,10 +141,7 @@ const Form = () => {
             </div>
 
             <div className="flex flex-col gap-y-6 text-left mb-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="grade"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="grade">
                 GRADE
               </label>
               <input
@@ -166,16 +159,13 @@ const Form = () => {
 
           <div className="w-full">
             <div className="flex flex-col text-left gap-y-5 mb-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="mobile"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="mobile">
                 Mobile Number
               </label>
               <input
                 id="mobile"
                 name="mobile"
-                placeholder="Sample@gmail.com"
+                placeholder="Enter mobile number"
                 className="rounded-3xl bg-gray-100 border border-gray-300 p-4 w-full"
                 type="text"
                 required
@@ -185,10 +175,7 @@ const Form = () => {
             </div>
 
             <div className="flex flex-col text-left gap-y-5 mb-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="currentarea"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="currentarea">
                 Current posted AREA
               </label>
               <input
@@ -204,10 +191,7 @@ const Form = () => {
             </div>
 
             <div className="flex flex-col text-left gap-y-5 mb-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="designation"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="designation">
                 Designation
               </label>
               <input
@@ -223,10 +207,7 @@ const Form = () => {
             </div>
 
             <div className="flex flex-col text-left gap-y-5 mb-5">
-              <label
-                className="font-poppins font-medium text-xl"
-                htmlFor="transferarea"
-              >
+              <label className="font-poppins font-medium text-xl" htmlFor="transferarea">
                 Preferred Transfer Area
               </label>
               <input
@@ -244,38 +225,36 @@ const Form = () => {
         </div>
 
         <div className="flex flex-col text-left gap-y-5 mb-5">
-          <label
-            className="font-poppins font-medium text-xl"
-            htmlFor="transfersubsidiary"
-          >
+          <label className="font-poppins font-medium text-xl" htmlFor="transfersubsidiary">
             Preferred Transfer Subsidiary
           </label>
-          <input
-            placeholder="Write here..."
-            className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
-            type="text"
-            required
-            name="transfersubsidiary"
+          <select
             id="transfersubsidiary"
+            name="transfersubsidiary"
+            className="p-4 overflow-y-scroll max-sm:w-[300px] rounded-3xl bg-gray-100 border border-gray-300 w-full"
             value={formData.transfersubsidiary}
             onChange={handleChange}
-          />
+          >
+            <option value="">Select Transfer Subsidiary</option>
+            {coalIndiaSubsidiaries.map((data, idx) => (
+              <option key={idx} value={data.name}>
+                {data.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="flex flex-col text-left gap-y-5 mb-16">
-          <label
-            className="font-poppins font-medium text-xl"
-            htmlFor="transfermine"
-          >
+          <label className="font-poppins font-medium text-xl" htmlFor="transfermine">
             Preferred Transfer Mine
           </label>
           <input
             placeholder="Enter mine name"
             className="rounded-3xl bg-gray-100 border border-gray-300 p-4"
             type="text"
-            required
-            name="transfermine"
             id="transfermine"
+            name="transfermine"
+            required
             value={formData.transfermine}
             onChange={handleChange}
           />
@@ -292,12 +271,8 @@ const Form = () => {
       </form>
 
       {open && (
-        <div className="fixed container w-[90%]  top-[50%] z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <ReviewForm
-            formData={formData}
-            setFormData={setFormData}
-            setOpen={setOpen}
-          />
+        <div className="fixed container w-[90%] top-[50%] z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <ReviewForm formData={formData} setFormData={setFormData} setOpen={setOpen} />
         </div>
       )}
     </div>

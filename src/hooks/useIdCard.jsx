@@ -6,7 +6,7 @@ const useStudentIdCard = (userType) => {
     const [data, setDataList] = useState([]);
     const [loading, setLoading] = useState(false);
   
-    const getIdCard=async(userType,searchTerm)=>{
+    const getIdCard=async(userType,searchTerm,currentPage,limit)=>{
         setLoading(true);
         console.log(searchTerm)
         let res;
@@ -14,13 +14,19 @@ const useStudentIdCard = (userType) => {
             if(userType==='Employees')
            {  res = await axios.get(
                `${import.meta.env.VITE_API_BACKEND_URL}/api/employeeidcard`,{ 
-                params:{searchTerm:searchTerm}
+                params:{searchTerm:searchTerm,
+                  page:currentPage,
+                  limit
+                }
                }
              );}
              else{
                res = await axios.get(
                 `${import.meta.env.VITE_API_BACKEND_URL}/api/studentidcard`,{ 
-                params:{searchTerm:searchTerm}
+                params:{searchTerm:searchTerm,
+                  page:currentPage,
+                  limit
+                }
                 })
              }
              if (res.status === 200) setDataList(res.data)
@@ -38,6 +44,7 @@ const useStudentIdCard = (userType) => {
               if(category==='employee')
                 {  res = await axios.get(
                     `${import.meta.env.VITE_API_BACKEND_URL}/api/employeeidcard/${id}`,{ 
+
                     }
                   );}
                   else{

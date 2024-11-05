@@ -112,7 +112,7 @@ const IdCardPurple = ({data}) => {
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">E-mail :</h4>
-                      <p>demo@email.com</p>
+                      <p>{data?.user?.email}</p>
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">Address :</h4>

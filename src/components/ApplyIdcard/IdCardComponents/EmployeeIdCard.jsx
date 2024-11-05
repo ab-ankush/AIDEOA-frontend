@@ -85,7 +85,7 @@ const EmployeeIdCard = ({data}) => {
           >
             <div className="relative min-height-[549px]">
               <img
-                src={data?.employeePhoto || "/card/lower.svg"}
+                src={"/card/lower.svg"}
                 className="max-xsm:w-full"
                 alt="lower"
               />
@@ -121,7 +121,7 @@ const EmployeeIdCard = ({data}) => {
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">E-mail :</h4>
-                      <p>demo@email.com</p>
+                      <p>{data?.user?.email}</p>
                     </div>
                     <div className="flex justify-start items-start">
                       <h4 className="font-bold mx-1">Address :</h4>

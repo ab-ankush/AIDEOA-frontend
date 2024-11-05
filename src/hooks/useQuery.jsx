@@ -1,19 +1,21 @@
 import axios from 'axios';
-import  { useEffect, useState } from 'react'
+import  {  useState } from 'react'
 import toast from 'react-hot-toast';
 
 const useQuery = () => {
     const [dataList, setDataList] = useState([]);
     const [loading, setLoading] = useState(false);
   
-    const fetchData = async (searchTerm) => {
+    const fetchData = async (searchTerm,currentPage,limit) => {
       setLoading(true);
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_API_BACKEND_URL}/api/query`,
           {
             params:{
-              searchTerm:searchTerm
+              searchTerm:searchTerm,
+              page:currentPage,
+              limit
             }
           }
         );

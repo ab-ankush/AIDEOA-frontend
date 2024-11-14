@@ -1,19 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import toast from 'react-hot-toast';
+import axios from "axios";
+import { limit } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
-const useStudentNews = (searchTerm) => {
-    const [dataList, setDataList] = useState([]);
+const useStudentNews = () => {
+  const [dataList, setDataList] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchData = async ( searchTerm) => {
+  const fetchData = async (searchTerm, currentPage) => {
     setLoading(true);
     try {
       const res = await axios.get(
         `${import.meta.env.VITE_API_BACKEND_URL}/api/studentnews`,
         {
           params: {
-            searchTerm: searchTerm || "",
+            currentPage,
+            limit: 8,
           },
         }
       );
@@ -30,19 +32,16 @@ const useStudentNews = (searchTerm) => {
         `${import.meta.env.VITE_API_BACKEND_URL}/api/studentnews/${id}`
       );
       if (res.status === 200) {
-    fetchData()
-      toast.success(res.data.message)
+        fetchData();
+        toast.success(res.data.message);
       }
     } catch (error) {
-      
-        toast.error(error?.response?.data?.message)
+      toast.error(error?.response?.data?.message);
       throw new Error("Error deleting mission: " + error.message);
     }
   };
-  useEffect(() => {
-    fetchData( searchTerm);
-  }, [ searchTerm]);
-  return {dataList,loading,deletenews}
-}
 
-export default useStudentNews
+  return { dataList, loading, deletenews, fetchData };
+};
+
+export default useStudentNews;

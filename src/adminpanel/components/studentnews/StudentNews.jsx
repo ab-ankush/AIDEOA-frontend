@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BsThreeDotsVertical } from "react-icons/bs";
 
@@ -10,7 +10,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit2 } from "react-icons/fi";
 import useStudentNews from "../../../hooks/useStudentNews";
 
-const StudentNews = ({setActiveComponent,setStudentData}) => {
+const StudentNews = ({ setActiveComponent, setStudentData }) => {
   const data = [
     {
       title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
@@ -28,7 +28,6 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
       description: "our area have developed...",
       url: "https://www.example.com",
     },
-  
   ];
 
   const [selectedItems, setSelectedItems] = useState([]);
@@ -52,7 +51,30 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-  const {dataList,deletenews}=useStudentNews()
+
+  const { dataList, deletenews, fetchData } = useStudentNews();
+  useEffect(() => {
+    fetchData(currentPage);
+  }, [currentPage]);
+
+  const handleNextPage = () => {
+    console.log(currentPage);
+    setCurrentPage((prev) => {
+      if (prev <= dataList.pagination.totalPages) {
+        return prev + 1;
+      }
+      return prev;
+    });
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      }
+      return prev;
+    });
+  };
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
@@ -63,13 +85,14 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
           </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
-      
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
-            <button onClick={()=>setActiveComponent("Add Studentnews")} className="bg-[#4B0082] text-nowrap font-semibold border shadow-md text-white py-2 px-4 rounded-md mr-2">
+            <button
+              onClick={() => setActiveComponent("Add Studentnews")}
+              className="bg-[#4B0082] text-nowrap font-semibold border shadow-md text-white py-2 px-4 rounded-md mr-2"
+            >
               Create
             </button>
-
           </div>
         </div>
       </div>
@@ -89,15 +112,16 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
               <th className="py-3 px-4 text-left  font-medium text-sm text-gray-500">
                 Title
               </th>
-             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Description
               </th>
-             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Category
               </th>
-         
-              
-             <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">Actions</th>
+
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -120,13 +144,15 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
                 <td className="p-2 font-medium text-sm text-gray-400">
                   {item.category}
                 </td>
-                
+
                 <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                  <RiDeleteBin6Line  onClick={()=>deletenews(item.id)}/>
-                  <FiEdit2 onClick={()=>{
-                 setActiveComponent("Update Studentnews")
-                 setStudentData(item)
-                  }}/>
+                  <RiDeleteBin6Line onClick={() => deletenews(item.id)} />
+                  <FiEdit2
+                    onClick={() => {
+                      setActiveComponent("Update Studentnews");
+                      setStudentData(item);
+                    }}
+                  />
                 </td>
               </tr>
             ))}
@@ -138,7 +164,7 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
         <button
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           disabled={currentPage === 1}
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          onClick={() => handlePrevPage}
         >
           Previous
         </button>
@@ -160,9 +186,7 @@ const StudentNews = ({setActiveComponent,setStudentData}) => {
         <button
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
           disabled={currentPage === totalPages}
-          onClick={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
+          onClick={() => setCurrentPage(handleNextPage)}
         >
           Next
         </button>

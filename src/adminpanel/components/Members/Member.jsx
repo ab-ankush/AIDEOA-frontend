@@ -15,7 +15,7 @@ const Member = () => {
   const [selectAll, setSelectAll] = useState(false);
   const { dataList, fetchData } = useMembers(userType, currentPage);
 
-  const [searchTerm,setSearchTerm]=useState("")
+  const [searchTerm, setSearchTerm] = useState("");
   const totalPages = 3;
 
   const handleSelectAll = () => {
@@ -80,7 +80,7 @@ const Member = () => {
                 <CiSearch className="absolute  top-3 left-3" />
                 <input
                   type="text"
-                  onChange={(e)=>setSearchTerm(e.target.value)}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   className="px-8 py-2 border w-full rounded-full text-sm border-gray-300"
                   placeholder="Search"
                 />
@@ -112,7 +112,7 @@ const Member = () => {
                         : "bg-[#4B0082]  text-white"
                     }`}
                   >
-                    {dataList&& dataList.users && dataList?.users?.length}
+                    {dataList && dataList.users && dataList?.users?.length}
                   </span>
                 )}
               </button>
@@ -133,7 +133,7 @@ const Member = () => {
                         : "bg-[#4B0082]  text-white"
                     }`}
                   >
-                  {dataList&& dataList.users && dataList?.users?.length}
+                    {dataList && dataList.users && dataList?.users?.length}
                   </span>
                 )}
               </button>
@@ -154,7 +154,7 @@ const Member = () => {
                         : "bg-[#4B0082]  text-white"
                     }`}
                   >
-                 {dataList&& dataList.users && dataList?.users?.length}
+                    {dataList && dataList.users && dataList?.users?.length}
                   </span>
                 )}
               </button>
@@ -199,7 +199,8 @@ const Member = () => {
               </tr>
             </thead>
             <tbody>
-              {dataList && dataList?.users &&
+              {dataList &&
+                dataList.users &&
                 dataList?.users?.slice(0, 7).map((item, index) => (
                   <tr key={index} className="border-b border-gray-200 h-16">
                     <td className="p-2 px-4 font-medium text-sm text-gray-600">

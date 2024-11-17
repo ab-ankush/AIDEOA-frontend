@@ -11,35 +11,22 @@ import { FiEdit2 } from "react-icons/fi";
 import useStudentNews from "../../../hooks/useStudentNews";
 
 const StudentNews = ({ setActiveComponent, setStudentData }) => {
-  const data = [
-    {
-      title: "AIDEOA Hostsdasdsa sdsadas safdsad Summit",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "2 days",
-      location: "Hotel Baker",
-      description: "candiceThe roads in our area...",
-      url: "https://www.example.com",
-    },
-    {
-      title: "Phoenix Baker Alumni",
-      eventDateTime: "12 Nov 2025 5:30 am - 6:30 pm",
-      days: "15 days",
-      location: "Hotel Baker",
-      description: "our area have developed...",
-      url: "https://www.example.com",
-    },
-  ];
-
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 3;
+
+  const { dataList, fetchData } = useStudentNews(); // Assuming `fetchData` updates `dataList`
+  const totalPages = dataList?.pagination?.totalPages || 1; // Use pagination data if available
+
+  useEffect(() => {
+    fetchData(currentPage); // Fetch data based on current page
+  }, [currentPage]);
 
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
     } else {
-      setSelectedItems(data.map((_, index) => index));
+      setSelectedItems(dataList?.items?.map((_, index) => index) || []);
     }
     setSelectAll(!selectAll);
   };
@@ -52,43 +39,28 @@ const StudentNews = ({ setActiveComponent, setStudentData }) => {
     }
   };
 
-  const { dataList, deletenews, fetchData } = useStudentNews();
-  useEffect(() => {
-    fetchData(currentPage);
-  }, [currentPage]);
-
   const handleNextPage = () => {
-    console.log(currentPage);
-    setCurrentPage((prev) => {
-      if (prev <= dataList.pagination.totalPages) {
-        return prev + 1;
-      }
-      return prev;
-    });
+    setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev));
   };
 
   const handlePrevPage = () => {
-    setCurrentPage((prev) => {
-      if (prev > 1) {
-        return prev - 1;
-      }
-      return prev;
-    });
+    setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
   };
+
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
         <div className="flex space-x-3 items-center">
           <h2 className="font-bold text-lg">Student</h2>
           <span className="bg-purple-200 px-2 text-xs rounded-full">
-            {dataList.length} tests
+            {dataList?.items?.length || 0} items
           </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
           {selectedItems.length >= 2 && <MdDelete size={26} />}
           <div className="flex max-lg:flex-col gap-2">
             <button
-              onClick={() => setActiveComponent("Add Studentnews")}
+              onClick={() => setActiveComponent("Add StudentNews")}
               className="bg-[#4B0082] text-nowrap font-semibold border shadow-md text-white py-2 px-4 rounded-md mr-2"
             >
               Create
@@ -118,14 +90,13 @@ const StudentNews = ({ setActiveComponent, setStudentData }) => {
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Category
               </th>
-
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
                 Actions
               </th>
             </tr>
           </thead>
           <tbody>
-            {dataList.map((item, index) => (
+            {dataList?.items?.map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -135,24 +106,17 @@ const StudentNews = ({ setActiveComponent, setStudentData }) => {
                     onChange={() => handleSelectItem(index)}
                   />
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-600 max-w-52 whitespace-nowrap overflow-hidden text-ellipsis">
+                <td className="p-2 font-medium text-sm text-gray-600">
                   {item.title}
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
+                <td className="p-2 font-medium text-sm text-gray-600">
                   {item.description}
                 </td>
-                <td className="p-2 font-medium text-sm text-gray-400">
+                <td className="p-2 font-medium text-sm text-gray-600">
                   {item.category}
                 </td>
-
-                <td className="p-2 flex font-medium text-center w-full text-sm justify-around h-16 items-center  text-gray-600 cursor-pointer">
-                  <RiDeleteBin6Line onClick={() => deletenews(item.id)} />
-                  <FiEdit2
-                    onClick={() => {
-                      setActiveComponent("Update Studentnews");
-                      setStudentData(item);
-                    }}
-                  />
+                <td className="p-2 font-medium text-sm text-gray-600 cursor-pointer">
+                  <BsThreeDotsVertical />
                 </td>
               </tr>
             ))}
@@ -160,11 +124,10 @@ const StudentNews = ({ setActiveComponent, setStudentData }) => {
         </table>
       </div>
 
-      <div className="flex justify-between items-center mt-4 px-4">
+      <div className="flex justify-between px-4 items-center mt-4">
         <button
+          onClick={handlePrevPage}
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
-          disabled={currentPage === 1}
-          onClick={() => handlePrevPage}
         >
           Previous
         </button>
@@ -172,21 +135,20 @@ const StudentNews = ({ setActiveComponent, setStudentData }) => {
           {[...Array(totalPages).keys()].map((page) => (
             <button
               key={page}
+              onClick={() => setCurrentPage(page + 1)}
               className={`py-2 px-4 rounded-md shadow-md border ${
                 currentPage === page + 1
                   ? "bg-purple-700 text-white"
                   : "bg-white text-black"
               }`}
-              onClick={() => setCurrentPage(page + 1)}
             >
               {page + 1}
             </button>
           ))}
         </div>
         <button
+          onClick={handleNextPage}
           className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage(handleNextPage)}
         >
           Next
         </button>

@@ -15,7 +15,7 @@ const useMembers = (userType) => {
         }/api/members?userType=${userType}&page=${currentPage}&limit=4`
       );
       console.log("res.data", res.data);
-      
+
       if (res.status === 200) setDataList(res.data);
       setLoading(false);
     } catch (error) {

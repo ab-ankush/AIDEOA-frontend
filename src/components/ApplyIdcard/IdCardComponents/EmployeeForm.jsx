@@ -78,14 +78,9 @@ const EmployeeForm = () => {
     setFormData((prevData) => ({ ...prevData, employeePhoto: dfile }));
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setFormData((prevData) => ({ ...prevData, employeePhoto: file }));
-  };
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -129,7 +124,7 @@ const EmployeeForm = () => {
     }));
     setProgressStudent(false);
     toast.success("Image uploaded successfully");
-    handleSubmit({...formData,studentPhoto:res.url})
+    handleSubmit({...formData,employeePhoto:res.url})
     setActiveStep(0)
   };
   console.log(formData)

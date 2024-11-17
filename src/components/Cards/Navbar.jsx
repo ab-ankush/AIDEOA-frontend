@@ -136,7 +136,9 @@ const Navbar = () => {
                 <Link to="/profile">
                   <MenuItem onClick={handleClose}>Profile</MenuItem>
                 </Link>
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                <MenuItem onClick={()=>{handleLogout()
+                   setAnchorEl(null);
+                }}>Logout</MenuItem>
               </Menu>
             </div>
           ) : (

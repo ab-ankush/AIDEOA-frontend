@@ -11,8 +11,10 @@ const IdCard = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [searchTerm,setSearchTerm]=useState("")
-  const totalPages = 3;
-
+  const { data, loading, getIdCard, approveIdCard } =
+  useStudentIdCard(userType);
+  const totalPages = data?.pagination?.totalPages
+  const limit=6;
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -29,19 +31,36 @@ const IdCard = () => {
     }
   };
 
-  const { data, loading, getIdCard, approveIdCard } =
-    useStudentIdCard(userType);
 
   useEffect(() => {
-    getIdCard(userType,searchTerm);
-  }, [userType,searchTerm]);
+    getIdCard(userType,searchTerm,currentPage,limit);
+  }, [userType,searchTerm,currentPage]);
+  const handleNextPage = () => {
+  
+    setCurrentPage((prev) => {
+      if (prev < data?.pagination?.totalPages) {
+        return prev + 1;
+      }
+      return prev;
+    });
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      }
+      return prev;
+    });
+  };
+  console.log(data)
   return (
     <div className=" bg-white rounded-xl py-4 lightdropshadowbox">
       <div className="flex flex-col">
         <div className="flex  space-x-4 mb-4 items-center">
           <div className="flex space-x-3 items-center">
             <h2 className="font-bold text-lg ml-5">Id Card</h2>
-            <span className="bg-purple-200 px-2 text-xs rounded-full"></span>
+            <span className="bg-purple-200 px-2 text-xs rounded-full">{}</span>
           </div>
           <div className="flex justify-end flex-1 px-4  items-center space-x-4 ">
             <div className="relative w-[55%]">
@@ -80,7 +99,7 @@ const IdCard = () => {
                     : "bg-[#4B0082]  text-white"
                 }`}
               >
-                {data.length}
+               {data?.pagination?.totalIdCards}
               </span>}
             </button>
             <button
@@ -99,7 +118,7 @@ const IdCard = () => {
                     : "bg-[#4B0082]  text-white"
                 }`}
               >
-                {data.length}
+               {data?.pagination?.totalIdCards}
               </span>}
             </button>
           </div>
@@ -120,6 +139,9 @@ const IdCard = () => {
               </th>
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 ">
                 Name & Photo
+              </th>
+              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 ">
+                Email
               </th>
               <th className="py-3 px-4 text-left font-medium text-sm text-gray-500 ">
                 {userType === "Employees" ? " Company Name" : "College Name"}
@@ -150,7 +172,7 @@ const IdCard = () => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((item, index) => (
+            {data&&data?.idcards?.slice(0,limit).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -173,6 +195,9 @@ const IdCard = () => {
                     />{" "}
                     {item.name}
                   </td>
+                </td>
+                <td className="p-2 font-medium text-sm text-gray-400 ">
+                  {item?.user.email}
                 </td>
                 <td className="p-2 font-medium text-sm text-gray-400 ">
                   {userType === "Employees"
@@ -223,28 +248,35 @@ const IdCard = () => {
         </table>
       </div>
 
-      <div className="flex justify-between items-center mt-4 px-4">
-        <button className="py-2 px-4 bg-white shadow-md border text-black rounded-md">
-          Previous
-        </button>
-        <div className="space-x-2">
-          {[...Array(totalPages).keys()].map((page) => (
-            <button
-              key={page}
-              className={`py-2 px-4 rounded-md shadow-md border ${
-                currentPage === page + 1
-                  ? "bg-purple-700 text-white"
-                  : " bg-white  text-black "
-              }`}
-            >
-              {page + 1}
-            </button>
-          ))}
+      <div className="flex justify-between px-4 items-center mt-4">
+          <button
+            onClick={handlePrevPage}
+            className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
+          >
+            Previous
+          </button>
+          <div className="space-x-2">
+            {[...Array(totalPages).keys()].map((page) => (
+              <button
+                key={page}
+                onClick={()=>setCurrentPage(page+1)}
+                className={`py-2 px-4 rounded-md shadow-md border ${
+                  currentPage === page + 1
+                    ? "bg-purple-700 text-white"
+                    : " bg-white  text-black "
+                }`}
+              >
+                {page + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={handleNextPage}
+            className="py-2 px-4  bg-white shadow-md border text-black rounded-md"
+          >
+            Next
+          </button>
         </div>
-        <button className="py-2 px-4  bg-white shadow-md border text-black rounded-md">
-          Next
-        </button>
-      </div>
     </div>
   );
 };

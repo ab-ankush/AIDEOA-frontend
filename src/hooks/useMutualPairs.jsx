@@ -6,14 +6,16 @@ const useMutualPairs = () => {
     const [data, setDataList] = useState([]);
     const [loading, setLoading] = useState(false);
   
-    const getPairs=async(status)=>{
+    const getPairs=async(searchTerm,limit,currentPage)=>{
         setLoading(true);
            try {
              const res = await axios.get(
                `${import.meta.env.VITE_API_BACKEND_URL}/api/transferpair`,{
-                params:{
-                  status:status
-                }
+              params:{
+                searchTerm:searchTerm||"",
+                limit:limit||null,
+                page:currentPage
+              }
                }
              );
              if (res.status === 200) setDataList(res.data)

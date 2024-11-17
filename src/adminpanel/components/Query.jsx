@@ -31,13 +31,15 @@ const Query = () => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 3;
+  const {dataList,fetchData,deleteQuery}=useQuery()
+  const totalPages = dataList?.pagination?.totalPages
+  const limit=6;
 
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
     } else {
-      setSelectedItems(data.map((_, index) => index));
+      setSelectedItems(dataList.map((_, index) => index));
     }
     setSelectAll(!selectAll);
   };
@@ -49,17 +51,35 @@ const Query = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
-  const {dataList,fetchData,deleteQuery}=useQuery()
+
   useEffect(() => {
-    fetchData(searchTerm );
-  }, [ searchTerm]);
+    fetchData(searchTerm,currentPage,limit );
+  }, [ searchTerm,currentPage]);
+  const handleNextPage = () => {
+    console.log(currentPage);
+    setCurrentPage((prev) => {
+      if (prev < dataList?.pagination?.totalPages) {
+        return prev + 1;
+      }
+      return prev;
+    });
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      }
+      return prev;
+    });
+  };
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
       <div className="flex px-4 space-x-4 mb-4 items-center">
         <div className="flex space-x-3 items-center">
           <h2 className="font-bold text-lg">Query</h2>
           <span className="bg-purple-200 px-2 text-xs rounded-full">
-            {dataList.length} query
+            {dataList?.totalQueries} query
           </span>
         </div>
         <div className="flex justify-end flex-1 items-center space-x-4">
@@ -114,7 +134,7 @@ const Query = () => {
             </tr>
           </thead>
           <tbody>
-            {dataList.map((item, index) => (
+            {dataList&&dataList?.queries?.slice(0,limit).map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -152,39 +172,35 @@ const Query = () => {
         </table>
       </div>
 
-      <div className="flex justify-between items-center mt-4 px-4">
-        <button
-          className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-        >
-          Previous
-        </button>
-        <div className="space-x-2">
-          {[...Array(totalPages).keys()].map((page) => (
-            <button
-              key={page}
-              className={`py-2 px-4 rounded-md shadow-md border ${
-                currentPage === page + 1
-                  ? "bg-purple-700 text-white"
-                  : "bg-white text-black"
-              }`}
-              onClick={() => setCurrentPage(page + 1)}
-            >
-              {page + 1}
-            </button>
-          ))}
+      <div className="flex justify-between px-4 items-center mt-4">
+          <button
+            onClick={handlePrevPage}
+            className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
+          >
+            Previous
+          </button>
+          <div className="space-x-2">
+            {[...Array(totalPages).keys()].map((page) => (
+              <button
+                key={page}
+                onClick={()=>setCurrentPage(page+1)}
+                className={`py-2 px-4 rounded-md shadow-md border ${
+                  currentPage === page + 1
+                    ? "bg-purple-700 text-white"
+                    : " bg-white  text-black "
+                }`}
+              >
+                {page + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={handleNextPage}
+            className="py-2 px-4  bg-white shadow-md border text-black rounded-md"
+          >
+            Next
+          </button>
         </div>
-        <button
-          className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
-          disabled={currentPage === totalPages}
-          onClick={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
-        >
-          Next
-        </button>
-      </div>
     </div>
   );
 };

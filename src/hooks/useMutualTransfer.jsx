@@ -7,7 +7,8 @@ const useMutualTransfer = (designationType, searchTerm) => {
   const [dataList, setDataList] = useState([]);
   const [loading, setLoading] = useState(false);
   const {authToken} =useContext(AuthContext)
-  const fetchData = async (designationType, searchTerm) => {
+  const fetchData = async (designationType, searchTerm,searchCriteria) => {
+    console.log(searchCriteria)
     setLoading(true);
     try {
       const res = await axios.get(
@@ -16,6 +17,7 @@ const useMutualTransfer = (designationType, searchTerm) => {
           params: {
             designationType: designationType || "",
             searchTerm: searchTerm || "",
+            searchCriteria:searchCriteria || ""
           },
         }
       );
@@ -52,7 +54,7 @@ const useMutualTransfer = (designationType, searchTerm) => {
     fetchData(designationType, searchTerm);
   }, [designationType, searchTerm]);
 
-  return { dataList, loading,acceptPair };
+  return { dataList, loading,acceptPair,fetchData };
 };
 
 export default useMutualTransfer;

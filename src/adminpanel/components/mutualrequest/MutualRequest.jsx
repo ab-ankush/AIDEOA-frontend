@@ -13,11 +13,12 @@ import useMutualPairs from "../../../hooks/useMutualPairs";
 
 const MutualRequest = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [userType, setUserType] = useState("Pending");
+
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const {data,getPairs}=useMutualPairs()
+  const totalPages =data && data?.pagination?.totalPages
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -26,7 +27,7 @@ const MutualRequest = () => {
     }
     setSelectAll(!selectAll);
   };
-
+  const limit=6;
   const handleSelectItem = (index) => {
     if (selectedItems.includes(index)) {
       setSelectedItems(selectedItems.filter((item) => item !== index));
@@ -34,16 +35,37 @@ const MutualRequest = () => {
       setSelectedItems([...selectedItems, index]);
     }
   };
- 
-const {data,loading,approvePair,getPairs}=useMutualPairs()
+  const handleNextPage = () => {
+    console.log(currentPage);
+    setCurrentPage((prev) => {
+      if (prev < data?.pagination?.totalPages) {
+        return prev + 1;
+      }
+      return prev;
+    });
+  };
 
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      }
+      return prev;
+    });
+  };
+
+console.log(data)
 useEffect(()=>{
-getPairs(userType)
-},[userType])
+getPairs(searchTerm,limit,currentPage)
+},[searchTerm,currentPage])
   return (
     <div className="bg-white rounded-xl py-4 lightdropshadowbox">
       <div className="flex flex-col">
+        
         <div className="flex space-x-4 mb-4 items-center">
+        <div className="flex space-x-3 items-center px-3">
+          <h2 className="font-bold text-lg">Mutual Request</h2>
+        </div>
           <div className="flex justify-end flex-1 px-4 items-center space-x-4">
             <div className="relative w-[55%]">
               <CiSearch className="absolute top-3 left-3" />
@@ -65,53 +87,7 @@ getPairs(userType)
           </div>
         </div>
 
-        <div className="flex justify-between px-4">
-          <div className="flex space-x-3 items-center">
-            <button
-              onClick={() => setUserType("Pending")}
-              className={` ${
-                userType === "Pending"
-                  ? "bg-[#4B0082] text-white"
-                  : "bg-white text-[#4B0082]"
-              } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
-            >
-              <span>Pending</span>
-              {userType !== "Completed" && (
-                <span
-                  className={`text-xs font-bold px-2 rounded-md ${
-                    userType === "Pending"
-                      ? "bg-white text-[#4B0082]"
-                      : "bg-[#4B0082] text-white"
-                  }`}
-                >
-                  {data.length}
-                </span>
-              )}
-            </button>
-            <button
-              onClick={() => setUserType("Completed")}
-              className={` ${
-                userType !== "Pending"
-                  ? "bg-[#4B0082] text-white"
-                  : "bg-white text-[#4B0082]"
-              } rounded-t-2xl text-sm py-2 w-40 font-medium flex gap-2 justify-center items-center`}
-            >
-              <span>Completed</span>
-              {userType === "Completed" && (
-                <span
-                  className={`text-xs font-bold px-2 rounded-md ${
-                    userType !== "Pending"
-                      ? "bg-white text-[#4B0082]"
-                      : "bg-[#4B0082] text-white"
-                  }`}
-                >
-                  {data.length}
-                </span>
-              )}
-            </button>
-          </div>
-          <button className="text-sm font-semibold">Filter by</button>
-        </div>
+     
       </div>
 
       <div className="overflow-x-scroll rounded-b-2xl">
@@ -165,17 +141,13 @@ getPairs(userType)
               <th className="p-2 font-medium text-sm text-gray-500 max-w-32">
                 Email
               </th>
-              <th className="p-2 font-medium text-sm text-gray-500 max-w-32">
-                Status
-              </th>
-              <th className="py-3 px-4 text-left font-medium text-sm text-gray-500">
-                Actions
-              </th>
+           
+             
             </tr>
           </thead>
 
           <tbody>
-            {data?.slice(0, 7)?.map((item, index) => (
+            {data && data?.transferPairs && data?.transferPairs?.slice(0, limit)?.map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -207,7 +179,7 @@ getPairs(userType)
                   {item.transferRequest.grade}
                 </td>
                 <td className="text-gray-400 max-w-32 p-2 font-medium text-sm whitespace-nowrap overflow-hidden text-ellipsis">
-                  {item.transferRequest.designation}
+                  {item.transferRequest.designationType}
                 </td>
                 <td className="p-2 font-medium text-xs text-gray-400">
                   {item.transferRequest.preferredTransferSubsidiary}
@@ -224,58 +196,42 @@ getPairs(userType)
                 <td className="p-2 font-medium text-xs text-gray-400">
                   {item.user2.email}
                 </td>
-                <td className="p-2 font-medium text-xs text-gray-400">
-                  {item.status}
-                </td>
-                <td className="py-3 px-4 font-medium">
-                      <button disabled={item.status==='completed'} onClick={()=>approvePair(item.id)} className="text-gray-500 flex gap-x-5 hover:text-gray-700">
-                       <span className="text-xs text-white px-2 py-1 rounded-full bg-green-700">{item.status==='completed'?'Completed':'Approve'}</span>
-                      </button>
-                    </td>
+              
+               
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className="p-3 w-full flex justify-center items-center gap-3">
-        <button
-          onClick={() => setCurrentPage(currentPage - 1)}
-          className="rounded-full h-6 w-6 flex items-center justify-center border bg-gray-100"
-        >
-          {"<"}
-        </button>
-        <button
-          onClick={() => setCurrentPage(1)}
-          className={`${
-            currentPage === 1 ? "bg-[#4B0082] text-white" : "bg-gray-100"
-          } rounded-full h-6 w-6 flex items-center justify-center border`}
-        >
-          1
-        </button>
-        <button
-          onClick={() => setCurrentPage(2)}
-          className={`${
-            currentPage === 2 ? "bg-[#4B0082] text-white" : "bg-gray-100"
-          } rounded-full h-6 w-6 flex items-center justify-center border`}
-        >
-          2
-        </button>
-        <button
-          onClick={() => setCurrentPage(3)}
-          className={`${
-            currentPage === 3 ? "bg-[#4B0082] text-white" : "bg-gray-100"
-          } rounded-full h-6 w-6 flex items-center justify-center border`}
-        >
-          3
-        </button>
-        <button
-          onClick={() => setCurrentPage(currentPage + 1)}
-          className="rounded-full h-6 w-6 flex items-center justify-center border bg-gray-100"
-        >
-          {">"}
-        </button>
-      </div>
+      <div className="flex justify-between px-4 items-center mt-4">
+          <button
+            onClick={handlePrevPage}
+            className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
+          >
+            Previous
+          </button>
+          <div className="space-x-2">
+            {[...Array(totalPages).keys()].map((page) => (
+              <button
+                key={page}
+                className={`py-2 px-4 rounded-md shadow-md border ${
+                  currentPage === page + 1
+                    ? "bg-purple-700 text-white"
+                    : " bg-white  text-black "
+                }`}
+              >
+                {page + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={handleNextPage}
+            className="py-2 px-4  bg-white shadow-md border text-black rounded-md"
+          >
+            Next
+          </button>
+        </div>
     </div>
   );
 };

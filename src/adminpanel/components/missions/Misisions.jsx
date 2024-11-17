@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { LuUploadCloud } from "react-icons/lu";
@@ -9,13 +9,18 @@ import useMissions from "../../../hooks/useMissions";
 const Missions = ({ setActiveComponent,setMissionData }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
+  const {dataList:data,deleteMission,fetchData}=useMissions()
 
-  const {dataList:data,deleteMission}=useMissions()
+  const totalPages = data?.pagination?.totalPages
+  const limit=6;
   const handleDelete=async(id)=>{
     await deleteMission(id)
   }
-  
+    useEffect(() => {
+    fetchData(currentPage,limit );
+  }, [ currentPage,limit]);
   const handleSelectAll = () => {
     if (selectAll) {
       setSelectedItems([]);
@@ -31,6 +36,24 @@ const Missions = ({ setActiveComponent,setMissionData }) => {
     } else {
       setSelectedItems([...selectedItems, index]);
     }
+  };
+  const handleNextPage = () => {
+    console.log(currentPage);
+    setCurrentPage((prev) => {
+      if (prev < data?.pagination?.totalPages) {
+        return prev + 1;
+      }
+      return prev;
+    });
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      }
+      return prev;
+    });
   };
   return (
     <div className="py-4 bg-white rounded-xl lightdropshadowbox">
@@ -84,7 +107,7 @@ const Missions = ({ setActiveComponent,setMissionData }) => {
             </tr>
           </thead>
           <tbody>
-            {data.slice(0, 7).map((item, index) => (
+            {data&&data?.missions?.slice(0, limit)?.map((item, index) => (
               <tr key={index} className="border-b border-gray-200 h-16 ">
                 <td className="p-2 px-4 font-medium text-sm text-gray-600">
                   <input
@@ -110,6 +133,35 @@ const Missions = ({ setActiveComponent,setMissionData }) => {
           </tbody>
         </table>
       </div>
+      <div className="flex justify-between px-4 items-center mt-4">
+          <button
+            onClick={handlePrevPage}
+            className="py-2 px-4 bg-white shadow-md border text-black rounded-md"
+          >
+            Previous
+          </button>
+          <div className="space-x-2">
+            {[...Array(totalPages).keys()].map((page) => (
+              <button
+                key={page}
+                onClick={()=>setCurrentPage(page+1)}
+                className={`py-2 px-4 rounded-md shadow-md border ${
+                  currentPage === page + 1
+                    ? "bg-purple-700 text-white"
+                    : " bg-white  text-black "
+                }`}
+              >
+                {page + 1}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={handleNextPage}
+            className="py-2 px-4  bg-white shadow-md border text-black rounded-md"
+          >
+            Next
+          </button>
+        </div>
     </div>
   );
 };
